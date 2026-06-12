@@ -1,0 +1,16 @@
+---
+title: "Story Telling"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "14-story-telling"
+  logitrcars: false
+  surveydown: false
+  notes: false
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```

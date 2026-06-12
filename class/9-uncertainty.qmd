@@ -1,0 +1,16 @@
+---
+title: "Uncertainty"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "9-uncertainty"
+  logitrcars: true
+  surveydown: true
+  notes: true
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```

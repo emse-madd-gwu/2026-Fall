@@ -1,0 +1,15 @@
+---
+title: "Final Presentations"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "15-final-presentations"
+  logitrcars: false
+  surveydown: false
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```

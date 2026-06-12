@@ -1,0 +1,16 @@
+---
+title: "Heterogeneity"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "12-heterogeneity"
+  logitrcars: true
+  surveydown: false
+  notes: true
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```

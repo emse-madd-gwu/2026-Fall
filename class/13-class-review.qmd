@@ -1,0 +1,16 @@
+---
+title: "Class Review"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "13-class-review"
+  logitrcars: true
+  surveydown: false
+  notes: true
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```

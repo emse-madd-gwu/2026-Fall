@@ -1,0 +1,15 @@
+---
+title: "Project Proposal Workshops"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "4-workshop-proposals"
+  logitrcars: false
+  surveydown: false
+  notes: true
+---
+
+No class this week - sign up **[HERE](https://calendar.app.google/niXopBudj9t4pmbj7)** for your team proposal meeting with Professor Helveston

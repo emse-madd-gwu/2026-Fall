@@ -1,0 +1,8 @@
+---
+title: "Conjoint Surveys in surveydown"
+params:
+  number: 4
+  purpose: "The purpose of this assignment is to get familiar with how to implement a full conjoint survey in surveydown."
+---
+
+Coming soon!

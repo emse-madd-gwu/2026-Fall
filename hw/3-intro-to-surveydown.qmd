@@ -1,0 +1,8 @@
+---
+title: "Intro to surveydown"
+params:
+  number: 3
+  purpose: 'The purpose of this assignment is to get familiar with the [surveydown](https://surveydown.org/) survey platform, which we will be using to implement our surveys.'
+---
+
+Coming soon!

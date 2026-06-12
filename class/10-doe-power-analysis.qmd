@@ -1,0 +1,16 @@
+---
+title: "DOE & Power Analysis"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "10-doe-power-analysis"
+  logitrcars: false
+  surveydown: false
+  notes: true
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```

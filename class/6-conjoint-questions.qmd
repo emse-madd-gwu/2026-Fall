@@ -1,0 +1,15 @@
+---
+title: "Conjoint Questions"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "6-conjoint-questions"
+  logitrcars: true
+  notes: true
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```

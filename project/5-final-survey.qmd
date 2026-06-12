@@ -1,0 +1,78 @@
+---
+title: "Final Survey"
+toc: true
+toc-location: right
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  number: 5
+  weight: '5%'
+---
+
+```{r}
+#| label: setup
+
+source(here::here("_common.R"))
+
+rubric <- read_csv(here::here('rubrics', '5-final-survey.csv'))
+maxPoints <- rubric %>%
+    filter(rating == "Excellent") %>%
+    summarise(max = sum(maxPoints)) %>%
+    pull(max)
+```
+
+```{r child = here::here("fragments", "project.qmd")}
+```
+
+As a team, create your **final survey** by building on your initial pilot survey. You should incorporate any changes you wrote about in your pilot analysis report. The course instructor will review and grade your survey and will provide written feedback. Follow the instructions below to prepare your pilot survey.
+
+# 1. Get Organized
+
+Download and unzip the [choice-based conjoint survey template](https://github.com/surveydown-dev/template_conjoint_buttons/archive/refs/heads/main.zip) for your pilot survey. The folder contains the following files:
+
+- `survey.Rproj`: An R Project file for staying organized.
+- `code/1_make_choice_questions.R`: The code to generate the `data/choice_questions.csv` file (your survey design file...use the code you wrote in class for this).
+- `data/choice_questions.csv`: The survey choice question design file.
+- `survey.qmd`: The code for creating your survey content, which should include a welcome page, content form, and eligibility questions for screening our ineligible respondents. It should also include your education content and randomized conjoint choice questions, then any other questions you wish to ask your survey respondents (e.g. demographics).
+- `app.R`: The file to run the Shiny app.
+- `images`: A folder of images (if you're using any in your survey).
+
+# 2. Target population
+
+Who should take your survey? When you submit your assignment on Blackboard, write down in Blackboard the eligibility requirements for who should be allowed to take your survey. Your survey should screen out people who don't qualify, but I will also use this information to try to pre-screen respondents so hopefully fewer will be screened out of your survey.
+
+# 3. Write your survey content
+
+The files included in the zip file are just example content based on the [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/) on building conjoint surveys in surveydown. **This is just placeholder content - you need to replace it with your survey content**.
+
+Follow these guidelines in inserting your content:
+
+- You may directly copy and paste any content you wish from your [Survey Plan](https://madd.seas.gwu.edu/2026-Fall/project/2-survey-plan.html) [Pilot Survey](https://madd.seas.gwu.edu/2026-Fall/project/3-pilot-survey.html) assignments.
+- In your `survey.qmd` file, you should have your randomized sets of choice questions working using your `choice_questions.csv` design file.
+- Setup a [database connection](https://surveydown.org/docs/storing-data) on Supabase and make sure your survey data is being stored properly in the database.
+
+# 4. Upload your survey to shinyapps.io
+
+Only one person from your team should create an account for hosting your survey on shinyapps.io. Follow the documentation on [deploying the app](https://surveydown.org/docs/deployment).
+
+> Be sure to run the `app.R` file to preview your choice questions locally as a Shiny app before deploying to shinyapps.io.
+
+# 5. Attribution
+
+Include a short description in your blackboard submission of the specific contributions of each team member for this report. If all members contributed equally, you can just put the single sentence "All members contributed equally".
+
+Team members who do not make meaningful contributions to their projects will not receive the same grade as that of their team mates. If you are having any issues or disputes among team members, please contact Professor Helveston ASAP so we can find a resolution.
+
+# 6. Submit
+
+Create a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. **Only one person from your team should submit the report.**
+
+# Grading Rubric
+
+**`r maxPoints` Total Points**
+
+```{r, echo=FALSE}
+make_rubric(rubric)
+```

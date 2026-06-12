@@ -1,0 +1,16 @@
+---
+title: "Optimization & MLE"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "8-optimization-mle"
+  logitrcars: true
+  surveydown: true
+  notes: true
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```
