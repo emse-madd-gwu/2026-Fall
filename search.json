@@ -1,0 +1,1086 @@
+[
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Instructor\nCourse\n\n\n\n\n John Paul Helveston\n Wednesdays\n\n\n Science & Engineering Hall, 2830\n Tompkins 201\n\n\n +1 (202) 994-7173\n Aug. 26 - Dec 9, 2026\n\n\n jph@gwu.edu\n 3:30PM - 6:00PM EST\n\n\n @jhelvy.bsky.social\n Slack\n\n\n\n\n\n\nThis course provides students with data analysis techniques to inform design decisions in an uncertain, competitive market; topics include consumer choice modeling, programming in the R programming language, survey design, conjoint analysis, optimization, market simulation, and professional communication skills. Over the course of the semester, students will learn and apply theory and methods to a team project to assess the market competitiveness of an emerging product / technology and use marketing analytics to generate design insights. All analyses will be conducted to support reproducibility from raw data to results using Quarto (which is built on the ideas of RMarkdown). At the end of the semester, students will submit a final, reproducible report of their project along with a presentation of their findings. This course has a “flipped” classroom structure. Students will spend the majority of class time working through guiding practice exercises or working on their projects. To prepare for class, students must complete weekly assignments that involve watching and reviewing recorded lecture materials and answering related practice questions.\n\n\n\nThis course requires prior exposure to:\n\nProbability theory\nMultivariable calculus\nLinear algebra\nRegression\n\nEach of these concepts will be applied throughout the course, and no time will be spent reviewing the foundational elements of each concept.\nIn addition, we will work in the R programming language throughout the course, but no prior programming experience is required. We will spend the first three weeks going through exercises to get up to speed in R.\nStudents are encouraged to complete this self assessment prior to registering for the course to self-assess familiarity with these concepts.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course provides students with data analysis techniques to inform design decisions in an uncertain, competitive market; topics include consumer choice modeling, programming in the R programming language, survey design, conjoint analysis, optimization, market simulation, and professional communication skills. Over the course of the semester, students will learn and apply theory and methods to a team project to assess the market competitiveness of an emerging product / technology and use marketing analytics to generate design insights. All analyses will be conducted to support reproducibility from raw data to results using Quarto (which is built on the ideas of RMarkdown). At the end of the semester, students will submit a final, reproducible report of their project along with a presentation of their findings. This course has a “flipped” classroom structure. Students will spend the majority of class time working through guiding practice exercises or working on their projects. To prepare for class, students must complete weekly assignments that involve watching and reviewing recorded lecture materials and answering related practice questions.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#prerequisites",
+    "href": "syllabus.html#prerequisites",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course requires prior exposure to:\n\nProbability theory\nMultivariable calculus\nLinear algebra\nRegression\n\nEach of these concepts will be applied throughout the course, and no time will be spent reviewing the foundational elements of each concept.\nIn addition, we will work in the R programming language throughout the course, but no prior programming experience is required. We will spend the first three weeks going through exercises to get up to speed in R.\nStudents are encouraged to complete this self assessment prior to registering for the course to self-assess familiarity with these concepts.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#pep-talk",
+    "href": "syllabus.html#pep-talk",
+    "title": "Syllabus",
+    "section": "Pep Talk!",
+    "text": "Pep Talk!\nWorking in and learning a programming language can be as challenging as learning a new spoken language. Hadley Wickham (chief data scientist at RStudio and author of many amazing R packages you’ll be using) made this wise observation:\n\nIt’s easy when you start out programming to get really frustrated and think, “Oh it’s me, I’m really stupid,” or, “I’m not made out to program.” But, that is absolutely not the case. Everyone gets frustrated. I still get frustrated occasionally when writing R code. It’s just a natural part of programming. So, it happens to everyone and gets less and less over time. Don’t blame yourself. Just take a break, do something fun, and then come back and try again later.\n\nIf you’re finding yourself taking way too long hitting your head against a wall and not understanding, take a break, talk to classmates, ask questions in Slack, and try it again later.\nI promise, you can do this!",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#software",
+    "href": "syllabus.html#software",
+    "title": "Syllabus",
+    "section": "Software",
+    "text": "Software\nGo to the Course Software page for detailed instructions on how to install the software we’ll be using. Here’s a quick list:\n\nR (version 4.1.0 or later), which can be downloaded from The Comprehensive R Archive Network (CRAN)\nRStudio (Desktop Version), a free IDE for R, which can be downloaded from RStudio\nWe’ll be using Slack for most communication.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#textbooks",
+    "href": "syllabus.html#textbooks",
+    "title": "Syllabus",
+    "section": "Textbooks",
+    "text": "Textbooks\n\nFor learning the basics of R, I recommend referencing my book “Programming for Analytics in R”, by Professor Helveston. The book is available freely on the web at https://p4a.jhelvy.com/.\nThe theoretical underpinnings to most of the modeling we will do in this course can be found in the book “Discrete Choice Methods with Simulation” by Dr. Kenneth Train. The book is available freely on the web at https://eml.berkeley.edu/books/choice2.html.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#participation-attendance",
+    "href": "syllabus.html#participation-attendance",
+    "title": "Syllabus",
+    "section": "Participation & Attendance",
+    "text": "Participation & Attendance\nAttendance will be taken and will be part of your participation grade.\nIn-person attendance is critical as we will spend a lot of time working on problems and writing code during class. You should plan to attend class in person each week.\nThere will be no option for remote attendance (e.g. zoom), and class sessions will not be recorded. If you have any questions or need special accommodations, send me a message on slack and we can discuss. If you must miss class for an excused absence (e.g. medical issue), please message Professor Helveston and get notes from your fellows classmates.\nMultiple absences, inappropriate or unprofessional behavior during class (such as monopolizing discussions or being rude or disruptive), not participating in classroom exercises, and not being prepared for class will result in a poor score for attendance and participation.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#quizzes",
+    "href": "syllabus.html#quizzes",
+    "title": "Syllabus",
+    "section": "Quizzes",
+    "text": "Quizzes\nQuizzes will be given about once every other week immediately at the beginning of class (check the schedule). Make up quizzes will not be available if you miss it (except for excused absences). Please show up on time to class each week to ensure that you do not miss a quiz. Quizzes will cover material presented in previous classes and assignments during the weeks since the most-recent quiz.\nQuizzes are short (10 minutes) and are designed to test for fluency and to demonstrate where additional study is needed. Quizzes are low-stakes - your worst one is dropped, and the rest count for a small portion of your final grade. If you do poorly on one or two, use that as feedback on where you need additional improvement.\n\nWhy quiz at all? Research shows that giving small quizzes throughout a class can dramatically help with retention. It’s a phenomenon known as the “retrieval effect” - basically, you have to practice remembering things, otherwise your brain won’t remember them. The phenomenon and research on it is explained in detail in the book “Make It Stick: The Science of Successful Learning,” by Brown, Roediger, and McDaniel.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#homework",
+    "href": "syllabus.html#homework",
+    "title": "Syllabus",
+    "section": "Homework",
+    "text": "Homework\nEach week, students will be assigned readings and exercises to prepare for the next class period. Students will need to submit reflections on these readings each week, which may involve answering some practice questions. These are graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write. I’m looking for thoughtful engagement, that’s all.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#final-project",
+    "href": "syllabus.html#final-project",
+    "title": "Syllabus",
+    "section": "Final Project",
+    "text": "Final Project\nThroughout the semester, students will work in teams of 3-4 students towards a final project. The project is broken into multiple phases with key deliverables due throughout the semester. See the Project Overview page for more details.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#final-exam",
+    "href": "syllabus.html#final-exam",
+    "title": "Syllabus",
+    "section": "Final Exam",
+    "text": "Final Exam\nThe final exam is a take-home exam, and we will spend a portion of the last day of class going over the solutions together.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#category-breakdown",
+    "href": "syllabus.html#category-breakdown",
+    "title": "Syllabus",
+    "section": "Category Breakdown",
+    "text": "Category Breakdown\nFinal grades will be calculated as follows:\n\n\n\n\nItem\nWeight\nNotes\n\n\n\n\nParticipation / Attendance\n5%\n(Yes, I take attendance)\n\n\nReflections (11)\n30 %\nWeekly assignment (10 x 3%), lowest 1 dropped\n\n\nQuizzes (5)\n10 %\nLowest 1 dropped\n\n\nFinal Exam\n10 %\nTake home exam\n\n\nProject Proposal\n5 %\nTeams of 3-4 students\n\n\nSurvey Plan\n5 %\n\n\n\nPilot Survey\n5 %\n\n\n\nPilot Analysis\n5 %\n\n\n\nFinal Survey\n5 %\n\n\n\nFinal Analysis Report\n15 %\n\n\n\nFinal Presentation\n5 %\n\n\n\n\n\nHere’s a visual breakdown by category:",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#grading-scale",
+    "href": "syllabus.html#grading-scale",
+    "title": "Syllabus",
+    "section": "Grading Scale",
+    "text": "Grading Scale\n\n\n\n\nGrade\nRange\nGrade\nRange\n\n\n\n\nA\n94 - 100%\nC\n74 - 76.99%\n\n\nA-\n90 - 93.99%\nC-\n70 - 73.99%\n\n\nB+\n87 - 89.99%\nD+\n67 - 69.99%\n\n\nB\n84 - 86.99%\nD\n64 - 66.99%\n\n\nB-\n80 - 83.99%\nD-\n60 - 63.99%\n\n\nC+\n77 - 79.99%\nF\n&lt; 60%\n\n\n\n\nThe course instructors may choose to change the scales at their discretion. You are guaranteed that your letter grade will never become worse as a result of changing scales.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#rounding",
+    "href": "syllabus.html#rounding",
+    "title": "Syllabus",
+    "section": "Rounding",
+    "text": "Rounding\nI do not round final grades. Here’s why. Wherever the line is drawn, there will always be students just below or just above, and rounding will only move that bar and create another group of students who are just below and just above. Rounding does not eliminate the issue but rather just shifts it to another group of students. This is why I draw the lines before the course starts - to ensure a fair and transparent system for everyone, that way you don’t have to shoot for a moving bar. To be clear, this means I will not modify or round your final score, even if you’re very close to a different letter grade (e.g., a 93.98 is an “A-” and will not be rounded up to an “A”).\nRather than round, I grade generously throughout the semester. For example, if you give a quiz your best shot and completely fail it, you will likely get a 50% instead of a 0%. The 50% is for trying as learning still happens when you try regardless if you get the question correct (0s are reserved for those who simply don’t attempt it).",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#slack",
+    "href": "syllabus.html#slack",
+    "title": "Syllabus",
+    "section": "Slack",
+    "text": "Slack\nAll course communication will be managed through Slack. A link to sign up for the course slack page can be found on the one (and only) announcement on Blackboard.\nYou can use Slack to:\n\nAsk general questions.\nAsk for help with an assignment.\nSend direct, private messages to each other or the instructors (just like email…but better!)\n\n\nAsking for help on Slack: You can post questions on slack and receive quick responses. This also enables other students to see answers to common questions. Be specific - if your code has an error you don’t understand, include the code and the error message in your question.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#ama-hours",
+    "href": "syllabus.html#ama-hours",
+    "title": "Syllabus",
+    "section": "AMA Hours",
+    "text": "AMA Hours\nI will hold regular “Ask Me Anything” hours each week. The specific hours will be posted on the course slack. During this period, you can come to my office (SEH 2830) and ask me anything. And I mean anything. Most of the time you may just have a question related to class, but I am also happy to discuss anything else with you regarding life, important decisions, career, art, music, dance, etc.\nIf the AMA hours don’t work with your schedule, you can always schedule a zoom call with me using this link. I’m available most days of the week.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#tutoring-hours",
+    "href": "syllabus.html#tutoring-hours",
+    "title": "Syllabus",
+    "section": "Tutoring hours",
+    "text": "Tutoring hours\nYour class tutors will each hold a dedicated period of time each week for zoom tutoring hours. Please don’t make your tutors sit and do emails for two hours - come by and ask for help!",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#library-services",
+    "href": "syllabus.html#library-services",
+    "title": "Syllabus",
+    "section": "Library Services",
+    "text": "Library Services\nWhile the University Library is not a stand in for TAs, you can schedule a consultation for general help with Coding, Programming, Data, Statistical, and GIS. See more at https://academiccommons.gwu.edu/writing-research-help",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#tldr",
+    "href": "syllabus.html#tldr",
+    "title": "Syllabus",
+    "section": "tl;dr",
+    "text": "tl;dr\n\nBE NICE\nBE ON TIME\nBE HONEST\nDON’T CHEAT\nSERIOUSLY: DON’T CHEAT",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#late-policy",
+    "href": "syllabus.html#late-policy",
+    "title": "Syllabus",
+    "section": "Late Policy",
+    "text": "Late Policy\nEach students is allowed 3 late homework submission days - use them however you want, no questions asked. These are meant to cover illness, family emergencies, and religious holidays.\nBeyond those, assignments are due by 11:59pm on the assigned due date unless specified otherwise. Assignments submitted up to 24 hours past this deadline will be graded to a max of 50% of the available points. Assignments submitted beyond 24 hours past the deadline will not be graded and will be assigned a 0.\nIf you need a special accommodation such as due to an illness, family emergency, or religious holidays, contact the instructor ahead of time.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#use-of-chatgpt-and-other-ai-tools",
+    "href": "syllabus.html#use-of-chatgpt-and-other-ai-tools",
+    "title": "Syllabus",
+    "section": "Use of chatGPT and other AI tools",
+    "text": "Use of chatGPT and other AI tools\nUse of large language models (LLMs) like chatGPT, Claude, etc. are not only permitted but encouraged. You need to learn how to use AI tools to learn new skills, improve productivity, and find solutions.\nWhile LLMs are pretty good, sometimes they suck. Don’t blindly trust them - they will betray you, especially with code.\nI will grade AI generated work no differently than work you produce without AI. But it’s important that you understand your work should not suck. Sometimes AI-generated work really, really sucks, so if you blindly trust an AI to do your work and submit it and it sucks, you may not like the grade.\nHere are some tips on how to work with AI tools but not generate work that sucks:\n\nDon’t submit code that doesn’t run (actually run it before submitting it).\nActually read what the AI generates.\nDon’t use methods I don’t teach. There are dozens of ways to do things - you should use the approach I teach. Using some other approach that an AI generates is a very bad idea.\n\nYour goal in using tools like ChatGPT should be to see them as an assistant - a tool to help you accomplish the task - rather than as a solutions manual. Take the time to work through the code / text these tools generate and ensure that what they provide is accurate, and if not make the corrections to fix their mistakes.\n\nCurious how LLMs actually work? Check out this article, which provides a simplified description of how they work (which itself is still quite complicated).",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#cheating",
+    "href": "syllabus.html#cheating",
+    "title": "Syllabus",
+    "section": "Cheating",
+    "text": "Cheating\nCheating results in a penalty on the first offense, and failing the course on the second offense. Cheating on assignments can include:\n\nCopying or stealing any amount of code from someone currently in the class or someone who has taken the class before.\nNOTE: Copying is never okay, whether the code is provided electronically, visually, audibly, or on paper. Even if you work together on an assignment, write your own code.\nProviding code you have written for an assignment to anyone else in the class.\nPutting code solutions from the course assignments online.\nReceiving code-level assistance from any person not associated with the course.\nGetting someone else to write the assignment code for you.\nAsking questions about the assignments on any online services outside of the course office hours / Slack.\n\nCheating on quizzes, assignments, or the final project can include:\n\nReferring to any external resources while completing the assignment (phones, notes, etc.).\nCopying part of an answer off of another student’s paper, even if it is very small.\nUsing solutions provided by students who previously took the course.\n\n\nPenalties\nViolations will be reported to the Office of Student Rights & Responsibilities. Penalties are decided by the course instructors, and can vary based on the severity of the offense. Possible penalties include:\n\nReceiving a 0 on the assignment/quiz in question.\nReceiving a full letter grade deduction in the course.\nAutomatically failing the course.\n\nDepending on the student’s prior academic history, violations may also be accompanied by a letter to the Dean of Student Affairs, again at the instructors’ discretion. This can lead to university-level penalties, such as being suspended or expelled.\n\n\nGrace Period\nCollege is a time when you do a lot of learning. Sometimes, you might make bad decisions or mistakes. The most important thing for you to do is to learn from your mistakes, to constantly grow, and become a better person.\nSometimes, students panic and copy code right before the deadline, then regret what they did afterwards. Therefore, you may rescind any homework submission for up to 24 hours after the deadline with no questions asked. Simply email the course instructors asking to delete the submission in question, and we will do so. Deleted submissions will not be considered during plagiarism detection, though of course they will also not be graded. However, it will always be better to get a 0 (or partial credit) on an assignment than to get a cheating violation!",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#children-in-class",
+    "href": "syllabus.html#children-in-class",
+    "title": "Syllabus",
+    "section": "Children in class",
+    "text": "Children in class\n\n\nI applaud all of you who attend school with children! It is difficult to balance academic, work, and family commitments, and I want you to succeed. Here are my policies regarding children in class:\n\nAll breastfeeding babies are welcome in class as often as necessary.\nNon-nursing babies and older children are welcome whenever alternate arrangements cannot be made. As a parent of young children, I understand that babysitters fall through, partners have conflicting schedules, children get sick, and other issues arise that leave parents with few other options.\nIn cases where children come to class, I invite parents/caregivers to sit close to the door so as to more easily excuse yourself to attend to your child’s needs. Non-parents in the class: please reserve seats near the door for your parenting classmates.\nAll students are expected to join with me in creating a welcoming environment that is respectful of your classmates who bring children to class.\n\nI understand that sleep deprivation and exhaustion are among the most difficult aspects of parenting young children. The struggle of balancing school, work, childcare, and graduate school is tiring, and I will do my best to accommodate any such issues while maintaining the same high expectations for all students enrolled in the class. Please do not hesitate to contact me with any questions or concerns.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#laurens-promise",
+    "href": "syllabus.html#laurens-promise",
+    "title": "Syllabus",
+    "section": "Lauren’s Promise",
+    "text": "Lauren’s Promise\n\n\nI will listen and believe you if someone is threatening you.\nLauren McCluskey, a 21-year-old honors student athlete, was murdered on October 22, 2018 by a man she briefly dated on the University of Utah campus. We must all take action to ensure that this never happens again.\nIf you are in immediate danger, call 911 or GWU police at 202-994-6111 (GWPD).\nIf you are experiencing sexual assault, domestic violence, or stalking, if you report it to me I will listen and connect you to resources or call GWU’s Counseling and Psychological Services (202-994-5300).\nAny form of sexual harassment or violence will not be excused or tolerated at GWU. GWU has instituted procedures to respond to violations of these laws and standards, programs aimed at the prevention of such conduct, and intervention on behalf of the victims. GWU Police officers will treat victims of sexual assault, domestic violence, and stalking with respect and dignity. Advocates on campus and in the community can help with victims’ physical and emotional health, reporting options, and academic concerns.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#use-of-course-materials",
+    "href": "syllabus.html#use-of-course-materials",
+    "title": "Syllabus",
+    "section": "Use of Course Materials",
+    "text": "Use of Course Materials\nAll course materials available on the course website are developed open source - you are welcome to post and share them following the licensing guidelines listed in the license page.\nHowever, all solutions to assignments and quizzes are proprietary. Don’t post them online or try to sell them - this is a violation of the student code of conduct and it is also a violation of the class cheating policy.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#recording-in-class",
+    "href": "syllabus.html#recording-in-class",
+    "title": "Syllabus",
+    "section": "Recording in Class",
+    "text": "Recording in Class\nYou are free to record class periods (audio and / or video) for your own personal study use and only for your personal study use. If you do record a class period, you are prohibited from posting or sharing the content online or with others.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#what-to-do-if-the-instructor-does-not-arrive",
+    "href": "syllabus.html#what-to-do-if-the-instructor-does-not-arrive",
+    "title": "Syllabus",
+    "section": "What To Do if the Instructor Does Not Arrive",
+    "text": "What To Do if the Instructor Does Not Arrive\nWait 20 minutes, after that you’re free to leave. One member of the class should be selected to notify the EMSE Department of the Instructor’s absence by calling the EMSE Department 202-994-4892 on next business day.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#university-policy-on-religious-holidays",
+    "href": "syllabus.html#university-policy-on-religious-holidays",
+    "title": "Syllabus",
+    "section": "University Policy on Religious Holidays",
+    "text": "University Policy on Religious Holidays\nIn accordance with University Policy, students should notify faculty during the first week of the semester of their intention to be absent from class on their day(s) of religious observance. Official university policy here: https://students.gwu.edu/accommodations-religious-holidays\n\nStudents should notify faculty during the first week of the semester of their intention to be absent from class on their day(s) of religious observance.\nFaculty should extend to these students the courtesy of absence without penalty on such occasions, including permission to make up examinations.\nFaculty who intend to observe a religious holiday should arrange at the beginning of the semester to reschedule missed classes or to make other provisions for their course-related activities.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#support-for-students-outside-the-classroom",
+    "href": "syllabus.html#support-for-students-outside-the-classroom",
+    "title": "Syllabus",
+    "section": "Support for Students Outside the Classroom",
+    "text": "Support for Students Outside the Classroom\nDisability Support Services (DSS): Any student who may need an accommodation based on the potential impact of a disability should contact the Disability Support Services office at 202-994-8250 in the Rome Hall, Suite 102, to establish eligibility and to coordinate reasonable accommodations. For additional information please refer to: https://disabilitysupport.gwu.edu/\nMental Health Services (202-994-5300): The University’s Mental Health Services offers 24/7 assistance and referral to address students’ personal, social, career, and study skills problems. Services for students include: crisis and emergency mental health consultations confidential assessment, counseling services (individual and small group), and referrals. https://healthcenter.gwu.edu/counseling-and-psychological-services",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#academic-integrity-code",
+    "href": "syllabus.html#academic-integrity-code",
+    "title": "Syllabus",
+    "section": "Academic Integrity Code",
+    "text": "Academic Integrity Code\nAcademic dishonesty is defined as cheating of any kind, including misrepresenting one’s own work, taking credit for the work of others without crediting them and without appropriate authorization, and the fabrication of information. For the remainder of the code, see: https://studentconduct.gwu.edu/code-academic-integrity\nIn addition to the formal code of academic integrity, the instructor expects that students will treat this course with the level of professionalism required in the workplace. Remember that real firms are sponsoring student projects throughout the semester; in a workplace setting, these firms would be paying clients for the analyses being conducted. This course prepares students to succeed in the workplace, and maintaining a high degree of professionalism is expected.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "self-assessment.html",
+    "href": "self-assessment.html",
+    "title": "Self Assessment",
+    "section": "",
+    "text": "This optional assignment allows you to self-assess whether you have the prerequisite knowledge required for this course. Take this three-question self-assessment quiz. It shouldn’t take more than 10-20 minutes to complete, and answers can be compared with the solutions.\nIf you have trouble answering these questions, you may find this course challenging and may want to take other courses or review refresher materials on these topics prior to taking this course."
+  },
+  {
+    "objectID": "self-assessment.html#this-assignment-is-optional",
+    "href": "self-assessment.html#this-assignment-is-optional",
+    "title": "Self Assessment",
+    "section": "",
+    "text": "This optional assignment allows you to self-assess whether you have the prerequisite knowledge required for this course. Take this three-question self-assessment quiz. It shouldn’t take more than 10-20 minutes to complete, and answers can be compared with the solutions.\nIf you have trouble answering these questions, you may find this course challenging and may want to take other courses or review refresher materials on these topics prior to taking this course."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "The theoretical underpinnings to most of the modeling we will do in this course can be found in the book “Discrete Choice Methods with Simulation” by Dr. Kenneth Train. The book is available freely on the web at https://eml.berkeley.edu/books/choice2.html.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#general-programming-in-r",
+    "href": "references.html#general-programming-in-r",
+    "title": "References",
+    "section": "General Programming in R",
+    "text": "General Programming in R\n\nGrolemund, Garrett. “Hands-On Programming with R” [free online], [buy on amazon]\nPeng, Roger D. “R Programming for Data Science” [online - pay what you want]",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#data-analysis-in-r",
+    "href": "references.html#data-analysis-in-r",
+    "title": "References",
+    "section": "Data Analysis in R",
+    "text": "Data Analysis in R\n\nGrolemund, Garrett and Wickham, Hadley. “R for Data Science” [free online], [buy on amazon]\nPeng, Roger D. “Exploratory Data Analysis with R” [online - pay what you want]\n16 HOWTO’s, by Lingyun Zhang",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#rstudio-cheatsheets",
+    "href": "references.html#rstudio-cheatsheets",
+    "title": "References",
+    "section": "RStudio “Cheatsheets”",
+    "text": "RStudio “Cheatsheets”\n\nAll cheatsheets\nData wrangling with the dplyr library\nData visualization with the ggplot2 library\nRMarkdown",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#principles-of-data-visualization",
+    "href": "references.html#principles-of-data-visualization",
+    "title": "References",
+    "section": "Principles of data visualization",
+    "text": "Principles of data visualization\n\nHealy, Kieran. “Data Visualization: A practical introduction” [free online], [buy on amazon]\nWilke, Claus O. “Fundamentals of Data Visualization” [free online], [buy on amazon]\nVideo: How Humans See Data, by John Rauser. This is probably the best overviews I’ve seen on how to exploit the psychology of how our brains interpret images to make effective visualizations.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#choosing-the-right-chart",
+    "href": "references.html#choosing-the-right-chart",
+    "title": "References",
+    "section": "Choosing the right chart",
+    "text": "Choosing the right chart\nYou will want to choose different chart types depending on the relationship or message you want to convey. Fortunately, we live in the future and awesome people have created wonderful tools to help you find the most appropriate graph for your data. Take a look through some of these resources - these will come in handy when you start working on your final project:\n\n Stephen Few’s Graph Selection Matrix\nThe Data Visualisation Catalogue\nData-to-Viz\nR Graph Gallery\nVisual Vocabulary\nThe Data Viz Project",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#making-plots-with-ggplot2",
+    "href": "references.html#making-plots-with-ggplot2",
+    "title": "References",
+    "section": "Making plots with ggplot2",
+    "text": "Making plots with ggplot2\n\nThe R Graph Catalog: 124 examples (with code) for making common ggplots.\nThe ggplot2 Extensions gallery: 64 registered libraries that extend the functionality of ggplot2.\nTop 50 ggplot2 visualizations\nR Cookbook for ggplot2\nRStudio ggplot2 Cheatsheet\nTidyverse ggplot2 reference guide\nggThemeAssist: Package for customizing plot themes and layout\n16 HOWTO’s, by Lingyun Zhang - super useful for making specific types of charts",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#polishing-ggplot2-plots",
+    "href": "references.html#polishing-ggplot2-plots",
+    "title": "References",
+    "section": "Polishing ggplot2 plots",
+    "text": "Polishing ggplot2 plots\n\nggplot2: Elegant Graphics for Data Analysis\nFollow good design rules",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#choosing-colors",
+    "href": "references.html#choosing-colors",
+    "title": "References",
+    "section": "Choosing colors",
+    "text": "Choosing colors\n\nColor wheel tool\nggplot2 book chapter 12\nR graph gallery\nCoolors.co - super nice color palette generator",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#animating-ggplot2-plots",
+    "href": "references.html#animating-ggplot2-plots",
+    "title": "References",
+    "section": "Animating ggplot2 plots",
+    "text": "Animating ggplot2 plots\n\nAnimate your ggplots with gganimate\nHow to make a bar chart race",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#helpful-tutorials",
+    "href": "references.html#helpful-tutorials",
+    "title": "References",
+    "section": "Helpful Tutorials",
+    "text": "Helpful Tutorials\n\nRStudio Primers\nTidyverse in R\nTransitioning from Excel to R",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#inspiration",
+    "href": "references.html#inspiration",
+    "title": "References",
+    "section": "Inspiration",
+    "text": "Inspiration\n\nAn Incomplete List of Females in Data Visualization, by Stephanie Evergreen\nThe Links Between Open Science and Star Wars",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "references.html#when-all-else-fails",
+    "href": "references.html#when-all-else-fails",
+    "title": "References",
+    "section": "When all else fails…",
+    "text": "When all else fails…\nYou will inevitably run into problems; things won’t work the way you expect, and you’ll get lots of confusing error messages. When this happens, many turn to the following tried and true problem-solving approaches:",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "project/7-final-presentation.html",
+    "href": "project/7-final-presentation.html",
+    "title": "Final Presentation",
+    "section": "",
+    "text": "Due: Dec 08 by 11:59pm\nWeight: This assignment is worth 5% of your final grade.\nAssessment: Your submission will be assessed using the rubric at the bottom of this page.\n\nMake a slideshow presentation of your findings in your final report. You may do one of the following:\n\nCreate a video recording of your presentation and publish it on the web (e.g. via Youtube, Vimeo, etc.).\nPresent your presentation live in class.\n\nWe will watch all the presentations together during the period scheduled for the exam.\nBelow is a list of specific items your presentation should include.\n\n1. Format\n\nYour presentation should be no longer than 10 minutes in length.\nEach team member must present at least one slide.\nYou may use as many slides as you feel helps you communicate your ideas (but keep the 10 minute limit in mind).\nYour title slide should include the project title, team member names, and the presentation date: December 10, 2025.\nAll slides should be numbered in the bottom-left or bottom-right corners.\nReview the slide design guidelines discussed in class as a check list when designing your slides.\n\n\n\n2. Recording strategies\nIf you choose to record your presentation, I recommend using Zoom. Have someone share their screen showing the slides and talk over the slides while recording the call.\nAnother option is to use a screen recording program, such as Quicktime (mac only), to record a screen recording on someone talking over the slides, though this may be challenging if not all teammates can be in the same room.\n\n\n2. Content\nYour slides do not need to include the detailed code used to conduct your analysis - that should be accessible from your report. Rather, the purpose of your presentation is to present the “big picture” overview and results from your project. You should discuss:\n\nAn introduction of your product / policy (similar to the introduction in your report).\nA brief overview of your survey:\n\nAt least one slide depicting an example choice question\nAt least one slide with some summary stats about your sample (e.g., sample size, etc.)\n\nYour main findings:\n\nA slide describing your utility model\nPolished charts of WTP, market simulations, sensitivity analyses.\nFor your market simulation(s), you must show a table showing the attributes used in the simulation(s).\nYour recommendations based on your findings.\n\n\n\n\n4. Publish\nIf you recorded a video, publish your video recording on the web (e.g. via Youtube, Vimeo, etc.), then send a link to the published video in a DM to Professor Helveston on slack.\nOnly one team member needs to publish the video.\n\n\n5. Submit\nCreate a zip file of your slides as a pdf / pptx / qmd (whatever you used to make your slides) and submit it on the corresponding assignment submission on Blackboard. Only one person from your team should submit.\n\n\nGrading Rubric\n35 Total Points\n\n\n\n\n\n\nCategory\nExcellent\nGood\nNeeds work\n\n\n\n\nSlide Design\n10 / 9\nSlides are well-designed and well-organized to effectively communicate a coherent story on the project findings; design guidelines are followed.\n8 / 7 / 6\nSlides are largely well-designed and well-organized, but some include distracting or confusing elements; story is not fully coherent; design guidelinees are mostly followed.\n5 / 4 / 3\nSlides are poorly-designed and organized; frequent use of bullets and lots of text; story is poorly developed and / or does not clearly communicate findings; design guidelines are largely ignored.\n\n\nContent\n15 / 14\nAll required content is included, including a clear and concise introduction, an overview of the survey, and clear results with well-designed figures that communicate findings and recommendations.\n13 / 12\nMost required content is included, including an introduction, an overview of the survey, and results with well-designed figures that communicate findings and recommendations. Some charts may be sub-par and unclear, and some recommendations may not be clearly connected to the research results.\n11 / 10 / 9\nMultiple required content elements are missing, including an introduction, an overview of the survey, and results with figures that communicate findings and recommendations. Most charts are unclear and recommendations are not be connected to or supported by the research results.\n\n\nCommunication\n10 / 9\nEngaging speaking; all team members participate; findings and recommendations clearly presented; adequately responsed to audience questions.\n8 / 7 / 6\nSpeaking is somewhat engaging; most team members participated; findings and recommendations presented but some unclear; responsed to audience questions, but did not fully answer question(s).\n5 / 4 / 3\nSpeaking is not engaging; not all team members participate; findings and recommendations are poorly presented and / or not justified by presented results; poor responses to audience questions.",
+    "crumbs": [
+      "Final Project",
+      "Final Presentation"
+    ]
+  },
+  {
+    "objectID": "project/5-final-survey.html",
+    "href": "project/5-final-survey.html",
+    "title": "Final Survey",
+    "section": "",
+    "text": "Due: Nov 15 by 11:59pm\nWeight: This assignment is worth 5% of your final grade.\nAssessment: Your submission will be assessed using the rubric at the bottom of this page.\n\nAs a team, create your final survey by building on your initial pilot survey. You should incorporate any changes you wrote about in your pilot analysis report. The course instructor will review and grade your survey and will provide written feedback. Follow the instructions below to prepare your pilot survey.\n\n1. Get Organized\nDownload and unzip the choice-based conjoint survey template for your pilot survey. The folder contains the following files:\n\nsurvey.Rproj: An R Project file for staying organized.\ncode/1_make_choice_questions.R: The code to generate the data/choice_questions.csv file (your survey design file…use the code you wrote in class for this).\ndata/choice_questions.csv: The survey choice question design file.\nsurvey.qmd: The code for creating your survey content, which should include a welcome page, content form, and eligibility questions for screening our ineligible respondents. It should also include your education content and randomized conjoint choice questions, then any other questions you wish to ask your survey respondents (e.g. demographics).\napp.R: The file to run the Shiny app.\nimages: A folder of images (if you’re using any in your survey).\n\n\n\n2. Target population\nWho should take your survey? When you submit your assignment on Blackboard, write down in Blackboard the eligibility requirements for who should be allowed to take your survey. Your survey should screen out people who don’t qualify, but I will also use this information to try to pre-screen respondents so hopefully fewer will be screened out of your survey.\n\n\n3. Write your survey content\nThe files included in the zip file are just example content based on the blog post on building conjoint surveys in surveydown. This is just placeholder content - you need to replace it with your survey content.\nFollow these guidelines in inserting your content:\n\nYou may directly copy and paste any content you wish from your Survey Plan Pilot Survey assignments.\nIn your survey.qmd file, you should have your randomized sets of choice questions working using your choice_questions.csv design file.\nSetup a database connection on Supabase and make sure your survey data is being stored properly in the database.\n\n\n\n4. Upload your survey to shinyapps.io\nOnly one person from your team should create an account for hosting your survey on shinyapps.io. Follow the documentation on deploying the app.\n\nBe sure to run the app.R file to preview your choice questions locally as a Shiny app before deploying to shinyapps.io.\n\n\n\n5. Attribution\nInclude a short description in your blackboard submission of the specific contributions of each team member for this report. If all members contributed equally, you can just put the single sentence “All members contributed equally”.\nTeam members who do not make meaningful contributions to their projects will not receive the same grade as that of their team mates. If you are having any issues or disputes among team members, please contact Professor Helveston ASAP so we can find a resolution.\n\n\n6. Submit\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. Only one person from your team should submit the report.\n\n\nGrading Rubric\n35 Total Points\n\n\n\n\n\n\nCategory\nExcellent\nGood\nNeeds work\n\n\n\n\nOrganization & Formatting\n5\nAll formatting guidelines are followed.\n4\nMost formatting guidelines are followed; only one or two components from the template are missing.\n3\nMost formatting guidelines are followed; several components from the template are missing or incomplete.\n\n\nSurvey Content\n10 / 9\nRmd files are complete and compile without error to html pages. All referenced files are on the web (not local).\n8 / 7 / 6\nRmd files are complete and compile to html pages mostly without error (may need one or two small fixeds). All referenced files are on the web (not local).\n5 / 4 / 3\nRmd files are incomplete and / or missing, and they require multiple fixes to compile into html files. References local files that are not yet on the web.\n\n\nConjoint Questions\n10 / 9\nRandomized conjoint questions render on live formr survey without error.\n8 / 7 / 6\nRandomized conjoint questions render on live formr survey with only one or two errors (e.g. image load fail).\n5 / 4 / 3\nRandomized conjoint questions have major issues rendering on the live formr survey. Page load fails or content is displayed in an unintelligle manner.\n\n\nsurveydown\n10 / 9\nEntire survey renders on live survey without errors, user can get to end and questions are clear and understandable.\n8 / 7 / 6\nThe survey contains one or two errors when rendering on shinyapps.io, but the user can still get to the end of the survey.\n5 / 4 / 3\nAn error page displays preventing continuation in the survey, or multiple major errors exist in the survey making it difficult to understand the questions.",
+    "crumbs": [
+      "Final Project",
+      "Final Survey"
+    ]
+  },
+  {
+    "objectID": "project/3-pilot-survey.html",
+    "href": "project/3-pilot-survey.html",
+    "title": "Pilot Survey",
+    "section": "",
+    "text": "Due: Oct 13 by 11:59pm\nWeight: This assignment is worth 5% of your final grade.\nAssessment: Your submission will be assessed using the rubric at the bottom of this page.\n\nAs a team, create a pilot survey - an initial draft of your final survey for preliminary testing. Your fellow classmates will all take your survey and provide feedback. The course instructor will also review and grade your survey and will provide written feedback. Follow the instructions below to prepare your pilot survey.\n\n1. Get Organized\nDownload and unzip the choice-based conjoint survey template for your pilot survey. The folder contains the following files:\n\nsurvey.Rproj: An R Project file for staying organized.\ncode/1_make_choice_questions.R: The code to generate the data/choice_questions.csv file (your survey design file…use the code you wrote in class for this).\ndata/choice_questions.csv: The survey choice question design file.\nsurvey.qmd: The code for creating your survey content, which should include a welcome page, content form, and eligibility questions for screening our ineligible respondents. It should also include your education content and randomized conjoint choice questions, then any other questions you wish to ask your survey respondents (e.g. demographics).\napp.R: The file to run the Shiny app.\nimages: A folder of images (if you’re using any in your survey).\n\n\n\n2. Write your survey content\nThe files included in the zip file are just example content based on the blog post on building conjoint surveys in surveydown. This is just placeholder content - you need to replace it with your survey content.\nFollow these guidelines in inserting your content:\n\nYou may directly copy and paste any content you wish from your Survey Plan assignment.\nIn your survey.qmd file, you should have your randomized sets of choice questions working using your choice_questions.csv design file.\nSetup a database connection on Supabase and make sure your survey data is being stored properly in the database.\n\n\nBe sure to render your survey.qmd file often to an html file so you can preview that everything is displaying as expected, then also run the app.R file to preview your choice questions locally as a Shiny app.\n\n\n\n3. Upload your survey to shinyapps.io\nOnly one person from your team should create an account for hosting your survey on shinyapps.io. Follow the documentation on deploying the app.\n\nBe sure to run the app.R file to preview your choice questions locally as a Shiny app before deploying to shinyapps.io.\n\n\n\n4. Attribution\nInclude a short description of the specific contributions of each team member for this report. If all members contributed equally, you can just put the single sentence “All members contributed equally”.\nTeam members who do not make meaningful contributions to their projects will not receive the same grade as that of their team mates. If you are having any issues or disputes among team members, please contact Professor Helveston ASAP so we can find a resolution.\n\n\n5. Submit\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. Only one person from your team should submit the report.\n\n\nGrading Rubric\n35 Total Points\n\n\n\n\n\n\nCategory\nExcellent\nGood\nNeeds work\n\n\n\n\nOrganization & Formatting\n5\nAll formatting guidelines are followed.\n4\nMost formatting guidelines are followed; only one or two components from the template are missing.\n3\nMost formatting guidelines are followed; several components from the template are missing or incomplete.\n\n\nSurvey Content\n10 / 9\nAll required content is present in the survey.qmd file with proper logic in the app.R file\n8 / 7 / 6\nAll required content is present in the survey.qmd file with proper logic in the app.R file, though it may need one or two small fixes to work properly.\n5 / 4 / 3\nRequired content is incomplete and / or missing, and there are multiple fixes required before the app runs.\n\n\nConjoint Questions\n10 / 9\nRandomized conjoint questions render on live survey without error.\n8 / 7 / 6\nRandomized conjoint questions render on live survey with only one or two errors (e.g. image load fail).\n5 / 4 / 3\nRandomized conjoint questions have major issues rendering on the live survey. Page load fails or content is displayed in an unintelligle manner.\n\n\nsurveydown\n10 / 9\nEntire survey renders on live survey without errors, user can get to end and questions are clear and understandable.\n8 / 7 / 6\nThe survey contains one or two errors when rendering on shinyapps.io, but the user can still get to the end of the survey.\n5 / 4 / 3\nAn error page displays preventing continuation in the survey, or multiple major errors exist in the survey making it difficult to understand the questions.",
+    "crumbs": [
+      "Final Project",
+      "Pilot Survey"
+    ]
+  },
+  {
+    "objectID": "project/1-proposal.html",
+    "href": "project/1-proposal.html",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "Due: Sep 20 by 11:59pm\nWeight: This assignment is worth 5% of your final grade.\nAssessment: Your submission will be assessed using the rubric at the bottom of this page.\nAs a team, write a proposal defining the scope of your project plan. Your chosen project topic should follow the project selection guidelines.\nThe course instructor will review and grade your proposal and provide feedback in team meetings the week following the due date. If your proposal is approved, you are done and can move on towards the next project task. In some cases, the instructor may ask you to submit a revised proposal, most likely by focusing / adjusting the proposal scope. Follow the guidelines below to prepare your proposal.",
+    "crumbs": [
+      "Final Project",
+      "Proposal"
+    ]
+  },
+  {
+    "objectID": "project/1-proposal.html#get-organized",
+    "href": "project/1-proposal.html#get-organized",
+    "title": "Project Proposal",
+    "section": "1. Get Organized",
+    "text": "1. Get Organized\nDownload and unzip this template for your proposal. Open the proposal.Rproj file and write your proposal in the proposal.qmd file. The template comes with some text and code explaining how to use it - you should delete this code / text as it is only for explanatory purposes. Be sure to adjust the content in the header:\n\nWrite your project title in the title field (and provide a subtitle if you wish, or delete the subtitle field).\nIn the author field, list the names of all teammates, e.g. author: Luke Skywalker, Leia Organa, and Han Solo.",
+    "crumbs": [
+      "Final Project",
+      "Proposal"
+    ]
+  },
+  {
+    "objectID": "project/1-proposal.html#writing-quality",
+    "href": "project/1-proposal.html#writing-quality",
+    "title": "Project Proposal",
+    "section": "2. Writing Quality",
+    "text": "2. Writing Quality\nYour proposal should be written in a clear, concise, and logically-structured manner so that a reader can easily understand the ideas presented. The proposal should be proof-read before submission to correct any grammatical or spelling errors. Spell checking can be automated by installing the spelling package and running this in the R console:\nAll figures should be referenced in the text.",
+    "crumbs": [
+      "Final Project",
+      "Proposal"
+    ]
+  },
+  {
+    "objectID": "project/1-proposal.html#proposal-contents",
+    "href": "project/1-proposal.html#proposal-contents",
+    "title": "Project Proposal",
+    "section": "3. Proposal Contents",
+    "text": "3. Proposal Contents\nYour proposal should contain the following items listed as separate sections.\n\nNOTE: If your team is working on a policy project rather than a product, see the Policy Proposal Contents section below.\n\n\nAbstract\nA few sentences summarizing the overall proposal and convincing the reader why it is important. Specifically, tell the reader:\n\nWhat is the product you are studying?\nWhat key product attributes make it different than its competitors?\nWhat major research questions will you focus on for your analysis?\n\n\n\nIntroduction\nProvide a brief description and background of the product or technology. Include a picture or diagram of the product.\n\n\nMarket Opportunity\n\nIdentify Your Customer\nIf there are multiple potential markets, choose one to focus on for your analysis. Describe who you plan on taking your survey and how you intend to gain access to that population. You may survey customers of a “downstream” product, if appropriate (e.g. survey electric vehicle buyers to learn about preferences for electric vehicle battery attributes).\n\n\nIdentify Competitors\nWhich other products will compete with yours? Benchmark how competitors compare on your product’s attributes.\n\n\nIdentify Market Size\nEstimate the size of the annual market (expected sales in units per year) for this product and its competitors. Specify if your estimated annual market size is regional, national, or global, and provide references. Also address how the market size is expected to grow in the future.\n\n\n\nProduct Attributes\nA key component of your proposal is to identify the relationships between your product attributes and research questions.\nThese are the product features that consumers observe and care about. For example, price is almost always an important product attribute that influences consumer choices. You should list and describe the major product attributes you will include in your analysis. Where possible, label the product attributes on the diagram of your design. Where possible, quantify the metrics for each attribute (e.g. if one of your attributes is weight, the metric could be “kilograms”). Also list the set or range of possible levels you plan to explore for each attribute (e.g. for color you may choose the set {red, green, blue}, or for price you may choose the range $1 - $10).\nSummarize your product attributes in a table, identifying the basic features of your attributes as well as the features of current competitors. Use this example as a template.\n\n\nResearch Questions\nYour research questions are the central decisions that you are trying to inform with your project, and they often are directly related to the product attributes! For example, a research question on a project about solar panels might be “how thick should the cells be?”. This question affects multiple product attributes, such as the weight (thicker cells are heavier), price (thicker cells use more material), lifetime (cell thickness may affect how quickly a cell degrades), etc. You should discuss ~2-3 key research questions that are related to your product’s design. Discuss why you chose these questions, and note any relationship between the questions you are asking and the attributes of your product.\n\n\nOther Questions\nList major outstanding questions (e.g. about the product / technology performance metrics, market opportunities, etc.) that you will need to know to conduct your analysis and how you propose to find answers. The purpose of this section is to identify high-priority items that you will need to know early on in your project.\n\n\nAttribution\nInclude a short description of the specific contributions of each team member in your team. Here is an example:\n\n\nStudent A wrote the initial proposal draft.\nStudent B identified the market opportunity and created the product attribute table.\nStudent C helped organize project files and edited the final draft of the proposal.\n\n\nIf all members contributed equally, you can just put the single sentence “All members contributed equally”.\nTeam members who do not make meaningful contributions to their projects will not receive the same grade as that of their team mates. If you are having any issues or disputes among team members, please contact Professor Helveston ASAP so we can find a resolution.",
+    "crumbs": [
+      "Final Project",
+      "Proposal"
+    ]
+  },
+  {
+    "objectID": "project/1-proposal.html#submit",
+    "href": "project/1-proposal.html#submit",
+    "title": "Project Proposal",
+    "section": "4. Submit",
+    "text": "4. Submit\nRender your proposal.qmd file, then create a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. Only one person from your team should submit the report.",
+    "crumbs": [
+      "Final Project",
+      "Proposal"
+    ]
+  },
+  {
+    "objectID": "project/1-proposal.html#policy-proposal-contents",
+    "href": "project/1-proposal.html#policy-proposal-contents",
+    "title": "Project Proposal",
+    "section": "Policy Proposal Contents",
+    "text": "Policy Proposal Contents\nFor teams looking at a policy design rather than a product design, your proposal should contain the following sections.\n\nAbstract\nA few sentences summarizing the overall proposal and convincing the reader why it is important. Specifically, tell the reader:\n\nWhat is the problem you are trying to address?\nWhat policy options are you considering to address the problem?\nWhat is the target population of your policies? Who will be affected by them?\n\n\n\nIntroduction\nProvide a brief description and background of the problem you are trying to address and the goal of the policies you are considering.\n\n\nTarget Population\nDescribe the target population for your analysis. Who will be affected by the policies you are considering? Who are you targeting these policies towards? Who are you planning on getting to take your survey, and how you intend to gain access to that population? Include an estimate of the size of the total target population.\n\n\nPolicy Options\n\nIdentify Policy Options\nWhich policies are you considering, and what are some of the potential pros and cons of them? Are some easier / more feasible to implement or enforce than others? Are some more costly to implement than others? Include a summary table comparing some basic features of each policy, e.g.\n\n\n\nPolicy\nDescription\nPro\nCon\n\n\n\n\nPolicy 1\nBrief description\nEasily implemented\nExpensive\n\n\nPolicy 2\nBrief description\nHard to enforce\nCheap\n\n\n\n\n\nIdentify Policy Attributes\nFor each policy, identify the key attributes that your target population will observe. For example, if the policy involves a fee or tax, then the amount of that fee or tax would be a key attribute. For each attribute, specify the range of possible levels you plan to explore (e.g. for amount you may choose the range $1 - $10). You should choose levels that reflect the range of existing policies or potential policies. You may choose to include policies / attributes that have not yet been implemented as well.\n\n\n\nResearch Questions\nYour research questions are the central decisions that you are trying to inform with your project, and they often are directly related to the policy options and attributes.\n\n\nQuestions\nList major outstanding questions that you will need to know to conduct your analysis and how you propose to find answers. The purpose of this section is to identify high-priority items that you will need to know early on in your project.",
+    "crumbs": [
+      "Final Project",
+      "Proposal"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EMSE 6035:Marketing Analytics for Design Decisions(Fall 2026)",
+    "section": "",
+    "text": "Department: Engineering Management and Systems Engineering @ GWU\nCredits: 3\nDescription:\nThis course provides students with data analysis techniques to inform design decisions in an uncertain, competitive market; topics include consumer choice modeling, programming in the R programming language, survey design, conjoint analysis, optimization, market simulation, and professional communication skills. Over the course of the semester, students will learn and apply theory and methods to a team project to assess the market competitiveness of an emerging product / technology and use marketing analytics to generate design insights. All analyses will be conducted to support reproducibility from raw data to results using Quarto (which is built on the ideas of RMarkdown). At the end of the semester, students will submit a final, reproducible report of their project along with a presentation of their findings. This course has a “flipped” classroom structure. Students will spend the majority of class time working through guiding practice exercises or working on their projects. To prepare for class, students must complete weekly assignments that involve watching and reviewing recorded lecture materials and answering related practice questions.\nLearning Objectives:\nHaving successfully completed this course, students will be able to:\n\nImport, wrangle, visualize, and export data in R.\nDesign surveys to obtain informative data about consumer preferences for product features.\nBuild and estimate discrete choice models.\nAnalyze consumer choice data to estimate consumer preferences for product features.\nDesign and create effective charts and presentations.\nCommunicate results in terms of design insights.\n\nPrerequisites:\nThis course requires prior exposure to:\n\nProbability theory\nMultivariable calculus\nLinear algebra\nRegression\n\nEach of these concepts will be applied throughout the course, and no time will be spent reviewing the foundational elements of each concept.\nIn addition, we will work in the R programming language throughout the course, but no prior programming experience is required. We will spend the first three weeks going through exercises to get up to speed in R.\nStudents are encouraged to complete this self assessment prior to registering for the course to self-assess familiarity with these concepts.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "hw/9-wtp-simulation-temp.html",
+    "href": "hw/9-wtp-simulation-temp.html",
+    "title": "WTP & Simulations",
+    "section": "",
+    "text": "Due: Nov 02 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of willingness to pay (WTP) and to learn how we can use estimated model coefficients to compute estimates of WTP and make predictions about how likely people would be to choose each option in a set of alternatives.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nFollow these instructions:\n\nDownload and edit this template.\nUnzip the template folder. Make sure you actually unzip it! (in Windows, right-click it and use “extract all”)\nOpen the .Rproj file to open RStudio.\nInside RStudio, open the hw9.qmd file, take notes, and write some example code as you go through the readings / exercises below.\n\n\n\n2. Readings\nAt this point in the class, we know how to design conjoint surveys, field them on formr.org, clean the resulting data, estimate models, and assess the uncertainty around the resulting coefficients. But what do those coefficients actually mean? How should we use them to gain design insights?\nThis week, we’ll begin considering these questions as we learn how to use estimated model coefficients to compute estimates of “willingness to pay” (WTP) and make predictions about how likely people would be to choose each option in a set of alternatives. Take notes as you watch the video on these topics, and answer the practice questions in the video as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.\nClick here to download the slides in the video as a PDF.\n\n\n\n\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw9.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Render” button in RStudio or running the command quarto::quarto_render(\"hw9.qmd\") command.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard."
+  },
+  {
+    "objectID": "hw/8-doe-power-analysis-temp.html",
+    "href": "hw/8-doe-power-analysis-temp.html",
+    "title": "Design of Experiment",
+    "section": "",
+    "text": "Due: Oct 26 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of design of experiments and to understand how experiment design can impact the amount of information available about different model effects.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nFollow these instructions:\n\nDownload and edit this template.\nUnzip the template folder. Make sure you actually unzip it! (in Windows, right-click it and use “extract all”)\nOpen the .Rproj file to open RStudio.\nInside RStudio, open the hw8.qmd file, take notes, and write some example code as you go through the readings / exercises below.\n\n\n\n2. Readings\nLast week we discussed how we quantify parameter uncertainty from maximizing the log-likelihood. This week, we’ll begin considering the relationship between parameter uncertainty and how we design our experiment.\nTake notes as you watch the video. At the end of the video, I ask one practice question - you should answer this questions as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.\nClick here to download the slides in the video as a PDF.\n\n\n\n\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw8.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Render” button in RStudio or running the command quarto::quarto_render(\"hw8.qmd\") command.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard."
+  },
+  {
+    "objectID": "hw/7-uncertainty-temp.html",
+    "href": "hw/7-uncertainty-temp.html",
+    "title": "Uncertainty",
+    "section": "",
+    "text": "Due: Oct 19 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to introduce how we quantify uncertainty around estimated parameters that result from maximizing the log-likelihood function.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\nPilot Surveys\nIn addition to the assignment below, this week you should also help out your fellow classmates by providing feedback on their pilot surveys. For every team other than your own, answer their pilot survey and provide any feedback you have in a row in this spreadsheet. Feedback should be anonymous, constructive, and objective. Note things that didn’t work and / or things that weren’t clear or were confusing.\nIf you got screened out early in the survey, go back and take it again and pick a response so that you won’t get screened out. Do your best to actually answer the conjoint questions honestly (don’t just click randomly).\nCompleting all the surveys shouldn’t take more than an hour. In addition to giving everyone very useful feedback, this exercise may also give you new ideas for improving your own survey.\n\n\n1. Get Organized\nFollow these instructions:\n\nDownload and edit this template.\nUnzip the template folder. Make sure you actually unzip it! (in Windows, right-click it and use “extract all”)\nOpen the .Rproj file to open RStudio.\nInside RStudio, open the hw7.qmd file, take notes, and write some example code as you go through the readings / exercises below.\n\n\n\n2. Readings\nLast week we introduced how we can use maximum likelihood estimation to estimate the unknown parameters of utility models. This week we’ll learn about how to quantify the uncertainty associated with those parameter estimates by watching the third video in our Youtube playlist on choice modeling: Uncertainty\nTake notes as you watch the video. Throughout the video, I ask practice questions at several places - you should answer to those questions as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.\nClick here to download the slides in the video as a PDF.\n\n\n\n\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw7.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Render” button in RStudio or running the command quarto::quarto_render(\"hw7.qmd\") command.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard."
+  },
+  {
+    "objectID": "hw/6-optimization-mle-temp.html",
+    "href": "hw/6-optimization-mle-temp.html",
+    "title": "Optimization & MLE",
+    "section": "",
+    "text": "Due: Oct 12 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of maximum likelihood estimation, which is the estimation approach we’ll be using in class to estimate our choice models.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nFollow these instructions:\n\nDownload and edit this template.\nUnzip the template folder. Make sure you actually unzip it! (in Windows, right-click it and use “extract all”)\nOpen the .Rproj file to open RStudio.\nInside RStudio, open the hw6.qmd file, take notes, and write some example code as you go through the readings / exercises below.\n\n\n\n2. Readings\nLast week we introduced the concept of utility models, which is the primary theoretical framework we’ll be using to construct our choice models.\nThis week, we’ll be learning about how we estimate the unknown parameters of those models by watching the second video in our Youtube playlist on choice modeling: Maximum Likelihood Estimation & Optimization\nTake notes as you watch the video. Throughout the video, I ask practice questions at several places - you should answer to those questions as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.\nClick here to download the slides in the video as a PDF.\n\n\n\n\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw6.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Render” button in RStudio or running the command quarto::quarto_render(\"hw6.qmd\") command.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard."
+  },
+  {
+    "objectID": "hw/5-utility-models-temp.html",
+    "href": "hw/5-utility-models-temp.html",
+    "title": "Utility Models",
+    "section": "",
+    "text": "Due: Oct 05 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to get familiar with utility models, which will be the underyling modeling framework we will use for constructing choice models.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nFollow these instructions:\n\nDownload and edit this template.\nUnzip the template folder. Make sure you actually unzip it! (in Windows, right-click it and use “extract all”)\nOpen the .Rproj file to open RStudio.\nInside RStudio, open the hw5.qmd file, take notes, and write some example code as you go through the readings / exercises below.\n\n\n\n2. Readings\nNext week we will start getting into choice modeling. I have pre-recorded videos covering most of the technical concepts we will use for estimating choice models in this Youtube playlist. Feel free to look ahead at concepts we’ll be covering over the next few weeks.\n\nFor this coming week, you should watch the first video:Introduction to Choice Modeling\n\nTake notes as you watch the video. Throughout the video, I ask practice questions at several places - you should answer to those questions as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.\nClick here to download the slides in the video as a PDF.\n\n\n\n\nIf you are interested in more details about the logit model, see Chapter 3 (free pdf) of Kenneth Train’s book, “Discrete Choice Methods with Simulation”\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw5.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Render” button in RStudio or running the command quarto::quarto_render(\"hw5.qmd\") command.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard."
+  },
+  {
+    "objectID": "hw/4-conjoint-questions-temp.html",
+    "href": "hw/4-conjoint-questions-temp.html",
+    "title": "Conjoint Surveys in surveydown",
+    "section": "",
+    "text": "Due: Sep 28 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to get familiar with how to implement a full conjoint survey in surveydown.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nFollow these instructions:\n\nDownload and edit this template.\nUnzip the template folder. Make sure you actually unzip it! (in Windows, right-click it and use “extract all”)\nOpen the .Rproj file to open RStudio.\nInside RStudio, open the hw4.qmd file, take notes, and write some example code as you go through the readings / exercises below.\n\n\n\n2. Readings\nYour next major team assignment is your survey plan. The central questions of your eventual survey will be your conjoint questions, which are the sets of randomized choice questions where respondents will be asked to make choices from different sets of alternatives. We have not yet gotten into all the details of how to set up those randomized questions (that will come soon!). But it is helpful at this stage to see an overview of the overall survey structure and how a conjoint survey can be built in surveydown.\nWith that in mind, read through this blog post I wrote on how to implement a choice-based conjoint survey in surveydown. It may not yet be immediately clear what every single piece of code is doing, but reading it at least once will help as we go forward with the class. You will probably want to use this blog post as a guide to implement your own conjoint surveys later in the class.\nOnce you have an understanding of how things are working, try downloading the template on how to implement a conjoint survey using the button format discussed in the blog. You should be able to use that template to re-create a working survey where the choice questions are shown randomly according to the design of experiment in the template.\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw4.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Render” button in RStudio or running the command quarto::quarto_render(\"hw4.qmd\") command.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard."
+  },
+  {
+    "objectID": "hw/3-intro-to-surveydown-temp.html",
+    "href": "hw/3-intro-to-surveydown-temp.html",
+    "title": "Intro to surveydown",
+    "section": "",
+    "text": "Due: Sep 21 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to get familiar with the surveydown survey platform, which we will be using to implement our surveys.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nFollow these instructions:\n\nDownload and edit this template.\nUnzip the template folder. Make sure you actually unzip it! (in Windows, right-click it and use “extract all”)\nOpen the .Rproj file to open RStudio.\nInside RStudio, open the hw3.qmd file, take notes, and write some example code as you go through the readings / exercises below.\n\n\n\n2. Readings\nNext week we will start getting into designing conjoint surveys for our projects. We will implement them using surveydown, which is a markdown-based platform for designing surveys. The platform allows you to use R or markdown code (just like you would in a .qmd file) to define everything you see in an online survey. While you will be editing a Quarto document, it renders into a Shiny app, which you can then use to administer your survey.\nTo get familiar with the platform, read the Getting Started and Basic Components documentation pages on the surveydown website. Take notes as you read the docs.\n\n\n3. Make a practice survey\nFor practice, try replicating one of the template surveys listed on the surveydown website. The default survey template will be the easiest to use, but try another template if you are interested. Follow these steps:\n\nDownload or clone a template of your choice.\nIn the template you chose, open RStudio, then open the app.R file and click “Run”. Then copy-paste the localhost url into your browser to locally preview the survey.\nMake edits to the survey to personalize it. Choose a topic that you find interesting and try modifying at least one question in the survey, then re-render the document to see your changes.\n\n\n\n4. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw3.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n5. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Render” button in RStudio or running the command quarto::quarto_render(\"hw3.qmd\") command.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCreate a zip file of all the files in your R project folder for this assignment (your hw3.qmd and your demo survey files) and submit it on the corresponding assignment submission on Blackboard."
+  },
+  {
+    "objectID": "hw/2-quarto-plotting-temp.html",
+    "href": "hw/2-quarto-plotting-temp.html",
+    "title": "Quarto & Plotting",
+    "section": "",
+    "text": "Due: Sep 07 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to get familiar with creating plots using the ggplot2 library and to introduce you to the “Quarto” file format.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nFollow these instructions:\n\nDownload and edit this template.\nUnzip the template folder. Make sure you actually unzip it! (in Windows, right-click it and use “extract all”)\nOpen the .Rproj file to open RStudio.\nInside RStudio, open the hw2.qmd file, take notes, and write some example code as you go through the readings / exercises below.\n\n\nNotice that this week’s template is a .qmd file, which is called a “Quarto Markdown” file (or just “Quarto” file). You’ll learn about what these files are and how they are different from .R files in the readings for this week. From now on, we’ll mostly be using Quarto files for our assignments (including your project deliverables).\n\n\n\n2. Readings\nOpen up a notebook (physical, digital…whatever you take notes in best), and take notes while you go through these readings:\n\nLesson 5 “Data Visualization”\nLesson 6 “Reproducible Reporting”\n\n\n\n3. Exercises\nWe’re going to again look at the Posit “recipes” page for examples on how to implement things in . This time, focus on the “Visualize Data” section - go through each recipe and try to implement it yourself in your hw2.qmd file. We’ll spend time in class next week going over ggplot and doing more practice with it.\n\n\n4. Review\nLast week you read about working with data in R using the tidyverse and the dplyr package (handing data using pipes, %&gt;%, etc.). We also discussed this in class.\nIt is very important that you feel comfortable working with data frames using this approach as we will use it throughout the semester.\nFor extra practice, take a look at this assignment from my Intro to Programming in R class that I taught in the spring semester. I strongly encourage you to look through it and try to answer the questions, especially if this is your first time using the tidyverse and / or R. It is just good practice to review these skills.\n\n\n5. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw2.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n6. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Render” button in RStudio or running the command quarto::quarto_render(\"hw2.qmd\") command.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard."
+  },
+  {
+    "objectID": "hw/12-exam-temp.html",
+    "href": "hw/12-exam-temp.html",
+    "title": "Exam",
+    "section": "",
+    "text": "This week’s assignment will be a take-home. The exam will be distributed in class on 11/18 and due 11/22 by 11:59pm sharp (no late submissions will be accepted). Use the template posted in the #class channel on slack to complete the exam. While you are free to use any other tools you wish (e.g. course content, ChatGPT, etc.), you must work alone on the exam.\nIn addition, in two weeks we’ll talk about story-telling. Watch this short video on how to start a speech (no need to submit a reflection):"
+  },
+  {
+    "objectID": "hw/11-sensitivity-temp.html",
+    "href": "hw/11-sensitivity-temp.html",
+    "title": "Sensitivity Analysis",
+    "section": "",
+    "text": "Due: Nov 16 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of preference heterogeneity - that is, not everyone has the same preferences. We will see two ways to account for this: 1) specify preference parameters as distributions, and 2) estimate fixed parameter models on different sub-groups in your data.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nFollow these instructions:\n\nDownload and edit this template.\nUnzip the template folder. Make sure you actually unzip it! (in Windows, right-click it and use “extract all”)\nOpen the .Rproj file to open RStudio.\nInside RStudio, open the hw11.qmd file, take notes, and write some example code as you go through the readings / exercises below.\n\n\n\n2. Readings\nThis is your last homework! Okay, well not really - your homework next week will be a take home exam. But don’t worry, we will spend our time in class next week going over the entire class, so there will be time to get answers to any questions you have.\nFor this week, the only thing you will look over is the concept of a sensitivity analysis. Last week in class we covered how to use our estimated logit model to conduct a market simulation, which gave us predicted market shares for different products. Naturally, one of the key things we might want to know is how sensitive our predicted market shares are to changes in our attributes.\nTo understand how we calculate such sensitivities, take a look at the logitr-cars repo. Download the repo using this link, then open the R project file to open RStudio. Then in RStudio, open the following two files:\n\n9.1-compute-sensitivity.R\n9.2-plot-sensitivity.R\n\nYour job this week is to go through each of these files line-by-line to make sure you understand what is being done. (It might also help to look back at some of the earlier files we covered as a refresher, such as 3.1 on estimating models or 5.1 on uncertainty).\nLet’s start with the first file, 9.1. In this file, we use the predict() function to compute market shares for different markets.\nIn the first sensitivity analysis, we define a baseline market, then we create repeated copies of this market but with incremental changes to the price of alternative 2. When we use predict(), we get predicted probabilities for each market, which we can then use to see how the predicted probability for alternative 2 changes with price.\nIn the second sensitivity analysis, we also start with repeated copies of our baseline market, but then we substitute in a series of different cases where we change the values of other attributes. Each case has a “low” and “high” value, where “high” means they result in expected higher market shares, and “low” means the opposite. Again, we use predict() to obtain predicted market shares for each scenario.\nAt the bottom of the script, we save the data frames.\nIn 9.2, we use the saved results to visualize the results computed in 9.1. This code shows us how to create line plots of the predicted market share versus price as well as revenue versus price. The third chart is a “tornado” plot, which shows us the predicted market share for each of the “high” and “low” conditions in 9.1.\nThese charts – sensitivity to price, and sensitivity to changes in other attributes – will be important charts to include in your final analysis report. You can use these examples to help you create similar charts for your project.\nOnce you have gone through each file, consider what might make a good “baseline” market for your project, then write your reflection.\n\n\n3. Reflect\nReflect on what you’ve learned while going through these exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw11.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Render” button in RStudio or running the command quarto::quarto_render(\"hw11.qmd\") command.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard."
+  },
+  {
+    "objectID": "hw/10-heterogeneity-temp.html",
+    "href": "hw/10-heterogeneity-temp.html",
+    "title": "Heterogeneity",
+    "section": "",
+    "text": "Due: Nov 09 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of preference heterogeneity - that is, not everyone has the same preferences. We will see two ways to account for this: 1) specify preference parameters as distributions, and 2) estimate fixed parameter models on different sub-groups in your data.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nFollow these instructions:\n\nDownload and edit this template.\nUnzip the template folder. Make sure you actually unzip it! (in Windows, right-click it and use “extract all”)\nOpen the .Rproj file to open RStudio.\nInside RStudio, open the hw10.qmd file, take notes, and write some example code as you go through the readings / exercises below.\n\n\n\n2. Readings\nUp until this point in the class, we have only estimated relatively simple models that assume everyone in our sample has the same preferences. That is, we only estimate a “fixed parameter” model that reflects the average preferences for the whole sample. In reality, preferences are usually heterogeneous (different people have different preferences).\nOne way to account for this is to estimated a “mixed” logit model where we assume the preference parameters in our utility models follow some distribution across the sample (usually a normal distribution). Another way is to estimate a fixed parameter model on different sub-groups in our data. Each of these approaches are discussed in this week’s video on heterogeneity. Take notes as you watch the video and answer the practice questions in the video as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.\nClick here to download the slides in the video as a PDF.\n\n\n\n\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw10.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Render” button in RStudio or running the command quarto::quarto_render(\"hw10.qmd\") command.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCreate a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard."
+  },
+  {
+    "objectID": "hw/1-data-wrangling-temp.html",
+    "href": "hw/1-data-wrangling-temp.html",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "Due: Aug 31 by 11:59pm\nWeight: This assignment is worth 3% of your final grade.\nPurpose: The purpose of this assignment is to get more familiar with R and RStudio and to develop some basic strategies for working with data in R.\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned."
+  },
+  {
+    "objectID": "hw/1-data-wrangling-temp.html#inspect-data-from-other-packages",
+    "href": "hw/1-data-wrangling-temp.html#inspect-data-from-other-packages",
+    "title": "Data Wrangling",
+    "section": "Inspect data from other packages",
+    "text": "Inspect data from other packages\nWrite R code to install the dslabs package from CRAN, then write code to load the library. Write some code to preview and inspect the movielens data frame that gets loaded when you load the library using some of the techniques we saw in class. For each of the following questions, write code to find your answer and leave a detailed response in a comment:\n\nWhat is this dataset about?\nHow many observations are in the data frame?\nWhat is the original source of the data?\nWhat type of data is each variable?\nWhat are the years of the earliest and most recent observations in the data set?"
+  },
+  {
+    "objectID": "hw/1-data-wrangling-temp.html#answer-questions-about-the-data",
+    "href": "hw/1-data-wrangling-temp.html#answer-questions-about-the-data",
+    "title": "Data Wrangling",
+    "section": "Answer questions about the data",
+    "text": "Answer questions about the data\nFor each of the following questions, write code to find your answer and leave a detailed response in a comment:\n\nWhat is the min, mean, and max rating in the data set?\nHow many observations received the maximum rating?\nWhat percentage of total observations received the maximum rating?\nWhat is the title of the observation with the longest title (in terms of numbers of letters in the title)?"
+  },
+  {
+    "objectID": "hw/1-data-wrangling-temp.html#installing-packages-from-github-the-brrr-library",
+    "href": "hw/1-data-wrangling-temp.html#installing-packages-from-github-the-brrr-library",
+    "title": "Data Wrangling",
+    "section": "Installing packages from Github: the BRRR library",
+    "text": "Installing packages from Github: the BRRR library\nThe vast majority of the time, you will install external packages using the install.packages() function. This installs packages from the Comprehensive R Archive Network (CRAN), where most packages are published. But you can also install packages that are under development or haven’t been published to CRAN yet. Most of the time, these packages are hosted on GitHub - an online platform for sharing code (it’s also where all of the files that make up this website are stored).\nTo install a package from GitHub, you first need to install the remotes library. Then you can use the remotes::install_github()` function to install packages directly from GitHub. To try this out, install the remotes library, then trying installing the BRRR package:\n\nremotes::install_github(\"brooke-watson/BRRR\")\n\n\n\n\n\n\n\nNote\n\n\n\nPackages on GitHub are in development and often require other packges to work. So if you get an installation error about some other package dependency, try restarting your R session and try again.\n\n\nNot sure what this package does? Well, one of the other nice things about packages listed on GitHub is the authors tend to write detailed descriptions - check out the GitHub page for the BRRR package. Then try using the BRRR::skrrrahh() function with different number arguments (turn your volume up). In the #welcome channel on slack, post your favorite argument to skrrrahh() (mine is 24)."
+  },
+  {
+    "objectID": "class/9-uncertainty.html",
+    "href": "class/9-uncertainty.html",
+    "title": "Uncertainty",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/7-utility-models.html",
+    "href": "class/7-utility-models.html",
+    "title": "Utility Models",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/5-intro-to-surveydown.html",
+    "href": "class/5-intro-to-surveydown.html",
+    "title": "Intro to surveydown",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/3-quarto-plotting.html",
+    "href": "class/3-quarto-plotting.html",
+    "title": "Quarto & Plotting",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/15-final-presentations.html",
+    "href": "class/15-final-presentations.html",
+    "title": "Final Presentations",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/13-class-review.html",
+    "href": "class/13-class-review.html",
+    "title": "Class Review",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/11-wtp-simulation.html",
+    "href": "class/11-wtp-simulation.html",
+    "title": "WTP & Simulations",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/1-getting-started.html",
+    "href": "class/1-getting-started.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Licensing and copyright information",
+    "section": "",
+    "text": "The course material is licensed under the Creative Commons Attribution 4.0 International License and the course code is licensed under a MIT License by John Helveston.",
+    "crumbs": [
+      "Other",
+      "License"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This course provides students with data analysis techniques to inform design decisions in an uncertain, competitive market; topics include consumer choice modeling, programming in the R programming language, survey design, conjoint analysis, optimization, market simulation, and professional communication skills. Over the course of the semester, students will learn and apply theory and methods to a team project to assess the market competitiveness of an emerging product / technology and use marketing analytics to generate design insights. All analyses will be conducted to support reproducibility from raw data to results using Quarto (which is built on the ideas of RMarkdown). At the end of the semester, students will submit a final, reproducible report of their project along with a presentation of their findings. This course has a “flipped” classroom structure. Students will spend the majority of class time working through guiding practice exercises or working on their projects. To prepare for class, students must complete weekly assignments that involve watching and reviewing recorded lecture materials and answering related practice questions.\nThis course was first created by Dr. John Paul Helveston at the George Washington University for the Spring 2019 semester of EMSE 6035, which was previously called Marketing of Technology. See the LICENSE page for information about reusing and sharing content.",
+    "crumbs": [
+      "Other",
+      "About"
+    ]
+  },
+  {
+    "objectID": "class/10-doe-power-analysis.html",
+    "href": "class/10-doe-power-analysis.html",
+    "title": "DOE & Power Analysis",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/12-heterogeneity.html",
+    "href": "class/12-heterogeneity.html",
+    "title": "Heterogeneity",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/14-story-telling.html",
+    "href": "class/14-story-telling.html",
+    "title": "Story Telling",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/2-data-wrangling.html",
+    "href": "class/2-data-wrangling.html",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/4-workshop-proposals.html",
+    "href": "class/4-workshop-proposals.html",
+    "title": "Project Proposal Workshops",
+    "section": "",
+    "text": "No class this week - sign up HERE for your team proposal meeting with Professor Helveston"
+  },
+  {
+    "objectID": "class/6-conjoint-questions.html",
+    "href": "class/6-conjoint-questions.html",
+    "title": "Conjoint Questions",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/8-optimization-mle.html",
+    "href": "class/8-optimization-mle.html",
+    "title": "Optimization & MLE",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "Frequenly Asked Questions",
+    "section": "",
+    "text": "If you registered for the class, you should have been sent a link at the start of the semester to join the class Slack. If not, email Professor Helveston for an invite link. I recommend using your @gwu.edu email to sign up, but if you use another email for another Slack then use that.\n\n\n\nMac\nWindows\n\n\n\nbox.com\nI do not use Blackboard for showing your grades, so please ignore anything you see there. Instead, I create a unique folder for each of you on box.com. The folder will be named netID-madd. For example, my netID is jph, so my folder would be jph-madd.\nIf you log into box.com using your GW email, you should be able to find this folder. All of your graded feedback will be in that folder. You will see a pdf of feedback for each assignment as well as two CSV files: one that displays your grade for each assignment, and another that shows your current total grade in the class.\n\n\n\nSince homeworks are due the night before class, I usually can’t grade them all by the start of class. Some weeks it can take me up to a whole week to grade something, so at most you can expect to see a grade one week after submitting it.\n\n\n\nSee the class late policy for details. That said, if you’ve completed an assignment but it’s now late, please do go ahead and submit it. Better to get some credit for it than none.\nIf you’re submitting late, please send your submission to Professor Helveston in slack - don’t submit on Blackboard. The Blackboard submission window will probably close anyway, and also Professor Helveston downloads all the submissions when they are due, so late submissions often get missed.\n\n\n\nNo - see the policy in the syllabus on this for any exception.",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#i-cant-get-into-the-class-slack",
+    "href": "faq.html#i-cant-get-into-the-class-slack",
+    "title": "Frequenly Asked Questions",
+    "section": "",
+    "text": "If you registered for the class, you should have been sent a link at the start of the semester to join the class Slack. If not, email Professor Helveston for an invite link. I recommend using your @gwu.edu email to sign up, but if you use another email for another Slack then use that.",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#how-do-i-make-a-zip-file-for-my-homework",
+    "href": "faq.html#how-do-i-make-a-zip-file-for-my-homework",
+    "title": "Frequenly Asked Questions",
+    "section": "",
+    "text": "Mac\nWindows",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#where-can-i-see-my-grades",
+    "href": "faq.html#where-can-i-see-my-grades",
+    "title": "Frequenly Asked Questions",
+    "section": "",
+    "text": "box.com\nI do not use Blackboard for showing your grades, so please ignore anything you see there. Instead, I create a unique folder for each of you on box.com. The folder will be named netID-madd. For example, my netID is jph, so my folder would be jph-madd.\nIf you log into box.com using your GW email, you should be able to find this folder. All of your graded feedback will be in that folder. You will see a pdf of feedback for each assignment as well as two CSV files: one that displays your grade for each assignment, and another that shows your current total grade in the class.",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#when-can-i-expect-to-see-a-grade-for-my-assignment",
+    "href": "faq.html#when-can-i-expect-to-see-a-grade-for-my-assignment",
+    "title": "Frequenly Asked Questions",
+    "section": "",
+    "text": "Since homeworks are due the night before class, I usually can’t grade them all by the start of class. Some weeks it can take me up to a whole week to grade something, so at most you can expect to see a grade one week after submitting it.",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#how-can-i-submit-my-homework-late",
+    "href": "faq.html#how-can-i-submit-my-homework-late",
+    "title": "Frequenly Asked Questions",
+    "section": "",
+    "text": "See the class late policy for details. That said, if you’ve completed an assignment but it’s now late, please do go ahead and submit it. Better to get some credit for it than none.\nIf you’re submitting late, please send your submission to Professor Helveston in slack - don’t submit on Blackboard. The Blackboard submission window will probably close anyway, and also Professor Helveston downloads all the submissions when they are due, so late submissions often get missed.",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#can-i-make-up-a-quiz-if-im-late-or-miss-class",
+    "href": "faq.html#can-i-make-up-a-quiz-if-im-late-or-miss-class",
+    "title": "Frequenly Asked Questions",
+    "section": "",
+    "text": "No - see the policy in the syllabus on this for any exception.",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#my-r-rstudio-is-totally-fubar-what-should-i-do",
+    "href": "faq.html#my-r-rstudio-is-totally-fubar-what-should-i-do",
+    "title": "Frequenly Asked Questions",
+    "section": "My R / RStudio is totally FUBAR, what should I do?",
+    "text": "My R / RStudio is totally FUBAR, what should I do?\nIf you want to get back up to speed quickly, you can open a cloud version of RStudio on the web at https://posit.cloud/plans/free. This is by far the easiest and fastest thing to do.\nYou can try to troubleshoot, but often the next easiest thing to do is just re-install R and RStudio. Be careful to save your work first!",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#rstudio-wont-let-me-save-my-file",
+    "href": "faq.html#rstudio-wont-let-me-save-my-file",
+    "title": "Frequenly Asked Questions",
+    "section": "RStudio won’t let me save my file",
+    "text": "RStudio won’t let me save my file\nMost often times this occurs for one of two reasons:\n\nYou may have opened the .R file instead of the .RProj file, in which case RStudio opens, but it may not be “looking” at the correct folder where your .R file lives. As a result, it can’t find it on your computer and can’t save it. In this case, copy all of the text in your .R file, then re-open RStudio by double clicking on the .RProj file, then open the .R file from inside RStudio and paste your code into the .R file.\nIf you’re on a windows computer, you may have opened RStudio from inside the zip file. As a result, you can’t save any files because everything is still zipped up. You have to go back and extract the files from the zip file before you can save anything. In this case, copy all of the text in your .R file, then quit RStudio, go unzip the folder, re-open RStudio by double clicking on the .RProj file, then open the .R file from inside RStudio and paste your code into the .R file.",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#im-trying-to-read-write-some-data-using-here-and-it-says-the-path-doesnt-exist.",
+    "href": "faq.html#im-trying-to-read-write-some-data-using-here-and-it-says-the-path-doesnt-exist.",
+    "title": "Frequenly Asked Questions",
+    "section": "I’m trying to read / write some data using here() and it says the path doesn’t exist.",
+    "text": "I’m trying to read / write some data using here() and it says the path doesn’t exist.\nHave you double-checked that the file name you defined is the same as the data file name? For example, if there is a folder called “data” and inside it a data file called “some_data.csv”, then your path should be here('data', 'some_data.csv').\nIf the file names look correct, then see the two issues in the above question",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#i-keep-seeing-a-sign-in-the-console",
+    "href": "faq.html#i-keep-seeing-a-sign-in-the-console",
+    "title": "Frequenly Asked Questions",
+    "section": "I keep seeing a + sign in the console…",
+    "text": "I keep seeing a + sign in the console…\nIf you start a command but don’t complete it, R will show a + sign because it’s waiting for you to finish it. Here’s an example:\n\n5 +\n\nIf you press enter, R will show a + sign, and each time you press enter you’ll get more + signs. This is because R wants you to “finish” the command (it expects another number).\nThe easiest way to get out of this is to press the “Escape” key. Do that, and you’ll get back to the &gt; R console.",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#i-got-this-error-message",
+    "href": "faq.html#i-got-this-error-message",
+    "title": "Frequenly Asked Questions",
+    "section": "I got this error message",
+    "text": "I got this error message\n\ncould not find function \"functionName\"\n\n\nDid you load the package that contains functionName?\nDid you spell functionName correctly?",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#how-to-load-a-file-under-my-project-directory",
+    "href": "faq.html#how-to-load-a-file-under-my-project-directory",
+    "title": "Frequenly Asked Questions",
+    "section": "How to load a file under my project directory",
+    "text": "How to load a file under my project directory\nWhen using RStudio, we usually open a project by double clicking on the .Rproj file. This has two purposes:\n\nIt opens RStudio and directs you to the project folder.\nIt sets your working directory to this project folder.\n\nFor example, say you have an .Rproj file located under:\n\n/Users/your_name/Documents/my_project\n\nThen, your working directory starts from here. Your manipulations of files in your project only happens below this directory.\nLet’s load a csv file as an example. Say you have a file located under this directory:\n\n/Users/your_name/Documents/my_project/data/file.csv\n\nThen, to load it, run:\n\nlibrary(here)\nlibrary(readr)\n\npath &lt;- here(\"data\", \"file.csv\")\ndf &lt;- read_csv(path)\n\nThe here() function defines your project directory. Its input of \"data\" and \"file.csv\" are below this directory.\nBy running read_csv(path), your data is loaded to df.",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "hw/1-data-wrangling.html",
+    "href": "hw/1-data-wrangling.html",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/10-heterogeneity.html",
+    "href": "hw/10-heterogeneity.html",
+    "title": "Heterogeneity",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/11-sensitivity.html",
+    "href": "hw/11-sensitivity.html",
+    "title": "Sensitivity Analysis",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/12-exam.html",
+    "href": "hw/12-exam.html",
+    "title": "Exam",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/2-quarto-plotting.html",
+    "href": "hw/2-quarto-plotting.html",
+    "title": "Quarto & Plotting",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/3-intro-to-surveydown.html",
+    "href": "hw/3-intro-to-surveydown.html",
+    "title": "Intro to surveydown",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/4-conjoint-questions.html",
+    "href": "hw/4-conjoint-questions.html",
+    "title": "Conjoint Surveys in surveydown",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/5-utility-models.html",
+    "href": "hw/5-utility-models.html",
+    "title": "Utility Models",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/6-optimization-mle.html",
+    "href": "hw/6-optimization-mle.html",
+    "title": "Optimization & MLE",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/7-uncertainty.html",
+    "href": "hw/7-uncertainty.html",
+    "title": "Uncertainty",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/8-doe-power-analysis.html",
+    "href": "hw/8-doe-power-analysis.html",
+    "title": "Design of Experiment",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/9-wtp-simulation.html",
+    "href": "hw/9-wtp-simulation.html",
+    "title": "WTP & Simulations",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "project/0-overview.html",
+    "href": "project/0-overview.html",
+    "title": "Project Overview",
+    "section": "",
+    "text": "Throughout the semester, you will work in teams of 3-4 students towards a final project. The project will have three phases:\n\nProject proposal\nPilot survey & analysis\nFinal survey & analysis\n\nTeams will apply topics covered in class to develop quantitative models of consumer choice to inform design decisions for a novel product, technology, or policy. Each team will have somewhat different tasks and areas of emphasis, depending on the product selected; however, all projects will be expected to demonstrate mastery of the topics covered in class and to address the criteria and guidelines required for project assignments.\nSummary of Deliverables: To make the overall project more manageable, it is broken down into separate “milestone” deliverables due throughout the semester, starting with a proposal.\n\n\n\n\nItem\nWeight towardsfinal grade\nDue Date(by 11:59pm)\n\n\n\n\nProject Proposal\n5 %\nSep. 21\n\n\nSurvey Plan\n5 %\nSep. 30\n\n\nPilot Survey\n5 %\nOct. 14\n\n\nPilot Analysis\n5 %\nNov. 02\n\n\nFinal Survey\n5 %\nNov. 16\n\n\nFinal Analysis Report\n15 %\nDec. 07\n\n\nFinal Presentation\n5 %\nDec. 09\n\n\n\n\n\nProject Selection\nI want this project to be as useful for you and your future career as possible - you’ll hopefully want to show off your final project in a portfolio or during job interviews. Accordingly, you get to choose the topic for your project, but it must meet certain guidelines.\nProjects must be selected during the first two weeks of class. Projects much be an emerging technology, product, or policy with a clearly identified market that has not yet been introduced into the mass market, such as a new invention from a research laboratory at GWU or a new product being explored by a firm. Students have the option to choose a sponsored project or propose their own project if it is approved by the instructor and meets the following criteria:\n\nInnovative / Emerging: The proposed project involves a new product or technology with attributes (e.g. price, efficiency, reliability, size, performance, color, etc.) that may be competitive in the marketplace but for which actual market adoption is still uncertain.\nWell-Defined: This course focuses on mathematical modeling to support design decision-making. There is not sufficient time in the course for conceptual design of a new product.\nIdentified Target Market: A target market has been identified for this new product or technology. Competing products in that market are known, and the attributes on which new market entrants compete can be identified. Representative potential customers can be identified for survey solicitation. If the new product or technology is a component of a larger product sold to a consumer market, students may assess the market implications for the final consumer product.\nPrior to Mass Commercialization: The new product or technology has only recently or has not yet been introduced to the mass market.\nModerate Scope and Complexity: The product or technology should involve moderate complexity. For example, a non-differentiated commodity, such as sugar, is too simple, and a complex product involving many components and manufacturing operations, such as a vehicle, is too complex.\nExpertise: If the product involves a new technology that requires specialized knowledge about its attributes, the team should have reliable access to experts who can supply the requisite knowledge.\nDecision Variables: The product should have several non-trivial design decisions. For example, choosing between two materials or topologies, setting dimensions of a component, or selecting among a set of alternative component configurations are suitable design decisions. The models developed in the project will be used to support decision-making along such dimensions.\n\n\n\nTeamwork\nThe experience of working in teams on this project will serve as preparation for teamwork throughout your careers. Some teams may experience an imbalance in team member contributions, effort, or reliability. The instructor is available to provide advice and interact in resolving team inequity and conflict; however, students should view this as a learning experience. Such situations regularly occur in any career, and learning how to handle them is a valuable skill. If you experience challenges within your team, it is a good opportunity to develop strategies and figure out how you will address such challenges in the future. One common job interview question is, “Describe a time when you experienced difficulties working in a team or experienced a team failure. What did you do about it?” This is a good chance to build a strong answer to this question.",
+    "crumbs": [
+      "Final Project",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "project/2-survey-plan.html",
+    "href": "project/2-survey-plan.html",
+    "title": "Survey Plan",
+    "section": "",
+    "text": "Due: Sep 29 by 11:59pm\nWeight: This assignment is worth 5% of your final grade.\nAssessment: Your submission will be assessed using the rubric at the bottom of this page.\n\nAs a team, write a survey plan to guide your survey design in formr. This plan does not have to be “set in stone” but rather a first attempt at defining the scope and general content of your survey. The course instructor will review and grade your plan and provide written feedback to guide the development of your pilot survey. Follow the instructions below to prepare your survey plan.\n\n1. Get Organized\nDownload and unzip this template for your survey plan. Open the survey_plan.Rproj file and write your plan in the survey_plan.qmd file. The template comes with some text and code explaining how to use it - you should delete this code / text as it is only for explanatory purposes. Be sure to adjust the content in the YAML:\n\nWrite your project title in the title field (and provide a subtitle if you wish, or delete the subtitle field).\nIn the author field, list the names of all teammates, e.g. author: Luke Skywalker, Leia Organa, and Han Solo.\n\n\n\n2. Specify the Target Population\nWhat is the ideal population you would like to take your survey? If you cannot access this population, is there a different or similar population that you are planning to target?\nWrite out your eligibility requirements for people to be considered part of your target population. Be specific. Write the exact question language you plan to use in your survey (e.g. “Are you a car owner?”) to identify the target sample. You may need to ask more than one question.\nBy default, we will pay users on prolific.co (i.e. people from the general U.S. population) to take your survey, but if a specific subpopulation is required (e.g. people currently shopping for a car), list that here and perhaps one or two strategies for reaching that population. If you have any other opportunities to distribute your survey to the target population (e.g. an external collaborator, personal networks, etc.), list those here.\n\n\n3. Attributes and Levels for Choice Questions\nWrite the text of the choice question you plan on asking your respondents. Below your question, list in a table the attributes and levels you will include in your choice questions (these may change between now and the actual final survey).\nFor example, for a survey on car preferences, you might use this as a choice question:\n\n“If these were your only options, which vehicle would you choose?”\n\nAnd you might use these as your attributes and levels:\n\n\n\nAttribute\nLevels\nUnit\n\n\n\n\nPrice\n15, 20, 25\n$1000\n\n\nFuel economy\n20, 25, 30\nMiles per gallon\n\n\nAcceleration time\n6, 7, 8\nSeconds (from 0-60 mph)\n\n\nPowertrain\nGasoline, Electric\nType\n\n\n\n\n\n4. Survey Content\nYour survey plan should include the following additional content (much of this will go directly into your pilot survey):\n\nWelcome page text: Welcome your survey respondents and inform them in just a few sentences who you are and what the survey is about.\nConsent page text: Write out the text of a consent form and include restrictions at least for 18 years of age and the statement “I have read and understand the above information” (in your survey, this can go on the welcome page).\nEducation information: Write out descriptions of the attributes you will include in your conjoint choice questions so that you can explain them to your survey respondents. Use common, simple language and as few words as possible. Include illustrative images if possible.\nCritical respondent information: What pieces of information about your respondent are absolutely necessary for your analysis (e.g. demographic factors like income, age, etc., or other information specific to the market for your product). Again, write the specific questions you plan on asking.\nOther questions: What other information about your respondents would be helpful in your analysis? Are you planning on asking any behavioral or demographic questions? Include the specific question text you plan to include.\n\n\n\n4. Attribution\nInclude a short description of the specific contributions of each team member for this report. If all members contributed equally, you can just put the single sentence “All members contributed equally”.\nTeam members who do not make meaningful contributions to their projects will not receive the same grade as that of their team mates. If you are having any issues or disputes among team members, please contact Professor Helveston ASAP so we can find a resolution.\n\n\n5. Submit\nRender your survey_plan.qmd file, then create a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. Only one person from your team should submit the report.\n\n\nGrading Rubric\n35 Total Points\n\n\n\n\n\n\nCategory\nExcellent\nGood\nNeeds work\n\n\n\n\nOrganization & Formatting\n5\nAll formatting guidelines are followed; YAML is correct with all team members listed; Rmd compiles to html.\n4\nMost formatting guidelines are followed; YAML is correct with all team members listed; Rmd might require one fix to compile to html.\n3\nSeveral or all formatting guidelines not followed; YAML contains elements that aren't updated from the template; Rmd requires mutliple fixes to compile to html.\n\n\nTarget Population\n10 / 9\nTarget population clearly identified; fielding strategy is discussed; eligibility requirement question text is specified.\n8 / 7 / 6\nTarget population identified, though may need to be refined; fielding strategy is discussed; eligibility requirement question text needs to be refined.\n5 / 4 / 3\nTarget population unclear; fielding strategy missing; eligibility requirement question text needs to be refined or is missing.\n\n\nAttributes & Levels\n10 / 9\nChoice question text is clear and specific; table of all attributes are included.\n8 / 7 / 6\nChoice question text could be improved; table of all attributes are included with some attributes missing.\n5 / 4 / 3\nChoice question text is missing or poorly written / unclear; table of all attributes is missing or unclear.\n\n\nSurvey Content\n10 / 9\nAll required survey components are specified with clear, precise question text included.\n8 / 7 / 6\nSome but not all required survey components are specified.\n5 / 4 / 3\nMissing multiple of the required survey components, question text is unclear.",
+    "crumbs": [
+      "Final Project",
+      "Survey Plan"
+    ]
+  },
+  {
+    "objectID": "project/4-pilot-analysis.html",
+    "href": "project/4-pilot-analysis.html",
+    "title": "Pilot Analysis",
+    "section": "",
+    "text": "Due: Nov 01 by 11:59pm\nWeight: This assignment is worth 5% of your final grade.\nAssessment: Your submission will be assessed using the rubric at the bottom of this page.\n\nAs a team, analyze your pilot survey data, and write a report of your findings. The course instructor will review and grade your analysis and report and provide feedback. The primary purpose of the report is to 1) lay some initial groundwork for analyzing your survey data (you will be able to re-use this code for your final analysis), and 2) gain insights to improve your final survey.\nYour report should include three main components:\n\nA detailed description of your pilot survey (e.g., how it was designed, what it contained, etc.).\nA detailed description of the results from analyzing your pilot survey data.\nA detailed description of planned changes you will include in your final survey.\n\nFollow the guidelines below to prepare your analysis and report.\n\n1. Report Guidelines\nDownload and unzip this template for your report. You should write your report in the report.qmd file. The template comes with some text and code explaining how to use it - you should delete this code & text as it is only for explanatory purposes. Be sure to adjust the content in the YAML:\n\nWrite your project title in the title field (and provide a subtitle if you wish, or delete the subtitle field).\nIn the author field, list the names of all teammates, e.g. author: Luke Skywalker, Leia Organa, and Han Solo.\n\nYour report should be written in a clear, concise, and logically-structured manner so that a reader can easily understand the ideas presented. The report should be proof-read before submission to correct any grammatical or spelling errors. Spell checking can be automated by installing the spelling package and running this in the R console:\n\nspelling::spell_check_files(\"report.qmd\")\n\nAll figures, tables, and equations should be referenced in the text.\n\n\n2. Pilot Data Analysis\nBefore writing your report, you should first analyze your pilot data by following these steps:\n\nDownload the survey response data from your Supabase account. You can import the data directly using the sd_get_data() function (see the documentation page for details). Save the raw data in the “data” folder in the report template.\nOpen the clean-data.R file and write code to clean your pilot data and prepare it for modeling. Your cleaned choice data should be in a “long” format similar to the example choice data here.\nSave your cleaned data file as a .csv file in the “data” folder.\nOpen the modeling.R file and write code to estimate preliminary models using your cleaned choice data.\nOpen the power-analysis.R file and write code to conduct a power analysis to inform the sample size requirements for your final survey.\n\n\n\n3. Pilot Analysis Report\nYour report should contain the following items listed as separate sections.\n\nNOTE: You may re-use content from earlier project assignments in this report, such as introductory paragraphs, images, etc.\n\n\nAbstract\nA few sentences summarizing the project and what you found from your pilot analysis. Include:\n\nWhat is the product / policy you are studying?\nWhat were the product attributes and design decisions you were interested in?\nAt least one key insight you gained from your pilot analysis (e.g., a modeling result, a design change you will make for your final survey, etc.).\n\n\n\nIntroduction\nProvide a brief description and background of the product / policy that motivates the study of it. Include a picture or diagram of the product. You should also discuss the key product attributes and decisions variables you chose to study in your pilot survey. This section can be largely similar to your proposal introduction.\n\n\nSurvey Design\nThis section should discuss the design choices you made in creating your pilot survey. Include the following:\n\nDescribe the eligibility requirements you chose and why you chose them.\nWhat information about your respondents did you collect (e.g. critical information questions, demographics, etc.)?\nDescribe any educational material presented to the respondents.\nDefine and justify the attributes and levels chosen for your conjoint choice questions. Indicate the number of alternatives per choice question and the number of choice questions per respondent.\nIf you included a “no-choice” option, define its meaning and state how that was communicated to the respondent.\nInclude an example figure of a random conjoint question (this can be a screen shot).\n\nYou should include a full copy of your survey in an appendix (see the Appendix section below)\n\n\nPilot Data Analysis\nThis section should describe the analysis you carried out using your pilot data, including the following subsections:\n\nSample Description\nDescribe your respondent sample, including the total sample size, the total number of choice question responses, and summary statistics of how your sample varies across critical information questions, demographics, etc. You should also include a description of what your target demographics should look like and compare these to your pilot sample (obviously your pilot sample was your classmates, so it may not be too representative of the target).\n\n\nData Cleaning\nDescribe any filtering process you applied to your data. Summarize how many acceptable vs. rejected responses you kept in your analysis and justify how you made that determination.\n\n\nModeling\nWrite out the specific utility model you estimated. This online LaTeX equation editor might come in handy for this (also, some example LaTeX equations can be found in the class notes from previous classes). Include a summary table of your utility coefficient estimates with standard errors. You should also include summary figures of the estimated coefficients for all attributes. Your figures should include uncertainty bounds. Interpret and discuss the implications of your findings.\n\n\nPower Analysis\nYou should also include a description of conclusions from your power analysis, including a summary figure of your power analysis results (standard errors versus sample size).\n\n\n\nChanges to Final Survey\nBased on your analyses, write a description of any changes you plan on making to your final survey (which should be based on your pilot survey). Consider the following:\n\nDid you make any changes to the product attributes and / or levels?\nDo you expect to be able to obtain the necessary sample size for your analysis?\nOther useful feedback did you receive from respondents / classmates that informed a design change.\n\n\n\nAttribution\nInclude a short description of the specific contributions of each team member for this report. If all members contributed equally, you can just put the single sentence “All members contributed equally”.\nTeam members who do not make meaningful contributions to their projects will not receive the same grade as that of their team mates. If you are having any issues or disputes among team members, please contact Professor Helveston ASAP so we can find a resolution.\n\n\nAppendix\nYou should include a full copy of your conjoint survey in an appendix at the end of this report (i.e., the same information and questions respondents saw when taking the survey). This can be the same content used in your .qmd files from the last project assignment (the pilot survey). For the conjoint choice questions, you only need to include one example since the specific levels were different for each choice question.\n\n\n\n4. Submit\nRender your .qmd files, then create a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. Only one person from your team should submit the report.\n\n\nGrading Rubric\n35 Total Points\n\n\n\n\n\n\nCategory\nExcellent\nGood\nNeeds work\n\n\n\n\nOrganization & Formatting\n5\nAll formatting guidelines are followed.\n4\nMost formatting guidelines are followed; only one or two components from the template are missing.\n3\nMost formatting guidelines are followed; several components from the template are missing or incomplete.\n\n\nPilot Analysis\n10 / 9\nAll analysis guidelines are followed, including data cleaning, modeling, and a power analysis. Code in related files runs without error and results can be fully reproduced.\n8 / 7 / 6\nMost analysis guidelines are followed, including data cleaning, modeling, and a power analysis. Code in related files might have a few errors, but the results can still be reproduced with a few fixes.\n5 / 4 / 3\nSome of the analysis guidelines components are incomplete or missing, including data cleaning, modeling, and a power analysis. Code in related files has multiple significant errors and results cannot be reproduced, even with efforts to correct errors.\n\n\nReport Contents\n15 / 14\nAll report guidelines are followed, including descriptions of the survey design, the pilot analysis results, and changes that will be made to the final survey.\n13 / 12 / 11\nMost report guidelines are followed, including descriptions of the survey design, the pilot analysis results, and changes that will be made to the final survey. Some may be unclear or missing important details.\n10 / 9 / 8 / 7\nSeveral report guidelines are not followed, including descriptions of the survey design, the pilot analysis results, and changes that will be made to the final survey. Some components are incomplete or missing.\n\n\nAppendix\n5\nAppendix of the full survey is included.\n4\nAppendix of the full survey is included, but some parts of the survey may be missing.\n3\nNo appendix of survey included",
+    "crumbs": [
+      "Final Project",
+      "Pilot Analysis"
+    ]
+  },
+  {
+    "objectID": "project/6-final-analysis.html",
+    "href": "project/6-final-analysis.html",
+    "title": "Final Analysis",
+    "section": "",
+    "text": "Due: Dec 06 by 11:59pm\nWeight: This assignment is worth 15% of your final grade.\nAssessment: Your submission will be assessed using the rubric at the bottom of this page.\n\nAs a team, analyze your final survey data, and write a report of your findings. Your final report should be a fully reproducible html webpage. It should include text, data, code, and plots. Your report should be written in a narrative format (i.e. using coherent paragraphs rather than a series of bullet points). You may use headings where appropriate to break up your report into sections. There is no length requirement - your report should be sufficiently detailed to address the requirements listed below and sufficiently concise such that it is expressed in the fewest necessary words.\nYour report should include three main components:\n\nA detailed description of your survey (e.g., how it was designed, what it contained, etc.).\nA detailed description of your analysis of your survey data and the results you found.\nA detailed description of the key insights you obtained from your experiment and your design recommendations based on those insights.\n\nFollow the guidelines below to prepare your analysis and report.\n\n1. Report Guidelines\nDownload and unzip this template for your report. You should write your report in the report.qmd file. The template comes with some text and code explaining how to use it - you should delete this code & text as it is only for explanatory purposes. Be sure to adjust the content in the YAML:\n\nWrite your project title in the title field (and provide a subtitle if you wish, or delete the subtitle field).\nIn the author field, list the names of all teammates, e.g. author: Luke Skywalker, Leia Organa, and Han Solo.\n\nYour report should be written in a clear, concise, and logically-structured manner so that a reader can easily understand the ideas presented. The report should be proof-read before submission to correct any grammatical or spelling errors. Spell checking can be automated by installing the spelling package and running this in the R console:\n\nspelling::spell_check_files(\"report.qmd\")\n\nAll figures, tables, and equations should be referenced in the text.\n\n\n2. Data Analysis\nBefore writing your report, you should first analyze your data by following these steps:\n\nDownload the survey response data from your Supabase account. You can import the data directly using the sd_get_data() function (see the documentation page for details). Save the raw data in the “data” folder in the report template.\nOpen the clean-data.R file and write code to clean your pilot data and prepare it for modeling. Your cleaned choice data should be in a “long” format similar to the example choice data here.\nSave your cleaned data file as a .csv file in the “data” folder.\nOpen the modeling.R file and write code to estimate any models you will use in your analysis. At a minimum, you should estimate:\n\nA simple logit model that includes all of the attributes in your survey.\nA mixed logit model that allows at least some of those attributes to vary randomly according to assumed distributions.\nAt least one sub-group analysis where you compare a logit model on different sub-groups in your sample.\n\nOpen the analysis.R file and write code to conduct further analyses using the results from your estimated models. At a minimum, you should include:\n\nEstimates of consumer WTP for each attribute in your survey, along with corresponding plots of WTP. Your estimates and plots should include both the mean estimates and a 95% confidence interval. (Policy projects may omit estimates of WTP if they are not applicable and instead should report utility coefficients).\nAt least one market simulation comparing your product against competitors along with an accompanying plot. (Policy projects should compare different policies).\nA sensitivity analysis showing your product’s market share sensitivity to changes in price as well as changes in other attributes in your survey along with accompanying plots.\n\n\n\n\n3. Final Analysis Report\nYour report should contain the following items listed as separate sections.\n\nNOTE: You may re-use content from earlier project assignments in this report, such as introductory paragraphs, images, etc.\n\n\nAbstract\nA few sentences summarizing your experiment and your main findings along with design recommendations. Include:\n\nWhat is the product / policy you are studying?\nWhat were the product attributes and design decisions you were interested in?\nWhat are the key insights and recommendations you are making based on those insights?\n\n\n\nIntroduction\nProvide a brief description and background of the product / policy that motivates the study of it. Include a picture or diagram of the product. You should also discuss the key product attributes and decisions variables you chose to study in your survey. This section can be largely similar to your proposal introduction.\n\n\nSurvey Design\nThis section should discuss the design choices you made in creating your survey. Include the following:\n\nDescribe the eligibility requirements you chose and why you chose them. These should be the question(s) you used to filter respondents in or out of your survey.\nWhat information about your respondents did you collect (e.g. critical information questions, demographics, etc.)?\nDescribe any educational material presented to the respondents.\nDefine and justify the attributes and levels chosen for your conjoint choice questions. Indicate the number of alternatives per choice question and the number of choice questions per respondent.\nInclude table summarizing the attributes and levels you included in your survey.\nDescribe any major changes you made between your pilot survey and final survey.\nInclude an example figure of a random conjoint question (this can be a screen shot or you can use Rmarkdown code to generate an example).\n\nYou should include a full copy of your survey in an appendix (see the Appendix section below)\n\n\nData Analysis\nThis section should describe the analysis you carried out using your final survey data, including the following subsections:\n\nSample Description\nDescribe your respondent sample, including the total sample size, the total number of choice question responses, and summary statistics of how your sample varies across critical information questions, demographics, etc. Include a summary table showing the breakdown of different demographic questions you asked on your survey. Tables should be formatted (e.g., using kable()), not just print outs from code chunks.\n\n\nData Cleaning\nDescribe any filtering process you applied to your data. Summarize how many acceptable vs. rejected responses you kept in your analysis and justify how you made that determination.\n\n\nModeling\nWrite out the specific utility model you estimated for your baseline logit model (you don’t need to include descriptions of the other models as they are derivative from the baseline model). This online LaTeX equation editor might come in handy for this (also, some example LaTeX equations are provided in the practice-solutions.qmd files from previous classes). Include a summary table of your utility coefficient estimates with standard errors.\n\n\n\nResults\nShow your plots\nInsert and discuss your plot(s) of WTP for product attributes with simulated 95% confidence intervals, using a common scale for the y-axis across plots (policy projects, show plots of utility coefficients). Interpret the results and identify key attributes that drive consumer choice.\nClearly define and justify your simulated market scenario(s) using a table listing the attributes of your product(s) and competitor products. Report simulated market shares with simulated 95% confidence intervals. Discuss key insights from these simulations. Discuss opportunities for increasing demand – what attributes drive market adoption, and what ranges of values for your product attributes result in more competitive outcomes?\nDiscuss the sensitivity of market demand predictions to product attributes and include at least one “tornado” plot as well as plots of market share vs. price. Identify the best price point and design decisions in terms of maximizing revenue for your product and state the uncertainty of these estimates.\nExplain the limitations of your analysis (e.g. survey sample representativeness, issues outside the scope of your model that could influence your assessment and recommendations, etc.).\n\n\nFinal Recommendations and Conclusions\nDescribe your key insights and resulting recommendations:\n\nDoes the product have the potential to be competitive against current competitors? At what price ranges? How confident are you? What key unknowns or uncertainties could most influence profitability? (For policy projects, discuss comparisons of policy interventions).\nWhat are your recommendations for key decisions on price and other decision variables, and how robust are these recommendations?\nWhat are the top opportunities you identified for increasing demand / market success of your product?\n\n\n\nLimitations\nDescribe limitations:\n\nIdentify what information would be most valuable to collect next in order to address limitations of the analysis and support decision-making.\nDescribe the most important unknowns that could affect your findings.\n\n\n\nAttribution\nInclude a short description in your blackboard submission of the specific contributions of each team member for this report. If all members contributed equally, you can just put the single sentence “All members contributed equally”.\nTeam members who do not make meaningful contributions to their projects will not receive the same grade as that of their team mates. If you are having any issues or disputes among team members, please contact Professor Helveston ASAP so we can find a resolution.\n\n\nAppendix\nYour appendix should include:\n\nA full copy of your conjoint survey (for the conjoint choice questions, include just one example since the specific levels were different for each choice question).\nAny other supplementary information that could not be included into the main report.\n\n\n\n\n5. Submit\nRender your report.qmd file, then create a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. Only one person from your team should submit the report.\n\n\nGrading Rubric\n40 Total Points\n\n\n\n\n\n\nCategory\nExcellent\nGood\nNeeds work\n\n\n\n\nOrganization & Formatting\n5\nAll formatting guidelines are followed.\n4\nMost formatting guidelines are followed; only one or two components from the template are missing.\n3\nMost formatting guidelines are followed; several components from the template are missing or incomplete.\n\n\nData Analysis\n15 / 14\nAll analysis requirements are followed, including data cleaning, modeling, and analysis, and all modeling and analysis is correctly specified. Code runs without error and results can be fully reproduced.\n13 / 12 / 11\nMost analysis requirements are followed, including data cleaning, modeling, and analysis. There may be some small errors in modeling or interpretation, but these errors do not have a strong effect on outcomes or conclusions. Code might contain a few errors, but the results can still be reproduced with a few fixes.\n10 / 9 / 8 / 7 / 6 / 5\nSome of the analysis requirements components are incomplete or missing, including data cleaning, modeling, and analysis. Interpretation or modeling is incorrect or mis-specified, leading to errors in conclusions. Code contains multiple significant errors and results cannot be reproduced, even with efforts to correct errors.\n\n\nReport Contents\n15 / 14\nAll report guidelines are followed, including the introduction, descriptions of the survey and modeling / analysis, and results and recommendations / conclusions are clear and justified by results.\n13 / 12 / 11\nMost report guidelines are followed, including the introduction, descriptions of the survey and modeling / analysis; results and recommendations / conclusions are perhaps unclear or missing important details, but are still largely supported by the modeling results.\n10 / 9 / 8 / 7 / 6 / 5\nSeveral report guidelines are not followed, including the introduction, descriptions of the survey and modeling / analysis; results and recommendations / conclusions are unclear or missing, or are not supported by the modeling results. Some components are incomplete or missing.\n\n\nAppendix\n5\nAppendix of the full survey is included.\n4\nAppendix of the full survey is included, but some parts of the survey may be missing.\n3\nNo appendix of survey included",
+    "crumbs": [
+      "Final Project",
+      "Final Analysis"
+    ]
+  },
+  {
+    "objectID": "project/examples.html",
+    "href": "project/examples.html",
+    "title": "Example Analyses",
+    "section": "",
+    "text": "As inspiration for your final projects, check out these prior exploratory data analyses.\n\nPrevious course showcases\n\n\n\n\n\nFall 2021 Showcase\nProjects from the fall 2021 semester of this class.\n\n\n\n\n\n\n\nFall 2022 Showcase\nProjects from the fall 2022 semester of this class.\n\n\n\n\n\n\n\nFall 2023 Showcase\nProjects from the fall 2023 semester of this class.",
+    "crumbs": [
+      "Final Project",
+      "Examples"
+    ]
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "All assignments are due by 11:59pm on the due date.\n\n\n\n\n\n\nWeek\nDate\nQuiz\nClass\nWeekly HW\nFinal Projects\n\n\n\n\n1\nAug 26\n\nGetting Started\nClass orientation, intro to R, workflow, packages\nHW 1\nDue: Aug 31\n\n\n\n2\nSep 02\n\nData Wrangling\nImporting, wrangling, and summarizing data in R\nHW 2\nDue: Sep 07\n\n\n\n3\nSep 09\n\nQuarto & Plotting\nIntro to \"literate programming\" with Quarto and plotting with {ggplot2}\nFinish Proposals!\nProposal\nDue: Sep 20\n\n\n4\nSep 16\n\nProject Workshop\nTeam meetings to discuss project proposals\nHW 3\nDue: Sep 21\nSurvey Plan\nDue: Sep 29\n\n\n5\nSep 23\nQuiz 1:\nWeek 2\nIntro to surveydown\n\nHW 4\nDue: Sep 28\n\n\n\n6\nSep 30\nQuiz 2:\nWeek 4\nConjoint Questions\nGenerating conjoint questions in R, implementing in surveydown\nHW 5\nDue: Oct 05\nPilot Survey\nDue: Oct 13\n\n\n7\nOct 07\n\nUtility Models\nIntro to utility models, discrete vs. continuous parameters, parameter coding\nHW 6\nDue: Oct 12\n\n\n\n8\nOct 14\nQuiz 3:\nWeek 7\nOptimization & MLE\nOptimization, maximum likelihood estimation\nHW 7\nDue: Oct 19\n\n\n\n9\nOct 21\n\nUncertainty\nComputing uncertainty in coefficient estimates\nHW 8\nDue: Oct 26\nPilot Analysis\nDue: Nov 01\n\n\n10\nOct 28\nQuiz 4:\nWeek 8\nDOE & Power Analysis\nDesigning your survey to reduce error\nHW 9\nDue: Nov 02\n\n\n\n11\nNov 04\n\nWTP & Simulation\nComputing WTP, WTP space models, market simulations\nHW 10\nDue: Nov 09\nFinal Survey\nDue: Nov 15\n\n\n12\nNov 11\nQuiz 5:\nWeek 11\nHeterogeneity\nModeling differences in preferences across sample population\nHW 11\nDue: Nov 16\n\n\n\n13\nNov 18\n\nClass Review\nOverview of course concepts\nHW 12\nDue: Nov 22\nFinal Analysis\nDue: Dec 06\n\n\n14\nNov 25\n\nThanksgiving - no class\n\n\n\n\n\n15\nDec 02\n\nStory Telling\nGo over exam solutions and also discuss tips for giving a good presentation\n\n\n\n\n16\nDec 09\n\nFinal Presentations\nIn-class presentation showcase w/Q&A\n\nFinal Presentation\nDue: Dec 08",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
+    "section": "",
+    "text": "You should install and set everything here before the first day of class.\n\n\nSign up for Slack. You should have been sent a link to join in the course intro email. If not, email Professor Helveston for an invite link. I recommend using your @gwu.edu email to sign up, but if you use another email for another Slack then use that.\nInstall the Slack app on your phone and Turn notifications on!. I’ll send all course communication via Slack, so please make sure your notifications are on so you don’t miss anything.\nInstall the latest version of R and RStudio:\n\n\nDownload and install R (version 4.0.2 or higher)\nDownload and install RStudio (Desktop version)\n\n\nOptional: Posit has a new IDE called Positron, which is similar to RStudio but has some new features. I encourage you to try it out if you want, but it’s not required for this course. You can download it here.\n\n\nIf you have a Mac, install XQuartz. This is needed for making some figures and is only for Mac (if you’re on Windows or Linux, skip this step).\nDownload and install Quarto\nSign up for Posit Cloud1 (the free version). It’s basically the same thing as RStudio, but accessible via a web browser. If things aren’t working on your computer, this is a great backup to quickly get back to working in RStudio.\nYou’ll need to install some R packages in RStudio that we will use throughout the semester. To do so, open RStudio then copy-paste this code into the console and press Return. This will install all the packages listed in the file.\n\nThat’s it - you’re all set for class!",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#footnotes",
+    "href": "software.html#footnotes",
+    "title": "Software",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n“Posit” is the company that makes “RStudio”, the software we’ll use to work with R.↩︎",
+    "crumbs": [
+      "Software"
+    ]
+  }
+]
