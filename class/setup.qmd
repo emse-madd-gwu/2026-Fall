@@ -1,0 +1,82 @@
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(tidyverse)
+library(cowplot)
+library(kableExtra)
+library(countdown)
+library(ggrepel)
+
+options(
+  htmltools.dir.version = FALSE,
+  knitr.table.format = "html",
+  knitr.kable.NA = '',
+  dplyr.width = Inf,
+  width = 250
+)
+
+knitr::opts_chunk$set(
+  cache = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  fig.path = "figs/",
+  fig.width = 7.252,
+  fig.height = 4,
+  comment = "#>",
+  fig.retina = 3
+)
+
+sp <- function(gap = 2, unit = "em") {
+  sprintf('<div style="height: %s%s;"></div>', gap, unit)
+}
+
+agenda <- function(
+  highlight = NULL,
+  week = paste("Week", rmarkdown::metadata$week),
+  title = rmarkdown::metadata$title
+) {
+  lines <- c(
+    "{{< inverse >}}",
+    "{{< middle >}}",
+    sprintf("# %s: [%s]{.fancy}", week, title),
+    '<div style="height: 1.5em;"></div>'
+  )
+  for (i in seq_along(agenda_items)) {
+    item <- agenda_items[i]
+    if (!is.null(highlight) && i == highlight) {
+      item <- sprintf("[%s]{.orange}", item)
+    }
+    lines <- c(lines, sprintf("### %d. %s", i, item))
+  }
+  cat(lines, sep = "\n\n")
+}
+```
+
+<!-- Title slide -->
+
+::: {.col width="30%"}
+
+<center>
+<img src="https://madd.seas.gwu.edu/images/logo.png" width=100%>
+</center>
+
+:::
+
+::: {.col width="70%" valign="middle"}
+
+{{< inverse >}}
+{{< center >}}
+{{< middle >}}
+{{< no-slide-number >}}
+
+# [{{< meta title >}}]{.fancy}
+
+### {{< fa building-columns >}} {{< meta subtitle >}}
+
+### {{< fa user >}} {{< meta author >}}
+
+### {{< fa calendar-alt >}} {{< meta displaydate >}}
+
+:::
