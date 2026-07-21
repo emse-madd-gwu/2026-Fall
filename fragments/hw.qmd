@@ -21,6 +21,8 @@ hw_file <- paste0('hw', params$number, '.qmd')
 >
 > **Purpose**: `r params$purpose`
 >
+> **Submit**: Push your completed assignment to your course GitHub repository. (Detailed GitHub submission instructions coming soon.)
+>
 > **Assessment**: This assignment is graded using a check system:
 >
 > - ✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.

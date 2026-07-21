@@ -1,0 +1,16 @@
+---
+title: "Agentic Workflows"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "2-agentic-workflows"
+  logitrcars: false
+  surveydown: false
+  notes: true
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```

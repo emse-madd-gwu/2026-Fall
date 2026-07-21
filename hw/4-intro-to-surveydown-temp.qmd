@@ -1,0 +1,48 @@
+---
+title: "Intro to surveydown"
+params:
+  number: 4
+  purpose: 'The purpose of this assignment is to get familiar with the [surveydown](https://surveydown.org/) survey platform, which we will be using to implement our surveys.'
+---
+
+```{r child = here::here("fragments", "hw.qmd")}
+```
+
+# 1. Get Organized
+
+Follow these instructions:
+
+1. Download and edit [this template](`r url_template`).
+2. Unzip the template folder. **Make sure you actually unzip it**! (in Windows, right-click it and use "extract all")
+3. Open the .Rproj file to open RStudio.
+4. Inside RStudio, open the ``r hw_file`` file, take notes, and write some example code as you go through the readings / exercises below.
+
+# 2. Readings
+
+Next week we will start getting into designing conjoint surveys for our projects. We will implement them using [surveydown](https://surveydown.org/), which is a markdown-based platform for designing surveys. The platform allows you to use R or markdown code (just like you would in a .qmd file) to define everything you see in an online survey. While you will be editing a Quarto document, it renders into a [Shiny](https://shiny.posit.co/) app, which you can then use to administer your survey.
+
+To get familiar with the platform, read the [Getting Started](https://surveydown.org/docs/getting-started) and [Basic Components](https://surveydown.org/docs/basic-components) documentation pages on the surveydown website. **Take notes** as you read the docs.
+
+# 3. Make a practice survey
+
+For practice, try replicating one of the [template surveys](https://surveydown.org/templates) listed on the surveydown website. The [default](https://surveydown.org/templates/default) survey template will be the easiest to use, but try another template if you are interested. Follow these steps:
+
+1. Download or clone a template of your choice.
+2. In the template you chose, open RStudio, then open the app.R file and click "Run". Then copy-paste the localhost url into your browser to locally preview the survey.
+3. Make edits to the survey to personalize it. Choose a topic that you find interesting and try modifying at least one question in the survey, then re-render the document to see your changes.
+
+# 4. Reflect
+
+Reflect on what you've learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your ``r hw_file`` file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.
+
+If you're unsure where to start with a reflection, try filling out this template:
+
+> "I used to think ______, now I think ______ 🤔"
+
+# 5. Submit
+
+To submit your assignment, follow these instructions:
+
+1. Render your .qmd file by either clicking the "Render" button in RStudio or running the command ``r paste0('quarto::quarto_render("', hw_file, '")')`` command.
+2. Open the rendered html file and make sure it looks good! Is all the formatting as you expected?
+3. Create a zip file of all the files in your R project folder for this assignment (your ``r hw_file`` and your demo survey files) and submit it to your course GitHub repository (GitHub submission details coming soon).
