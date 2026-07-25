@@ -1,0 +1,347 @@
+---
+title: "Intro to surveydown"
+subtitle: "EMSE 6035: Marketing Analytics for Design Decisions"
+author: "John Paul Helveston"
+institute: "The George Washington University | EMSE"
+week: 6
+displaydate: September 30, 2026
+format: lexis-revealjs
+mouse-wheel: true
+progress: false
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: false
+---
+
+{{< include ../setup.qmd >}}
+
+```{r}
+#| include: false
+
+library(surveydown)
+
+agenda_items <- c(
+  "surveydown basics",
+  "Conjoint survey components"
+)
+```
+
+---
+
+{{< inverse >}}
+
+# Quiz 1
+
+```{r}
+#| echo: false
+countdown(
+  minutes      = 12,
+  warn_when    = 30,
+  update_every = 1,
+  top          = 0,
+  right        = 0,
+  font_size    = '3em'
+)
+```
+
+::: {.col}
+
+## Write your name on the quiz!
+
+## Rules:
+
+- Work alone; no outside help of any kind is allowed.
+- No calculators, no notes, no books, no computers, no phones.
+
+:::
+
+::: {.col}
+
+<br>
+<center>
+<img src="https://github.com/emse-p4a-gwu/2022-Spring/raw/main/images/quiz_doge.png" width="400">
+</center>
+
+:::
+
+---
+
+```{r}
+#| echo: false
+#| output: asis
+agenda(0)
+```
+
+---
+
+```{r}
+#| echo: false
+#| output: asis
+agenda(1)
+```
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+# Follow along with<br>[this workshop](https://jhelvy.github.io/2025-surveydown-workshop/) on surveydown
+
+---
+
+```{r}
+#| echo: false
+#| output: asis
+agenda(2)
+```
+
+---
+
+# 3 Parts
+
+<br>
+
+::: {.font150}
+- **Part 1**: Intro
+- **Part 2**: Conjoint questions
+- **Part 3**: Other / demographic questions
+:::
+
+---
+
+# 3 Parts
+
+<br>
+
+::: {.font150}
+- **Part 1**: Intro → [screen for target population]{.red}
+- **Part 2**: Conjoint questions → [screen for random answers]{.red}
+- **Part 3**: Other / demographic questions
+:::
+
+---
+
+# [Think of your survey as a _conversation_]{.center}
+
+<br>
+
+- Include "transition" pages (e.g. Great job! Now we'll ask you about...)
+
+---
+
+{{< inverse >}}
+{{< center >}}
+{{< middle >}}
+
+# **Part 1**: Intro
+
+---
+
+{{< center >}}
+
+# Start with a welcome page
+
+<center>
+<img src="images/1welcome page.png" width=800>
+</center>
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+::: {.col width="30%"}
+
+# Consent form
+
+:::
+
+::: {.col width="70%"}
+
+<center>
+<img src="images/2consent.png" width=500>
+</center>
+
+:::
+
+---
+
+{{< center >}}
+
+## **Eligibility questions**: who is your target population?
+
+### [_Filter out respondents here_]{.red}
+
+<center>
+<img src="images/3filter.png" width=700>
+</center>
+
+---
+
+{{< inverse >}}
+{{< center >}}
+{{< middle >}}
+
+# **Part 2**: Conjoint questions
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+# Education information
+
+<center>
+<img src="images/5education1.png" width=700>
+</center>
+
+---
+
+{{< center >}}
+
+# Education information
+
+::: {.col}
+
+<center>
+<img src="images/5education2.png">
+</center>
+
+:::
+
+::: {.col}
+
+<center>
+<img src="images/5education3.png">
+</center>
+
+:::
+
+---
+
+## [Can be helpful to provide relative comparisons]{.center}
+
+Weight:
+
+- 1/2 lbs (similar to 1 cup water)
+- 8 lbs (similar to 1 gallon of milk)
+
+---
+
+{{< center >}}
+
+# Conjoint intro
+
+<center>
+<img src="images/6conjoint_intro1.png" width=800>
+</center>
+
+---
+
+{{< center >}}
+
+## Practice conjoint (also attention check)
+
+### [_May also filter out respondents here_]{.red}
+
+<center>
+<img src="images/7conjoint_practice.png" width=550>
+</center>
+
+---
+
+{{< center >}}
+
+# Transition to actual conjoint questions
+
+<center>
+<img src="images/8conjoint_intro2.png" width=700>
+</center>
+
+---
+
+{{< middle >}}
+
+::: {.col width="40%"}
+
+# Conjoint questions
+
+### [_May also filter out respondents at the end_]{.red}
+
+(e.g. chose all same answers)
+
+:::
+
+::: {.col width="60%"}
+
+<center>
+<img src="images/9conjoint.png" width=600>
+</center>
+
+:::
+
+---
+
+{{< inverse >}}
+{{< center >}}
+{{< middle >}}
+
+# **Part 3**: Other / demographic questions
+
+---
+
+{{< center >}}
+
+# Transition
+
+<center>
+<img src="images/10wrap_up.png" width=700>
+</center>
+
+---
+
+{{< center >}}
+
+# Critical respondent information
+
+<center>
+<img src="images/4critical_info.png" width=900>
+</center>
+
+---
+
+{{< center >}}
+
+# Demographic / other questions
+
+<center>
+<img src="images/11demo.png" width=500>
+</center>
+
+---
+
+{{< center >}}
+
+# Finale
+
+<center>
+<img src="images/12end.png" width=900>
+</center>
+
+---
+
+{{< inverse >}}
+{{< center >}}
+{{< middle >}}
+
+# [Blog post on conjoint in surveydown](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/)
+
+::: {.fragment}
+# [Project survey plan](https://madd.seas.gwu.edu/2026-Fall/project/2-survey-plan.html)
+:::
+
+::: {.fragment}
+# Sign up for meeting slot next week<br>(link in #project channel)
+:::

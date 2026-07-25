@@ -1,0 +1,95 @@
+---
+title: "Final Presentations"
+subtitle: "EMSE 6035: Marketing Analytics for Design Decisions"
+author: "John Paul Helveston"
+institute: "The George Washington University | EMSE"
+week: 15
+displaydate: December 09, 2026
+format: lexis-revealjs
+mouse-wheel: true
+progress: false
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: false
+---
+
+{{< include ../setup.qmd >}}
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+# Lab-Grown Chicken Consumer Preferences:<br>Exploring Environmental<br>and Animal-Welfare Trade-Offs
+
+## by Luis Bracho, Massimo Mariani, Shannon Zhang, Sami Gebeyehu
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+# RFIDinMe: Investigating the use of<br>alternate RFID devices
+
+## by Abdullah, Bogdan, Collin, Jeb
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+# Portable Modular Power Bank
+
+## by Kidist Bekele, Donia Drias, Kaitlyn Frost, Hana Kilani
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+# Reusable To-Go with OZZI: A conjoint analysis of OZZI reusable containers in university dining
+
+## by Sai Lekhana Kottiyada, Sri Murari Dachepalli, Jyothika Priyanka Talluri, Ulindala Venkata Nikhil Kumar Reddy
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+# [Cycle Sense: Menstrual Health Tracking](https://www.canva.com/design/DAG6-CfXxck/pwuD-Rmo2q-hYFsu11kWtg/view?utm_content=DAG6-CfXxck&utm_campaign=designshare&utm_medium=link&utm_source=viewer)
+
+## by Marena Marzari, Federica Negron, Diego Farah,<br>Tomas Hache, Sabina Pereira
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+# FlexiConnect: A Conjoint Analysis of Consumer Preferences for Flexible Service Plans
+
+## by Harish Kommana, Lakshana Ananthakrishnan Prabhakar, Girish Kumar Naragani,<br>and Samuel Asiedu Boateng
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+# [Consumer Adoption of Autonomous Robots<br>for Last-Mile Deliveries](https://www.youtube.com/watch?v=cOo4B2JSUC4)
+
+## by Adwoa Darko, Siddharth Kusuma, Sudeep Januga
+
+---
+
+{{< inverse >}}
+{{< center >}}
+{{< middle >}}
+
+## Fill out course evals: https://gwu.smartevals.com/
+
+### (please be specific!)
+
+<center>
+<img src="https://media.tenor.com/images/76f5c6f0db05171eef3ee586eba77410/tenor.gif" width=600>
+</center>

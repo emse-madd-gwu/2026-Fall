@@ -1,0 +1,32 @@
+---
+title: "Agentic Workflows"
+subtitle: "EMSE 6035: Marketing Analytics for Design Decisions"
+author: "John Paul Helveston"
+institute: "The George Washington University | EMSE"
+week: 2
+displaydate: September 02, 2026
+format: lexis-revealjs
+mouse-wheel: true
+progress: false
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: false
+---
+
+{{< include ../setup.qmd >}}
+
+```{r}
+#| include: false
+
+agenda_items <- c(
+  "Coming soon"
+)
+```
+
+---
+
+# Coming soon!
+
+_Content for this class will be brought over from the EDA course._
