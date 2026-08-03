@@ -28,7 +28,7 @@ output:
 
 # For this class
 data <- mtcars
-bears <- read_csv(here::here('data', 'bear_killings.csv'))
+bears <- read_csv(file.path('data', 'bear_killings.csv'))
 theme_set(theme_gray(base_size = 16))
 ```
 

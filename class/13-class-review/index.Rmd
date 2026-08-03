@@ -127,8 +127,7 @@ class: inverse, middle, center
 ## 1. Create a path to the data
 
 ```{r}
-library(here)
-path_to_data <- here('data', 'data.csv') #<<
+path_to_data <- file.path('data', 'data.csv') #<<
 path_to_data
 ```
 
@@ -148,7 +147,7 @@ data <- read_csv(path_to_data) #<<
 ```{r, eval=FALSE}
 library(tidyverse)
 
-data <- read_csv(here::here('data', 'data.csv'))
+data <- read_csv(file.path('data', 'data.csv'))
 ```
 
 ---

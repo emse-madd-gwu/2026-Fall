@@ -1,6 +1,5 @@
 # install.packages(c("tidyverse", "here"))
 library(tidyverse)
-library(here)
 
 # The setting below is optional, it lets you see all the columns in a data frame
 options(dplyr.width = Inf)
@@ -65,7 +64,7 @@ colnames(msleep)
 
 # DATA FROM CSV FILE ----------------------------------------------------------
 
-# Build path to data using here()
+# Build path to data using file.path()
 
 # Read in data using read_csv()
 

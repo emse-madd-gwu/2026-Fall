@@ -26,14 +26,13 @@ output:
 ```{r}
 #| include: false
 
-library(here)
 
 # For this class
-milk_production  <- read_csv(here::here('data', 'milk_production.csv'))
-fed_spend_long <- read_csv(here('data', 'fed_spend_long.csv'))
-fed_spend_wide <- read_csv(here('data', 'fed_spend_wide.csv'))
-tb_cases <- read_csv(here('data', 'tb_cases.csv'))
-lotr_words <- read_csv(here('data', 'lotr_words.csv'))
+milk_production  <- read_csv(file.path('data', 'milk_production.csv'))
+fed_spend_long <- read_csv(file.path('data', 'fed_spend_long.csv'))
+fed_spend_wide <- read_csv(file.path('data', 'fed_spend_wide.csv'))
+tb_cases <- read_csv(file.path('data', 'tb_cases.csv'))
+lotr_words <- read_csv(file.path('data', 'lotr_words.csv'))
 ```
 
 ---

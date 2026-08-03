@@ -20,7 +20,7 @@ execute:
 ```{r}
 #| include: false
 
-abbs <- read_csv(here::here('data', 'state_abbs.csv'))
+abbs <- read_csv(file.path('data', 'state_abbs.csv'))
 
 agenda_items <- c(
   "Maximum likelihood estimation",
@@ -329,7 +329,7 @@ Using the starting point $\underline{x}_0 = [1, 1]$ and the step size $\gamma = 
 
 ::: {.col width="80%"}
 
-## 1. Open `logitr-cars.Rproj`
+## 1. Open the `logitr-cars` folder in Positron
 
 ## 2. Open `code/3.1-model-mnl.R`
 
@@ -648,9 +648,9 @@ countdown(
 
 ```{r}
 #| include: false
-state_abbs <- read_csv(here::here('data', 'state_abbs.csv'))
-state_regions <- read_csv(here::here('data', 'state_regions.csv'))
-wildlife_impacts <- read_csv(here::here('data', 'wildlife_impacts.csv'))
+state_abbs <- read_csv(file.path('data', 'state_abbs.csv'))
+state_regions <- read_csv(file.path('data', 'state_regions.csv'))
+wildlife_impacts <- read_csv(file.path('data', 'wildlife_impacts.csv'))
 
 state_data <- state_abbs %>%
     left_join(state_regions, by = c('state_name' = 'state')) %>%
@@ -716,7 +716,7 @@ agenda(4)
 
 ::: {.col width="80%"}
 
-## 1. Open `survey.Rproj`
+## 1. Open the `survey` folder in Positron
 
 ## 2. Open `code/3_data_cleaning.R`
 

@@ -24,7 +24,7 @@ agenda_items <- c(
   "Course orientation",
   "Intro to conjoint analysis",
   "Introductions",
-  "Getting started with R & RStudio"
+  "Getting started with R & Positron"
 )
 ```
 
@@ -89,7 +89,7 @@ agenda(1)
 :::
 
 ::: {.fragment}
-## {{< fa brands r-project >}} & RStudio: [Course Software Page](https://madd.seas.gwu.edu/2026-Fall/software.html)
+## {{< fa brands r-project >}} & Positron: [Course Software Page](https://madd.seas.gwu.edu/2026-Fall/software.html)
 :::
 
 ---
@@ -646,7 +646,9 @@ agenda(3)
 
 1. If you haven't already, install everything on the [software page](https://madd.seas.gwu.edu/2026-Fall/software.html)
 
-2. Stand up, meet each other, (maybe form teams?...use [this sheet](https://docs.google.com/spreadsheets/d/1bWkSJ7iinHWt4NOPdGYBk2ZxhmhblM1KsDN7Dd1Cwmg/edit?usp=sharing))
+2. Add your **GitHub username** to [this sheet](https://docs.google.com/spreadsheets/d/14bLHRcs7hQUX4LDLNKllcA9UhLyuYBZH6VH75Y2_fyU/edit?usp=sharing) (you need this to get your course repo!)
+
+3. Stand up, meet each other, (maybe form teams?...use [this sheet](https://docs.google.com/spreadsheets/d/1bWkSJ7iinHWt4NOPdGYBk2ZxhmhblM1KsDN7Dd1Cwmg/edit?usp=sharing))
 
 ```{r}
 #| echo: false
@@ -673,13 +675,13 @@ agenda(4)
 {{< center >}}
 {{< middle >}}
 
-# If you're familiar with R and RStudio,
+# This semester we use [Positron](https://positron.posit.co/download.html)
 
-# download and try out [Positron](https://positron.posit.co/download.html)
+## (not RStudio)
 
 ---
 
-# RStudio Orientation
+# Positron Orientation
 
 ::: {.col width="70%"}
 
@@ -691,10 +693,10 @@ agenda(4)
 
 ::: {.col width="30%"}
 
-- Know the boxes
+- Know the panes
 - Customize the layout
 - Customize the look
-- [Extra themes](https://github.com/gadenbuie/rsthemes)
+- The **terminal** is where we'll run our agent
 
 :::
 
@@ -754,7 +756,7 @@ countdown(
 
 ### A. Practice getting organized
 
-1. Open RStudio and create a new R project called `week1`.
+1. Make a new folder called `week1`, then open it in Positron (**File > Open Folder...**).
 2. Create a new R script and save it as `practice.R`.
 3. Open the `practice.R` file and write your answers to these questions in it.
 
@@ -878,7 +880,7 @@ wikifacts::wiki_randomfact()
 
 ## Example: **wikifacts**
 
-Now, restart your RStudio session:
+Now, restart your R session in Positron:
 > Session -> Restart R
 
 . . .

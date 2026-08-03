@@ -20,7 +20,6 @@ library(tidyverse)
 library(knitr)
 library(patchwork)
 library(kableExtra)
-library(here)
 library(logitr)
 ```
 
@@ -279,7 +278,7 @@ $$x^{\mathrm{price}} = \frac{1}{\beta_1} \left[ log(e^{v_1} + e^{v_3}) - \beta_2
 1. Run the code chunk to read in the `data.csv` file in the "data" folder.
 
 ```{r}
-data <- read_csv(here('data', 'data.csv'))
+data <- read_csv(file.path('data', 'data.csv'))
 ```
 
 2. Write code to estimate the following utility model (HINT: you may need to make some dummy-coded variables!):

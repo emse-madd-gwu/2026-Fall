@@ -334,8 +334,8 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p><strong>Due</strong>: Aug 31 by 11:59pm</p>
 <p><strong>Weight</strong>: This assignment is worth 3% of your final grade.</p>
-<p><strong>Purpose</strong>: The purpose of this assignment is to get set up with the tools we will use all semester: GitHub for hosting and submitting your work, and an agentic coding workflow for working with R.</p>
-<p><strong>Submit</strong>: Push your completed assignment to your course GitHub repository. (Detailed GitHub submission instructions coming soon.)</p>
+<p><strong>Purpose</strong>: This course is built around a fundamental shift in how we do data analysis. We used to live in a paradigm where we hand-wrote every line of code. Instead, we now direct an AI coding agent (e.g., Claude Code) to do the majority of the coding while our job changes to supervising, verifying, and taking responsibility for the resulting analysis produced by the code. This assignment is designed to make sure you have all your tools installed and properly configured and to ensure you can have productive conversations with an AI agent. Going forward, we will focus class time on working with agents rather than troubleshooting installations and configurations.</p>
+<p><strong>Submit</strong>: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).</p>
 <p><strong>Assessment</strong>: This assignment is graded using a check system:</p>
 <ul>
 <li>✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.</li>
@@ -344,25 +344,101 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Notice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is <strong>not enough</strong>. Write at least a paragraph and show me that you did the readings assigned.</p>
 </blockquote>
-<section id="software" class="level1">
-<h1>1. Software</h1>
-<p>If you haven’t yet, go to the <a href="../software.html">Software</a> page and install all the software we’ll need for this course, including <i class="fa-brands fa-r-project" aria-label="r-project"></i>, RStudio, and Git.</p>
+<section id="install-your-tools" class="level1">
+<h1>1. Install Your Tools</h1>
+<p>If you haven’t yet, go to the <a href="../software.html">software page</a> and make sure you have everything installed on your computer.</p>
+<p>Then, <strong>verify everything works</strong>: open Positron, open a folder (any folder will do for now), open the terminal window in Positron, and run <code>claude</code> (or launch a different agent if you’re not using Claude Code). If it starts a conversation and asks for your login, it’s working.</p>
+<p>If you get stuck on installation, post in Slack and we can help you. Don’t wait until Monday night - ask sooner!</p>
 </section>
-<section id="create-your-course-github-repository" class="level1">
-<h1>2. Create your course GitHub repository</h1>
-<p><em>Coming soon</em> — this section will walk you through creating your GitHub account, setting up your course repository, and connecting it to RStudio. This is the repository you’ll use to submit every assignment this semester.</p>
+<section id="get-familiar-with-the-course" class="level1">
+<h1>2. Get familiar with the course</h1>
+<p>Follow <a href="https://www.youtube.com/watch?v=Tnlaokj1opA">Snoop’s advice</a> and read the entire <a href="../syllabus.html">Course Syllabus</a> (actually read the whole thing). Then review the <a href="../schedule.html">schedule</a> and make sure to note important upcoming deadlines.</p>
+<p>This course is built around a semester-long team project, so pay particular attention to the <a href="../project/0-overview.html">project overview</a> and the dates for each project deliverable.</p>
 </section>
-<section id="set-up-your-agentic-workflow" class="level1">
-<h1>3. Set up your agentic workflow</h1>
-<p><em>Coming soon</em> — this section will walk you through setting up the agentic coding tools we’ll use alongside R throughout the course.</p>
+<section id="make-your-first-github-repo" class="level1">
+<h1>3. Make your first GitHub repo</h1>
+<p>Using your GitHub account (which you should have made when installing the course software, if you didn’t already have one), use GitHub Desktop to make a simple demo repo. This 2-min video recording shows the steps, which are also listed below: <a href="https://youtu.be/VlD8N0ZClBo">https://youtu.be/VlD8N0ZClBo</a></p>
+<ol type="1">
+<li>GitHub Desktop → <strong>File › New Repository</strong> → name it <code>madd-practice</code>.</li>
+<li>Click on the box for “initialize this repository with a README”, and choose “None” in the “Git Ignore” and “License” parts.</li>
+<li>Publish it to GitHub.com - make it public, not private (the video shows private).</li>
+<li>In GitHub Desktop, click on “Show in Finder” to open your local clone.</li>
+<li>Open the README.md file in Positron and add a line or two of text, save it.</li>
+<li>Back in GitHub Desktop, notice the “diff” (showing the changes made).</li>
+<li>Write a description of your changes in the bottom-left box, then Commit your changes.</li>
+<li>Push your change to github.com (button with up arrow at the top)</li>
+<li>Look at your <strong>History</strong> tab to see changes, then click on “View on GitHub” to confirm your changes are in the main repo.</li>
+<li>When you’re done, post the link to your public repo in the <code>#hw</code> channel.</li>
+</ol>
+</section>
+<section id="clone-your-course-repo" class="level1">
+<h1>4. Clone your course repo</h1>
+<p>The repo you just made was practice. Everything you actually submit this semester will go in a single <strong>private</strong> repo that I have already created for you in the course’s GitHub organization. It comes pre-loaded with a folder for each assignment, so you never have to make one yourself.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can check if this folder exists by going to the <a href="https://github.com/orgs/madd-f26/repositories">list of repos</a> in the course organization GitHub account and searching for your repo, which should be labeled <code>madd-netID</code>, where <code>netID</code> is your GW netID (not your GitHub user name). If you do not see a repo there, check that you have added your <strong>GitHub username</strong> in <a href="https://docs.google.com/spreadsheets/d/14bLHRcs7hQUX4LDLNKllcA9UhLyuYBZH6VH75Y2_fyU/edit?usp=sharing">this sheet</a> next to your name</p>
+</div>
+</div>
+<ol type="1">
+<li>Check your email for an invitation to join the <code>madd-f26</code> organization on GitHub and <strong>accept it</strong>. Check your spam folder if you don’t see it. You can’t reach your repo until you’ve accepted, so do this first. Message Prof.&nbsp;Helveston on Slack if you can’t find it.</li>
+<li>In GitHub Desktop → <strong>File › Clone Repository</strong> → the <strong>GitHub.com</strong> tab. Your repo will be in the list as <code>madd-f26/madd-netID</code>, where <code>netID</code> is your GW netID (not your GitHub user name). Select it and click <strong>Clone</strong>.</li>
+<li>Choose a sensible place to put it on your computer. You’ll be opening this folder all semester, so don’t bury it somewhere you’ll never find again.</li>
+<li>Click “Show in Finder” and look around. You should see a folder for each assignment, including <code>hw1</code>, which you’ll need later to add your <a href="#reflect">reflection</a> at the end of this assignment.</li>
+</ol>
+</section>
+<section id="read-about-claude-code" class="level1">
+<h1>5. Read about Claude Code</h1>
+<p>Read <a href="https://www.anthropic.com/research/claude-code-expertise">how Claude Code is used in practice</a> (Anthropic). Read this one carefully. Its central finding is directly relevant to this whole course: <em>domain expertise (not coding proficiency) is what makes people effective with a coding agent.</em> That’s the whole premise of how this class is taught this semester – you don’t need to be a stronger programmer than the agent to build good choice models, but you do need to become a better judge of whether its output is <em>accurate</em>, and to develop the habits and workflow patterns that build that judgement.</p>
+</section>
+<section id="light-practice-your-first-conversation-with-an-agent" class="level1">
+<h1>6. Light practice: your first conversation with an agent</h1>
+<p>Open the course repo you just cloned in Positron (<strong>File › Open Folder</strong>, then choose that folder). Open the terminal window, run <code>claude</code>, and try a couple of low-stakes things:</p>
+<ul>
+<li>Ask it to look around the folder and tell you what’s in it. Do this one first – it shows you that the agent can see the files in whatever folder you’ve opened, which is the single most important thing to understand about working with one.</li>
+<li>Ask it what a <code>.qmd</code> file does, how it is different from a plain <code>.R</code> script, and for a quick demonstration of each. Ask it to put the demonstration files in the <code>hw1</code> folder.</li>
+</ul>
+<p>You don’t need a data file or a real analysis task for this. The point is just to see the agent read, reason about, and explain something concrete, and to get a feel for the back-and-forth of working with an agent.</p>
+<p>If the agent creates any files while you’re poking around, that’s fine. You don’t have to commit them. The only thing that has to end up on GitHub is your reflection (next step).</p>
 </section>
 <section id="reflect" class="level1">
-<h1>4. Reflect</h1>
-<p>Reflect on what you’ve learned while getting set up. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph and include at least one question.</p>
+<h1>7. Reflect</h1>
+<p>In your course repo, open the file <code>hw1/reflection.qmd</code> and write at least a paragraph reflecting on your experiences from this assignment. Some prompts you could use:</p>
+<ul>
+<li>What surprised you about installing or using Claude Code for the first time?</li>
+<li>Where do you already have questions or doubts about directing an AI agent to write code, versus writing it yourself?</li>
+<li>The Anthropic reading argues that domain expertise matters more than coding skill for using an agent well. Do you buy that? Why or why not?</li>
+<li>“I used to think ______, now I think ______ 🤔”</li>
+</ul>
 </section>
 <section id="submit" class="level1">
-<h1>5. Submit</h1>
-<p>Submit your assignment by pushing your work to your course GitHub repository. (Detailed GitHub submission instructions coming soon.)</p>
+<h1>8. Submit</h1>
+<p>To submit your assignment, follow these instructions:</p>
+<ol type="1">
+<li>Render your .qmd file by either clicking the “Preview” button in Positron or running <code>quarto render</code> in the terminal.</li>
+<li>Open the rendered html file and make sure it looks good! Is all the formatting as you expected?</li>
+<li>Commit and push your work using GitHub Desktop: look at the diff, write a short commit message, click <strong>Commit</strong>, then <strong>Push</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Remember">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Remember
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your work isn’t submitted until you’ve <strong>pushed</strong> it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done.</p>
+</div>
+</div>
 
 
 </section>

@@ -9,7 +9,6 @@ params:
   class: "6-intro-to-surveydown"
   logitrcars: false
   surveydown: true
-  notes: false
 ---
 
 ```{r child = here::here("fragments", "placeholder.qmd")}

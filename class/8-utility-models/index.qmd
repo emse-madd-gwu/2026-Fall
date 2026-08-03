@@ -301,7 +301,7 @@ agenda(2)
 
 ::: {.col width="80%"}
 
-## 1. Open `logitr-cars.Rproj`
+## 1. Open the `logitr-cars` folder in Positron
 
 ## 2. Open `code/2.1-explore-data.R`
 
@@ -412,7 +412,7 @@ Coef. | Interpretation
 
 ::: {.col width="80%"}
 
-## 1. Open `logitr-cars.Rproj`
+## 1. Open the `logitr-cars` folder in Positron
 
 ## 2. Open `code/3.1-model-mnl.R`
 
@@ -490,7 +490,7 @@ agenda(4)
 
 ::: {.col width="80%"}
 
-## 1. Open `logitr-cars.Rproj`
+## 1. Open the `logitr-cars` folder in Positron
 
 ## 2. Open `code/4.1-model-no_choice.R`
 

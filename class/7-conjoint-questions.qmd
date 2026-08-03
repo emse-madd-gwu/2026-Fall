@@ -8,7 +8,6 @@ execute:
 params:
   class: "7-conjoint-questions"
   logitrcars: true
-  notes: true
 ---
 
 ```{r child = here::here("fragments", "placeholder.qmd")}

@@ -19,7 +19,6 @@ knitr::opts_chunk$set(
 library(tidyverse)
 library(knitr)
 library(kableExtra)
-library(here)
 library(logitr)
 library(fastDummies)
 ```

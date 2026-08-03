@@ -43,7 +43,6 @@ Once installed, you'll need to _load_ the libraries every time you open RStudio:
 
 ```{r, eval=FALSE}
 library(tidyverse)
-library(here)
 ```
 
 ---
@@ -202,8 +201,7 @@ If you **must** open it in Excel:
 ## 1. Create a path to the data
 
 ```{r}
-library(here)
-path_to_data <- here('data', 'data.csv') #<<
+path_to_data <- file.path('data', 'data.csv') #<<
 path_to_data
 ```
 
@@ -220,18 +218,18 @@ data <- read_csv(path_to_data) #<<
 
 ## Using the **here** package to make file paths
 
-The `here()` function builds the path to your **root** to your _working directory_ <br>(this is where your `.Rproj` file lives!)
+The `file.path()` function builds the path to your **root** to your _working directory_ <br>(this is where your `.Rproj` file lives!)
 
 ```{r}
-here()
+file.path()
 ```
 
 --
 
-The `here()` function builds the path to files _inside_ your working directory
+The `file.path()` function builds the path to files _inside_ your working directory
 
 ```{r}
-path_to_data <- here('data', 'data.csv')
+path_to_data <- file.path('data', 'data.csv')
 path_to_data
 ```
 
@@ -253,7 +251,7 @@ path_to_data
 # Back to reading in data
 
 ```{r, eval=FALSE}
-path_to_data <- here('data', 'data.csv')
+path_to_data <- file.path('data', 'data.csv')
 data <- read_csv(path_to_data) #<<
 ```
 
@@ -280,7 +278,7 @@ countdown(
 
 .font90[
 
-1) Use the `here()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
+1) Use the `file.path()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
 
 2) Use the `data` object to answer the following questions:
 
@@ -567,7 +565,7 @@ countdown(
 
 .font90[
 
-1) Use the `here()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
+1) Use the `file.path()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
 
 2) Use the `data` object and the `select()` and `filter()` functions to answer the following questions:
 
@@ -688,7 +686,7 @@ countdown(
 
 .font90[
 
-1) Use the `here()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
+1) Use the `file.path()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
 
 2) Using the `data` object, create the following new variables:
 

@@ -35,7 +35,7 @@ Make sure you have these libraries installed:
 
 ```{r}
 #| eval: false
-install.packages(c("tidyverse", "here"))
+install.packages("tidyverse")
 ```
 
 **Remember: you only need to install packages once!**
@@ -44,12 +44,11 @@ install.packages(c("tidyverse", "here"))
 
 <br>
 
-Once installed, you'll need to _load_ the libraries every time you open RStudio:
+Once installed, you'll need to _load_ the libraries every time you open Positron:
 
 ```{r}
 #| eval: false
 library(tidyverse)
-library(here)
 ```
 
 ---
@@ -221,8 +220,7 @@ If you **must** open it in Excel:
 
 ```{r}
 #| code-line-numbers: "2"
-library(here)
-path_to_data <- here('data', 'data.csv')
+path_to_data <- file.path('data', 'data.csv')
 path_to_data
 ```
 
@@ -239,20 +237,20 @@ data <- read_csv(path_to_data)
 
 ---
 
-## Using the **here** package to make file paths
+## Using `file.path()` to make file paths
 
-The `here()` function builds the path to your **root** to your _working directory_ <br>(this is where your `.Rproj` file lives!)
+Your paths start from **the folder you opened in Positron** <br>(**File › Open Folder…** - not double-clicking a file!)
 
 ```{r}
-here()
+getwd()
 ```
 
 . . .
 
-The `here()` function builds the path to files _inside_ your working directory
+`file.path()` joins the pieces into a path to a file _inside_ that folder
 
 ```{r}
-path_to_data <- here('data', 'data.csv')
+path_to_data <- file.path('data', 'data.csv')
 path_to_data
 ```
 
@@ -260,11 +258,11 @@ path_to_data
 
 # Avoid hard-coding file paths!
 
-### (they can break on different computers)
+### (they break on every computer but yours)
 
 ```{r}
-path_to_data <- 'data/data.csv'
-path_to_data
+#| eval: false
+path_to_data <- '/Users/jhelvy/Documents/madd/week3/data/data.csv'
 ```
 
 # 💩💩💩
@@ -276,7 +274,7 @@ path_to_data
 ```{r}
 #| eval: false
 #| code-line-numbers: "2"
-path_to_data <- here('data', 'data.csv')
+path_to_data <- file.path('data', 'data.csv')
 data <- read_csv(path_to_data)
 ```
 
@@ -304,7 +302,7 @@ countdown(
 
 ::: {.font90}
 
-1) Use the `here()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
+1) Use the `file.path()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
 
 2) Use the `data` object to answer the following questions:
 
@@ -605,7 +603,7 @@ countdown(
 
 ::: {.font90}
 
-1) Use the `here()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
+1) Use the `file.path()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
 
 2) Use the `data` object and the `select()` and `filter()` functions to answer the following questions:
 
@@ -731,7 +729,7 @@ countdown(
 
 ::: {.font90}
 
-1) Use the `here()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
+1) Use the `file.path()` and `read_csv()` functions to load the `data.csv` file that is in the `data` folder. Name the data frame object `data`.
 
 2) Using the `data` object, create the following new variables:
 
