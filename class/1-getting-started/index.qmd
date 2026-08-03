@@ -186,7 +186,7 @@ agenda(1)
 :::
 
 ::: {.fragment}
-## {{< fa calendar >}} 5 total, lowest dropped
+## {{< fa calendar >}} 6 total, lowest dropped
 :::
 
 ::: {.fragment}
@@ -254,7 +254,7 @@ Item                  | Weight | Notes
 ----------------------|--------|-------------------------------------
 Participation / Attendance | 5%     | (Yes, I take attendance)
 Reflections           | 30 %   | Weekly assignment (10 x 3%, lowest dropped)
-Quizzes               | 10 %    | 5 quizzes, lowest dropped
+Quizzes               | 10 %    | 6 quizzes, lowest dropped
 Final Exam            | 10 %   | Take home exam
 Project Proposal      | 5 %    | Teams of 3-4 students
 Survey Plan           | 5 %    |
