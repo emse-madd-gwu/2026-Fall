@@ -14,8 +14,8 @@ Follow these instructions:
 
 1. Download and edit [this template](`r url_template`).
 2. Unzip the template folder. **Make sure you actually unzip it**! (in Windows, right-click it and use "extract all")
-3. Open the .Rproj file to open RStudio.
-4. Inside RStudio, open the ``r hw_file`` file, take notes, and write some example code as you go through the readings / exercises below.
+3. Open the unzipped folder in Positron (**File > Open Folder...**) - open the folder itself, not a file inside it.
+4. Inside Positron, open the ``r hw_file`` file, take notes, and write some example code as you go through the readings / exercises below.
 
 # 2. Readings
 
@@ -28,7 +28,7 @@ To get familiar with the platform, read the [Getting Started](https://surveydown
 For practice, try replicating one of the [template surveys](https://surveydown.org/templates) listed on the surveydown website. The [default](https://surveydown.org/templates/default) survey template will be the easiest to use, but try another template if you are interested. Follow these steps:
 
 1. Download or clone a template of your choice.
-2. In the template you chose, open RStudio, then open the app.R file and click "Run". Then copy-paste the localhost url into your browser to locally preview the survey.
+2. In the template you chose, open the folder in Positron, then open the app.R file and click "Run". Then copy-paste the localhost url into your browser to locally preview the survey.
 3. Make edits to the survey to personalize it. Choose a topic that you find interesting and try modifying at least one question in the survey, then re-render the document to see your changes.
 
 # 4. Reflect
@@ -41,8 +41,4 @@ If you're unsure where to start with a reflection, try filling out this template
 
 # 5. Submit
 
-To submit your assignment, follow these instructions:
-
-1. Render your .qmd file by either clicking the "Render" button in RStudio or running the command ``r paste0('quarto::quarto_render("', hw_file, '")')`` command.
-2. Open the rendered html file and make sure it looks good! Is all the formatting as you expected?
-3. Create a zip file of all the files in your R project folder for this assignment (your ``r hw_file`` and your demo survey files) and submit it to your course GitHub repository (GitHub submission details coming soon).
+{{< include ../fragments/hw-submit.qmd >}}

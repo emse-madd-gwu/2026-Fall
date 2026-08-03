@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
 )
 
 library(tidyverse)
-library(here)
 ```
 
 
@@ -145,8 +144,8 @@ Write code to read in the following two files:
 - `milk_production.csv`: Data on milk production by state
 
 ```{r}
-milk_production <- read_csv(here('data', 'milk_production.csv'))
-pv_cells <- read_csv(here('data', 'pv_cells.csv'))
+milk_production <- read_csv(file.path('data', 'milk_production.csv'))
+pv_cells <- read_csv(file.path('data', 'pv_cells.csv'))
 ```
 
 Now modify the format of each:

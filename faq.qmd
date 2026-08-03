@@ -39,26 +39,28 @@ If you're submitting late, please **send your submission to Professor Helveston 
 
 **No** - see the [policy in the syllabus](syllabus.html#quizzes) on this for any exception.
 
-# R / RSTUDIO STUFF
+# R / POSITRON STUFF
 
-## My R / RStudio is totally [FUBAR](https://en.wikipedia.org/wiki/List_of_military_slang_terms#FUBAR), what should I do? 
+## My R / Positron is totally [FUBAR](https://en.wikipedia.org/wiki/List_of_military_slang_terms#FUBAR), what should I do?
 
-If you want to get back up to speed quickly, you can open a cloud version of RStudio on the web at [https://posit.cloud/plans/free](https://posit.cloud/plans/free). This is by far the easiest and fastest thing to do. 
+If you want to get back up to speed quickly, you can open a cloud version of Positron on the web at [https://posit.cloud/plans/free](https://posit.cloud/plans/free). It isn't the IDE we use in class, but it will run your R code in a pinch.
 
-You can try to troubleshoot, but often the next easiest thing to do is just re-install R and RStudio. Be careful to save your work first!
+You can try to troubleshoot, but often the next easiest thing to do is just re-install R and Positron. Be careful to save your work first!
 
-## RStudio won't let me save my file
+## Positron won't let me save my file
 
 Most often times this occurs for one of two reasons:
 
-1. You may have opened the .R file instead of the .RProj file, in which case RStudio opens, but it may not be "looking" at the correct folder where your .R file lives. As a result, it can't find it on your computer and can't save it. In this case, copy all of the text in your .R file, then re-open RStudio by double clicking on the .RProj file, then open the .R file from inside RStudio and paste your code into the .R file.
-2. If you're on a windows computer, you may have opened RStudio from _inside the zip file_. As a result, you can't save any files because everything is still zipped up. You have to go back and extract the files from the zip file before you can save anything. In this case, copy all of the text in your .R file, then quit RStudio, go unzip the folder, re-open RStudio by double clicking on the .RProj file, then open the .R file from inside RStudio and paste your code into the .R file.
+1. You may have double-clicked the `.qmd` or `.R` file instead of opening the **folder** it lives in. Positron then isn't "looking" at that folder, so your file paths break. Close it, then use **File › Open Folder…** and choose the folder itself.
+2. If you're on a windows computer, you may have opened the file from _inside the zip file_. As a result, you can't save anything because everything is still zipped up. Go back and extract the files from the zip first (right-click the zip and choose "extract all"), then open the extracted folder in Positron.
 
-## I'm trying to read / write some data using `here()` and it says the path doesn't exist.
+## I'm trying to read / write some data using `file.path()` and it says the path doesn't exist.
 
-Have you double-checked that the file name you defined is the same as the data file name? For example, if there is a folder called "data" and inside it a data file called "some_data.csv", then your path should be `here('data', 'some_data.csv')`.
+Have you double-checked that the file name you defined is the same as the data file name? For example, if there is a folder called "data" and inside it a data file called "some_data.csv", then your path should be `file.path('data', 'some_data.csv')`.
 
-If the file names look correct, then see the two issues in the [above question](#rstudio-wont-let-me-save-my-file)
+Paths are relative to the folder you opened in Positron, so also check that you opened the class folder itself — not the folder containing all your class folders.
+
+If the file names look correct, then see the two issues in the [above question](#positron-wont-let-me-save-my-file)
 
 ## I keep seeing a `+` sign in the console...
 
@@ -81,12 +83,12 @@ The easiest way to get out of this is to press the "Escape" key. Do that, and yo
 
 ## How to load a file under my project directory
 
-When using RStudio, we usually open a project by double clicking on the `.Rproj` file. This has two purposes:
+In Positron, you open a project with **File › Open Folder…** and choose the folder itself — never by double-clicking a file inside it. This has two purposes:
 
-1. It opens RStudio and directs you to the project folder.
-2. It sets your working directory to this project folder.
+1. It points Positron at the project folder.
+2. It sets your working directory to that folder, which is what all your file paths are relative to.
 
-For example, say you have an `.Rproj` file located under:
+For example, say you opened the folder located at:
 
 ```{r, eval=FALSE}
 /Users/your_name/Documents/my_project
@@ -103,14 +105,13 @@ Let's load a csv file as an example. Say you have a file located under this dire
 Then, to load it, run:
 
 ```{r, eval=FALSE}
-library(here)
 library(readr)
 
-path <- here("data", "file.csv")
+path <- file.path("data", "file.csv")
 df <- read_csv(path)
 ```
 
-The `here()` function defines your project directory. Its input of `"data"` and `"file.csv"` are below this directory.
+`file.path()` builds the path from the folder you opened in Positron, joining the pieces with the right separator for your operating system. Its inputs of `"data"` and `"file.csv"` are below that folder.
 
 By running `read_csv(path)`, your data is loaded to `df`.
 

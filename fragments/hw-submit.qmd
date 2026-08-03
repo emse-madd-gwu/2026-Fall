@@ -1,0 +1,9 @@
+To submit your assignment, follow these instructions:
+
+1. Render your .qmd file by either clicking the "Preview" button in Positron or running `quarto render` in the terminal.
+2. Open the rendered html file and make sure it looks good! Is all the formatting as you expected?
+3. Commit and push your work using GitHub Desktop: look at the diff, write a short commit message, click **Commit**, then **Push**.
+
+::: {.callout-note title="Remember"}
+Your work isn't submitted until you've **pushed** it. Committing only saves the change on your own computer -- go look at your repo on GitHub.com and confirm your work is actually there before you call this done.
+:::

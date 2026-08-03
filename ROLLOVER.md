@@ -22,9 +22,11 @@ scripted.
 
 For each class week:
 
-- [ ] Update the week's slides in `class/<week>/index.Rmd`, then re-render
-      slides, PDF, and notes zip with `class/render.R` (the copied
-      `index.html` / `.pdf` / `.zip` files are still last year's renders)
+- [ ] Update the week's slides in `class/<week>/index.qmd`, then re-render
+      slides, PDF, and practice zip by running `class/render.R` **from inside
+      that deck folder** (the copied `index.html` / `.pdf` / `.zip` files are
+      still last year's renders). `render.R` derives everything from the folder
+      name, so there is nothing to edit per class.
 - [ ] Restore the class page: in `class/<week>.qmd`, swap the
       `fragments/placeholder.qmd` child back to `fragments/class.qmd`
 - [ ] Release the HW: replace the "Coming soon!" version with the full

@@ -55,7 +55,10 @@ All texts and software for this course is freely available on the web, accessibl
 Go to the Course [Software page](software.qmd) for detailed instructions on how to install the software we'll be using. Here's a quick list:
 
 - R (version 4.1.0 or later), which can be downloaded from [The Comprehensive R Archive Network (CRAN)](https://cloud.r-project.org)
-- RStudio (Desktop Version), a free IDE for R, which can be downloaded from [RStudio](https://rstudio.com/products/rstudio/download/)
+- Positron, a free IDE for R, which can be downloaded from [Posit](https://positron.posit.co/download.html). We will not be using RStudio this semester.
+- Quarto, which can be downloaded from [quarto.org](https://quarto.org/docs/get-started/)
+- GitHub Desktop, which can be downloaded from [desktop.github.com](https://desktop.github.com/download/)
+- An agentic coding tool - we'll use [Claude Code](https://code.claude.com/docs/en/quickstart), which requires a [Claude Pro](https://claude.ai) subscription
 - We'll be using [Slack]({{< var slack >}}){target="_blank"} for most communication.
 
 ## Textbooks

@@ -14,8 +14,8 @@ Follow these instructions:
 
 1. Download and edit [this template](`r url_template`).
 2. Unzip the template folder. **Make sure you actually unzip it**! (in Windows, right-click it and use "extract all")
-3. Open the .Rproj file to open RStudio.
-4. Inside RStudio, open the ``r hw_file`` file, take notes, and write some example code as you go through the readings / exercises below.
+3. Open the unzipped folder in Positron (**File > Open Folder...**) - open the folder itself, not a file inside it.
+4. Inside Positron, open the ``r hw_file`` file, take notes, and write some example code as you go through the readings / exercises below.
 
 # 2. Readings
 
@@ -35,8 +35,4 @@ If you're unsure where to start with a reflection, try filling out this template
 
 # 4. Submit
 
-To submit your assignment, follow these instructions:
-
-1. Render your .qmd file by either clicking the "Render" button in RStudio or running the command ``r paste0('quarto::quarto_render("', hw_file, '")')`` command.
-2. Open the rendered html file and make sure it looks good! Is all the formatting as you expected?
-3. Create a zip file of all the files in your R project folder for this assignment and submit it to your course GitHub repository (GitHub submission details coming soon).
+{{< include ../fragments/hw-submit.qmd >}}

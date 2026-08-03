@@ -1,24 +1,37 @@
 # Software
 
-> **You should install and set everything here _before_ the first day of class.**
+::: {.callout-warning}
 
-1. Sign up for [Slack]({{< var slack >}}). You should have been sent a link to join in the course intro email. If not, email Professor Helveston for an invite link. I recommend using your `@gwu.edu` email to sign up, but if you use another email for another Slack then use that.
+**You should install and set everything here _before_ the first day of class.**
 
-2. Install the Slack app on your phone and **Turn notifications on!**. I'll send all course communication via Slack, so please make sure your notifications are on so you don't miss anything. 
+:::
 
-3. Install the latest version of R and RStudio:
+## Install the core class software
 
-- [Download and install R](https://cloud.r-project.org) (version 4.0.2 or higher)
-- [Download and install RStudio](https://rstudio.com/products/rstudio/download/) (Desktop version)
+1. **Sign up for [Slack]({{< var slack >}})**. You should have been sent a link to join in the course intro email. If not, email Professor Helveston for an invite link. I recommend using your `@gwu.edu` email to sign up, but if you use another email for another Slack then use that.
 
-> **Optional:** Posit has a new IDE called Positron, which is similar to RStudio but has some new features. I encourage you to try it out if you want, but it's not required for this course. You can download it [here](https://positron.posit.co/download.html).
+2. **Install the Slack app** on your phone and **Turn notifications on!**. I'll send all course communication via Slack, so please make sure your notifications are on so you don't miss anything.
 
-4. If you have a Mac, install [XQuartz](https://www.xquartz.org/). This is needed for making some figures and is only for Mac (if you're on Windows or Linux, skip this step).
+3. [**Download and install R**](https://cloud.r-project.org) (version 4.0.2 or higher). We'll still be doing all our analysis in R -- this course just changes *who's typing the code*, not the language.
 
-5. [Download and install Quarto](https://quarto.org/docs/get-started/)
+4. **Install Positron**, the IDE we'll use all semester: [download it here](https://positron.posit.co/download.html) and follow the install instructions for your OS. Positron is Posit's newer IDE (built by the same company behind RStudio) and is what we'll use to work with R, Quarto, and Claude Code together in one place. We will not be using RStudio this semester.
 
-6. Sign up for [Posit Cloud](https://posit.cloud/plans/free)^["Posit" is the company that makes "RStudio", the software we'll use to work with R.] (the free version). It's basically the same thing as RStudio, but accessible via a web browser. If things aren't working on your computer, this is a great backup to quickly get back to working in RStudio.
+5. If you have a Mac, install [XQuartz](https://www.xquartz.org/). This is needed for making some figures and is only for Mac (if you're on Windows or Linux, skip this step).
 
-7. You'll need to install some R packages in RStudio that we will use throughout the semester. To do so, open RStudio then copy-paste [this code](./content/packages.R) into the console and press Return. This will install all the packages listed in the file.
+6. [**Download and install Quarto**](https://quarto.org/docs/get-started/)
+
+7. **Install course R packages**: Open Positron, open its R console, then copy-paste [this code](./content/packages.R) into the console and press Return. This will install all the packages listed in the file.
+
+8. [**Download and install GitHub Desktop**](https://desktop.github.com/download/)
+
+9. **Create your GitHub account**: If you do not yet have a GitHub account, you'll need to [create one](https://github.com/signup?). Choose a user name that you like, recognizing that this will be viewed by many in the professional world (Professor Helveston's is [jhelvy](https://github.com/jhelvy/)), and use a personal email address that will follow you after leaving GW (I recommend **not** using your GW email as it eventually expires).
+
+## Install an agentic CLI tool
+
+This course uses Claude Code as our primary agentic tool. If you do not already have a Claude subscription, you will need to sign up for one. You'll need at least a [Claude Pro](https://claude.ai) subscription to use Claude Code (a free account isn't sufficient).
+
+Once you have an account, **install Claude Code** following the official [Quickstart guide](https://code.claude.com/docs/en/quickstart). Once installed, verify it works: open Positron, open its integrated terminal, and run `claude` -- it should start a conversation and prompt you to log in.
+
+Alternatively, if you already have another agentic coding tool set up that you'd rather use instead -- e.g. [Google Gemini CLI](https://geminicli.com/) or OpenAI's Codex CLI -- that's fine, the underlying skills (directing an agent, verifying its output) transfer. Just know that in-class instruction, troubleshooting help, and these materials will all assume Claude Code, so you're on your own for translating anything tool-specific.
 
 That's it - you're all set for class!

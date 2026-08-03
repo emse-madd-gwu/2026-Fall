@@ -2,28 +2,80 @@
 title: "Getting Set Up: GitHub & Agentic Tools"
 params:
   number: 1
-  purpose: 'The purpose of this assignment is to get set up with the tools we will use all semester: GitHub for hosting and submitting your work, and an agentic coding workflow for working with R.'
+  purpose: "This course is built around a fundamental shift in how we do data analysis. We used to live in a paradigm where we hand-wrote every line of code. Instead, we now direct an AI coding agent (e.g., Claude Code) to do the majority of the coding while our job changes to supervising, verifying, and taking responsibility for the resulting analysis produced by the code. This assignment is designed to make sure you have all your tools installed and properly configured and to ensure you can have productive conversations with an AI agent. Going forward, we will focus class time on working with agents rather than troubleshooting installations and configurations."
 ---
 
 ```{r child = here::here("fragments", "hw.qmd")}
 ```
 
-# 1. Software
+# 1. Install Your Tools
 
-If you haven't yet, go to the [Software](../software.html) page and install all the software we'll need for this course, including {{< fa brands r-project >}}, RStudio, and Git.
+If you haven't yet, go to the [software page](../software.qmd) and make sure you have everything installed on your computer.
 
-# 2. Create your course GitHub repository
+Then, **verify everything works**: open Positron, open a folder (any folder will do for now), open the terminal window in Positron, and run `claude` (or launch a different agent if you're not using Claude Code). If it starts a conversation and asks for your login, it's working.
 
-_Coming soon_ — this section will walk you through creating your GitHub account, setting up your course repository, and connecting it to RStudio. This is the repository you'll use to submit every assignment this semester.
+If you get stuck on installation, post in Slack and we can help you. Don't wait until Monday night - ask sooner!
 
-# 3. Set up your agentic workflow
+# 2. Get familiar with the course
 
-_Coming soon_ — this section will walk you through setting up the agentic coding tools we'll use alongside R throughout the course.
+Follow [Snoop's advice](https://www.youtube.com/watch?v=Tnlaokj1opA) and read the entire [Course Syllabus](../syllabus.html) (actually read the whole thing). Then review the [schedule](../schedule.html) and make sure to note important upcoming deadlines.
 
-# 4. Reflect
+This course is built around a semester-long team project, so pay particular attention to the [project overview](../project/0-overview.html) and the dates for each project deliverable.
 
-Reflect on what you've learned while getting set up. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph and include at least one question.
+# 3. Make your first GitHub repo
 
-# 5. Submit
+Using your GitHub account (which you should have made when installing the course software, if you didn't already have one), use GitHub Desktop to make a simple demo repo. This 2-min video recording shows the steps, which are also listed below: [https://youtu.be/VlD8N0ZClBo](https://youtu.be/VlD8N0ZClBo)
 
-Submit your assignment by pushing your work to your course GitHub repository. (Detailed GitHub submission instructions coming soon.)
+1. GitHub Desktop → **File › New Repository** → name it `madd-practice`.
+2. Click on the box for "initialize this repository with a README", and choose "None" in the "Git Ignore" and "License" parts.
+3. Publish it to GitHub.com - make it public, not private (the video shows private).
+4. In GitHub Desktop, click on "Show in Finder" to open your local clone.
+5. Open the README.md file in Positron and add a line or two of text, save it.
+6. Back in GitHub Desktop, notice the "diff" (showing the changes made).
+7. Write a description of your changes in the bottom-left box, then Commit your changes.
+8. Push your change to github.com (button with up arrow at the top)
+9. Look at your **History** tab to see changes, then click on "View on GitHub" to confirm your changes are in the main repo.
+10. When you're done, post the link to your public repo in the `#hw` channel.
+
+# 4. Clone your course repo
+
+The repo you just made was practice. Everything you actually submit this semester will go in a single **private** repo that I have already created for you in the course's GitHub organization. It comes pre-loaded with a folder for each assignment, so you never have to make one yourself.
+
+::: {.callout-note}
+
+You can check if this folder exists by going to the [list of repos](https://github.com/orgs/madd-f26/repositories) in the course organization GitHub account and searching for your repo, which should be labeled `madd-netID`, where `netID` is your GW netID (not your GitHub user name). If you do not see a repo there, check that you have added your **GitHub username** in [this sheet](https://docs.google.com/spreadsheets/d/14bLHRcs7hQUX4LDLNKllcA9UhLyuYBZH6VH75Y2_fyU/edit?usp=sharing) next to your name
+
+:::
+
+1. Check your email for an invitation to join the `madd-f26` organization on GitHub and **accept it**. Check your spam folder if you don't see it. You can't reach your repo until you've accepted, so do this first. Message Prof. Helveston on Slack if you can't find it.
+2. In GitHub Desktop → **File › Clone Repository** → the **GitHub.com** tab. Your repo will be in the list as `madd-f26/madd-netID`, where `netID` is your GW netID (not your GitHub user name). Select it and click **Clone**.
+3. Choose a sensible place to put it on your computer. You'll be opening this folder all semester, so don't bury it somewhere you'll never find again.
+4. Click "Show in Finder" and look around. You should see a folder for each assignment, including `hw1`, which you'll need later to add your [reflection](#reflect) at the end of this assignment.
+
+# 5. Read about Claude Code
+
+Read [how Claude Code is used in practice](https://www.anthropic.com/research/claude-code-expertise) (Anthropic). Read this one carefully. Its central finding is directly relevant to this whole course: *domain expertise (not coding proficiency) is what makes people effective with a coding agent.* That's the whole premise of how this class is taught this semester -- you don't need to be a stronger programmer than the agent to build good choice models, but you do need to become a better judge of whether its output is *accurate*, and to develop the habits and workflow patterns that build that judgement.
+
+# 6. Light practice: your first conversation with an agent
+
+Open the course repo you just cloned in Positron (**File › Open Folder**, then choose that folder). Open the terminal window, run `claude`, and try a couple of low-stakes things:
+
+- Ask it to look around the folder and tell you what's in it. Do this one first -- it shows you that the agent can see the files in whatever folder you've opened, which is the single most important thing to understand about working with one.
+- Ask it what a `.qmd` file does, how it is different from a plain `.R` script, and for a quick demonstration of each. Ask it to put the demonstration files in the `hw1` folder.
+
+You don't need a data file or a real analysis task for this. The point is just to see the agent read, reason about, and explain something concrete, and to get a feel for the back-and-forth of working with an agent.
+
+If the agent creates any files while you're poking around, that's fine. You don't have to commit them. The only thing that has to end up on GitHub is your reflection (next step).
+
+# 7. Reflect {#reflect}
+
+In your course repo, open the file `hw1/reflection.qmd` and write at least a paragraph reflecting on your experiences from this assignment. Some prompts you could use:
+
+- What surprised you about installing or using Claude Code for the first time?
+- Where do you already have questions or doubts about directing an AI agent to write code, versus writing it yourself?
+- The Anthropic reading argues that domain expertise matters more than coding skill for using an agent well. Do you buy that? Why or why not?
+- "I used to think ______, now I think ______ 🤔"
+
+# 8. Submit
+
+{{< include ../fragments/hw-submit.qmd >}}

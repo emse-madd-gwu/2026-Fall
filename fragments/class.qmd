@@ -5,6 +5,11 @@ path_pdf <- file.path(params$class, paste0(params$class, ".pdf"))
 path_notes <- file.path(params$class, paste0(params$class, ".zip"))
 path_logitrcars <- "https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip"
 path_surveydown <- "https://jhelvy.github.io/2025-surveydown-workshop/"
+
+# Lecture-only weeks ship no practice files, so there's no zip to link to.
+# Driven off the file itself rather than a `notes:` param so a class page can
+# never advertise a zip that class/render.R didn't build.
+has_notes <- file.exists(here::here("class", path_notes))
 ```
 
 ::: {.grid}
@@ -40,11 +45,16 @@ path_surveydown <- "https://jhelvy.github.io/2025-surveydown-workshop/"
 
 **CLASS PRACTICE**
 
-::: {.content-hidden unless-meta=params.notes}
+```{r}
+#| results: asis
 
-<a href=`r path_notes` class="btn-notes"><i class="fas fa-download"></i> Notes zip file</a>
-
-:::
+if (has_notes) {
+  cat(
+    '<a href=', path_notes,
+    ' class="btn-notes"><i class="fas fa-download"></i> Practice files</a>\n'
+  )
+}
+```
 
 ::: {.content-hidden unless-meta=params.logitrcars}
 

@@ -1,15 +1,10 @@
-# Run this from within a class folder's RStudio project (open its .Rproj first)
-# to (re)build that class's slides.
+# Run this from inside the deck folder -- everything below keys off `lesson`.
+# Deliberately NOT here::here(): deck folders sit inside the site's Quarto
+# project, so here() roots at the repo, not the deck.
+lesson <- basename(getwd())
 
-lesson <- strsplit(here::here(), "/")[[1]]
-lesson <- lesson[length(lesson)]
-
-# Refresh this class's copy of the shared Quarto extensions (lexis + fontawesome).
-# The source of truth is class/_extensions/ — edit there, never the per-class copy.
-# Each class needs its own copy because the class folders are render-excluded in
-# _quarto.yml, so Quarto only looks for _extensions inside the folder itself.
-unlink("_extensions", recursive = TRUE)
-file.copy("../_extensions", ".", recursive = TRUE)
+# Note: each deck's _extensions is a symlink to class/_extensions (lexis +
+# fontawesome), the single source of truth.
 
 # Build the slides
 renderthis::to_html("index.qmd", "index.html")
@@ -18,16 +13,65 @@ renderthis::to_pdf("index.html", paste0(lesson, ".pdf"))
 # Compress the PDF to reduce size
 tools::compactPDF(paste0(lesson, ".pdf"), gs_quality = 'ebook')
 
-# Files to bundle into the downloadable class-notes zip.
-# Edit this list per lesson as needed; only files that exist are included.
-notes_files <- c(
+# Zip up the class practice files students download from the class page.
+#
+# Keyed by folder name, not week number, so renumbering the schedule can't
+# silently hand out the wrong week's files. Most weeks are just the base set;
+# `practice_extras` lists the one-off files a few weeks add. Anything listed
+# that doesn't exist in this folder is dropped, so a week that skips one of the
+# base files still builds fine.
+
+# Both extensions are listed because the early weeks hand out plain scripts and
+# the later ones hand out Quarto docs; file.exists() drops whichever is absent.
+practice_base <- c(
   'data',
   'practice.qmd',
-  'practice-solutions.qmd'
+  'practice-solutions.qmd',
+  'practice.R',
+  'practice-solutions.R'
 )
-notes_files <- notes_files[file.exists(notes_files)]
 
-zip::zip(
-  zipfile = paste0(lesson, ".zip"),
-  files = c(notes_files, paste0(lesson, ".Rproj"))
+practice_extras <- list(
+  '1-getting-started' = 'intro-to-R.R',
+  '5-quarto-plotting' = c(
+    'bears.qmd',
+    'bears_solutions.qmd',
+    'ggplot2.qmd',
+    'ggplot2_solutions.qmd',
+    'logo.png',
+    'quarto_demo.qmd'
+  ),
+  '7-conjoint-questions' = c(
+    'conjoint_buttons',
+    'conjoint_tables'
+  ),
+  '8-utility-models' = 'simulate-choices.R',
+  '11-doe-power-analysis' = c(
+    'balance-orthogonality.qmd',
+    'design-efficiency.qmd',
+    'interactions.qmd',
+    'power-analysis.qmd'
+  )
 )
+
+extras <- if (lesson %in% names(practice_extras)) {
+  practice_extras[[lesson]]
+} else {
+  character(0)
+}
+
+practice_files <- c(practice_base, extras)
+practice_files <- practice_files[file.exists(practice_files)]
+
+zipfile <- paste0(lesson, ".zip")
+unlink(zipfile)
+
+# Lecture-only weeks have nothing to hand out -- no zip, and the class page
+# drops the download button on its own.
+#
+# Nothing but the practice files goes in: decks and practice files build paths
+# with file.path() relative to their own folder, so there is no .Rproj or .here
+# marker to ship.
+if (length(practice_files)) {
+  zip::zip(zipfile = zipfile, files = practice_files)
+}

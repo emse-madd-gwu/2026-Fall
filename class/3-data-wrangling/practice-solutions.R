@@ -1,6 +1,5 @@
  # install.packages(c("tidyverse", "here"))
 library(tidyverse)
-library(here)
 
 # The setting below is optional, it lets you see all the columns in a data frame
 options(dplyr.width = Inf)
@@ -69,8 +68,8 @@ colnames(msleep)
 
 # DATA FROM CSV FILE ----------------------------------------------------------
 
-# Build path to data using here()
-path_to_data <- here('data', 'data.csv')
+# Build path to data using file.path()
+path_to_data <- file.path('data', 'data.csv')
 path_to_data
 
 # Read in data using read_csv()
@@ -112,7 +111,7 @@ max(data$cost_repairs_infl_adj, na.rm = TRUE)
 # filter() & select() ---------------------------------------------------------
 
 # Read in the data.csv file in the data folder:
-path_to_data <- here('data', 'data.csv')
+path_to_data <- file.path('data', 'data.csv')
 data <- read_csv(path_to_data)
 
 # Create a new data frame, dc, that contains only the rows from DC airports.
@@ -148,7 +147,7 @@ length(unique(dc_dawn_birds$species))
 # mutate() & arrange() --------------------------------------------------------
 
 # Read in the data.csv file in the data folder:
-path_to_data <- here('data', 'data.csv')
+path_to_data <- file.path('data', 'data.csv')
 data <- read_csv(path_to_data)
 
 # Create the height_miles variable (the height variable converted to miles)

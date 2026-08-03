@@ -20,7 +20,6 @@ library(tidyverse)
 library(knitr)
 library(patchwork)
 library(kableExtra)
-library(here)
 library(logitr)
 ```
 
@@ -114,7 +113,7 @@ b) What price would Bar 2 have to be to get a 50% market share?
 1. Run the code chunk to read in the `data.csv` file in the "data" folder.
 
 ```{r}
-data <- read_csv(here('data', 'data.csv'))
+data <- read_csv(file.path('data', 'data.csv'))
 ```
 
 2. Write code to estimate the following utility model (HINT: you may need to make some dummy-coded variables!):

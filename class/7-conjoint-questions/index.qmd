@@ -213,9 +213,8 @@ mtcars %>%
 ```{r}
 #| eval: false
 library(tidyverse)
-library(here)
 
-df <- read_csv(here("data", "competitors.csv"))
+df <- read_csv(file.path("data", "competitors.csv"))
 df %>%
   kable()
 ```
@@ -225,9 +224,8 @@ df %>%
 ```{r}
 #| echo: false
 library(tidyverse)
-library(here)
 
-df <- read_csv(here("data", "competitors.csv"))
+df <- read_csv(file.path("data", "competitors.csv"))
 df %>%
   kable()
 ```
@@ -311,7 +309,7 @@ agenda(1)
 {{< inverse >}}
 {{< center >}}
 
-# Open `logitr-cars.Rproj`
+# Open the `logitr-cars` folder in Positron
 
 ---
 
@@ -472,7 +470,7 @@ countdown(
 
 ## Your Turn
 
-## Open `survey.Rproj` in "conjoint_buttons" template
+## Open the "conjoint_buttons" template folder in Positron
 
 With your team, discuss the specific choice question design for your project
 

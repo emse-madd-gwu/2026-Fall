@@ -208,9 +208,8 @@ mtcars %>%
 
 ```{r, eval=FALSE}
 library(tidyverse)
-library(here)
 
-df <- read_csv(here("data", "competitors.csv"))
+df <- read_csv(file.path("data", "competitors.csv"))
 df %>% 
   kable()
 ```
@@ -219,9 +218,8 @@ df %>%
 
 ```{r, echo=FALSE}
 library(tidyverse)
-library(here)
 
-df <- read_csv(here("data", "competitors.csv"))
+df <- read_csv(file.path("data", "competitors.csv"))
 df %>% 
   kable()
 ```

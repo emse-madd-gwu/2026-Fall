@@ -14,8 +14,8 @@ Follow these instructions:
 
 1. Download and edit [this template](`r url_template`).
 2. Unzip the template folder. **Make sure you actually unzip it**! (in Windows, right-click it and use "extract all")
-3. Open the .Rproj file to open RStudio.
-4. Inside RStudio, open the ``r hw_file`` file, take notes, and write some example code as you go through the readings / exercises below.
+3. Open the unzipped folder in Positron (**File > Open Folder...**) - open the folder itself, not a file inside it.
+4. Inside Positron, open the ``r hw_file`` file, take notes, and write some example code as you go through the readings / exercises below.
 
 # 2. Readings
 
@@ -23,7 +23,7 @@ This is your last homework! Okay, well not really - your homework next week will
 
 For this week, the only thing you will look over is the concept of a _sensitivity analysis_. Last week in class we covered how to use our estimated logit model to conduct a market simulation, which gave us predicted market shares for different products. Naturally, one of the key things we might want to know is how sensitive our predicted market shares are to changes in our attributes.
 
-To understand how we calculate such sensitivities, take a look at the [logitr-cars](https://github.com/jhelvy/logitr-cars) repo. Download the repo using [this link](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip), then open the R project file to open RStudio. Then in RStudio, open the following two files:
+To understand how we calculate such sensitivities, take a look at the [logitr-cars](https://github.com/jhelvy/logitr-cars) repo. Download the repo using [this link](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip), then open the folder in Positron (**File > Open Folder...**). Then open the following two files:
 
 - `9.1-compute-sensitivity.R`
 - `9.2-plot-sensitivity.R`
@@ -54,8 +54,4 @@ If you're unsure where to start with a reflection, try filling out this template
 
 # 4. Submit
 
-To submit your assignment, follow these instructions:
-
-1. Render your .qmd file by either clicking the "Render" button in RStudio or running the command ``r paste0('quarto::quarto_render("', hw_file, '")')`` command.
-2. Open the rendered html file and make sure it looks good! Is all the formatting as you expected?
-3. Create a zip file of all the files in your R project folder for this assignment and submit it to your course GitHub repository (GitHub submission details coming soon).
+{{< include ../fragments/hw-submit.qmd >}}
