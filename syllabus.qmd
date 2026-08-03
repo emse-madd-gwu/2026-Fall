@@ -114,7 +114,7 @@ Item                  | Weight | Notes
 ----------------------|--------|-------------------------------------
 Participation / Attendance | 5%     | (Yes, I take attendance)
 Reflections (11)          | 30 %    | Weekly assignment (10 x 3%), lowest 1 dropped
-Quizzes (5)               | 10 %    | Lowest 1 dropped
+Quizzes (6)               | 10 %    | Lowest 1 dropped
 Final Exam            | 10 %   | Take home exam
 Project Proposal      | 5 %    | Teams of 3-4 students
 Survey Plan           | 5 %    |
