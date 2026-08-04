@@ -674,24 +674,13 @@ agenda(4)
 
 ---
 
-# Positron Orientation
+{{< bg-color "#ffffff" >}}
 
-::: {.col width="70%"}
+# [Positron Orientation]{.center}
 
 <center>
-<img src="images/test.png" width=100%>
+<img src="images/positron.png" width=90%>
 </center>
-
-:::
-
-::: {.col width="30%"}
-
-- Know the panes
-- Customize the layout
-- Customize the look
-- The **terminal** is where we'll run our agent
-
-:::
 
 ---
 
@@ -703,29 +692,25 @@ agenda(4)
 
 ---
 
-# View prior code in history pane
-
-<img src="images/rstudio-panes.png" width=500>
-
-. . .
-
-# Use "up" arrow see previous code
-
----
-
 # Staying organized
+
+<br>
 
 . . .
 
 ## 1) Save your code in .R files
 
-> ### &zwj;File > New File > R Script
+<br>
 
 . . .
 
-## 2) Keep work in R Project files
+## 2) Keep all related work in folders
 
-> ### File > New Project...
+<br>
+
+. . .
+
+## 3) Always open your folder from Positron
 
 ---
 
@@ -747,7 +732,11 @@ countdown(
 
 ## Your turn
 
+<br>
+
 ### A. Practice getting organized
+
+<br>
 
 1. Make a new folder called `week1`, then open it in Positron (**File > Open Folder...**).
 2. Create a new R script and save it as `practice.R`.
@@ -759,6 +748,8 @@ countdown(
 
 ### B. Creating & working with objects
 
+<br>
+
 1). Create objects to store the values in this table:
 
 | City              | Area   (sq. mi.) | Population (thousands) |
@@ -766,6 +757,8 @@ countdown(
 | San Francisco, CA | 47             | 884                    |
 | Chicago, IL       | 228            | 2,716                  |
 | Washington, DC    | 61             | 694                    |
+
+<br>
 
 2) Using the objects you created, answer the following questions:
 
@@ -780,7 +773,7 @@ countdown(
 {{< middle >}}
 {{< bg-color "#ffffff" >}}
 
-# >15,000 [packages](https://cran.r-project.org/web/packages/available_packages_by_name.html) on the [CRAN](https://cran.r-project.org/)
+# >20,000 [packages](https://cran.r-project.org/web/packages/available_packages_by_name.html) on the [CRAN](https://cran.r-project.org/)
 
 <center>
 <img src="images/cran.png" width=600>
@@ -790,9 +783,12 @@ countdown(
 
 # Installing packages
 
+<br>
+
 . . .
 
 ### `install.packages("packagename")`
+
 ### (The package name **must** be in quotes)
 
 ```{r}
@@ -800,6 +796,8 @@ countdown(
 install.packages("packagename") # This works
 install.packages(packagename) # This doesn't work
 ```
+
+<br>
 
 . . .
 
@@ -809,16 +807,23 @@ install.packages(packagename) # This doesn't work
 
 # Loading packages
 
+<br>
+
 . . .
 
 ### `library(packagename)`: Loads all the functions in a package
+
 ### (The package name _doesn't_ need to be in quotes)
+
+<br>
 
 ```{r}
 #| eval: false
 library("packagename") # This works
 library(packagename) # This also works
 ```
+
+<br>
 
 . . .
 
@@ -831,6 +836,8 @@ library(packagename) # This also works
 
 # Installing vs. Loading
 
+<br>
+
 <center>
 <img src="images/package_lightbulb.png" width=1000>
 </center>
@@ -839,12 +846,16 @@ library(packagename) # This also works
 
 ## Example: **wikifacts**
 
+<br>
+
 Install the [Wikifacts](https://github.com/keithmcnulty/wikifacts) package, by Keith McNulty:
 
 ```{r}
 #| eval: false
 install.packages("wikifacts")
 ```
+
+<br>
 
 . . .
 
@@ -854,6 +865,8 @@ Load the package:
 #| eval: false
 library(wikifacts) # Load the library
 ```
+
+<br>
 
 . . .
 
@@ -873,10 +886,14 @@ wikifacts::wiki_randomfact()
 
 ## Example: **wikifacts**
 
+<br>
+
 Now, restart your R session in Positron:
 > Session -> Restart R
 
 . . .
+
+<br>
 
 Try using the package function again:
 
@@ -889,9 +906,13 @@ wiki_randomfact()
 
 # Using only _some_ package functions
 
+<br>
+
 ### You don't always have to load the whole library.
 
 . . .
+
+<br>
 
 ### Functions can be accessed with this pattern:
 `packagename::functionname()`

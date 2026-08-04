@@ -1,6 +1,3 @@
-# Run this from inside the deck folder -- everything below keys off `lesson`.
-# Deliberately NOT here::here(): deck folders sit inside the site's Quarto
-# project, so here() roots at the repo, not the deck.
 lesson <- basename(getwd())
 
 # Note: each deck's _extensions is a symlink to class/_extensions (lexis +
@@ -15,14 +12,6 @@ tools::compactPDF(paste0(lesson, ".pdf"), gs_quality = 'ebook')
 
 # Zip up the class practice files students download from the class page.
 #
-# Keyed by folder name, not week number, so renumbering the schedule can't
-# silently hand out the wrong week's files. Most weeks are just the base set;
-# `practice_extras` lists the one-off files a few weeks add. Anything listed
-# that doesn't exist in this folder is dropped, so a week that skips one of the
-# base files still builds fine.
-
-# Both extensions are listed because the early weeks hand out plain scripts and
-# the later ones hand out Quarto docs; file.exists() drops whichever is absent.
 practice_base <- c(
   'data',
   'practice.qmd',
