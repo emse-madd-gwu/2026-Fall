@@ -1,0 +1,129 @@
+<!--
+Shared Typst styling for the one-page class summaries (`class/N-stub/summary.qmd`).
+
+This is the single source of truth for how every summary PDF looks. Include it
+right after the YAML header of a summary.qmd with Quarto's include shortcode,
+pointing at `../_summary-styles.qmd`. (Not written out literally here — Quarto
+expands shortcodes even inside HTML comments, so an example would make this file
+include itself forever.)
+
+Then open the sheet with the header banner and switch to two columns:
+
+    ```{=typst}
+    #summary-header(1, "Getting Started", "August 26, 2026")
+    #show: rest => columns(2, rest)
+    ```
+
+Everything below is raw Typst: `#let` bindings and `set`/`show` rules defined
+here stay in scope for the rest of the document, since Quarto concatenates all
+`{=typst}` blocks into one .typ file.
+
+Authoring note: don't pack symbol-only inline code into a middot-separated run
+(`` `#` `` · `` `-` `` · `` `1.` ``). At 7.5pt the symbols are indistinguishable
+from the separators and it reads as a rendering failure. Use a two-column table
+instead. Middot runs are fine for lists of *words* (software names, dates).
+-->
+
+```{=typst}
+// ---- Palette (mirrors class/_extensions/lexis/lexis.scss) --------------------
+#let accent = rgb("#E74A2F")   // $color-red
+#let ink    = rgb("#121212")   // $color-black
+#let muted  = rgb("#5f5f5f")
+#let hairline = rgb("#d8d8d8")
+#let wash   = rgb("#f2f2f2")
+#let codeink = rgb("#2c8475")  // $color-darkgreen, matches inline code on slides
+
+// ---- Base text --------------------------------------------------------------
+#set text(font: "Source Sans Pro", size: 8.6pt, fill: ink)
+#set par(justify: false, leading: 0.52em, spacing: 0.62em)
+#show link: set text(fill: rgb("#007bff"))
+
+// Code. Careful here: Quarto's syntax highlighter emits every *token* as its own
+// inline `raw()` and joins lines with `raw("\n")`, so a `#show raw.where(block:
+// false)` rule that wraps tokens in a box silently destroys the line breaks in
+// every code block. Only touch the font, never the layout.
+#show raw: set text(font: "Fira Mono", size: 7.5pt)
+
+// Code blocks come through Quarto's `Skylighting` helper (defined in the
+// template preamble), which hardcodes a light-gray 8pt-inset block. Shadow it
+// here with a tighter, on-brand version — a later top-level `#let` wins for
+// every call after it, and all of ours come after.
+#show raw.where(block: true): set block(fill: wash, inset: 5pt, radius: 2.5pt)
+#let Skylighting(fill: none, number: false, start: 1, sourcelines) = {
+  let lines = []
+  for ln in sourcelines { lines = lines + ln + raw("\n") }
+  block(
+    fill: wash, width: 100%, inset: (x: 5pt, y: 4.5pt), radius: 2.5pt,
+    stroke: (left: 1.5pt + rgb("#dcdcdc")),
+    lines,
+  )
+}
+
+// ---- Headings ---------------------------------------------------------------
+// Level 1 = section header (colored rule). Level 2 = sub-header inside a section.
+#set heading(numbering: none)
+#show heading.where(level: 1): it => block(width: 100%, above: 1.0em, below: 0.5em, {
+  text(font: "Fira Sans", size: 9.5pt, weight: 700, fill: accent, tracking: 0.4pt,
+       upper(it.body))
+  v(-0.55em)
+  line(length: 100%, stroke: 0.6pt + accent)
+})
+#show heading.where(level: 2): it => block(above: 0.75em, below: 0.3em,
+  text(font: "Fira Sans", size: 8.8pt, weight: 600, fill: ink, it.body))
+
+// ---- Lists ------------------------------------------------------------------
+#set list(marker: text(fill: accent)[•], indent: 0.35em, body-indent: 0.4em,
+          spacing: 0.42em, tight: true)
+#set enum(indent: 0.35em, body-indent: 0.4em, spacing: 0.42em, tight: true)
+
+// ---- Tables -----------------------------------------------------------------
+#set table(
+  stroke: (x, y) => (top: if y == 1 { 0.6pt + hairline } else { none },
+                     bottom: none, left: none, right: none),
+  inset: (x: 3.5pt, y: 2.6pt),
+  fill: (_, y) => if y == 0 { none } else if calc.even(y) { wash } else { none },
+)
+#show table.cell.where(y: 0): set text(font: "Fira Sans", weight: 600, size: 8.2pt)
+#show figure: set block(above: 0.7em, below: 0.7em)
+// Tables are reference material — a table split across a column break is worse
+// than the whitespace you get from pushing the whole thing to the next column.
+#show table: it => block(breakable: false, it)
+
+// ---- Callout: the one thing to remember -------------------------------------
+#let keypoint(body) = block(
+  width: 100%, fill: rgb("#fdeeeb"), inset: 6pt, radius: 3pt,
+  stroke: (left: 2.5pt + accent),
+  text(size: 8.4pt, body),
+)
+
+// ---- Header banner ----------------------------------------------------------
+#let summary-header(week, title, date) = block(width: 100%, breakable: false, {
+  grid(
+    columns: (1fr, auto),
+    align: (left + bottom, right + bottom),
+    {
+      text(font: "Fira Sans", size: 7.4pt, weight: 600, fill: muted, tracking: 0.6pt,
+           upper("EMSE 4572 / 6572 · Exploratory Data Analysis · Fall 2026"))
+      v(-0.55em)
+      text(font: "Fira Sans", size: 19pt, weight: 700)[Week #week: #title]
+    },
+    text(font: "Fira Sans", size: 7.8pt, fill: muted)[#date],
+  )
+  v(-0.35em)
+  line(length: 100%, stroke: 1.8pt + accent)
+  v(0.2em)
+})
+
+// ---- Page footer ------------------------------------------------------------
+#set page(footer: context {
+  set text(font: "Fira Sans", size: 7pt, fill: muted)
+  line(length: 100%, stroke: 0.4pt + hairline)
+  v(0.1em)
+  grid(
+    columns: (1fr, auto),
+    align: (left, right),
+    link("https://eda.seas.gwu.edu/2026-Fall/")[eda.seas.gwu.edu/2026-Fall],
+    [#counter(page).get().first() / #counter(page).final().first()],
+  )
+})
+```
