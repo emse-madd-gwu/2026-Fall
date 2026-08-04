@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Conjoint Surveys in surveydown – EMSE 6035</title>
+<title>Exam Prep: Auditing an AI-Generated Analysis – EMSE 6035</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -84,12 +84,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Conjoint Surveys in surveydown – EMSE 6035">
+<meta property="og:title" content="Exam Prep: Auditing an AI-Generated Analysis – EMSE 6035">
 <meta property="og:description" content="Course website for Fall 2026 semester of the EMSE course “Marketing Analytics for Design Decisions” at GWU">
 <meta property="og:image" content="https://madd.seas.gwu.edu/2026-Fall/hw/images/logo.png">
 <meta property="og:site_name" content="EMSE 6035">
 <meta property="og:locale" content="es_ES">
-<meta name="twitter:title" content="Conjoint Surveys in surveydown – EMSE 6035">
+<meta name="twitter:title" content="Exam Prep: Auditing an AI-Generated Analysis – EMSE 6035">
 <meta name="twitter:description" content="Course website for Fall 2026 semester of the EMSE course “Marketing Analytics for Design Decisions” at GWU">
 <meta name="twitter:image" content="https://madd.seas.gwu.edu/2026-Fall/hw/images/logo-square.png">
 <meta name="twitter:creator" content="@johnhelveston">
@@ -314,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Conjoint Surveys in surveydown</h1>
+<h1 class="title">Exam Prep: Auditing an AI-Generated Analysis</h1>
 </div>
 
 
@@ -332,9 +332,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <blockquote class="blockquote">
-<p><strong>Due</strong>: Oct 05 by 11:59pm</p>
+<p><strong>Due</strong>: Nov 29 by 11:59pm</p>
 <p><strong>Weight</strong>: This assignment is worth 2.5% of your final grade.</p>
-<p><strong>Purpose</strong>: The purpose of this assignment is to get familiar with how to implement a full conjoint survey in surveydown.</p>
+<p><strong>Purpose</strong>: The purpose of this assignment is to practice the single most important skill you’ll need when an AI does your data work for you: knowing when it is wrong. You’ll audit a complete conjoint analysis that runs cleanly, reads confidently, and gets the client’s answer backwards. It is also your preparation for the in-class final exam on 12/2.</p>
 <p><strong>Submit</strong>: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).</p>
 <p><strong>Assessment</strong>: This assignment is graded using a check system:</p>
 <ul>
@@ -346,27 +346,32 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <section id="get-organized" class="level1">
 <h1>1. Get Organized</h1>
-<p>Follow these instructions:</p>
+<p>The files for this assignment are already in your course GitHub repository, in the <code>hw13/</code> folder:</p>
+<ul>
+<li><code>soda-analysis.qmd</code> — the analysis you are auditing.</li>
+<li><code>hw13.qmd</code> — where you write your answers.</li>
+<li><code>data/soda.csv</code> — the choice data the analysis uses.</li>
+</ul>
+<p>Pull the latest changes in GitHub Desktop, then open your course repo folder in Positron (<strong>File &gt; Open Folder…</strong>) and render <code>soda-analysis.qmd</code> to see the report as the client would see it.</p>
+</section>
+<section id="the-setup" class="level1">
+<h1>2. The Setup</h1>
+<p>Some GWU researchers ran a conjoint experiment on consumer preferences for soda. Each question showed respondents three different 12-ounce cans with the attributes <em>price</em>, <em>caffeine free</em>, <em>sugar free</em>, <em>added flavor</em> (None, Cherry, or Vanilla), and <em>brand</em> (Coke or Pepsi).</p>
+<p>An AI assistant was handed the data and asked to analyze it and write up the results. The report it produced is <code>soda-analysis.qmd</code>. It runs without errors. It is well organized. It has a coefficient table, willingness-to-pay estimates, a market simulation, and a confident recommendation to the client at the end.</p>
+<p><strong>It also contains exactly six errors, and its final recommendation is backwards.</strong></p>
+<p>Some of the six are mistakes in the code. Some are mistakes in how the results are described in the write-up. All six are the kind of mistake these tools make routinely — which is the whole reason you are the one who has to sign off on the analysis.</p>
+</section>
+<section id="do-the-audit" class="level1">
+<h1>3. Do the Audit</h1>
+<p>Work through <code>hw13.qmd</code>. It asks you to:</p>
 <ol type="1">
-<li>Download and edit <a href="https://madd.seas.gwu.edu/2026-Fall/templates/hw5.zip">this template</a>.</li>
-<li>Unzip the template folder. <strong>Make sure you actually unzip it</strong>! (in Windows, right-click it and use “extract all”)</li>
-<li>Open the unzipped folder in Positron (<strong>File &gt; Open Folder…</strong>) - open the folder itself, not a file inside it.</li>
-<li>Inside Positron, open the <code>hw5.qmd</code> file, take notes, and write some example code as you go through the readings / exercises below.</li>
+<li><strong>Find all six errors</strong>, saying where each one is, what’s wrong, and what it should be instead.</li>
+<li><strong>Fix them</strong> in <code>soda-analysis.qmd</code> and re-render it, then report the corrected coefficients, WTP estimates, and market shares.</li>
+<li><strong>Answer the client’s actual question</strong> using your corrected results: should Coke make this soda sugar-free, and should they add the Cherry flavoring? Sugar-free costs an extra $0.10 per can; Cherry flavoring costs an extra $0.15 per can. Say which specific error changed the answer.</li>
+<li><strong>Reflect</strong> on which error was hardest to catch, and on what you had to know yourself in order to judge whether your AI assistant’s answers were any good.</li>
 </ol>
-</section>
-<section id="readings" class="level1">
-<h1>2. Readings</h1>
-<p>Your next major team assignment is your survey plan. The central questions of your eventual survey will be your conjoint questions, which are the sets of randomized choice questions where respondents will be asked to make choices from different sets of alternatives. We have not yet gotten into all the details of how to set up those randomized questions (that will come soon!). But it is helpful at this stage to see an overview of the overall survey structure and how a conjoint survey can be built in surveydown.</p>
-<p>With that in mind, read through <a href="https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/">this blog post</a> I wrote on how to implement a choice-based conjoint survey in surveydown. It may not yet be immediately clear what every single piece of code is doing, but reading it at least once will help as we go forward with the class. You will probably want to use this blog post as a guide to implement your own conjoint surveys later in the class.</p>
-<p>Once you have an understanding of how things are working, try downloading the <a href="https://github.com/surveydown-dev/template_conjoint_buttons">template</a> on how to implement a conjoint survey using the button format discussed in the blog. You should be able to use that template to re-create a working survey where the choice questions are shown randomly according to the design of experiment in the template.</p>
-</section>
-<section id="reflect" class="level1">
-<h1>3. Reflect</h1>
-<p>Reflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your <code>hw5.qmd</code> file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.</p>
-<p>If you’re unsure where to start with a reflection, try filling out this template:</p>
-<blockquote class="blockquote">
-<p>“I used to think ______, now I think ______ 🤔”</p>
-</blockquote>
+<p><strong>Use Claude Code for this.</strong> That is the point — this is exactly the workflow you’ll use in practice. But note what happens when you do: the assistant will find some of these quickly, will miss others entirely, and will occasionally tell you something is wrong when it isn’t. You are the one who has to decide. Everything you write down should be something you could defend out loud without the computer in front of you.</p>
+<p>A hint on where to look: three of the six errors are visible in the numbers themselves if you check whether each claim in the write-up actually follows from the output above it. Two are in the code. One is about a result that the report treats as a finding when it shouldn’t.</p>
 </section>
 <section id="submit" class="level1">
 <h1>4. Submit</h1>
@@ -811,7 +816,7 @@ ul.task-list li input[type="checkbox"] {
  © 2026 John Paul Helveston  <a href="LICENSE.html"><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i><i class="fab fa-creative-commons-sa"></i></a><br><i class="far fa-calendar-alt"></i> Wednesdays | <i class="far fa-clock"></i> 3:30PM - 6:00PM EST | <a href="https://it.gwu.edu/classroom-search/tompkins-hall-201"><i class="fa fa-map-marker-alt"></i> Tompkins 201</a><br><a href="https://www.jhelvy.com"><i class="fas fa-user"></i> Dr. John Paul Helveston</a> | <a href="mailto:jph@gwu.edu"><i class="fas fa-envelope"></i> jph@gwu.edu</a> | <a href="https://github.com/emse-madd-gwu/2026-Fall"><i class="fab fa-github"></i></a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/emse-madd-gwu/2026-Fall/edit/main/hw/5-conjoint-questions-temp.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/emse-madd-gwu/2026-Fall/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/emse-madd-gwu/2026-Fall/edit/main/hw/13-take-home-analysis-temp.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/emse-madd-gwu/2026-Fall/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

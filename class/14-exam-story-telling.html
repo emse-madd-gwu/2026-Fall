@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Conjoint Surveys in surveydown – EMSE 6035</title>
+<title>Exam &amp; Story Telling – EMSE 6035</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -84,14 +84,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Conjoint Surveys in surveydown – EMSE 6035">
+<meta property="og:title" content="Exam &amp; Story Telling – EMSE 6035">
 <meta property="og:description" content="Course website for Fall 2026 semester of the EMSE course “Marketing Analytics for Design Decisions” at GWU">
-<meta property="og:image" content="https://madd.seas.gwu.edu/2026-Fall/hw/images/logo.png">
+<meta property="og:image" content="https://madd.seas.gwu.edu/2026-Fall/class/images/logo.png">
 <meta property="og:site_name" content="EMSE 6035">
 <meta property="og:locale" content="es_ES">
-<meta name="twitter:title" content="Conjoint Surveys in surveydown – EMSE 6035">
+<meta name="twitter:title" content="Exam &amp; Story Telling – EMSE 6035">
 <meta name="twitter:description" content="Course website for Fall 2026 semester of the EMSE course “Marketing Analytics for Design Decisions” at GWU">
-<meta name="twitter:image" content="https://madd.seas.gwu.edu/2026-Fall/hw/images/logo-square.png">
+<meta name="twitter:image" content="https://madd.seas.gwu.edu/2026-Fall/class/images/logo-square.png">
 <meta name="twitter:creator" content="@johnhelveston">
 <meta name="twitter:site" content="@johnhelveston">
 <meta name="twitter:card" content="summary">
@@ -314,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Conjoint Surveys in surveydown</h1>
+<h1 class="title">Exam &amp; Story Telling</h1>
 </div>
 
 
@@ -331,67 +331,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<blockquote class="blockquote">
-<p><strong>Due</strong>: Oct 05 by 11:59pm</p>
-<p><strong>Weight</strong>: This assignment is worth 2.5% of your final grade.</p>
-<p><strong>Purpose</strong>: The purpose of this assignment is to get familiar with how to implement a full conjoint survey in surveydown.</p>
-<p><strong>Submit</strong>: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).</p>
-<p><strong>Assessment</strong>: This assignment is graded using a check system:</p>
-<ul>
-<li>✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.</li>
-<li>✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.</li>
-<li>✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will <em>hopefully</em> not assign these often.</li>
-</ul>
-<p>Notice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is <strong>not enough</strong>. Write at least a paragraph and show me that you did the readings assigned.</p>
-</blockquote>
-<section id="get-organized" class="level1">
-<h1>1. Get Organized</h1>
-<p>Follow these instructions:</p>
-<ol type="1">
-<li>Download and edit <a href="https://madd.seas.gwu.edu/2026-Fall/templates/hw5.zip">this template</a>.</li>
-<li>Unzip the template folder. <strong>Make sure you actually unzip it</strong>! (in Windows, right-click it and use “extract all”)</li>
-<li>Open the unzipped folder in Positron (<strong>File &gt; Open Folder…</strong>) - open the folder itself, not a file inside it.</li>
-<li>Inside Positron, open the <code>hw5.qmd</code> file, take notes, and write some example code as you go through the readings / exercises below.</li>
-</ol>
-</section>
-<section id="readings" class="level1">
-<h1>2. Readings</h1>
-<p>Your next major team assignment is your survey plan. The central questions of your eventual survey will be your conjoint questions, which are the sets of randomized choice questions where respondents will be asked to make choices from different sets of alternatives. We have not yet gotten into all the details of how to set up those randomized questions (that will come soon!). But it is helpful at this stage to see an overview of the overall survey structure and how a conjoint survey can be built in surveydown.</p>
-<p>With that in mind, read through <a href="https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/">this blog post</a> I wrote on how to implement a choice-based conjoint survey in surveydown. It may not yet be immediately clear what every single piece of code is doing, but reading it at least once will help as we go forward with the class. You will probably want to use this blog post as a guide to implement your own conjoint surveys later in the class.</p>
-<p>Once you have an understanding of how things are working, try downloading the <a href="https://github.com/surveydown-dev/template_conjoint_buttons">template</a> on how to implement a conjoint survey using the button format discussed in the blog. You should be able to use that template to re-create a working survey where the choice questions are shown randomly according to the design of experiment in the template.</p>
-</section>
-<section id="reflect" class="level1">
-<h1>3. Reflect</h1>
-<p>Reflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your <code>hw5.qmd</code> file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.</p>
-<p>If you’re unsure where to start with a reflection, try filling out this template:</p>
-<blockquote class="blockquote">
-<p>“I used to think ______, now I think ______ 🤔”</p>
-</blockquote>
-</section>
-<section id="submit" class="level1">
-<h1>4. Submit</h1>
-<p>To submit your assignment, follow these instructions:</p>
-<ol type="1">
-<li>Render your .qmd file by either clicking the “Preview” button in Positron or running <code>quarto render</code> in the terminal.</li>
-<li>Open the rendered html file and make sure it looks good! Is all the formatting as you expected?</li>
-<li>Commit and push your work using GitHub Desktop: look at the diff, write a short commit message, click <strong>Commit</strong>, then <strong>Push</strong>.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Remember">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Remember
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Your work isn’t submitted until you’ve <strong>pushed</strong> it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done.</p>
-</div>
-</div>
+<p>Coming soon!</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -811,7 +753,7 @@ ul.task-list li input[type="checkbox"] {
  © 2026 John Paul Helveston  <a href="LICENSE.html"><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i><i class="fab fa-creative-commons-sa"></i></a><br><i class="far fa-calendar-alt"></i> Wednesdays | <i class="far fa-clock"></i> 3:30PM - 6:00PM EST | <a href="https://it.gwu.edu/classroom-search/tompkins-hall-201"><i class="fa fa-map-marker-alt"></i> Tompkins 201</a><br><a href="https://www.jhelvy.com"><i class="fas fa-user"></i> Dr. John Paul Helveston</a> | <a href="mailto:jph@gwu.edu"><i class="fas fa-envelope"></i> jph@gwu.edu</a> | <a href="https://github.com/emse-madd-gwu/2026-Fall"><i class="fab fa-github"></i></a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/emse-madd-gwu/2026-Fall/edit/main/hw/5-conjoint-questions-temp.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/emse-madd-gwu/2026-Fall/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/emse-madd-gwu/2026-Fall/edit/main/class/14-exam-story-telling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/emse-madd-gwu/2026-Fall/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

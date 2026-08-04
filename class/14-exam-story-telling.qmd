@@ -1,0 +1,15 @@
+---
+title: "Exam & Story Telling"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+params:
+  class: "14-exam-story-telling"
+  logitrcars: false
+  surveydown: false
+---
+
+```{r child = here::here("fragments", "placeholder.qmd")}
+```

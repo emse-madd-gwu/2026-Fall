@@ -5,7 +5,9 @@ author: "John Paul Helveston"
 institute: "The George Washington University | EMSE"
 week: 5
 displaydate: September 23, 2026
-format: lexis-revealjs
+format: 
+  lexis-revealjs:
+    link-external-newwindow: true
 mouse-wheel: true
 progress: false
 execute:

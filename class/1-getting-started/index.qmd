@@ -5,7 +5,9 @@ author: "John Paul Helveston"
 institute: "The George Washington University | EMSE"
 week: 1
 displaydate: August 26, 2026
-format: lexis-revealjs
+format: 
+  lexis-revealjs:
+    link-external-newwindow: true
 mouse-wheel: true
 progress: false
 execute:
@@ -178,7 +180,7 @@ agenda(1)
 <br>
 
 ::: {.fragment}
-## {{< fa calendar >}} ~Every week (12 total)
+## {{< fa calendar >}} ~Every week (13 total)
 :::
 
 ::: {.fragment}
@@ -269,9 +271,9 @@ Final Presentation    | 5 %    | Dec. 09
 Item                  | Weight | Notes
 ----------------------|--------|-------------------------------------
 Participation / Attendance | 5%     | (Yes, I take attendance)
-Reflections           | 30 %   | Weekly assignment (10 x 3%, lowest dropped)
+Homework              | 30 %   | 13 assignments (12 x 2.5%, lowest dropped)
 Quizzes               | 10 %    | 6 quizzes, lowest dropped
-Final Exam            | 10 %   | Take home exam
+Final Exam            | 10 %   | In class, closed book (12/2)
 Project Proposal      | 5 %    | Teams of 3-4 students
 Survey Plan           | 5 %    |
 Pilot Survey          | 5 %    |
@@ -602,7 +604,7 @@ agenda(2)
 
 # Your project starts now!
 
-## [Click here to view projects](https://docs.google.com/presentation/d/14y4J0FHOQt3hsFR1I-Js-5AwXeLUA--7XFVtV0b-7j8/edit?usp=sharing){target='_blank'}
+## [Click here to view projects](https://docs.google.com/presentation/d/14y4J0FHOQt3hsFR1I-Js-5AwXeLUA--7XFVtV0b-7j8/edit?usp=sharing)
 
 ---
 
@@ -632,11 +634,11 @@ agenda(3)
 
 # [[Break]{.fancy}]{.center}
 
-1. If you haven't already, install everything on the [software page](https://madd.seas.gwu.edu/2026-Fall/software.html)
+1. If you haven't already, install everything on the [software page](https://madd.seas.gwu.edu/2026-Fall/software.html){target='_blank'}
 
 2. Add your **GitHub username** to [this sheet](https://docs.google.com/spreadsheets/d/14bLHRcs7hQUX4LDLNKllcA9UhLyuYBZH6VH75Y2_fyU/edit?usp=sharing) (you need this to get your course repo!)
 
-3. Stand up, meet each other, (maybe form teams?...use [this sheet](https://docs.google.com/spreadsheets/d/1bWkSJ7iinHWt4NOPdGYBk2ZxhmhblM1KsDN7Dd1Cwmg/edit?usp=sharing))
+3. Stand up, meet each other, (maybe form teams?...use [this sheet](https://docs.google.com/spreadsheets/d/10INSdmtEK0Haqs-Y0DoIRGejyTr6R4H02rRPa0ujBko/edit?usp=sharing))
 
 ```{r}
 #| echo: false
@@ -677,7 +679,7 @@ agenda(4)
 ::: {.col width="70%"}
 
 <center>
-<img src="images/rstudio-panes.png" width=650>
+<img src="images/test.png" width=100%>
 </center>
 
 :::
