@@ -1,8 +1,8 @@
 ---
-title: "Getting Set Up: GitHub & Agentic Tools"
+title: "Agentic Workflows & GitHub"
 params:
   number: 1
-  purpose: "This course is built around a fundamental shift in how we do data analysis. We used to live in a paradigm where we hand-wrote every line of code. Instead, we now direct an AI coding agent (e.g., Claude Code) to do the majority of the coding while our job changes to supervising, verifying, and taking responsibility for the resulting analysis produced by the code. This assignment is designed to make sure you have all your tools installed and properly configured and to ensure you can have productive conversations with an AI agent. Going forward, we will focus class time on working with agents rather than troubleshooting installations and configurations."
+  purpose: "This course is built around a fundamental shift in how we do data analysis. We used to live in a paradigm where we hand-wrote every line of code. Instead, we now direct an AI coding agent (e.g., Claude Code) to do the majority of the coding while our job changes to supervising, verifying, and taking responsibility for the resulting analysis produced by the code. This assignment is designed to make sure you have all your tools installed and properly configured and to ensure you can have productive conversations with an AI agent. Going forward, we will focus class time on working with agents them rather than troubleshooting installations and configurations."
 ---
 
 ```{r child = here::here("fragments", "hw.qmd")}

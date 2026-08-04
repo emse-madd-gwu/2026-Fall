@@ -1,5 +1,5 @@
 week,date,notes,quiz,quiz_content,n_class,stub_class,name_class,description_class,project_name,project_description,n_assign,stub_assign,name_assign,due_assign,n_project,stub_project,name_project,due_project
-1,2026/08/26,,,,1,getting-started,Getting Started,"Class orientation, intro to R, workflow, packages",Introductions,Introductions to each other and potential projects,1,github-setup,,2026/08/31,,,,
+1,2026/08/26,,,,1,getting-started,Getting Started,"Class orientation, intro to R, workflow, packages",Introductions,Introductions to each other and potential projects,1,agentic-workflows-and-github,,2026/08/31,,,,
 2,2026/09/02,,,,2,agentic-workflows,Agentic Workflows,Intro to GitHub and agentic coding workflows,,,2,data-wrangling,,2026/09/07,,,,
 3,2026/09/09,Use google spreadsheet,1,Weeks 1-2,3,data-wrangling,Data Wrangling,"Importing, wrangling, and summarizing data in R",Decision Variables,Distinguishing between decision variables and product attributes,,,<b>Finish Proposals!</b>,,1,proposal,Proposal,2026/09/20
 4,2026/09/16,,,,,,Project Workshop,Team meetings to discuss project proposals (held remotely),,,3,quarto-plotting,,2026/09/21,2,survey-plan,Survey Plan,2026/09/29
