@@ -73,10 +73,10 @@ agenda <- function(
 
 # [{{< meta title >}}]{.fancy}
 
-### {{< fa building-columns >}} {{< meta subtitle >}}
+#### {{< fa building-columns >}} {{< meta subtitle >}}
 
-### {{< fa user >}} {{< meta author >}}
+#### {{< fa user >}} {{< meta author >}}
 
-### {{< fa calendar-alt >}} {{< meta displaydate >}}
+#### {{< fa calendar-alt >}} {{< meta displaydate >}}
 
 :::

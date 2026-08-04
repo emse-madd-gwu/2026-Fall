@@ -48,6 +48,8 @@ agenda(1)
 
 # Meet your instructor!
 
+<br>
+
 ::: {.col width="30%"}
 
 ::: {.circle}
@@ -81,11 +83,11 @@ agenda(1)
 <br>
 
 ::: {.fragment}
-## {{< fa globe >}} Course website: https://madd.seas.gwu.edu/2026-Fall/
+## {{< fa globe >}} Course website: [https://madd.seas.gwu.edu/2026-Fall/](https://madd.seas.gwu.edu/2026-Fall/)
 :::
 
 ::: {.fragment}
-## {{< fa brands slack >}} Course slack: https://emse-madd-f26.slack.com
+## {{< fa brands slack >}} Course slack: [https://emse-madd-f26.slack.com](https://emse-madd-f26.slack.com)
 :::
 
 ::: {.fragment}
@@ -99,16 +101,18 @@ agenda(1)
 # Why {{< fa brands r-project >}}?
 
 <center>
-<img src="images/why-R.png" width=600>
+<img src="images/why-R.png" width=800>
 </center>
 
 ---
 
 # Wait, why aren't we using Python?
 
+<br>
+
 ::: {.col}
 
-### The field of choice modeling grew out of Statistics, not Machine Learning
+### The Marketing field out of Statistics, not Machine Learning
 
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) is a general purpose language developed by [**Guido van Rossum**](https://en.wikipedia.org/wiki/Guido_van_Rossum), a computer scientist.
 - Unlike R, Python was not originally developed for data analysis.
@@ -128,6 +132,8 @@ agenda(1)
 
 # Learning Objectives
 
+<br>
+
 ### After this class, you will know how to...
 
 - ### ...work with data in {{< fa brands r-project >}}
@@ -138,6 +144,8 @@ agenda(1)
 ---
 
 # Course prerequisites
+
+<br>
 
 ::: {.col width="60%"}
 
@@ -159,11 +167,15 @@ agenda(1)
 
 ---
 
-# Reflections (30% of grade)
+# Weekly HW (30% of grade)
+
+<br>
 
 ### Do some readings, recorded lectures, practice problems
 
 ### Write a short reflection
+
+<br>
 
 ::: {.fragment}
 ## {{< fa calendar >}} ~Every week (12 total)
@@ -180,6 +192,8 @@ agenda(1)
 ---
 
 # **Quizzes** (10% of grade)
+
+<br>
 
 ::: {.fragment}
 ## {{< fa calendar >}} At the start of class every other week-ish. Make ups only for excused absences (i.e. don't be late).
@@ -201,9 +215,11 @@ agenda(1)
 
 # Exam (10% of grade)
 
-### Take home exam, 2nd to last week of class
+<br>
 
-### We'll go over exam solutions on last day of class
+### In-person, first 45 minutes of class on 12/2
+
+### All hand-written (like a long quiz)
 
 ---
 
@@ -268,6 +284,8 @@ Final Presentation    | 5 %    |
 
 # Course policies
 
+<br>
+
 ::: {.col .fragment width="35%"}
 
 - ## BE NICE
@@ -288,82 +306,38 @@ Final Presentation    | 5 %    |
 
 ---
 
-## Use of chatGPT and other AI tools
+# [Use of AI]{.center}
 
 <br>
+
+## [We will heavily use AI tools this semester]{.center}
+
+<br>
+
+::: {.incremental}
 
 - Large language models (LLMs) are pretty good
-
-. . .
-
 - Sometimes they suck.
-
-. . .
-
 - I will grade whatever you submit. **It should not suck.**
+
+:::
 
 ---
 
-## Ways to not have your work suck:
-
-- Don't submit code that doesn't run (actually run it before submitting it).
-
-. . .
-
-- Actually read what the AI generates, and **don't submit something you don't understand**. (Ask the LLM how it works)
-
-. . .
-
-- There are dozens of ways to do things - **you should use the approach I teach**.
-
-. . .
-
-- Ask yourself **"what would I ask Prof. Helveston?"**
-
-. . .
+# Ways to not have your work suck:
 
 <br>
 
-### **Use AI as an assistant, not a solutions manual**
+::: {.incremental}
+- Don't submit code that doesn't run (actually run it before submitting it).
+- Actually read what the AI generates, and **don't submit something you don't understand**. (Ask the LLM to explain _why_ something works or doesn't work)
+::: 
 
----
+<br>
 
-{{< middle >}}
+::: {.fragment}
 
-::: {.col width="75%"}
-
-<center>
-<img src="images/llm-bad.png" width=100%>
-</center>
-
-:::
-
-::: {.col width="25%"}
-
-## [The **wrong** ways to use LLMs]{.center}
-
-Don't copy-paste past the basics - it'll rob you of mastery
-
-:::
-
----
-
-{{< middle >}}
-
-::: {.col width="75%"}
-
-<center>
-<img src="images/llm-good.png" width=100%>
-</center>
-
-:::
-
-::: {.col width="25%"}
-
-## [The **right** way to use LLMs]{.center}
-
-- Asking to explain error messages
-- Asking to explain _why_ something works or doesn't work
+### **Use the approach I teach**: agentic workflows (starting next week)
 
 :::
 
@@ -371,13 +345,17 @@ Don't copy-paste past the basics - it'll rob you of mastery
 
 # Late submissions
 
-## - **5** late days - use them anytime, no questions asked
+<br>
+
+## - **3** late days - use them anytime, no questions asked
 ## - No more than **2** late days on any one assignment
 ## - Contact me for special cases
 
 ---
 
 # How to succeed in this class
+
+<br>
 
 ::: {.fragment}
 ## {{< fa users >}} Participate during class!
@@ -398,6 +376,8 @@ Don't copy-paste past the basics - it'll rob you of mastery
 ---
 
 # Getting Help
+
+<br>
 
 ::: {.fragment}
 ## {{< fa brands slack >}} Use [Slack](https://emse-madd-f26.slack.com/) to ask questions.
@@ -458,6 +438,8 @@ agenda(2)
 ### - How will my product compete against competitors in the market?
 
 . . .
+
+<br>
 
 ## **Answers depend on knowing what people want**
 
@@ -522,8 +504,10 @@ agenda(2)
 
 ## **Conjoint approach**:<br>Use consumer choice data to model preferences
 
+<br>
+
 <center>
-<img src="images/conjoint_table.png" width=800>
+<img src="images/conjoint_table.png" width=1000>
 </center>
 
 ---
@@ -600,8 +584,10 @@ agenda(2)
 
 ### Example survey choice question
 
+<br>
+
 <center>
-<img src="images/solar2.png" width=850>
+<img src="images/solar2.png" width=1000>
 </center>
 
 ---
@@ -616,7 +602,7 @@ agenda(2)
 
 # Your project starts now!
 
-# [View projects](https://docs.google.com/presentation/d/1R7GZ4_O6q7xINIlcjiO5CcKSh4V2ZWX3/edit?usp=sharing&ouid=108448693507188860264&rtpof=true&sd=true)
+## [Click here to view projects](https://docs.google.com/presentation/d/14y4J0FHOQt3hsFR1I-Js-5AwXeLUA--7XFVtV0b-7j8/edit?usp=sharing){target='_blank'}
 
 ---
 
@@ -629,6 +615,8 @@ agenda(3)
 ---
 
 # Introduce yourself
+
+<br>
 
 ## - Preferred name
 ## - Degree program
@@ -653,12 +641,15 @@ agenda(3)
 ```{r}
 #| echo: false
 countdown(
-    minutes = 5,
-    warn_when = 30,
-    update_every = 1,
-    left = 0, right = 0, top = 1, bottom = 0,
-    margin = "5%",
-    font_size = "8em"
+  minutes = 5,
+  warn_when = 30,
+  update_every = 1,
+  left = 0,
+  right = 0,
+  top = 1,
+  bottom = 0,
+  margin = "5%",
+  font_size = "8em"
 )
 ```
 
@@ -741,12 +732,12 @@ agenda(4)
 ```{r}
 #| echo: false
 countdown(
-  minutes      = 10,
-  warn_when    = 30,
+  minutes = 10,
+  warn_when = 30,
   update_every = 15,
-  bottom       = 0,
-  left         = 0,
-  font_size    = '2em'
+  bottom = 0,
+  left = 0,
+  font_size = '2em'
 )
 ```
 
@@ -805,7 +796,7 @@ countdown(
 ```{r}
 #| eval: false
 install.packages("packagename") # This works
-install.packages(packagename)   # This doesn't work
+install.packages(packagename) # This doesn't work
 ```
 
 . . .
@@ -824,7 +815,7 @@ install.packages(packagename)   # This doesn't work
 ```{r}
 #| eval: false
 library("packagename") # This works
-library(packagename)   # This also works
+library(packagename) # This also works
 ```
 
 . . .

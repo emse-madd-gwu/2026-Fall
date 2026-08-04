@@ -140,29 +140,39 @@ library(viridis)
 library(ggrepel)
 
 df <- data.frame(
-    category = c(
-      'Participation', 'Reflections', 'Quizzes', 'Project', 'Exam'),
-    percent = c(5, 30, 10, 45, 10)) %>%
-    arrange(desc(percent)) %>%
-    mutate(
-      cumpercent = cumsum(percent),
-      label_x = cumpercent - (percent / 2),
-      category = fct_reorder(category, percent))
+  category = c(
+    'Participation',
+    'Reflections',
+    'Quizzes',
+    'Project',
+    'Exam'
+  ),
+  percent = c(5, 30, 10, 45, 10)
+) %>%
+  arrange(desc(percent)) %>%
+  mutate(
+    cumpercent = cumsum(percent),
+    label_x = cumpercent - (percent / 2),
+    category = fct_reorder(category, percent)
+  )
 
 ggplot(df) +
-    geom_col(aes(y = "", x = percent, fill = category),
-             width = 1.1, alpha = 0.8) +
-    geom_label_repel(
-        data = df,
-        aes(y = "", x = label_x, label = category), 
-        direction = 'y', 
-        segment.colour = NA
-    ) +
-    scale_x_continuous(expand = expansion(mult = c(0, 0.05))) +
-    scale_fill_viridis(discrete = TRUE) +
-    theme_minimal_vgrid() +
-    theme(legend.position = 'none') +
-    labs(x = 'Percent of final grade', y = NULL)
+  geom_col(
+    aes(y = "", x = percent, fill = category),
+    width = 1.1,
+    alpha = 0.8
+  ) +
+  geom_label_repel(
+    data = df,
+    aes(y = "", x = label_x, label = category),
+    direction = 'y',
+    segment.colour = NA
+  ) +
+  scale_x_continuous(expand = expansion(mult = c(0, 0.05))) +
+  scale_fill_viridis(discrete = TRUE) +
+  theme_minimal_vgrid() +
+  theme(legend.position = 'none') +
+  labs(x = 'Percent of final grade', y = NULL)
 ```
 
 ## Grading Scale
@@ -248,7 +258,7 @@ Here are some tips on how to work with AI tools but not generate work that sucks
 - Actually read what the AI generates.
 - Don't use methods I don't teach. There are dozens of ways to do things - **you should use the approach I teach**. Using some other approach that an AI generates is a _very bad_ idea.
 
-Your goal in using tools like ChatGPT should be to see them as an assistant - a tool to help you accomplish the task - rather than as a solutions manual. Take the time to work through the code / text these tools generate and ensure that what they provide is accurate, and if not make the corrections to fix their mistakes.
+Your goal in using tools like Claude, ChatGPT, etc. should be to see them as an assistant - a tool to help you accomplish the task - rather than as a solutions manual. Take the time to work through the code / text these tools generate and ensure that what they provide is accurate, and if not make the corrections to fix their mistakes.
 
 > Curious how LLMs actually work? Check out [this article](https://www.understandingai.org/p/large-language-models-explained-with), which provides a simplified description of how they work (which itself is still quite complicated).
 
