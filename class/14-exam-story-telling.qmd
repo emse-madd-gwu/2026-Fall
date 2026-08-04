@@ -1,12 +1,12 @@
 ---
-title: "Story Telling"
+title: "Exam & Story Telling"
 toc: false
 execute:
   echo: false
   warning: false
   message: false
 params:
-  class: "14-story-telling"
+  class: "14-exam-story-telling"
   logitrcars: false
   surveydown: false
 ---

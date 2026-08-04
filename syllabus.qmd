@@ -88,8 +88,9 @@ Quizzes are **short** (10 minutes) and are designed to test for fluency and to d
 
 ## Homework
 
-Each week, students will be assigned readings and exercises to prepare for the next class period. Students will need to submit reflections on these readings each week, which may involve answering some practice questions.
-These are graded using a check system:
+There are **13 homework assignments**, roughly one per week. Each assigns readings and exercises to prepare you for the next class period, and asks you to write a short reflection on what you worked through - which may involve answering some practice questions along the way.
+
+Homework is graded using a check system:
 
 - ✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.
 - ✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.
@@ -103,7 +104,13 @@ Throughout the semester, students will work in teams of 3-4 students towards a f
 
 ## Final Exam
 
-The final exam is a take-home exam, and we will spend a portion of the last day of class going over the solutions together. 
+The final exam is held **in class on 12/2**. It is **closed book** and taken on paper - no computers, notes, or phones - and lasts 45 minutes.
+
+This is deliberate. Nearly everything else you do in this course, you do with an AI assistant at your side, and that's how the work is done in practice. But it only works if you can tell when the assistant is wrong. The exam is where you show me you can read a set of model results and say something true about them without anything else in the room.
+
+The exam opens with a section where you review a conjoint analysis written by an AI assistant and identify which of its claims are correct and which are not. The rest covers the concepts from across the semester: experiment design, utility models, maximum likelihood, willingness to pay, and market simulation.
+
+Your last homework (HW 13, due 11/29) is built as preparation for it: you'll audit a complete AI-generated analysis that runs cleanly and gets the client's answer backwards. Use your AI tools freely on that assignment - it's the practice, not the test. We'll go over the exam solutions together in class after you turn it in.
 
 # Grading
 
@@ -116,9 +123,9 @@ Final grades will be calculated as follows:
 Item                  | Weight | Notes
 ----------------------|--------|-------------------------------------
 Participation / Attendance | 5%     | (Yes, I take attendance)
-Reflections (11)          | 30 %    | Weekly assignment (10 x 3%), lowest 1 dropped
+Homework (13)             | 30 %    | Weekly assignment (12 x 2.5%), lowest 1 dropped
 Quizzes (6)               | 10 %    | Lowest 1 dropped
-Final Exam            | 10 %   | Take home exam
+Final Exam            | 10 %   | In class, closed book, on paper (12/2)
 Project Proposal      | 5 %    | Teams of 3-4 students
 Survey Plan           | 5 %    |
 Pilot Survey          | 5 %    |
@@ -142,7 +149,7 @@ library(ggrepel)
 df <- data.frame(
   category = c(
     'Participation',
-    'Reflections',
+    'Homework',
     'Quizzes',
     'Project',
     'Exam'
@@ -246,11 +253,9 @@ If you need a special accommodation such as due to an illness, family emergency,
 
 ## Use of chatGPT and other AI tools
 
-Use of large language models (LLMs) like chatGPT, Claude, etc. are not only permitted but encouraged. You need to learn how to use AI tools to learn new skills, improve productivity, and find solutions. 
+Use of large language models (LLMs) like chatGPT, Claude, etc. are not only permitted but encouraged. In this course, we will be learning how to use **agentic workflows** with AI tools (see the [course software](software.html#install-an-agentic-cli-tool) page for details). You _need_ to learn how to use AI tools to learn new skills, improve productivity, and find solutions. 
 
-While LLMs are pretty good, sometimes they suck. **Don't blindly trust them** - they will betray you, especially with code. 
-
-I will grade AI generated work no differently than work you produce without AI. But it's important that you understand **your work should not suck.** Sometimes AI-generated work _really_, _really_ sucks, so if you blindly trust an AI to do your work and submit it and it sucks, you may not like the grade.
+Now, LLMs are pretty good, but sometimes they suck. **Don't blindly trust them** - they will betray you, especially with code. **I will grade AI generated work no differently than work you produce without AI**. But it's important that you understand: **your work should not suck.** And sometimes AI-generated content _really_, _really_ sucks, so if you blindly trust an AI to do your work and you submit works that sucks, you probably won't like the grade. Learn to use the tools effectively so you always submit good, verified work.
 
 Here are some tips on how to work with AI tools but not generate work that sucks:
 

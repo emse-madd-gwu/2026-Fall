@@ -17,7 +17,7 @@ hw_file <- paste0('hw', params$number, '.qmd')
 
 > **Due**: `r due`
 >
-> **Weight**: This assignment is worth 3% of your final grade.
+> **Weight**: This assignment is worth 2.5% of your final grade.
 >
 > **Purpose**: `r params$purpose`
 >

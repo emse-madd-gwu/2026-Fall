@@ -1,11 +1,13 @@
 ---
-title: "Story Telling"
+title: "Exam & Story Telling"
 subtitle: "EMSE 6035: Marketing Analytics for Design Decisions"
 author: "John Paul Helveston"
 institute: "The George Washington University | EMSE"
 week: 14
 displaydate: December 02, 2026
-format: lexis-revealjs
+format: 
+  lexis-revealjs:
+    link-external-newwindow: true
 mouse-wheel: true
 progress: false
 execute:

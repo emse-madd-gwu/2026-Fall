@@ -1,0 +1,73 @@
+---
+title: "Exam Prep: Auditing an AI-Generated Analysis"
+params:
+  number: 13
+  purpose: "The purpose of this assignment is to practice the single most important skill you'll need when an AI does your data work for you: knowing when it is wrong. You'll audit a complete conjoint analysis that runs cleanly, reads confidently, and gets the client's answer backwards. It is also your preparation for the in-class final exam on 12/2."
+---
+
+```{r child = here::here("fragments", "hw.qmd")}
+```
+
+# 1. Get Organized
+
+The files for this assignment are already in your course GitHub repository, in
+the `hw13/` folder:
+
+- `soda-analysis.qmd` — the analysis you are auditing.
+- `hw13.qmd` — where you write your answers.
+- `data/soda.csv` — the choice data the analysis uses.
+
+Pull the latest changes in GitHub Desktop, then open your course repo folder in
+Positron (**File > Open Folder...**) and render `soda-analysis.qmd` to see the
+report as the client would see it.
+
+# 2. The Setup
+
+Some GWU researchers ran a conjoint experiment on consumer preferences for
+soda. Each question showed respondents three different 12-ounce cans with the
+attributes _price_, _caffeine free_, _sugar free_, _added flavor_ (None,
+Cherry, or Vanilla), and _brand_ (Coke or Pepsi).
+
+An AI assistant was handed the data and asked to analyze it and write up the
+results. The report it produced is `soda-analysis.qmd`. It runs without errors.
+It is well organized. It has a coefficient table, willingness-to-pay estimates,
+a market simulation, and a confident recommendation to the client at the end.
+
+**It also contains exactly six errors, and its final recommendation is
+backwards.**
+
+Some of the six are mistakes in the code. Some are mistakes in how the results
+are described in the write-up. All six are the kind of mistake these tools make
+routinely — which is the whole reason you are the one who has to sign off on
+the analysis.
+
+# 3. Do the Audit
+
+Work through `hw13.qmd`. It asks you to:
+
+1. **Find all six errors**, saying where each one is, what's wrong, and what it
+   should be instead.
+2. **Fix them** in `soda-analysis.qmd` and re-render it, then report the
+   corrected coefficients, WTP estimates, and market shares.
+3. **Answer the client's actual question** using your corrected results: should
+   Coke make this soda sugar-free, and should they add the Cherry flavoring?
+   Sugar-free costs an extra \$0.10 per can; Cherry flavoring costs an extra
+   \$0.15 per can. Say which specific error changed the answer.
+4. **Reflect** on which error was hardest to catch, and on what you had to know
+   yourself in order to judge whether your AI assistant's answers were any good.
+
+**Use Claude Code for this.** That is the point — this is exactly the workflow
+you'll use in practice. But note what happens when you do: the assistant will
+find some of these quickly, will miss others entirely, and will occasionally
+tell you something is wrong when it isn't. You are the one who has to decide.
+Everything you write down should be something you could defend out loud without
+the computer in front of you.
+
+A hint on where to look: three of the six errors are visible in the numbers
+themselves if you check whether each claim in the write-up actually follows from
+the output above it. Two are in the code. One is about a result that the report
+treats as a finding when it shouldn't.
+
+# 4. Submit
+
+{{< include ../fragments/hw-submit.qmd >}}
