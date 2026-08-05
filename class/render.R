@@ -10,6 +10,10 @@ renderthis::to_pdf("index.html", paste0(lesson, ".pdf"))
 # Compress the PDF to reduce size
 tools::compactPDF(paste0(lesson, ".pdf"), gs_quality = 'ebook')
 
+# Build the 1-2 page class summary
+quarto::quarto_render("summary.qmd", output_format = "typst")
+file.rename("summary.pdf", paste0(lesson, "-summary.pdf"))
+
 # Zip up the class practice files students download from the class page.
 #
 practice_base <- c(
