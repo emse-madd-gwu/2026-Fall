@@ -2,14 +2,17 @@
 ```{r}
 path_slides <- file.path(params$class, "index.html")
 path_pdf <- file.path(params$class, paste0(params$class, ".pdf"))
+path_summary <- file.path(params$class, paste0(params$class, "-summary.pdf"))
 path_notes <- file.path(params$class, paste0(params$class, ".zip"))
 path_logitrcars <- "https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip"
 path_surveydown <- "https://jhelvy.github.io/2025-surveydown-workshop/"
 
 # Lecture-only weeks ship no practice files, so there's no zip to link to.
 # Driven off the file itself rather than a `notes:` param so a class page can
-# never advertise a zip that class/render.R didn't build.
+# never advertise a zip that class/render.R didn't build. Same idea for the
+# one-page class summary, which only exists for decks that have a summary.qmd.
 has_notes <- file.exists(here::here("class", path_notes))
+has_summary <- file.exists(here::here("class", path_summary))
 ```
 
 ::: {.grid}
@@ -43,10 +46,17 @@ has_notes <- file.exists(here::here("class", path_notes))
 
 ::: {.class-buttons}
 
-**CLASS PRACTICE**
+**CLASS MATERIALS**
 
 ```{r}
 #| results: asis
+
+if (has_summary) {
+  cat(
+    '<a href=', path_summary,
+    ' class="btn-notes"><i class="fas fa-file-pdf"></i> Class summary</a>\n'
+  )
+}
 
 if (has_notes) {
   cat(
