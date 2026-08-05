@@ -103,7 +103,7 @@ instead. Middot runs are fine for lists of *words* (software names, dates).
     align: (left + bottom, right + bottom),
     {
       text(font: "Fira Sans", size: 7.4pt, weight: 600, fill: muted, tracking: 0.6pt,
-           upper("EMSE 4572 / 6572 · Exploratory Data Analysis · Fall 2026"))
+           upper("EMSE 6035 · Marketing Analytics for Design Decisions · Fall 2026"))
       v(-0.55em)
       text(font: "Fira Sans", size: 19pt, weight: 700)[Week #week: #title]
     },
@@ -122,7 +122,7 @@ instead. Middot runs are fine for lists of *words* (software names, dates).
   grid(
     columns: (1fr, auto),
     align: (left, right),
-    link("https://eda.seas.gwu.edu/2026-Fall/")[eda.seas.gwu.edu/2026-Fall],
+    link("https://madd.seas.gwu.edu/2026-Fall/")[madd.seas.gwu.edu/2026-Fall],
     [#counter(page).get().first() / #counter(page).final().first()],
   )
 })
