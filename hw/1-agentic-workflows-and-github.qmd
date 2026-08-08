@@ -61,7 +61,7 @@ Read [how Claude Code is used in practice](https://www.anthropic.com/research/cl
 Open the course repo you just cloned in Positron (**File › Open Folder**, then choose that folder). Open the terminal window, run `claude`, and try a couple of low-stakes things:
 
 - Ask it to look around the folder and tell you what's in it. Do this one first -- it shows you that the agent can see the files in whatever folder you've opened, which is the single most important thing to understand about working with one.
-- Ask it what a `.qmd` file does, how it is different from a plain `.R` script, and for a quick demonstration of each. Ask it to put the demonstration files in the `hw1` folder.
+- Ask it what a `.R` script is and for a quick demonstration -- have it write and walk you through a few lines of R code. Ask it to put the demonstration file in the `hw1` folder.
 
 You don't need a data file or a real analysis task for this. The point is just to see the agent read, reason about, and explain something concrete, and to get a feel for the back-and-forth of working with an agent.
 
@@ -69,7 +69,7 @@ If the agent creates any files while you're poking around, that's fine. You don'
 
 # 7. Reflect {#reflect}
 
-In your course repo, open the file `hw1/reflection.qmd` and write at least a paragraph reflecting on your experiences from this assignment. Some prompts you could use:
+In your course repo, open the ``r hw_file`` file in your `hw1` folder and write at least a paragraph (as comments) reflecting on your experiences from this assignment. Some prompts you could use:
 
 - What surprised you about installing or using Claude Code for the first time?
 - Where do you already have questions or doubts about directing an AI agent to write code, versus writing it yourself?
@@ -78,4 +78,4 @@ In your course repo, open the file `hw1/reflection.qmd` and write at least a par
 
 # 8. Submit
 
-{{< include ../fragments/hw-submit.qmd >}}
+{{< include ../fragments/hw-submit-r.qmd >}}

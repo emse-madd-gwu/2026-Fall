@@ -1,0 +1,8 @@
+To submit your assignment, follow these instructions:
+
+1. Make sure all your notes and your reflection are saved in your ``r hw_file`` file. (This assignment is a plain `.R` script -- there's nothing to render yet; we'll start using Quarto in a couple of weeks.)
+2. Commit and push your work using GitHub Desktop: look at the diff, write a short commit message, click **Commit**, then **Push**.
+
+::: {.callout-note title="Remember"}
+Your work isn't submitted until you've **pushed** it. Committing only saves the change on your own computer -- go look at your repo on GitHub.com and confirm your work is actually there before you call this done.
+:::
