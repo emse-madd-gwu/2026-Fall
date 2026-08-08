@@ -403,14 +403,14 @@ Note
 <p>Open the course repo you just cloned in Positron (<strong>File › Open Folder</strong>, then choose that folder). Open the terminal window, run <code>claude</code>, and try a couple of low-stakes things:</p>
 <ul>
 <li>Ask it to look around the folder and tell you what’s in it. Do this one first – it shows you that the agent can see the files in whatever folder you’ve opened, which is the single most important thing to understand about working with one.</li>
-<li>Ask it what a <code>.qmd</code> file does, how it is different from a plain <code>.R</code> script, and for a quick demonstration of each. Ask it to put the demonstration files in the <code>hw1</code> folder.</li>
+<li>Ask it what a <code>.R</code> script is and for a quick demonstration – have it write and walk you through a few lines of R code. Ask it to put the demonstration file in the <code>hw1</code> folder.</li>
 </ul>
 <p>You don’t need a data file or a real analysis task for this. The point is just to see the agent read, reason about, and explain something concrete, and to get a feel for the back-and-forth of working with an agent.</p>
 <p>If the agent creates any files while you’re poking around, that’s fine. You don’t have to commit them. The only thing that has to end up on GitHub is your reflection (next step).</p>
 </section>
 <section id="reflect" class="level1">
 <h1>7. Reflect</h1>
-<p>In your course repo, open the file <code>hw1/reflection.qmd</code> and write at least a paragraph reflecting on your experiences from this assignment. Some prompts you could use:</p>
+<p>In your course repo, open the <code>hw1.R</code> file in your <code>hw1</code> folder and write at least a paragraph (as comments) reflecting on your experiences from this assignment. Some prompts you could use:</p>
 <ul>
 <li>What surprised you about installing or using Claude Code for the first time?</li>
 <li>Where do you already have questions or doubts about directing an AI agent to write code, versus writing it yourself?</li>
@@ -422,8 +422,7 @@ Note
 <h1>8. Submit</h1>
 <p>To submit your assignment, follow these instructions:</p>
 <ol type="1">
-<li>Render your .qmd file by either clicking the “Preview” button in Positron or running <code>quarto render</code> in the terminal.</li>
-<li>Open the rendered html file and make sure it looks good! Is all the formatting as you expected?</li>
+<li>Make sure all your notes and your reflection are saved in your <code>hw1.R</code> file. (This assignment is a plain <code>.R</code> script – there’s nothing to render yet; we’ll start using Quarto in a couple of weeks.)</li>
 <li>Commit and push your work using GitHub Desktop: look at the diff, write a short commit message, click <strong>Commit</strong>, then <strong>Push</strong>.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled" title="Remember">
