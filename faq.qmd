@@ -11,7 +11,7 @@ toc-location: right
 
 If you registered for the class, you should have been sent a link at the start of the semester to join the class [Slack]({{< var slack >}}). If not, email Professor Helveston for an invite link. I recommend using your `@gwu.edu` email to sign up, but if you use another email for another Slack then use that.
 
-## How do I make a zip file for my homework?
+## How do I make a zip file?
 
 [**Mac**](https://www.youtube.com/watch?v=62tw3wZvQxs&t=23s)
 
@@ -19,11 +19,13 @@ If you registered for the class, you should have been sent a link at the start o
 
 ## Where can I see my grades?
 
-[box.com](https://box.com/)
+**[GitHub]({{< var gitorg >}})**
 
-I do **not** use Blackboard for showing your grades, so please ignore anything you see there. Instead, I create a unique folder for each of you on box.com. The folder will be named `netID-madd`. For example, my netID is `jph`, so my folder would be `jph-madd`.
+I do **not** use Blackboard for showing your grades, so please ignore anything you see there. Instead, I create a unique, private repo on the [class GitHub organization]({{< var gitorg >}}) for each of you. The repo will be named `eda-netID` (for example, Prof. Helveston's GW netID is `jph`, so his folder would be `eda-jph`). It should be the only repo you see in the organization.
 
-If you log into box.com using your GW email, you should be able to find this folder. All of your graded feedback will be in that folder. You will see a pdf of feedback for each assignment as well as two CSV files: one that displays your grade for each assignment, and another that shows your current total grade in the class.
+**You will use this repo both for submitting assignments and for receiving graded feedback.**
+
+In the **feedback** folder in that repo, you will see a pdf of feedback for each assignment as well as two CSV files: one that displays your grade for each assignment, and another that shows your current total grade in the class.
 
 ## When can I expect to see a grade for my assignment?
 
@@ -31,9 +33,9 @@ Since homeworks are due the night before class, I usually can't grade them all b
 
 ## How can I submit my homework late?
 
-See the class [late policy](/syllabus.html#late-policy) for details. That said, if you've completed an assignment but it's now late, please do go ahead and submit it. Better to get some credit for it than none.
+I use the submission timestamps on GitHub to determine if a submission is on time or not. If you've updated the assignment past the due date, it is considered late.
 
-If you're submitting late, please **send your submission to Professor Helveston in slack - don't submit on Blackboard**. The Blackboard submission window will probably close anyway, and also Professor Helveston downloads all the submissions when they are due, so late submissions often get missed.
+Now, you do have some "free" late days - see the class [late policy](/syllabus.html#late-policy) for details. But even so, if you've completed an assignment but it's now late, please do go ahead and submit it. Better to get some credit for it than none. Just push your work to your submission repo.
 
 ## Can I make up a quiz if I'm late or miss class?
 
@@ -114,4 +116,3 @@ df <- read_csv(path)
 `file.path()` builds the path from the folder you opened in Positron, joining the pieces with the right separator for your operating system. Its inputs of `"data"` and `"file.csv"` are below that folder.
 
 By running `read_csv(path)`, your data is loaded to `df`.
-
