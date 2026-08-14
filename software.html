@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -344,9 +379,57 @@ Warning
 </section>
 <section id="install-an-agentic-cli-tool" class="level2">
 <h2 class="anchored" data-anchor-id="install-an-agentic-cli-tool">Install an agentic CLI tool</h2>
-<p>This course uses Claude Code as our primary agentic tool. If you do not already have a Claude subscription, you will need to sign up for one. You’ll need at least a <a href="https://claude.ai">Claude Pro</a> subscription to use Claude Code (a free account isn’t sufficient).</p>
-<p>Once you have an account, <strong>install Claude Code</strong> following the official <a href="https://code.claude.com/docs/en/quickstart">Quickstart guide</a>. Once installed, verify it works: open Positron, open its integrated terminal, and run <code>claude</code> – it should start a conversation and prompt you to log in.</p>
-<p>Alternatively, if you already have another agentic coding tool set up that you’d rather use instead – e.g.&nbsp;<a href="https://geminicli.com/">Google Gemini CLI</a> or OpenAI’s Codex CLI – that’s fine, the underlying skills (directing an agent, verifying its output) transfer. Just know that in-class instruction, troubleshooting help, and these materials will all assume Claude Code, so you’re on your own for translating anything tool-specific.</p>
+<p>We will be learning agentic AI workflows in this class, so you will need to install an agentic CLI tool. I will use and teach Claude Code in class as the primary agentic tool I recommend, though you are welcome to use an <a href="#alternatives-to-claude-code">alternative</a> such as Google Gemini CLI.</p>
+<section id="installing-claude-code" class="level3">
+<h3 class="anchored" data-anchor-id="installing-claude-code">Installing Claude Code</h3>
+<p>You install Claude Code from inside Positron. Work through these five steps before the first day of class. You will need macOS 13 or newer, or Windows 10 or newer.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Below are my suggested installation steps. If you have any difficulty, look over Anthropic’s <a href="https://code.claude.com/docs/en/quickstart">Quickstart guide</a>. If you’re still stuck, we can sort it out with you before or after class.</p>
+</div>
+</div>
+<section id="step-1-get-a-claude-subscription" class="level4">
+<h4 class="anchored" data-anchor-id="step-1-get-a-claude-subscription">Step 1: Get a Claude subscription</h4>
+<p>If you do not already have one, sign up now. You’ll need at least a <a href="https://claude.ai/login?plan=pro">Claude Pro</a> subscription to use Claude Code – a free account isn’t sufficient.</p>
+</section>
+<section id="step-2-open-a-terminal-inside-positron" class="level4">
+<h4 class="anchored" data-anchor-id="step-2-open-a-terminal-inside-positron">Step 2: Open a terminal inside Positron</h4>
+<p>Open Positron, then from the menu bar, choose <code>Terminal &gt; New Terminal</code>. A panel opens along the bottom of the window. Everything below happens in that panel, so you never need to leave Positron.</p>
+</section>
+<section id="step-3-run-the-installer" class="level4">
+<h4 class="anchored" data-anchor-id="step-3-run-the-installer">Step 3: Run the installer</h4>
+<p>Paste the line for your computer into the terminal, then press Enter.</p>
+<p><strong>macOS</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://claude.ai/install.sh <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Windows</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">irm</span> https<span class="op">://</span>claude<span class="op">.</span><span class="fu">ai</span><span class="op">/</span>install<span class="op">.</span><span class="fu">ps1</span> <span class="op">|</span> <span class="fu">iex</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-4-close-that-terminal-then-open-a-new-one" class="level4">
+<h4 class="anchored" data-anchor-id="step-4-close-that-terminal-then-open-a-new-one">Step 4: Close that terminal, then open a new one</h4>
+<p>Use the trash icon on the terminal panel, then <code>Terminal &gt; New Terminal</code> again. This step matters: the installer teaches your computer where <code>claude</code> lives, and only a freshly opened terminal knows about it.</p>
+<p>To check that it worked, type <code>claude --version</code> and press Enter. You should see a version number such as <code>2.1.211 (Claude Code)</code>. If you instead see <code>command not found</code>, opening a new terminal is what fixes it nine times out of ten.</p>
+</section>
+<section id="step-5-log-in" class="level4">
+<h4 class="anchored" data-anchor-id="step-5-log-in">Step 5: Log in</h4>
+<p>Type <code>claude</code> and press Enter. A browser window opens: sign in with the Claude account you paid for in step 1. You only do this once.</p>
+</section>
+</section>
+</section>
+<section id="alternatives-to-claude-code" class="level2">
+<h2 class="anchored" data-anchor-id="alternatives-to-claude-code">Alternatives to Claude Code</h2>
+<p>Claude Code is not the only agent that works this way. Both of these below run in Positron’s terminal exactly like Claude Code does, and <strong>Gemini CLI is free</strong> with an ordinary Google account, though you can quickly run out of tokens using the free tier. The underlying skills we will cover (directing an agent, verifying its output) transfer. Just know that in-class instruction, troubleshooting help, and these materials will all assume Claude Code, so you’re on your own for translating anything tool-specific.</p>
+<ul>
+<li><p><a href="https://github.com/google-gemini/gemini-cli"><strong>Gemini CLI</strong></a>: Google’s coding agent for the terminal. The closest free stand-in for Claude Code, and the one to pick if you would rather not pay. <em>Free with a Google account.</em></p></li>
+<li><p><a href="https://github.com/openai/codex"><strong>Codex</strong></a>: OpenAI’s coding agent for the terminal. A good fit if you already pay for ChatGPT and want to stay in that account. <em>Needs a paid ChatGPT plan.</em></p></li>
+</ul>
 <p>That’s it - you’re all set for class!</p>
 
 
