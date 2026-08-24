@@ -142,6 +142,8 @@ agenda(1)
 - ### ...design effective surveys to get rich data
 - ### ...analyze consumer choice data to model consumer preferences
 - ### ...effectively communicate insights
+- ### ...use Git and GitHub as everyday version control and collaboration tools
+- ### ...direct agentic AI tools to write and audit code that supports analyses
 
 ---
 
@@ -268,6 +270,8 @@ Final Presentation    | 5 %    | Dec. 09
 
 # [Grades]{.center}
 
+::: {.font90}
+
 Item                  | Weight | Notes
 ----------------------|--------|-------------------------------------
 Participation / Attendance | 5%     | (Yes, I take attendance)
@@ -281,6 +285,8 @@ Pilot Analysis        | 5 %    |
 Final Survey          | 5 %    |
 Final Analysis Report | 15 %   |
 Final Presentation    | 5 %    |
+
+:::
 
 ---
 
@@ -604,7 +610,7 @@ agenda(2)
 
 # Your project starts now!
 
-## [Click here to view projects](https://docs.google.com/presentation/d/14y4J0FHOQt3hsFR1I-Js-5AwXeLUA--7XFVtV0b-7j8/edit?usp=sharing)
+## [Click here to view project ideas](https://docs.google.com/presentation/d/14y4J0FHOQt3hsFR1I-Js-5AwXeLUA--7XFVtV0b-7j8/edit?usp=sharing)
 
 ---
 
@@ -675,6 +681,7 @@ agenda(4)
 ---
 
 {{< bg-color "#ffffff" >}}
+{{< tight >}}
 
 # [Positron Orientation]{.center}
 

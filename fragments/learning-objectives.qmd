@@ -6,3 +6,5 @@ Having successfully completed this course, students will be able to:
 - Analyze consumer choice data to estimate consumer preferences for product features.
 - Design and create effective charts and presentations.
 - Communicate results in terms of design insights.
+- Use Git, GitHub, and pull requests fluently as everyday version control and collaboration tools.
+- Direct agentic AI tools to write and audit code that supports analyses.
