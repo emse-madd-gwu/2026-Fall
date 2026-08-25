@@ -51,17 +51,21 @@ has_summary <- file.exists(here::here("class", path_summary))
 ```{r}
 #| results: asis
 
+# Each button needs its own paragraph, so separate them with a blank line --
+# consecutive anchors in one block get merged into a single <p> and wrap inline.
 if (has_summary) {
   cat(
-    '<a href=', path_summary,
-    ' class="btn-notes"><i class="fas fa-file-pdf"></i> Class summary</a>\n'
+    '<a href="', path_summary,
+    '" class="btn-notes"><i class="fas fa-file-pdf"></i> Class summary</a>\n\n',
+    sep = ''
   )
 }
 
 if (has_notes) {
   cat(
-    '<a href=', path_notes,
-    ' class="btn-notes"><i class="fas fa-download"></i> Practice files</a>\n'
+    '<a href="', path_notes,
+    '" class="btn-notes"><i class="fas fa-download"></i> Practice files</a>\n\n',
+    sep = ''
   )
 }
 ```
