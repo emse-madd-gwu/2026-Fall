@@ -20,7 +20,7 @@
 
 6. [**Download and install Quarto**](https://quarto.org/docs/get-started/)
 
-7. **Install course R packages**: Open Positron, open its R console, then copy-paste [this code](./content/packages.R) into the console and press Return. This will install all the packages listed in the file.
+7. **Install course R packages**: Download [this R file](./content/packages.R), then open it in Positron and run the code in the file in the R console (if you can't find it, go to "View" -> "Console" from the menu bar). This will install all the packages listed in the file.
 
 8. [**Download and install GitHub Desktop**](https://desktop.github.com/download/)
 
