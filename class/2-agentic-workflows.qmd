@@ -1,5 +1,5 @@
 ---
-title: "Agentic Workflows"
+title: "Agentic Workflows & GitHub"
 toc: false
 execute:
   echo: false
@@ -11,5 +11,5 @@ params:
   surveydown: false
 ---
 
-```{r child = here::here("fragments", "placeholder.qmd")}
+```{r child = here::here("fragments", "class.qmd")}
 ```

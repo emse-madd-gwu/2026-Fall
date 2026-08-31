@@ -1,0 +1,5 @@
+# 1. Get Organized
+
+Open your course repo (`madd-f26/madd-netID`) in Positron using **File > Open Folder...** - open the folder itself, not a file inside it. If you haven't cloned your course repo yet, follow the steps in [HW1](1-agentic-workflows-and-github.html#clone-your-course-repo) first.
+
+Everything for this assignment lives in the ``r hw_dir`` folder. Open the ``r hw_file`` file inside it - that's the only file you need to edit. Take notes and write example code under the "Begin notes here" heading as you go through the readings and exercises below, then write your reflection under the "Reflection" heading at the end.

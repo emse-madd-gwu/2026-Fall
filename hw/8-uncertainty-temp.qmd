@@ -16,14 +16,7 @@ If you got screened out early in the survey, go back and take it again and pick 
 
 Completing all the surveys shouldn't take more than an hour. In addition to giving everyone very useful feedback, this exercise may also give you new ideas for improving your own survey.
 
-# 1. Get Organized
-
-Follow these instructions:
-
-1. Download and edit [this template](`r url_template`).
-2. Unzip the template folder. **Make sure you actually unzip it**! (in Windows, right-click it and use "extract all")
-3. Open the unzipped folder in Positron (**File > Open Folder...**) - open the folder itself, not a file inside it.
-4. Inside Positron, open the ``r hw_file`` file, take notes, and write some example code as you go through the readings / exercises below.
+{{< include ../fragments/hw-get-organized.qmd >}}
 
 # 2. Readings
 

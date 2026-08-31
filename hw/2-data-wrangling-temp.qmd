@@ -14,7 +14,9 @@ If you haven't yet, go to the [Software](../software.html) page and install all 
 
 # 2. Getting Organized
 
-Download and edit [this template](`r url_template`) when working through this assignment. This is for now mostly a blank file that you can use to jot down examples and play with code.
+Open your course repo (`madd-f26/madd-netID`) in Positron using **File > Open Folder...** - open the folder itself, not a file inside it. If you haven't cloned your course repo yet, follow the steps in [HW1](1-agentic-workflows-and-github.html#clone-your-course-repo) first.
+
+Everything for this assignment lives in the ``r hw_dir`` folder. Open the ``r hw_file`` file inside it - that's the only file you need to edit. It's for now mostly a blank script that you can use to jot down examples and play with code, and to leave your reflection in comments at the bottom.
 
 # 3. Readings
 

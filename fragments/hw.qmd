@@ -8,9 +8,7 @@ due <- get_schedule() %>%
   pull(due_assign) %>%
   paste0(" by 11:59pm")
 
-url_template <- paste0(
-  'https://madd.seas.gwu.edu/2026-Fall/templates/hw',
-  params$number, '.zip')
+hw_dir <- paste0('hw', params$number)
 
 # hw1 (GitHub/agentic) and hw2 (data wrangling) are submitted as plain .R
 # scripts -- Quarto isn't introduced until hw3 -- so their file is .R, not .qmd.
