@@ -864,7 +864,7 @@ built-in one.
 <div id="repo" class="h3">
 <span class="center">“repo”</span>
 </div>
-<p>A project folder that<br><strong>tracks its own history</strong><br><br><strong>Example</strong>: course website: <a href="https://github.com/emse-eda-gwu/2026-Fall">https://github.com/emse-eda-gwu/2026-Fall</a></p>
+<p>A project folder that<br><strong>tracks its own history</strong><br><br><strong>Example</strong>: course website: <a href="https://github.com/emse-madd-gwu/2026-Fall">https://github.com/emse-madd-gwu/2026-Fall</a></p>
 </div>
 <div class="col fragment">
 <div id="commit" class="h3">
@@ -927,6 +927,43 @@ built-in one.
 </section>
 <section class="slide level0">
 
+<section id="not-everything-belongs-in-a-repo" class="center">
+<h1>Not everything belongs in a repo</h1>
+<div class="font110">
+<p>A <strong><code>.gitignore</code></strong> file lists what git should <strong>pretend it can’t see</strong>.</p>
+</div>
+<div class="cols-row">
+<div class="col" style="flex:0 1 48%;width:48%">
+<div id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120786d61726b203e7d7d-keep-out" class="h3">
+<i class="fa-solid fa-xmark" aria-label="xmark"></i> <span class="red">Keep out</span>
+</div>
+<ul>
+<li>Rendered output (<code>_site/</code>, <code>*_files/</code>)</li>
+<li><code>.DS_Store</code>, <code>.Rhistory</code></li>
+<li>Anything with a <strong>password or key</strong></li>
+<li>Huge or private data files</li>
+</ul>
+</div>
+<div class="col" style="flex:0 1 52%;width:52%">
+<div id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636865636b203e7d7d-commit" class="h3">
+<i class="fa-solid fa-check" aria-label="check"></i> <span class="darkgreen">Commit</span>
+</div>
+<ul>
+<li>Your source: <code>.qmd</code>, <code>.R</code></li>
+<li>Small data files</li>
+<li><code>README.md</code>, <code>CLAUDE.md</code></li>
+<li><code>.gitignore</code> itself</li>
+</ul>
+</div>
+</div>
+<p><br></p>
+<div class="font100 center">
+<p>Ignored files still live on <strong>your</strong> computer — they just never get pushed.</p>
+</div>
+</section>
+</section>
+<section class="slide level0">
+
 <section class="lexis-slide-title inverse">
 <h1 class="lexis-slide-title"></h1>
 <div class="font200 fancy center">
@@ -936,7 +973,7 @@ built-in one.
 <div class="font120">
 <p>You already ran the solo loop in <strong>HW1</strong> — let’s make sure it stuck.</p>
 <ol type="1">
-<li>In <strong>GitHub Desktop</strong>, confirm your <strong><code>eda-practice</code></strong> repo is there</li>
+<li>In <strong>GitHub Desktop</strong>, confirm your <strong><code>madd-practice</code></strong> repo is there</li>
 <li>Open it on <strong>GitHub.com</strong> — can you see your commit in <strong>History</strong>?</li>
 <li><strong>Thumbs up</strong> once you can see your pushed change online</li>
 </ol>
@@ -944,15 +981,7 @@ built-in one.
 <p><br></p>
 <div class="font100 center">
 <p>Missing it, or joined the class late?</p>
-<p>Flag me now — grab the steps from <a href="https://eda.seas.gwu.edu/2026-Fall/hw/1-agentic-workflows-and-github.html">HW1</a> or this <a href="https://youtu.be/VlD8N0ZClBo">2-min walkthrough</a></p>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_71d9c47f" data-warn-when="30" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
+<p>Flag me now — grab the steps from <a href="https://madd.seas.gwu.edu/2026-Fall/hw/1-agentic-workflows-and-github.html">HW1</a> or this <a href="https://youtu.be/VlD8N0ZClBo">2-min walkthrough</a></p>
 </div>
 </section>
 </section>
@@ -985,60 +1014,56 @@ built-in one.
 <p>Make your own <strong>local copy</strong> <br> of someone else’s repo</p>
 </div>
 <div class="col fragment center">
-<div id="pull-request-pr" class="h3">
-“pull request” (PR)
+<div id="collaborator" class="h3">
+“collaborator”
 </div>
-<p><strong>Propose your changes</strong> back <br> they review, then <strong>merge</strong></p>
+<p>Someone they’ve given <strong>write access</strong> <br> so your pushes land in their repo</p>
 </div>
 </div>
 <p><br></p>
 <div class="font110 center fragment">
-<p>You work on a <strong>branch</strong>, so their <code>main</code> is untouched<br>until they say <em>yes</em>.</p>
+<p>Add each other as collaborators and you both work on the <strong>same <code>main</code></strong>.</p>
 </div>
 </section>
 </section>
 <section class="slide level0">
 
-<h1><span class="center">Why work on a branch?</span></h1>
-<div class="cols-row">
-<div class="col">
-<div id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636f64652d6272616e6368203e7d7d-on-a-branch" class="h3">
-<i class="fa-solid fa-code-branch" aria-label="code-branch"></i> <span class="darkgreen">On a branch</span>
+<section id="the-same-loop-now-with-two-people" class="center">
+<h1>The same loop, now with two people</h1>
+<div class="font110 darkgreen">
+<p><strong>Pull</strong> → <strong>Changes</strong> → <strong>Commit</strong> → <strong>Push</strong></p>
 </div>
-<ul>
-<li>Their <code>main</code> stays <strong>untouched</strong></li>
-<li>You experiment freely</li>
-<li>Nothing lands until it’s <strong>approved</strong></li>
-</ul>
+<p><br></p>
+<div class="font110 center">
+<p>One new step at the front: <span class="red"><strong>pull before you start.</strong></span></p>
 </div>
-<div class="col">
-<div id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120747269616e676c652d6578636c616d6174696f6e203e7d7d-straight-to-main" class="h3">
-<i class="fa-solid fa-triangle-exclamation" aria-label="triangle-exclamation"></i> <span class="red">Straight to <code>main</code></span>
+</section>
+</section>
+<section class="slide level0">
+
+<section id="when-you-both-edit-the-same-file" class="center">
+<h1>When you both edit the same file</h1>
+<div class="font110">
+<p>Different files, or different parts of a file → git merges them for you.</p>
 </div>
-<ul>
-<li>Your half-done work <strong>is</strong> the project</li>
-<li>No review step</li>
-<li>Mistakes hit everyone at once</li>
-</ul>
-</div>
+<p><br></p>
+<div class="font110">
+<p><strong>Same lines</strong>, both changed → git stops and asks <em>which one do you want?</em><br>That’s a <strong>merge conflict</strong>, and you fix it by editing the file.</p>
 </div>
 <div class="fragment">
 <p><br></p>
-<div class="font110 center">
-<p>A branch is a <strong>sandbox</strong>. The pull request is where they say <em>yes, bring it in.</em></p>
+<div class="font110 center darkgreen">
+<p>Pull often. Commit small. Tell each other what you’re working on.</p>
 </div>
 </div>
 </section>
+</section>
 <section class="slide level0">
 
-<section class="lexis-slide-title center" data-background-color="#fff">
-<h1 class="lexis-slide-title"></h1>
-<p><br></p>
-<div class="font110 darkgreen">
-<p><strong>New Branch</strong> → <strong>Commit</strong> on branch → <strong>Make PR</strong> → <strong>Merge</strong> to <code>main</code></p>
-</div>
-<div id="pull-request-loop" class="h1">
-Pull request loop
+<section id="one-more-thing-branches" class="center tight" data-background-color="#fff">
+<h1>One more thing: branches</h1>
+<div class="font90">
+<p>A <strong>branch</strong> is a sandbox copy of <code>main</code>. You work there, then open a <strong>pull request</strong> to merge it back. Big teams live this way. We’ll stay on <code>main</code> all semester — but this is the picture you’ll see everywhere.</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1056,33 +1081,26 @@ Pull request loop
 </div>
 <p><br></p>
 <div class="center">
-<p><strong>Team up and send your partner a pull request</strong></p>
+<p><strong>Team up and both commit to the same repo</strong></p>
 </div>
 <p><br></p>
 <div class="font90">
 <ol type="1">
-<li>Pair with a neighbor. In <em>your</em> <code>eda-practice</code> repo on GitHub.com:<br><strong>Settings › Collaborators</strong> → add your partner’s GH username → they <strong>accept</strong> the emailed invite</li>
+<li>Pair with a neighbor. In <em>your</em> <code>madd-practice</code> repo on GitHub.com:<br><strong>Settings › Collaborators</strong> → add your partner’s GH username → they <strong>accept</strong> the emailed invite</li>
 <li>Swap repo links. In GitHub Desktop, <strong>File › Clone Repository</strong> → clone <em>your partner’s</em> repo</li>
-<li><strong>Branch › New Branch</strong> → name it <code>new-edits</code></li>
-<li>Edit their <code>README.md</code> in Positron → <strong>Commit</strong> to your branch → <strong>Publish branch</strong></li>
-<li>Click <strong>Create Pull Request</strong> → describe your change → submit it on GitHub.com</li>
-<li>Back on <em>your</em> repo, review your partner’s PR and <strong>Merge</strong> it</li>
+<li>Edit their <code>README.md</code> in Positron → <strong>Commit</strong> to <code>main</code> → <strong>Push</strong></li>
+<li>Back in <em>your own</em> repo, click <strong>Fetch origin</strong>, then <strong>Pull</strong> — your partner’s edit shows up in your files</li>
+<li>Check <strong>History</strong> in GitHub Desktop: you should see <strong>both names</strong> on the commit list</li>
 </ol>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_cd7841a2" data-warn-when="60" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_ef83bd08" data-warn-when="60" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section class="slide level0">
-
-<section id="in-github-you-can-contribute-to-any-public-repo" class="inverse center middle">
-<h1>In GitHub, you can contribute to <em>any</em> public repo</h1>
 </section>
 </section>
 <section class="slide level0">
@@ -1247,9 +1265,9 @@ Build HTML
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6a964be8" data-warn-when="120" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_84d6b045" data-warn-when="120" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1257,8 +1275,8 @@ Build HTML
 </section>
 <section class="slide level0">
 
-<section id="bonus-publish-your-site-with-github-pages" class="inverse">
-<h1><span class="center">Bonus: publish your site with GitHub Pages</span></h1>
+<section id="extra-publish-your-site-with-github-pages" class="inverse">
+<h1><span class="center">Extra: publish your site with GitHub Pages</span></h1>
 <ol type="1">
 <li>Ask Claude to change the Quarto output folder from <code>_site</code> to <code>docs</code> (edit <code>_quarto.yml</code>’s <code>output-dir</code>), then re-render.</li>
 <li><strong>Commit + push</strong> your changes to GitHub.</li>
@@ -1746,9 +1764,9 @@ Every 7 days
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e046f7eb" data-warn-when="60" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_5e28bb72" data-warn-when="60" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1811,7 +1829,7 @@ Using one
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="figs/unnamed-chunk-12-1.png" width="576"></p>
+<p><img data-src="figs/unnamed-chunk-11-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -1823,7 +1841,7 @@ Using one
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="figs/unnamed-chunk-13-1.png" width="576"></p>
+<p><img data-src="figs/unnamed-chunk-12-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -1865,9 +1883,9 @@ Using one
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c14998ef" data-warn-when="60" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_b0d1f18c" data-warn-when="60" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -2272,7 +2290,7 @@ Using one
 <section class="lexis-slide-title inverse">
 <h1 class="lexis-slide-title"></h1>
 <div class="font200 fancy center">
-<p>Practice 5</p>
+<p>Your turn</p>
 </div>
 <p><strong>Which airline should you avoid?</strong></p>
 <p>The code will run. The chart will look great. <span class="orange">The answer may be wrong.</span></p>
@@ -2289,9 +2307,9 @@ Using one
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4a5e834a" data-warn-when="120" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_5d38037b" data-warn-when="120" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">18</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -2299,7 +2317,7 @@ Using one
 </section>
 <section class="slide level0">
 
-<h1><span class="center">What the chart was hiding</span></h1>
+<h1><span class="center">Did the agent get any of this wrong?</span></h1>
 <div class="cols-row">
 <div class="col">
 <div id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206d61676e696679696e672d676c617373203e7d7d-sample-size" class="h3">
@@ -2358,8 +2376,7 @@ Using one
 <section id="before-next-week" class="middle">
 <h1><span class="center">Before next week</span></h1>
 <ul>
-<li><a href="https://eda.seas.gwu.edu/2026-Fall/hw/2-tidy-data.html"><strong>HW2</strong></a>: read forward on tidy data + joins, try the light practice, reflect</li>
-<li>Next week: <strong>Cleaning, Reshaping &amp; Joining</strong> — same loop, on real data</li>
+<li><a href="https://madd.seas.gwu.edu/2026-Fall/hw/2-data-wrangling.html"><strong>HW2</strong></a>: read forward on data wrangling in the tidyverse, reflect</li>
 </ul>
 </section>
 </section>

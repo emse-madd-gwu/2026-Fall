@@ -58,8 +58,8 @@ button. (The command line works too, if you'd rather.)
 | push | Send your commits up to GitHub |
 | pull | Bring GitHub's commits down to your computer |
 | clone | Make your own local copy of someone else's repo |
+| collaborator | Someone given write access, so their pushes land in your repo |
 | branch | A sandbox copy where you work without touching `main` |
-| pull request | Propose your branch back; they review, then merge |
 
 ## The solo loop
 
@@ -70,19 +70,34 @@ Commit messages are notes to future you. "stuff", "update", "fixed it" tell you
 nothing in November. "Add flights bar chart", "Fix airline join dropping NAs",
 "Clean column names in import" tell you everything.
 
+## What not to commit
+
+A **`.gitignore`** file lists the things git should pretend it can't see. Keep
+out rendered output (`_site/`, `*_files/`), OS and editor junk (`.DS_Store`,
+`.Rhistory`), anything holding a password or API key, and data files that are
+huge or private. Commit your source (`.qmd`, `.R`), small data files, your
+`README.md` and `CLAUDE.md`, and the `.gitignore` itself. Ignored files still
+sit on your own computer — they just never get pushed.
+
 ## The collaboration loop
 
 To let someone into your repo: on GitHub.com, **Settings › Collaborators**, add
 their username, they accept the emailed invite.
 
-To contribute to someone else's repo: **clone** it, make a **new branch**,
-commit your work there, **publish the branch**, then open a **pull request**.
-Their `main` stays untouched until they merge it. That review step is the point —
-straight-to-`main` means your half-done work *is* the project, and mistakes hit
-everyone at once.
+Once you're a collaborator on a repo, you contribute the same way you work
+alone, plus one step at the front: **clone** it, **pull**, make your changes,
+**commit**, **push**. Everyone works on `main`. Pull before you start, or you'll
+be editing yesterday's version of the project.
 
-You can open a pull request against *any* public repo on GitHub, not just ones
-you've been added to.
+If two people edit different files — or different parts of the same file — git
+merges the work for you. If you both change the *same lines*, git stops and asks
+which version you want. That's a **merge conflict**, and you resolve it by
+editing the file. Pulling often and committing small changes is what keeps them
+rare.
+
+A **branch** is the other way to do this: a sandbox copy of `main` where you
+work, then open a **pull request** to merge it back. Large teams live this way,
+and you'll see it everywhere on GitHub. We'll stay on `main` all semester.
 
 ## Publishing the site with GitHub Pages
 
@@ -294,27 +309,30 @@ correct chart, and you only find these by going looking.
 | `claude` isn't a known command | Not installed, or the terminal was already open when you installed it — open a new one |
 | Agent edits files somewhere unexpected | You opened a *file* in Positron, not the *folder* |
 | Push is rejected as out of date | Someone pushed first — pull, then push |
-| "Publish branch" has nothing to send | You committed to `main` instead of your branch |
+| Your partner's change isn't in your files | You never pulled — **Fetch origin**, then **Pull** |
+| Merge conflict markers (`<<<<<<<`) in a file | You both edited the same lines — pick what you want, delete the markers, commit |
 | Pages URL shows a 404 | `output-dir` isn't `docs`, `docs/` never got pushed, or the repo is private |
 | Agent forgets the project after `/clear` | It only remembers what's in `CLAUDE.md` — write it down there |
 | A skill never fires | Wrong folder, or `SKILL.md` is missing its `name` / `description` header |
 
 # Before next class
 
-- **[HW2](https://eda.seas.gwu.edu/2026-Fall/hw/2-tidy-data.html)** — read
-  forward on tidy data, try the light practice, reflect. Due Sept 7.
+- **[HW2](https://madd.seas.gwu.edu/2026-Fall/hw/2-data-wrangling.html)** — read
+  forward on data wrangling, try the light practice, reflect. Due Sept 7.
 - **Quiz 1** at the start of next class, covering weeks 1–2.
 - Sign up for a team on the [team-formation
-  sheet](https://docs.google.com/spreadsheets/d/1cXNvWVfZ-WN4oLqbhv76cFTXPBi0KCiQdkCG7ivm7i4/edit?usp=sharing)
+  sheet](https://docs.google.com/spreadsheets/d/10INSdmtEK0Haqs-Y0DoIRGejyTr6R4H02rRPa0ujBko/edit?usp=sharing)
   and skim the [project
-  ideas](https://docs.google.com/presentation/d/1Z53tWwXvYgGpv5KNhdmL5MFmkR4NemmedCSgBbKJkNU/edit?usp=sharing).
+  ideas](https://docs.google.com/presentation/d/14y4J0FHOQt3hsFR1I-Js-5AwXeLUA--7XFVtV0b-7j8/edit?usp=sharing).
   The **proposal is due Sept 20** — it starts brewing now.
-- Next week: **Tidy Data** — same loop, on real data.
+- Next week: **Data Wrangling**
 
 You should be able to:
 
 - Create a repo, commit, and push it, all from GitHub Desktop.
-- Clone a repo, branch, and open a pull request against someone else's project.
+- Clone a repo you've been added to, commit to `main`, push, and pull your
+  collaborator's work back down.
+- Say what belongs in a `.gitignore` and why.
 - Open a folder in Positron and launch `claude` in it.
 - Cycle modes with shift + tab and say what each one lets the agent do.
 - Use `/init`, `/model`, `/effort`, `/compact`, and `/clear`, and edit the

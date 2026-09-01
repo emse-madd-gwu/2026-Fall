@@ -141,7 +141,7 @@ Our domain: **data analysis & agentic workflows**
 
 ::: {.col .fragment}
 ### ["repo"]{.center}
-A project folder that<br>**tracks its own history**<br><br>**Example**: course website: [https://github.com/emse-eda-gwu/2026-Fall](https://github.com/emse-eda-gwu/2026-Fall)
+A project folder that<br>**tracks its own history**<br><br>**Example**: course website: [https://github.com/emse-madd-gwu/2026-Fall](https://github.com/emse-madd-gwu/2026-Fall)
 :::
 
 ::: {.col .fragment}
@@ -198,6 +198,40 @@ A message is a note to **future you**
 
 ---
 
+{{< center >}}
+
+# Not everything belongs in a repo
+
+::: {.font110}
+A **`.gitignore`** file lists what git should **pretend it can't see**.
+:::
+
+::: {.col width="48%"}
+### {{< fa xmark >}} [Keep out]{.red}
+
+- Rendered output (`_site/`, `*_files/`)
+- `.DS_Store`, `.Rhistory`
+- Anything with a **password or key**
+- Huge or private data files
+:::
+
+::: {.col width="52%"}
+### {{< fa check >}} [Commit]{.darkgreen}
+
+- Your source: `.qmd`, `.R`
+- Small data files
+- `README.md`, `CLAUDE.md`
+- `.gitignore` itself
+:::
+
+<br>
+
+::: {.font100 .center}
+Ignored files still live on **your** computer — they just never get pushed.
+:::
+
+---
+
 {{< inverse >}}
 
 ::: {.font200 .fancy .center}
@@ -209,7 +243,7 @@ Checkpoint {{< fa thumbs-up >}}
 ::: {.font120}
 You already ran the solo loop in **HW1** — let's make sure it stuck.
 
-1. In **GitHub Desktop**, confirm your **`eda-practice`** repo is there
+1. In **GitHub Desktop**, confirm your **`madd-practice`** repo is there
 2. Open it on **GitHub.com** — can you see your commit in **History**?
 3. **Thumbs up** once you can see your pushed change online
 :::
@@ -219,13 +253,8 @@ You already ran the solo loop in **HW1** — let's make sure it stuck.
 ::: {.font100 .center}
 Missing it, or joined the class late?
 
-Flag me now — grab the steps from [HW1](https://eda.seas.gwu.edu/2026-Fall/hw/1-agentic-workflows-and-github.html) or this [2-min walkthrough](https://youtu.be/VlD8N0ZClBo)
+Flag me now — grab the steps from [HW1](https://madd.seas.gwu.edu/2026-Fall/hw/1-agentic-workflows-and-github.html) or this [2-min walkthrough](https://youtu.be/VlD8N0ZClBo)
 :::
-
-```{r}
-#| echo: false
-countdown(minutes = 3, warn_when = 30, top = 0, right = 0, font_size = "2em")
-```
 
 ---
 
@@ -256,56 +285,67 @@ Make your own **local copy** <br> of someone else's repo
 :::
 
 ::: {.col .fragment .center}
-### "pull request" (PR)
-**Propose your changes** back <br> they review, then **merge**
+### "collaborator"
+Someone they've given **write access** <br> so your pushes land in their repo
 :::
 
 <br>
 
 ::: {.font110 .center .fragment}
-You work on a **branch**, so their `main` is untouched<br>until they say *yes*.
+Add each other as collaborators and you both work on the **same `main`**.
 :::
 
 ---
 
-# [Why work on a branch?]{.center}
+{{< center >}}
 
-::: {.col}
-### {{< fa code-branch >}} [On a branch]{.darkgreen}
+# The same loop, now with two people
 
-- Their `main` stays **untouched**
-- You experiment freely
-- Nothing lands until it's **approved**
+::: {.font110 .darkgreen}
+**Pull** → **Changes** → **Commit** → **Push**
 :::
 
-::: {.col}
-### {{< fa triangle-exclamation >}} [Straight to `main`]{.red}
+<br>
 
-- Your half-done work **is** the project
-- No review step
-- Mistakes hit everyone at once
+::: {.font110 .center}
+One new step at the front: [**pull before you start.**]{.red}
+:::
+
+---
+
+{{< center >}}
+
+# When you both edit the same file
+
+::: {.font110}
+Different files, or different parts of a file → git merges them for you.
+:::
+
+<br>
+
+::: {.font110}
+**Same lines**, both changed → git stops and asks *which one do you want?*<br>That's a **merge conflict**, and you fix it by editing the file.
 :::
 
 . . .
 
 <br>
 
-::: {.font110 .center}
-A branch is a **sandbox**. The pull request is where they say *yes, bring it in.*
+::: {.font110 .center .darkgreen}
+Pull often. Commit small. Tell each other what you're working on.
 :::
 
 ---
 
 {{< bg-color "#fff" >}}
 {{< center >}}
+{{< tight >}}
 
-<br>
+# One more thing: branches
 
-::: {.font110 .darkgreen}
-**New Branch** → **Commit** on branch → **Make PR** → **Merge** to `main`
+::: {.font90}
+A **branch** is a sandbox copy of `main`. You work there, then open a **pull request** to merge it back. Big teams live this way. We'll stay on `main` all semester — but this is the picture you'll see everywhere.
 :::
-
-# Pull request loop
 
 ![](images/branch-flow.png){fig-align="center" width=100%}
 
@@ -320,33 +360,24 @@ Your turn
 <br>
 
 ::: {.center}
-**Team up and send your partner a pull request**
+**Team up and both commit to the same repo**
 :::
 
 <br>
 
 ::: {.font90}
 
-1. Pair with a neighbor. In *your* `eda-practice` repo on GitHub.com:<br>**Settings › Collaborators** → add your partner's GH username → they **accept** the emailed invite
+1. Pair with a neighbor. In *your* `madd-practice` repo on GitHub.com:<br>**Settings › Collaborators** → add your partner's GH username → they **accept** the emailed invite
 2. Swap repo links. In GitHub Desktop, **File › Clone Repository** → clone *your partner's* repo
-3. **Branch › New Branch** → name it `new-edits`
-4. Edit their `README.md` in Positron → **Commit** to your branch → **Publish branch**
-5. Click **Create Pull Request** → describe your change → submit it on GitHub.com
-6. Back on *your* repo, review your partner's PR and **Merge** it
+3. Edit their `README.md` in Positron → **Commit** to `main` → **Push**
+4. Back in *your own* repo, click **Fetch origin**, then **Pull** — your partner's edit shows up in your files
+5. Check **History** in GitHub Desktop: you should see **both names** on the commit list
 :::
 
 ```{r}
 #| echo: false
 countdown(minutes = 10, warn_when = 60, top = 0, right = 0, font_size = "2em")
 ```
-
----
-
-{{< inverse >}}
-{{< center >}}
-{{< middle >}}
-
-# In GitHub, you can contribute to *any* public repo
 
 ---
 
@@ -483,14 +514,14 @@ Direct the agent to build a multi-page Quarto website about **someone you admire
 
 ```{r}
 #| echo: false
-countdown(minutes = 15, warn_when = 120, top = 0, right = 0, font_size = "2em")
+countdown(minutes = 10, warn_when = 120, top = 0, right = 0, font_size = "2em")
 ```
 
 ---
 
 {{< inverse >}}
 
-# [Bonus: publish your site with GitHub Pages]{.center}
+# [Extra: publish your site with GitHub Pages]{.center}
 
 1. Ask Claude to change the Quarto output folder from `_site` to `docs` (edit `_quarto.yml`'s `output-dir`), then re-render.
 2. **Commit + push** your changes to GitHub.
@@ -948,7 +979,7 @@ Go back to your `my-website` repo
 
 ```{r}
 #| echo: false
-countdown(minutes = 15, warn_when = 60, top = 0, right = 0, font_size = "2em")
+countdown(minutes = 10, warn_when = 60, top = 0, right = 0, font_size = "2em")
 ```
 
 ---
@@ -1089,7 +1120,7 @@ Your turn
 
 ```{r}
 #| echo: false
-countdown(minutes = 15, warn_when = 60, top = 0, right = 0, font_size = "2em")
+countdown(minutes = 10, warn_when = 60, top = 0, right = 0, font_size = "2em")
 ```
 
 ---
@@ -1449,7 +1480,7 @@ fake = Faker('fr_FR')
 {{< inverse >}}
 
 ::: {.font200 .fancy .center}
-Practice 5
+Your turn
 :::
 
 **Which airline should you avoid?**
@@ -1466,12 +1497,12 @@ The code will run. The chart will look great. [The answer may be wrong.]{.orange
 
 ```{r}
 #| echo: false
-countdown(minutes = 18, warn_when = 120, top = 0, right = 0, font_size = "2em")
+countdown(minutes = 15, warn_when = 120, top = 0, right = 0, font_size = "2em")
 ```
 
 ---
 
-# [What the chart was hiding]{.center}
+# [Did the agent get any of this wrong?]{.center}
 
 ::: {.col}
 ### {{< fa magnifying-glass >}} [Sample size]{.red}
@@ -1538,8 +1569,7 @@ Every one of these is **invisible in the chart** and **invisible in the code**.<
 
 # [Before next week]{.center}
 
-- [**HW2**](https://eda.seas.gwu.edu/2026-Fall/hw/2-tidy-data.html): read forward on tidy data + joins, try the light practice, reflect
-- Next week: **Cleaning, Reshaping & Joining** — same loop, on real data
+- [**HW2**](https://madd.seas.gwu.edu/2026-Fall/hw/2-data-wrangling.html): read forward on data wrangling in the tidyverse, reflect
 
 ---
 
