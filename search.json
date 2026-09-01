@@ -602,60 +602,166 @@
     "text": "Due: Sep 21 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to get familiar with creating plots using the ggplot2 library and to introduce you to the “Quarto” file format.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nOpen your course repo (madd-f26/madd-netID) in Positron using File &gt; Open Folder… - open the folder itself, not a file inside it. If you haven’t cloned your course repo yet, follow the steps in HW1 first.\nEverything for this assignment lives in the hw3 folder. Open the hw3.qmd file inside it - that’s the only file you need to edit. Take notes and write example code under the “Begin notes here” heading as you go through the readings and exercises below, then write your reflection under the “Reflection” heading at the end.\n\nNotice that this week’s file is a .qmd file, which is called a “Quarto Markdown” file (or just “Quarto” file). You’ll learn about what these files are and how they are different from .R files in the readings for this week. From now on, we’ll mostly be using Quarto files for our assignments (including your project deliverables).\n\n\n\n2. Readings\nOpen up a notebook (physical, digital…whatever you take notes in best), and take notes while you go through these readings:\n\nLesson 5 “Data Visualization”\nLesson 6 “Reproducible Reporting”\n\n\n\n3. Exercises\nWe’re going to again look at the Posit “recipes” page for examples on how to implement things in . This time, focus on the “Visualize Data” section - go through each recipe and try to implement it yourself in your hw3.qmd file. We’ll spend time in class next week going over ggplot and doing more practice with it.\n\n\n4. Review\nLast week you read about working with data in R using the tidyverse and the dplyr package (handing data using pipes, %&gt;%, etc.). We also discussed this in class.\nIt is very important that you feel comfortable working with data frames using this approach as we will use it throughout the semester.\nFor extra practice, take a look at this assignment from my Intro to Programming in R class that I taught in the spring semester. I strongly encourage you to look through it and try to answer the questions, especially if this is your first time using the tidyverse and / or R. It is just good practice to review these skills.\n\n\n5. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw3.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n6. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Preview” button in Positron or running quarto render in the terminal.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
   },
   {
-    "objectID": "hw/2-data-wrangling-temp.html",
-    "href": "hw/2-data-wrangling-temp.html",
-    "title": "Data Wrangling",
+    "objectID": "hw/13-take-home-analysis.html",
+    "href": "hw/13-take-home-analysis.html",
+    "title": "Exam",
     "section": "",
-    "text": "Due: Sep 07 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to get more familiar with R and Positron and to develop some basic strategies for working with data in R.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned."
+    "text": "Coming soon!"
   },
   {
-    "objectID": "hw/2-data-wrangling-temp.html#inspect-data-from-other-packages",
-    "href": "hw/2-data-wrangling-temp.html#inspect-data-from-other-packages",
-    "title": "Data Wrangling",
-    "section": "Inspect data from other packages",
-    "text": "Inspect data from other packages\nWrite R code to install the dslabs package from CRAN, then write code to load the library. Write some code to preview and inspect the movielens data frame that gets loaded when you load the library using some of the techniques we saw in class. For each of the following questions, write code to find your answer and leave a detailed response in a comment:\n\nWhat is this dataset about?\nHow many observations are in the data frame?\nWhat is the original source of the data?\nWhat type of data is each variable?\nWhat are the years of the earliest and most recent observations in the data set?"
-  },
-  {
-    "objectID": "hw/2-data-wrangling-temp.html#answer-questions-about-the-data",
-    "href": "hw/2-data-wrangling-temp.html#answer-questions-about-the-data",
-    "title": "Data Wrangling",
-    "section": "Answer questions about the data",
-    "text": "Answer questions about the data\nFor each of the following questions, write code to find your answer and leave a detailed response in a comment:\n\nWhat is the min, mean, and max rating in the data set?\nHow many observations received the maximum rating?\nWhat percentage of total observations received the maximum rating?\nWhat is the title of the observation with the longest title (in terms of numbers of letters in the title)?"
-  },
-  {
-    "objectID": "hw/2-data-wrangling-temp.html#installing-packages-from-github-the-brrr-library",
-    "href": "hw/2-data-wrangling-temp.html#installing-packages-from-github-the-brrr-library",
-    "title": "Data Wrangling",
-    "section": "Installing packages from Github: the BRRR library",
-    "text": "Installing packages from Github: the BRRR library\nThe vast majority of the time, you will install external packages using the install.packages() function. This installs packages from the Comprehensive R Archive Network (CRAN), where most packages are published. But you can also install packages that are under development or haven’t been published to CRAN yet. Most of the time, these packages are hosted on GitHub - an online platform for sharing code (it’s also where all of the files that make up this website are stored).\nTo install a package from GitHub, you first need to install the remotes library. Then you can use the remotes::install_github()` function to install packages directly from GitHub. To try this out, install the remotes library, then trying installing the BRRR package:\n\nremotes::install_github(\"brooke-watson/BRRR\")\n\n\n\n\n\n\n\nNote\n\n\n\nPackages on GitHub are in development and often require other packges to work. So if you get an installation error about some other package dependency, try restarting your R session and try again.\n\n\nNot sure what this package does? Well, one of the other nice things about packages listed on GitHub is the authors tend to write detailed descriptions - check out the GitHub page for the BRRR package. Then try using the BRRR::skrrrahh() function with different number arguments (turn your volume up). In the #welcome channel on slack, post your favorite argument to skrrrahh() (mine is 24)."
-  },
-  {
-    "objectID": "hw/13-take-home-analysis-temp.html",
-    "href": "hw/13-take-home-analysis-temp.html",
-    "title": "Exam Prep: Auditing an AI-Generated Analysis",
-    "section": "",
-    "text": "Due: Nov 29 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to practice the single most important skill you’ll need when an AI does your data work for you: knowing when it is wrong. You’ll audit a complete conjoint analysis that runs cleanly, reads confidently, and gets the client’s answer backwards. It is also your preparation for the in-class final exam on 12/2.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nThe files for this assignment are already in your course GitHub repository, in the hw13/ folder:\n\nsoda-analysis.qmd — the analysis you are auditing.\nhw13.qmd — where you write your answers.\ndata/soda.csv — the choice data the analysis uses.\n\nPull the latest changes in GitHub Desktop, then open your course repo folder in Positron (File &gt; Open Folder…) and render soda-analysis.qmd to see the report as the client would see it.\n\n\n2. The Setup\nSome GWU researchers ran a conjoint experiment on consumer preferences for soda. Each question showed respondents three different 12-ounce cans with the attributes price, caffeine free, sugar free, added flavor (None, Cherry, or Vanilla), and brand (Coke or Pepsi).\nAn AI assistant was handed the data and asked to analyze it and write up the results. The report it produced is soda-analysis.qmd. It runs without errors. It is well organized. It has a coefficient table, willingness-to-pay estimates, a market simulation, and a confident recommendation to the client at the end.\nIt also contains exactly six errors, and its final recommendation is backwards.\nSome of the six are mistakes in the code. Some are mistakes in how the results are described in the write-up. All six are the kind of mistake these tools make routinely — which is the whole reason you are the one who has to sign off on the analysis.\n\n\n3. Do the Audit\nWork through hw13.qmd. It asks you to:\n\nFind all six errors, saying where each one is, what’s wrong, and what it should be instead.\nFix them in soda-analysis.qmd and re-render it, then report the corrected coefficients, WTP estimates, and market shares.\nAnswer the client’s actual question using your corrected results: should Coke make this soda sugar-free, and should they add the Cherry flavoring? Sugar-free costs an extra $0.10 per can; Cherry flavoring costs an extra $0.15 per can. Say which specific error changed the answer.\nReflect on which error was hardest to catch, and on what you had to know yourself in order to judge whether your AI assistant’s answers were any good.\n\nUse Claude Code for this. That is the point — this is exactly the workflow you’ll use in practice. But note what happens when you do: the assistant will find some of these quickly, will miss others entirely, and will occasionally tell you something is wrong when it isn’t. You are the one who has to decide. Everything you write down should be something you could defend out loud without the computer in front of you.\nA hint on where to look: three of the six errors are visible in the numbers themselves if you check whether each claim in the write-up actually follows from the output above it. Two are in the code. One is about a result that the report treats as a finding when it shouldn’t.\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Preview” button in Positron or running quarto render in the terminal.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
-  },
-  {
-    "objectID": "hw/12-sensitivity-temp.html",
-    "href": "hw/12-sensitivity-temp.html",
+    "objectID": "hw/12-sensitivity.html",
+    "href": "hw/12-sensitivity.html",
     "title": "Sensitivity Analysis",
     "section": "",
-    "text": "Due: Nov 22 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of preference heterogeneity - that is, not everyone has the same preferences. We will see two ways to account for this: 1) specify preference parameters as distributions, and 2) estimate fixed parameter models on different sub-groups in your data.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nOpen your course repo (madd-f26/madd-netID) in Positron using File &gt; Open Folder… - open the folder itself, not a file inside it. If you haven’t cloned your course repo yet, follow the steps in HW1 first.\nEverything for this assignment lives in the hw12 folder. Open the hw12.qmd file inside it - that’s the only file you need to edit. Take notes and write example code under the “Begin notes here” heading as you go through the readings and exercises below, then write your reflection under the “Reflection” heading at the end.\n\n\n2. Readings\nThis is your last homework! Okay, well not really - your homework next week will be a take home exam. But don’t worry, we will spend our time in class next week going over the entire class, so there will be time to get answers to any questions you have.\nFor this week, the only thing you will look over is the concept of a sensitivity analysis. Last week in class we covered how to use our estimated logit model to conduct a market simulation, which gave us predicted market shares for different products. Naturally, one of the key things we might want to know is how sensitive our predicted market shares are to changes in our attributes.\nTo understand how we calculate such sensitivities, take a look at the logitr-cars repo. Download the repo using this link, then open the folder in Positron (File &gt; Open Folder…). Then open the following two files:\n\n9.1-compute-sensitivity.R\n9.2-plot-sensitivity.R\n\nYour job this week is to go through each of these files line-by-line to make sure you understand what is being done. (It might also help to look back at some of the earlier files we covered as a refresher, such as 3.1 on estimating models or 5.1 on uncertainty).\nLet’s start with the first file, 9.1. In this file, we use the predict() function to compute market shares for different markets.\nIn the first sensitivity analysis, we define a baseline market, then we create repeated copies of this market but with incremental changes to the price of alternative 2. When we use predict(), we get predicted probabilities for each market, which we can then use to see how the predicted probability for alternative 2 changes with price.\nIn the second sensitivity analysis, we also start with repeated copies of our baseline market, but then we substitute in a series of different cases where we change the values of other attributes. Each case has a “low” and “high” value, where “high” means they result in expected higher market shares, and “low” means the opposite. Again, we use predict() to obtain predicted market shares for each scenario.\nAt the bottom of the script, we save the data frames.\nIn 9.2, we use the saved results to visualize the results computed in 9.1. This code shows us how to create line plots of the predicted market share versus price as well as revenue versus price. The third chart is a “tornado” plot, which shows us the predicted market share for each of the “high” and “low” conditions in 9.1.\nThese charts – sensitivity to price, and sensitivity to changes in other attributes – will be important charts to include in your final analysis report. You can use these examples to help you create similar charts for your project.\nOnce you have gone through each file, consider what might make a good “baseline” market for your project, then write your reflection.\n\n\n3. Reflect\nReflect on what you’ve learned while going through these exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw12.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Preview” button in Positron or running quarto render in the terminal.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
+    "text": "Coming soon!"
   },
   {
-    "objectID": "hw/11-heterogeneity-temp.html",
-    "href": "hw/11-heterogeneity-temp.html",
+    "objectID": "hw/11-heterogeneity.html",
+    "href": "hw/11-heterogeneity.html",
     "title": "Heterogeneity",
     "section": "",
-    "text": "Due: Nov 16 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of preference heterogeneity - that is, not everyone has the same preferences. We will see two ways to account for this: 1) specify preference parameters as distributions, and 2) estimate fixed parameter models on different sub-groups in your data.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nOpen your course repo (madd-f26/madd-netID) in Positron using File &gt; Open Folder… - open the folder itself, not a file inside it. If you haven’t cloned your course repo yet, follow the steps in HW1 first.\nEverything for this assignment lives in the hw11 folder. Open the hw11.qmd file inside it - that’s the only file you need to edit. Take notes and write example code under the “Begin notes here” heading as you go through the readings and exercises below, then write your reflection under the “Reflection” heading at the end.\n\n\n2. Readings\nUp until this point in the class, we have only estimated relatively simple models that assume everyone in our sample has the same preferences. That is, we only estimate a “fixed parameter” model that reflects the average preferences for the whole sample. In reality, preferences are usually heterogeneous (different people have different preferences).\nOne way to account for this is to estimated a “mixed” logit model where we assume the preference parameters in our utility models follow some distribution across the sample (usually a normal distribution). Another way is to estimate a fixed parameter model on different sub-groups in our data. Each of these approaches are discussed in this week’s video on heterogeneity. Take notes as you watch the video and answer the practice questions in the video as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.\nClick here to download the slides in the video as a PDF.\n\n\n\n\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw11.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Preview” button in Positron or running quarto render in the terminal.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
+    "text": "Coming soon!"
   },
   {
-    "objectID": "hw/10-wtp-simulation-temp.html",
-    "href": "hw/10-wtp-simulation-temp.html",
+    "objectID": "hw/10-wtp-simulation.html",
+    "href": "hw/10-wtp-simulation.html",
     "title": "WTP & Simulations",
     "section": "",
-    "text": "Due: Nov 09 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of willingness to pay (WTP) and to learn how we can use estimated model coefficients to compute estimates of WTP and make predictions about how likely people would be to choose each option in a set of alternatives.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nOpen your course repo (madd-f26/madd-netID) in Positron using File &gt; Open Folder… - open the folder itself, not a file inside it. If you haven’t cloned your course repo yet, follow the steps in HW1 first.\nEverything for this assignment lives in the hw10 folder. Open the hw10.qmd file inside it - that’s the only file you need to edit. Take notes and write example code under the “Begin notes here” heading as you go through the readings and exercises below, then write your reflection under the “Reflection” heading at the end.\n\n\n2. Readings\nAt this point in the class, we know how to design conjoint surveys, field them on formr.org, clean the resulting data, estimate models, and assess the uncertainty around the resulting coefficients. But what do those coefficients actually mean? How should we use them to gain design insights?\nThis week, we’ll begin considering these questions as we learn how to use estimated model coefficients to compute estimates of “willingness to pay” (WTP) and make predictions about how likely people would be to choose each option in a set of alternatives. Take notes as you watch the video on these topics, and answer the practice questions in the video as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.\nClick here to download the slides in the video as a PDF.\n\n\n\n\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw10.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Preview” button in Positron or running quarto render in the terminal.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "hw/1-agentic-workflows-and-github.html",
+    "href": "hw/1-agentic-workflows-and-github.html",
+    "title": "Agentic Workflows & GitHub",
+    "section": "",
+    "text": "Due: Aug 31 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: This course is built around a fundamental shift in how we do data analysis. We used to live in a paradigm where we hand-wrote every line of code. Instead, we now direct an AI coding agent (e.g., Claude Code) to do the majority of the coding while our job changes to supervising, verifying, and taking responsibility for the resulting analysis produced by the code. This assignment is designed to make sure you have all your tools installed and properly configured and to ensure you can have productive conversations with an AI agent. Going forward, we will focus class time on working with agents them rather than troubleshooting installations and configurations.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Install Your Tools\nIf you haven’t yet, go to the software page and make sure you have everything installed on your computer.\nThen, verify everything works: open Positron, open a folder (any folder will do for now), open the terminal window in Positron, and run claude (or launch a different agent if you’re not using Claude Code). If it starts a conversation and asks for your login, it’s working.\nIf you get stuck on installation, post in Slack and we can help you. Don’t wait until Monday night - ask sooner!\n\n\n2. Get familiar with the course\nFollow Snoop’s advice and read the entire Course Syllabus (actually read the whole thing). Then review the schedule and make sure to note important upcoming deadlines.\nThis course is built around a semester-long team project, so pay particular attention to the project overview and the dates for each project deliverable.\n\n\n3. Make your first GitHub repo\nUsing your GitHub account (which you should have made when installing the course software, if you didn’t already have one), use GitHub Desktop to make a simple demo repo. This 2-min video recording shows the steps, which are also listed below: https://youtu.be/VlD8N0ZClBo\n\nGitHub Desktop → File › New Repository → name it madd-practice.\nClick on the box for “initialize this repository with a README”, and choose “None” in the “Git Ignore” and “License” parts.\nPublish it to GitHub.com - make it public, not private (the video shows private).\nIn GitHub Desktop, click on “Show in Finder” to open your local clone.\nOpen the README.md file in Positron and add a line or two of text, save it.\nBack in GitHub Desktop, notice the “diff” (showing the changes made).\nWrite a description of your changes in the bottom-left box, then Commit your changes.\nPush your change to github.com (button with up arrow at the top)\nLook at your History tab to see changes, then click on “View on GitHub” to confirm your changes are in the main repo.\nWhen you’re done, post the link to your public repo in the #hw channel.\n\n\n\n4. Clone your course repo\nThe repo you just made was practice. Everything you actually submit this semester will go in a single private repo that I have already created for you in the course’s GitHub organization. It comes pre-loaded with a folder for each assignment, so you never have to make one yourself.\n\n\n\n\n\n\nNote\n\n\n\nYou can check if this folder exists by going to the list of repos in the course organization GitHub account and searching for your repo, which should be labeled madd-netID, where netID is your GW netID (not your GitHub user name). If you do not see a repo there, check that you have added your GitHub username in this sheet next to your name\n\n\n\nCheck your email for an invitation to join the madd-f26 organization on GitHub and accept it. Check your spam folder if you don’t see it. You can’t reach your repo until you’ve accepted, so do this first. Message Prof. Helveston on Slack if you can’t find it.\nIn GitHub Desktop → File › Clone Repository → the GitHub.com tab. Your repo will be in the list as madd-f26/madd-netID, where netID is your GW netID (not your GitHub user name). Select it and click Clone.\nChoose a sensible place to put it on your computer. You’ll be opening this folder all semester, so don’t bury it somewhere you’ll never find again.\nClick “Show in Finder” and look around. You should see a folder for each assignment, including hw1, which you’ll need later to add your reflection at the end of this assignment.\n\n\n\n5. Read about Claude Code\nRead how Claude Code is used in practice (Anthropic). Read this one carefully. Its central finding is directly relevant to this whole course: domain expertise (not coding proficiency) is what makes people effective with a coding agent. That’s the whole premise of how this class is taught this semester – you don’t need to be a stronger programmer than the agent to build good choice models, but you do need to become a better judge of whether its output is accurate, and to develop the habits and workflow patterns that build that judgement.\n\n\n6. Light practice: your first conversation with an agent\nOpen the course repo you just cloned in Positron (File › Open Folder, then choose that folder). Open the terminal window, run claude, and try a couple of low-stakes things:\n\nAsk it to look around the folder and tell you what’s in it. Do this one first – it shows you that the agent can see the files in whatever folder you’ve opened, which is the single most important thing to understand about working with one.\nAsk it what a .R script is and for a quick demonstration – have it write and walk you through a few lines of R code. Ask it to put the demonstration file in the hw1 folder.\n\nYou don’t need a data file or a real analysis task for this. The point is just to see the agent read, reason about, and explain something concrete, and to get a feel for the back-and-forth of working with an agent.\nIf the agent creates any files while you’re poking around, that’s fine. You don’t have to commit them. The only thing that has to end up on GitHub is your reflection (next step).\n\n\n7. Reflect\nIn your course repo, open the hw1.R file in your hw1 folder and write at least a paragraph (as comments) reflecting on your experiences from this assignment. Some prompts you could use:\n\nWhat surprised you about installing or using Claude Code for the first time?\nWhere do you already have questions or doubts about directing an AI agent to write code, versus writing it yourself?\nThe Anthropic reading argues that domain expertise matters more than coding skill for using an agent well. Do you buy that? Why or why not?\n“I used to think ______, now I think ______ 🤔”\n\n\n\n8. Submit\nTo submit your assignment, follow these instructions:\n\nMake sure all your notes and your reflection are saved in your hw1.R file. (This assignment is a plain .R script – there’s nothing to render yet; we’ll start using Quarto in a couple of weeks.)\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
+  },
+  {
+    "objectID": "class/9-optimization-mle.html",
+    "href": "class/9-optimization-mle.html",
+    "title": "Optimization & MLE",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/7-conjoint-questions.html",
+    "href": "class/7-conjoint-questions.html",
+    "title": "Conjoint Questions",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/5-quarto-plotting.html",
+    "href": "class/5-quarto-plotting.html",
+    "title": "Quarto & Plotting",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/3-data-wrangling.html",
+    "href": "class/3-data-wrangling.html",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/15-final-presentations.html",
+    "href": "class/15-final-presentations.html",
+    "title": "Final Presentations",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/13-heterogeneity.html",
+    "href": "class/13-heterogeneity.html",
+    "title": "Heterogeneity",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/11-doe-power-analysis.html",
+    "href": "class/11-doe-power-analysis.html",
+    "title": "DOE & Power Analysis",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/1-getting-started.html",
+    "href": "class/1-getting-started.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nCLASS MATERIALS\n Class summary\n Practice files"
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Licensing and copyright information",
+    "section": "",
+    "text": "The course material is licensed under the Creative Commons Attribution 4.0 International License and the course code is licensed under a MIT License by John Helveston.",
+    "crumbs": [
+      "Other",
+      "License"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This course provides students with data analysis techniques to inform design decisions in an uncertain, competitive market; topics include consumer choice modeling, programming in the R programming language, survey design, conjoint analysis, optimization, market simulation, and professional communication skills. Over the course of the semester, students will learn and apply theory and methods to a team project to assess the market competitiveness of an emerging product / technology and use marketing analytics to generate design insights. All analyses will be conducted to support reproducibility from raw data to results using Quarto (which is built on the ideas of RMarkdown). At the end of the semester, students will submit a final, reproducible report of their project along with a presentation of their findings. This course has a “flipped” classroom structure. Students will spend the majority of class time working through guiding practice exercises or working on their projects. To prepare for class, students must complete weekly assignments that involve watching and reviewing recorded lecture materials and answering related practice questions.\nThis course was first created by Dr. John Paul Helveston at the George Washington University for the Spring 2019 semester of EMSE 6035, which was previously called Marketing of Technology. See the LICENSE page for information about reusing and sharing content.",
+    "crumbs": [
+      "Other",
+      "About"
+    ]
+  },
+  {
+    "objectID": "class/10-uncertainty.html",
+    "href": "class/10-uncertainty.html",
+    "title": "Uncertainty",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/12-wtp-simulation.html",
+    "href": "class/12-wtp-simulation.html",
+    "title": "WTP & Simulations",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/14-exam-story-telling.html",
+    "href": "class/14-exam-story-telling.html",
+    "title": "Exam & Story Telling",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/2-agentic-workflows.html",
+    "href": "class/2-agentic-workflows.html",
+    "title": "Agentic Workflows & GitHub",
+    "section": "",
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nCLASS MATERIALS\n Class summary\n Practice files"
+  },
+  {
+    "objectID": "class/4-workshop-proposals.html",
+    "href": "class/4-workshop-proposals.html",
+    "title": "Project Proposal Workshops",
+    "section": "",
+    "text": "No class this week - sign up HERE for your team proposal meeting with Professor Helveston"
+  },
+  {
+    "objectID": "class/6-intro-to-surveydown.html",
+    "href": "class/6-intro-to-surveydown.html",
+    "title": "Intro to surveydown",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "class/8-utility-models.html",
+    "href": "class/8-utility-models.html",
+    "title": "Utility Models",
+    "section": "",
+    "text": "Coming soon!"
   },
   {
     "objectID": "faq.html",
@@ -788,173 +894,53 @@
     ]
   },
   {
-    "objectID": "class/8-utility-models.html",
-    "href": "class/8-utility-models.html",
-    "title": "Utility Models",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/6-intro-to-surveydown.html",
-    "href": "class/6-intro-to-surveydown.html",
-    "title": "Intro to surveydown",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/4-workshop-proposals.html",
-    "href": "class/4-workshop-proposals.html",
-    "title": "Project Proposal Workshops",
-    "section": "",
-    "text": "No class this week - sign up HERE for your team proposal meeting with Professor Helveston"
-  },
-  {
-    "objectID": "class/2-agentic-workflows.html",
-    "href": "class/2-agentic-workflows.html",
-    "title": "Agentic Workflows & GitHub",
-    "section": "",
-    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nCLASS MATERIALS\n Class summary\n Practice files"
-  },
-  {
-    "objectID": "class/14-exam-story-telling.html",
-    "href": "class/14-exam-story-telling.html",
-    "title": "Exam & Story Telling",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/12-wtp-simulation.html",
-    "href": "class/12-wtp-simulation.html",
+    "objectID": "hw/10-wtp-simulation-temp.html",
+    "href": "hw/10-wtp-simulation-temp.html",
     "title": "WTP & Simulations",
     "section": "",
-    "text": "Coming soon!"
+    "text": "Due: Nov 09 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of willingness to pay (WTP) and to learn how we can use estimated model coefficients to compute estimates of WTP and make predictions about how likely people would be to choose each option in a set of alternatives.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nOpen your course repo (madd-f26/madd-netID) in Positron using File &gt; Open Folder… - open the folder itself, not a file inside it. If you haven’t cloned your course repo yet, follow the steps in HW1 first.\nEverything for this assignment lives in the hw10 folder. Open the hw10.qmd file inside it - that’s the only file you need to edit. Take notes and write example code under the “Begin notes here” heading as you go through the readings and exercises below, then write your reflection under the “Reflection” heading at the end.\n\n\n2. Readings\nAt this point in the class, we know how to design conjoint surveys, field them on formr.org, clean the resulting data, estimate models, and assess the uncertainty around the resulting coefficients. But what do those coefficients actually mean? How should we use them to gain design insights?\nThis week, we’ll begin considering these questions as we learn how to use estimated model coefficients to compute estimates of “willingness to pay” (WTP) and make predictions about how likely people would be to choose each option in a set of alternatives. Take notes as you watch the video on these topics, and answer the practice questions in the video as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.\nClick here to download the slides in the video as a PDF.\n\n\n\n\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw10.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Preview” button in Positron or running quarto render in the terminal.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
   },
   {
-    "objectID": "class/10-uncertainty.html",
-    "href": "class/10-uncertainty.html",
-    "title": "Uncertainty",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This course provides students with data analysis techniques to inform design decisions in an uncertain, competitive market; topics include consumer choice modeling, programming in the R programming language, survey design, conjoint analysis, optimization, market simulation, and professional communication skills. Over the course of the semester, students will learn and apply theory and methods to a team project to assess the market competitiveness of an emerging product / technology and use marketing analytics to generate design insights. All analyses will be conducted to support reproducibility from raw data to results using Quarto (which is built on the ideas of RMarkdown). At the end of the semester, students will submit a final, reproducible report of their project along with a presentation of their findings. This course has a “flipped” classroom structure. Students will spend the majority of class time working through guiding practice exercises or working on their projects. To prepare for class, students must complete weekly assignments that involve watching and reviewing recorded lecture materials and answering related practice questions.\nThis course was first created by Dr. John Paul Helveston at the George Washington University for the Spring 2019 semester of EMSE 6035, which was previously called Marketing of Technology. See the LICENSE page for information about reusing and sharing content.",
-    "crumbs": [
-      "Other",
-      "About"
-    ]
-  },
-  {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "Licensing and copyright information",
-    "section": "",
-    "text": "The course material is licensed under the Creative Commons Attribution 4.0 International License and the course code is licensed under a MIT License by John Helveston.",
-    "crumbs": [
-      "Other",
-      "License"
-    ]
-  },
-  {
-    "objectID": "class/1-getting-started.html",
-    "href": "class/1-getting-started.html",
-    "title": "Getting Started",
-    "section": "",
-    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nCLASS MATERIALS\n Class summary\n Practice files"
-  },
-  {
-    "objectID": "class/11-doe-power-analysis.html",
-    "href": "class/11-doe-power-analysis.html",
-    "title": "DOE & Power Analysis",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/13-heterogeneity.html",
-    "href": "class/13-heterogeneity.html",
+    "objectID": "hw/11-heterogeneity-temp.html",
+    "href": "hw/11-heterogeneity-temp.html",
     "title": "Heterogeneity",
     "section": "",
-    "text": "Coming soon!"
+    "text": "Due: Nov 16 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of preference heterogeneity - that is, not everyone has the same preferences. We will see two ways to account for this: 1) specify preference parameters as distributions, and 2) estimate fixed parameter models on different sub-groups in your data.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nOpen your course repo (madd-f26/madd-netID) in Positron using File &gt; Open Folder… - open the folder itself, not a file inside it. If you haven’t cloned your course repo yet, follow the steps in HW1 first.\nEverything for this assignment lives in the hw11 folder. Open the hw11.qmd file inside it - that’s the only file you need to edit. Take notes and write example code under the “Begin notes here” heading as you go through the readings and exercises below, then write your reflection under the “Reflection” heading at the end.\n\n\n2. Readings\nUp until this point in the class, we have only estimated relatively simple models that assume everyone in our sample has the same preferences. That is, we only estimate a “fixed parameter” model that reflects the average preferences for the whole sample. In reality, preferences are usually heterogeneous (different people have different preferences).\nOne way to account for this is to estimated a “mixed” logit model where we assume the preference parameters in our utility models follow some distribution across the sample (usually a normal distribution). Another way is to estimate a fixed parameter model on different sub-groups in our data. Each of these approaches are discussed in this week’s video on heterogeneity. Take notes as you watch the video and answer the practice questions in the video as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.\nClick here to download the slides in the video as a PDF.\n\n\n\n\n\n\n3. Reflect\nReflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw11.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Preview” button in Positron or running quarto render in the terminal.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
   },
   {
-    "objectID": "class/15-final-presentations.html",
-    "href": "class/15-final-presentations.html",
-    "title": "Final Presentations",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/3-data-wrangling.html",
-    "href": "class/3-data-wrangling.html",
-    "title": "Data Wrangling",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/5-quarto-plotting.html",
-    "href": "class/5-quarto-plotting.html",
-    "title": "Quarto & Plotting",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/7-conjoint-questions.html",
-    "href": "class/7-conjoint-questions.html",
-    "title": "Conjoint Questions",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "class/9-optimization-mle.html",
-    "href": "class/9-optimization-mle.html",
-    "title": "Optimization & MLE",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "hw/1-agentic-workflows-and-github.html",
-    "href": "hw/1-agentic-workflows-and-github.html",
-    "title": "Agentic Workflows & GitHub",
-    "section": "",
-    "text": "Due: Aug 31 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: This course is built around a fundamental shift in how we do data analysis. We used to live in a paradigm where we hand-wrote every line of code. Instead, we now direct an AI coding agent (e.g., Claude Code) to do the majority of the coding while our job changes to supervising, verifying, and taking responsibility for the resulting analysis produced by the code. This assignment is designed to make sure you have all your tools installed and properly configured and to ensure you can have productive conversations with an AI agent. Going forward, we will focus class time on working with agents them rather than troubleshooting installations and configurations.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Install Your Tools\nIf you haven’t yet, go to the software page and make sure you have everything installed on your computer.\nThen, verify everything works: open Positron, open a folder (any folder will do for now), open the terminal window in Positron, and run claude (or launch a different agent if you’re not using Claude Code). If it starts a conversation and asks for your login, it’s working.\nIf you get stuck on installation, post in Slack and we can help you. Don’t wait until Monday night - ask sooner!\n\n\n2. Get familiar with the course\nFollow Snoop’s advice and read the entire Course Syllabus (actually read the whole thing). Then review the schedule and make sure to note important upcoming deadlines.\nThis course is built around a semester-long team project, so pay particular attention to the project overview and the dates for each project deliverable.\n\n\n3. Make your first GitHub repo\nUsing your GitHub account (which you should have made when installing the course software, if you didn’t already have one), use GitHub Desktop to make a simple demo repo. This 2-min video recording shows the steps, which are also listed below: https://youtu.be/VlD8N0ZClBo\n\nGitHub Desktop → File › New Repository → name it madd-practice.\nClick on the box for “initialize this repository with a README”, and choose “None” in the “Git Ignore” and “License” parts.\nPublish it to GitHub.com - make it public, not private (the video shows private).\nIn GitHub Desktop, click on “Show in Finder” to open your local clone.\nOpen the README.md file in Positron and add a line or two of text, save it.\nBack in GitHub Desktop, notice the “diff” (showing the changes made).\nWrite a description of your changes in the bottom-left box, then Commit your changes.\nPush your change to github.com (button with up arrow at the top)\nLook at your History tab to see changes, then click on “View on GitHub” to confirm your changes are in the main repo.\nWhen you’re done, post the link to your public repo in the #hw channel.\n\n\n\n4. Clone your course repo\nThe repo you just made was practice. Everything you actually submit this semester will go in a single private repo that I have already created for you in the course’s GitHub organization. It comes pre-loaded with a folder for each assignment, so you never have to make one yourself.\n\n\n\n\n\n\nNote\n\n\n\nYou can check if this folder exists by going to the list of repos in the course organization GitHub account and searching for your repo, which should be labeled madd-netID, where netID is your GW netID (not your GitHub user name). If you do not see a repo there, check that you have added your GitHub username in this sheet next to your name\n\n\n\nCheck your email for an invitation to join the madd-f26 organization on GitHub and accept it. Check your spam folder if you don’t see it. You can’t reach your repo until you’ve accepted, so do this first. Message Prof. Helveston on Slack if you can’t find it.\nIn GitHub Desktop → File › Clone Repository → the GitHub.com tab. Your repo will be in the list as madd-f26/madd-netID, where netID is your GW netID (not your GitHub user name). Select it and click Clone.\nChoose a sensible place to put it on your computer. You’ll be opening this folder all semester, so don’t bury it somewhere you’ll never find again.\nClick “Show in Finder” and look around. You should see a folder for each assignment, including hw1, which you’ll need later to add your reflection at the end of this assignment.\n\n\n\n5. Read about Claude Code\nRead how Claude Code is used in practice (Anthropic). Read this one carefully. Its central finding is directly relevant to this whole course: domain expertise (not coding proficiency) is what makes people effective with a coding agent. That’s the whole premise of how this class is taught this semester – you don’t need to be a stronger programmer than the agent to build good choice models, but you do need to become a better judge of whether its output is accurate, and to develop the habits and workflow patterns that build that judgement.\n\n\n6. Light practice: your first conversation with an agent\nOpen the course repo you just cloned in Positron (File › Open Folder, then choose that folder). Open the terminal window, run claude, and try a couple of low-stakes things:\n\nAsk it to look around the folder and tell you what’s in it. Do this one first – it shows you that the agent can see the files in whatever folder you’ve opened, which is the single most important thing to understand about working with one.\nAsk it what a .R script is and for a quick demonstration – have it write and walk you through a few lines of R code. Ask it to put the demonstration file in the hw1 folder.\n\nYou don’t need a data file or a real analysis task for this. The point is just to see the agent read, reason about, and explain something concrete, and to get a feel for the back-and-forth of working with an agent.\nIf the agent creates any files while you’re poking around, that’s fine. You don’t have to commit them. The only thing that has to end up on GitHub is your reflection (next step).\n\n\n7. Reflect\nIn your course repo, open the hw1.R file in your hw1 folder and write at least a paragraph (as comments) reflecting on your experiences from this assignment. Some prompts you could use:\n\nWhat surprised you about installing or using Claude Code for the first time?\nWhere do you already have questions or doubts about directing an AI agent to write code, versus writing it yourself?\nThe Anthropic reading argues that domain expertise matters more than coding skill for using an agent well. Do you buy that? Why or why not?\n“I used to think ______, now I think ______ 🤔”\n\n\n\n8. Submit\nTo submit your assignment, follow these instructions:\n\nMake sure all your notes and your reflection are saved in your hw1.R file. (This assignment is a plain .R script – there’s nothing to render yet; we’ll start using Quarto in a couple of weeks.)\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
-  },
-  {
-    "objectID": "hw/10-wtp-simulation.html",
-    "href": "hw/10-wtp-simulation.html",
-    "title": "WTP & Simulations",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "hw/11-heterogeneity.html",
-    "href": "hw/11-heterogeneity.html",
-    "title": "Heterogeneity",
-    "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "hw/12-sensitivity.html",
-    "href": "hw/12-sensitivity.html",
+    "objectID": "hw/12-sensitivity-temp.html",
+    "href": "hw/12-sensitivity-temp.html",
     "title": "Sensitivity Analysis",
     "section": "",
-    "text": "Coming soon!"
+    "text": "Due: Nov 22 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to introduce the concept of preference heterogeneity - that is, not everyone has the same preferences. We will see two ways to account for this: 1) specify preference parameters as distributions, and 2) estimate fixed parameter models on different sub-groups in your data.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nOpen your course repo (madd-f26/madd-netID) in Positron using File &gt; Open Folder… - open the folder itself, not a file inside it. If you haven’t cloned your course repo yet, follow the steps in HW1 first.\nEverything for this assignment lives in the hw12 folder. Open the hw12.qmd file inside it - that’s the only file you need to edit. Take notes and write example code under the “Begin notes here” heading as you go through the readings and exercises below, then write your reflection under the “Reflection” heading at the end.\n\n\n2. Readings\nThis is your last homework! Okay, well not really - your homework next week will be a take home exam. But don’t worry, we will spend our time in class next week going over the entire class, so there will be time to get answers to any questions you have.\nFor this week, the only thing you will look over is the concept of a sensitivity analysis. Last week in class we covered how to use our estimated logit model to conduct a market simulation, which gave us predicted market shares for different products. Naturally, one of the key things we might want to know is how sensitive our predicted market shares are to changes in our attributes.\nTo understand how we calculate such sensitivities, take a look at the logitr-cars repo. Download the repo using this link, then open the folder in Positron (File &gt; Open Folder…). Then open the following two files:\n\n9.1-compute-sensitivity.R\n9.2-plot-sensitivity.R\n\nYour job this week is to go through each of these files line-by-line to make sure you understand what is being done. (It might also help to look back at some of the earlier files we covered as a refresher, such as 3.1 on estimating models or 5.1 on uncertainty).\nLet’s start with the first file, 9.1. In this file, we use the predict() function to compute market shares for different markets.\nIn the first sensitivity analysis, we define a baseline market, then we create repeated copies of this market but with incremental changes to the price of alternative 2. When we use predict(), we get predicted probabilities for each market, which we can then use to see how the predicted probability for alternative 2 changes with price.\nIn the second sensitivity analysis, we also start with repeated copies of our baseline market, but then we substitute in a series of different cases where we change the values of other attributes. Each case has a “low” and “high” value, where “high” means they result in expected higher market shares, and “low” means the opposite. Again, we use predict() to obtain predicted market shares for each scenario.\nAt the bottom of the script, we save the data frames.\nIn 9.2, we use the saved results to visualize the results computed in 9.1. This code shows us how to create line plots of the predicted market share versus price as well as revenue versus price. The third chart is a “tornado” plot, which shows us the predicted market share for each of the “high” and “low” conditions in 9.1.\nThese charts – sensitivity to price, and sensitivity to changes in other attributes – will be important charts to include in your final analysis report. You can use these examples to help you create similar charts for your project.\nOnce you have gone through each file, consider what might make a good “baseline” market for your project, then write your reflection.\n\n\n3. Reflect\nReflect on what you’ve learned while going through these exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your hw12.qmd file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.\nIf you’re unsure where to start with a reflection, try filling out this template:\n\n“I used to think ______, now I think ______ 🤔”\n\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Preview” button in Positron or running quarto render in the terminal.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
   },
   {
-    "objectID": "hw/13-take-home-analysis.html",
-    "href": "hw/13-take-home-analysis.html",
-    "title": "Exam",
+    "objectID": "hw/13-take-home-analysis-temp.html",
+    "href": "hw/13-take-home-analysis-temp.html",
+    "title": "Exam Prep: Auditing an AI-Generated Analysis",
     "section": "",
-    "text": "Coming soon!"
+    "text": "Due: Nov 29 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to practice the single most important skill you’ll need when an AI does your data work for you: knowing when it is wrong. You’ll audit a complete conjoint analysis that runs cleanly, reads confidently, and gets the client’s answer backwards. It is also your preparation for the in-class final exam on 12/2.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned.\n\n\n1. Get Organized\nThe files for this assignment are already in your course GitHub repository, in the hw13/ folder:\n\nsoda-analysis.qmd — the analysis you are auditing.\nhw13.qmd — where you write your answers.\ndata/soda.csv — the choice data the analysis uses.\n\nPull the latest changes in GitHub Desktop, then open your course repo folder in Positron (File &gt; Open Folder…) and render soda-analysis.qmd to see the report as the client would see it.\n\n\n2. The Setup\nSome GWU researchers ran a conjoint experiment on consumer preferences for soda. Each question showed respondents three different 12-ounce cans with the attributes price, caffeine free, sugar free, added flavor (None, Cherry, or Vanilla), and brand (Coke or Pepsi).\nAn AI assistant was handed the data and asked to analyze it and write up the results. The report it produced is soda-analysis.qmd. It runs without errors. It is well organized. It has a coefficient table, willingness-to-pay estimates, a market simulation, and a confident recommendation to the client at the end.\nIt also contains exactly six errors, and its final recommendation is backwards.\nSome of the six are mistakes in the code. Some are mistakes in how the results are described in the write-up. All six are the kind of mistake these tools make routinely — which is the whole reason you are the one who has to sign off on the analysis.\n\n\n3. Do the Audit\nWork through hw13.qmd. It asks you to:\n\nFind all six errors, saying where each one is, what’s wrong, and what it should be instead.\nFix them in soda-analysis.qmd and re-render it, then report the corrected coefficients, WTP estimates, and market shares.\nAnswer the client’s actual question using your corrected results: should Coke make this soda sugar-free, and should they add the Cherry flavoring? Sugar-free costs an extra $0.10 per can; Cherry flavoring costs an extra $0.15 per can. Say which specific error changed the answer.\nReflect on which error was hardest to catch, and on what you had to know yourself in order to judge whether your AI assistant’s answers were any good.\n\nUse Claude Code for this. That is the point — this is exactly the workflow you’ll use in practice. But note what happens when you do: the assistant will find some of these quickly, will miss others entirely, and will occasionally tell you something is wrong when it isn’t. You are the one who has to decide. Everything you write down should be something you could defend out loud without the computer in front of you.\nA hint on where to look: three of the six errors are visible in the numbers themselves if you check whether each claim in the write-up actually follows from the output above it. Two are in the code. One is about a result that the report treats as a finding when it shouldn’t.\n\n\n4. Submit\nTo submit your assignment, follow these instructions:\n\nRender your .qmd file by either clicking the “Preview” button in Positron or running quarto render in the terminal.\nOpen the rendered html file and make sure it looks good! Is all the formatting as you expected?\nCommit and push your work using GitHub Desktop: look at the diff, write a short commit message, click Commit, then Push.\n\n\n\n\n\n\n\nNoteRemember\n\n\n\nYour work isn’t submitted until you’ve pushed it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done."
   },
   {
     "objectID": "hw/2-data-wrangling.html",
     "href": "hw/2-data-wrangling.html",
     "title": "Data Wrangling",
     "section": "",
-    "text": "Coming soon!"
+    "text": "Due: Sep 07 by 11:59pm\nWeight: This assignment is worth 2.5% of your final grade.\nPurpose: The purpose of this assignment is to get more familiar with R and Positron and to develop some basic strategies for working with data in R.\nSubmit: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).\nAssessment: This assignment is graded using a check system:\n\n✔+ (110%): Responses shows phenomenal thought and engagement with the course content. I will not assign these often.\n✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.\n✔− (50%): Responses are hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.\n\nNotice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is not enough. Write at least a paragraph and show me that you did the readings assigned."
+  },
+  {
+    "objectID": "hw/2-data-wrangling.html#posit-recipes",
+    "href": "hw/2-data-wrangling.html#posit-recipes",
+    "title": "Data Wrangling",
+    "section": "Posit recipes",
+    "text": "Posit recipes\nPosit offers many excellent recipes for implementing lots of common things in . Running through these exercises will help prepare you for class next week.\nPick at least 3 recipes under “Transform Tables” and “Visualize Data” (so 6 total) and try implementing them yourself. Ideally you could try even more."
+  },
+  {
+    "objectID": "hw/2-data-wrangling.html#installing-packages-from-github-the-brrr-library",
+    "href": "hw/2-data-wrangling.html#installing-packages-from-github-the-brrr-library",
+    "title": "Data Wrangling",
+    "section": "Installing packages from Github: the BRRR library",
+    "text": "Installing packages from Github: the BRRR library\nThe vast majority of the time, you will install external packages using the install.packages() function. This installs packages from the Comprehensive R Archive Network (CRAN), where most packages are published. But you can also install packages that are under development or haven’t been published to CRAN yet. Most of the time, these packages are hosted on GitHub - an online platform for sharing code (it’s also where all of the files that make up this website are stored).\nTo install a package from GitHub, you first need to install the remotes library. Then you can use the remotes::install_github()` function to install packages directly from GitHub. To try this out, install the remotes library, then trying installing the BRRR package:\n\nremotes::install_github(\"brooke-watson/BRRR\")\n\n\n\n\n\n\n\nNote\n\n\n\nPackages on GitHub are in development and often require other packges to work. So if you get an installation error about some other package dependency, try restarting your R session and try again.\n\n\nNot sure what this package does? Well, one of the other nice things about packages listed on GitHub is the authors tend to write detailed descriptions - check out the GitHub page for the BRRR package. Then try using the BRRR::skrrrahh() function with different number arguments (turn your volume up). In the #welcome channel on slack, post your favorite argument to skrrrahh() (mine is 24)."
   },
   {
     "objectID": "hw/3-quarto-plotting.html",
