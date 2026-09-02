@@ -26,6 +26,7 @@ practice_base <- c(
 
 practice_extras <- list(
   '1-getting-started' = 'intro-to-R.R',
+  '2-agentic-workflows' = 'my-chart-style',
   '5-quarto-plotting' = c(
     'bears.qmd',
     'bears_solutions.qmd',
