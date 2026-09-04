@@ -76,7 +76,7 @@ agenda(1)
 # The data frame...in Excel
 
 <center>
-<img src="images/spreadsheet.png" width=700>
+<img src="images/spreadsheet.png" width=900>
 </center>
 
 ---
@@ -85,11 +85,11 @@ agenda(1)
 
 ```{r}
 beatles <- tibble(
-    firstName   = c("John", "Paul", "Ringo", "George"),
-    lastName    = c("Lennon", "McCartney", "Starr", "Harrison"),
-    instrument  = c("guitar", "bass", "drums", "guitar"),
-    yearOfBirth = c(1940, 1942, 1940, 1943),
-    deceased    = c(TRUE, FALSE, FALSE, TRUE)
+  firstName = c("John", "Paul", "Ringo", "George"),
+  lastName = c("Lennon", "McCartney", "Starr", "Harrison"),
+  instrument = c("guitar", "bass", "drums", "guitar"),
+  yearOfBirth = c(1940, 1942, 1940, 1943),
+  deceased = c(TRUE, FALSE, FALSE, TRUE)
 )
 
 beatles
@@ -118,7 +118,7 @@ beatles$firstName
 Information about _John Lennon_ is in the first row:
 
 ```{r}
-beatles[1,]
+beatles[1, ]
 ```
 
 . . .
@@ -126,7 +126,7 @@ beatles[1,]
 Information about _Paul McCartney_ is in the second row:
 
 ```{r}
-beatles[2,]
+beatles[2, ]
 ```
 
 ---
@@ -148,7 +148,7 @@ beatles[2,]
 
 <br>
 
-NOTE: csv = "comma-separated values"
+CSV = Comma-Separated Values
 
 ---
 
@@ -201,6 +201,8 @@ Note the `data.csv` file in your `data` folder.
 
 Excel can **corrupt** your data!
 
+(Don't believe me? Read [this paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008984))
+
 :::
 
 ::: {.col .fragment width="40%"}
@@ -221,7 +223,6 @@ If you **must** open it in Excel:
 ## 1. Create a path to the data
 
 ```{r}
-#| code-line-numbers: "2"
 path_to_data <- file.path('data', 'data.csv')
 path_to_data
 ```
@@ -232,8 +233,7 @@ path_to_data
 
 ```{r}
 #| eval: false
-#| code-line-numbers: "2"
-library(tidyverse)
+
 data <- read_csv(path_to_data)
 ```
 
@@ -291,12 +291,12 @@ data <- read_csv(path_to_data)
 ```{r}
 #| echo: false
 countdown(
-    minutes = 10,
-    warn_when = 30,
-    update_every = 1,
-    top = 0,
-    right = 0,
-    font_size = '2em'
+  minutes = 10,
+  warn_when = 30,
+  update_every = 1,
+  top = '0.5em',
+  right = '0.5em',
+  font_size = '2em'
 )
 ```
 
@@ -342,7 +342,7 @@ agenda(2)
 # 80% of the job is data wrangling
 
 <center>
-<img src="images/data-wrangle.png" width="1000">
+<img src="images/data-wrangle.png" width="1200">
 </center>
 
 ---
@@ -406,10 +406,10 @@ leave_house(get_dressed(get_out_of_bed(wake_up(me))))
 ```{r}
 #| eval: false
 me %>%
-    wake_up %>%
-    get_out_of_bed %>%
-    get_dressed %>%
-    leave_house
+  wake_up %>%
+  get_out_of_bed %>%
+  get_dressed %>%
+  leave_house
 ```
 
 ---
@@ -431,11 +431,11 @@ me %>%
 
 ```{r}
 beatles <- tibble(
-    firstName   = c("John", "Paul", "Ringo", "George"),
-    lastName    = c("Lennon", "McCartney", "Starr", "Harrison"),
-    instrument  = c("guitar", "bass", "drums", "guitar"),
-    yearOfBirth = c(1940, 1942, 1940, 1943),
-    deceased    = c(TRUE, FALSE, FALSE, TRUE)
+  firstName = c("John", "Paul", "Ringo", "George"),
+  lastName = c("Lennon", "McCartney", "Starr", "Harrison"),
+  instrument = c("guitar", "bass", "drums", "guitar"),
+  yearOfBirth = c(1940, 1942, 1940, 1943),
+  deceased = c(TRUE, FALSE, FALSE, TRUE)
 )
 
 beatles
@@ -570,7 +570,7 @@ Drop all rows where `variable` is `NA`
 ```{r}
 #| eval: false
 data %>%
-    filter(!is.na(variable))
+  filter(!is.na(variable))
 ```
 
 ---
@@ -592,12 +592,12 @@ beatles %>%
 ```{r}
 #| echo: false
 countdown(
-    minutes = 10,
-    warn_when = 30,
-    update_every = 1,
-    top = 0,
-    right = 0,
-    font_size = '2em'
+  minutes = 10,
+  warn_when = 30,
+  update_every = 1,
+  top = '0.5em',
+  right = '0.5em',
+  font_size = '2em'
 )
 ```
 
@@ -646,7 +646,7 @@ Use the `yearOfBirth` variable to compute the age of each band member
 
 ```{r}
 beatles %>%
-    mutate(age = 2022 - yearOfBirth)
+  mutate(age = 2022 - yearOfBirth)
 ```
 
 ---
@@ -656,9 +656,10 @@ beatles %>%
 ```{r}
 #| code-line-numbers: "4"
 beatles %>%
-    mutate(
-        age = 2022 - yearOfBirth,
-        meanAge = mean(age))
+  mutate(
+    age = 2022 - yearOfBirth,
+    meanAge = mean(age)
+  )
 ```
 
 ---
@@ -671,7 +672,7 @@ beatles %>%
 
 ```{r}
 beatles %>%
-    mutate(playsGuitar = ifelse(instrument == "guitar", TRUE, FALSE))
+  mutate(playsGuitar = ifelse(instrument == "guitar", 1, 0))
 ```
 
 ---
@@ -684,7 +685,7 @@ Sort `beatles` data frame by year of birth
 
 ```{r}
 beatles %>%
-    arrange(yearOfBirth)
+  arrange(yearOfBirth)
 ```
 
 ---
@@ -696,7 +697,7 @@ Use the `desc()` function to sort in descending order
 ```{r}
 #| code-line-numbers: "2"
 beatles %>%
-    arrange(desc(yearOfBirth))
+  arrange(desc(yearOfBirth))
 ```
 
 ---
@@ -707,8 +708,8 @@ Compute the band member age, then sort based on the youngest:
 
 ```{r}
 beatles %>%
-    mutate(age = 2022 - yearOfBirth) %>%
-    arrange(age)
+  mutate(age = 2022 - yearOfBirth) %>%
+  arrange(age)
 ```
 
 ---
@@ -718,12 +719,12 @@ beatles %>%
 ```{r}
 #| echo: false
 countdown(
-    minutes = 10,
-    warn_when = 30,
-    update_every = 1,
-    top = 0,
-    right = 0,
-    font_size = '2em'
+  minutes = 10,
+  warn_when = 30,
+  update_every = 1,
+  top = '0.5em',
+  right = '0.5em',
+  font_size = '2em'
 )
 ```
 
@@ -752,12 +753,15 @@ countdown(
 ```{r}
 #| echo: false
 countdown(
-    minutes      = 5,
-    warn_when    = 30,
-    update_every = 1,
-    left         = 0, right = 0, top = 1, bottom = 0,
-    margin       = "5%",
-    font_size    = "8em"
+  minutes = 5,
+  warn_when = 30,
+  update_every = 1,
+  left = 0,
+  right = 0,
+  top = 1,
+  bottom = 0,
+  margin = "5%",
+  font_size = "8em"
 )
 ```
 
@@ -882,7 +886,7 @@ Decisions you are trying to inform
 {{< center >}}
 {{< middle >}}
 
-::: {.col}
+::: {.col .center}
 
 ## Product Attributes
 
@@ -890,7 +894,7 @@ Decisions you are trying to inform
 
 :::
 
-::: {.col}
+::: {.col .center}
 
 ## Research Questions
 
@@ -906,7 +910,7 @@ Decisions you are trying to inform
 
 {{< center >}}
 
-# Product Attributes Table ([example](https://docs.google.com/spreadsheets/d/1ewHLXWS0mnHOALPwat_DH-EC3yttoBTL3nPZzRbb9YA/edit?usp=sharing))
+# Product Attributes Table ([example](https://docs.google.com/spreadsheets/d/1G1GXamcurUJr3BclGmAzX2Ih2eeGN3920Z3WDq1zfrE/edit?usp=sharing))
 
 <center>
 <img src="images/solar2.png" width=1000>
@@ -919,12 +923,12 @@ Decisions you are trying to inform
 ```{r}
 #| echo: false
 countdown(
-    minutes = 15,
-    warn_when = 30,
-    update_every = 1,
-    top = 0,
-    right = 0,
-    font_size = '2em'
+  minutes = 15,
+  warn_when = 30,
+  update_every = 1,
+  top = '0.5em',
+  right = '0.5em',
+  font_size = '2em'
 )
 ```
 
@@ -933,9 +937,11 @@ countdown(
 1. Sit with your team
 2. Discuss & identify your customer & potential competitors
 3. Discuss & identify key _Product Attributes_ & _Research Questions_
-4. Start building out your model relationships table (copy from [this example](https://docs.google.com/spreadsheets/d/1ewHLXWS0mnHOALPwat_DH-EC3yttoBTL3nPZzRbb9YA/edit?usp=sharing))
+4. Start building out your model relationships table (copy from [this example](https://docs.google.com/spreadsheets/d/1G1GXamcurUJr3BclGmAzX2Ih2eeGN3920Z3WDq1zfrE/edit?usp=sharing))
 
 ### Suggestions
 
 - You may want to start with simple bullet lists
 - Start with more items rather than fewer (can always cut back later)
+
+Sign up [here](https://calendar.app.google/niXopBudj9t4pmbj7) for your team proposal 1-on-1 with Prof. Helveston

@@ -1,42 +1,40 @@
- # install.packages(c("tidyverse", "here"))
+# install.packages("tidyverse")
 library(tidyverse)
 
 # The setting below is optional, it lets you see all the columns in a data frame
 options(dplyr.width = Inf)
 
 
-
 # DATA FRAMES --------------------------------------------------------------
 
 beatles <- tibble(
-    firstName   = c("John", "Paul", "Ringo", "George"),
-    lastName    = c("Lennon", "McCartney", "Starr", "Harrison"),
-    instrument  = c("guitar", "bass", "drums", "guitar"),
+    firstName = c("John", "Paul", "Ringo", "George"),
+    lastName = c("Lennon", "McCartney", "Starr", "Harrison"),
+    instrument = c("guitar", "bass", "drums", "guitar"),
     yearOfBirth = c(1940, 1942, 1940, 1943),
-    deceased    = c(TRUE, FALSE, FALSE, TRUE)
+    deceased = c(TRUE, FALSE, FALSE, TRUE)
 )
 
 beatles
 
 # Extract rows and columns using df[row, col]
-beatles[1,] # First row
-beatles[,1] # First column
+beatles[1, ] # First row
+beatles[, 1] # First column
 
 # Extract whole columns using df$name
 beatles$firstName
 beatles$lastName
 
 # Get the dimensions
-nrow(beatles)  # number of rows
-ncol(beatles)  # number of columns
-dim(beatles)   # numbers of rows, columns 
+nrow(beatles) # number of rows
+ncol(beatles) # number of columns
+dim(beatles) # numbers of rows, columns
 
 # View dataset in new tab
 view(beatles) # This is "read-only" so you can't corrupt the data :)
 
 # View data types of each column
 glimpse(beatles)
-
 
 
 # DATA FROM PACKAGES ----------------------------------------------------------
@@ -65,7 +63,6 @@ names(msleep)
 colnames(msleep)
 
 
-
 # DATA FROM CSV FILE ----------------------------------------------------------
 
 # Build path to data using file.path()
@@ -80,14 +77,14 @@ nrow(data)
 ncol(data)
 dim(data)
 
-# What type of data is each column? 
+# What type of data is each column?
 # (Just look, don't need to type out the answer)
 glimpse(data)
 
-# Preview the different columns - what do you think this data is about? 
+# Preview the different columns - what do you think this data is about?
 # What might one row represent?
 
-# ANSWER: 
+# ANSWER:
 # These are observations of bird impacts with aircraft. Each row
 # is one impact observation
 
@@ -105,7 +102,6 @@ max(data$incident_date)
 # HINT: Use min() and max() with na.rm = TRUE
 min(data$cost_repairs_infl_adj, na.rm = TRUE)
 max(data$cost_repairs_infl_adj, na.rm = TRUE)
-
 
 
 # filter() & select() ---------------------------------------------------------
@@ -141,7 +137,6 @@ dc_dawn_birds <- data %>%
 # airports?
 unique(dc_dawn_birds$species)
 length(unique(dc_dawn_birds$species))
-
 
 
 # mutate() & arrange() --------------------------------------------------------
