@@ -31,6 +31,40 @@ agenda_items <- c(
 
 ---
 
+{{< inverse >}}
+
+# Quiz 1
+
+```{r}
+#| echo: false
+
+countdown(
+  minutes = 10,
+  warn_when = 30,
+  update_every = 1,
+  top = "0.5em",
+  right = "0.5em",
+  font_size = "3em"
+)
+```
+
+::: {.col}
+## Write your name on the quiz!
+
+## Rules:
+
+- Work alone; no outside help of any kind is allowed.
+- No calculators, no notes, no books, no computers, no phones.
+:::
+
+::: {.col}
+<br>
+
+![](https://github.com/emse-p4a-gwu/2022-Spring/raw/main/images/quiz_doge.png){width="400"}
+:::
+
+---
+
 # Required Packages (check `practice.R` file)
 
 Make sure you have these libraries installed:
