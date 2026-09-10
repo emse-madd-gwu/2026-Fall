@@ -1,0 +1,9 @@
+To submit this deliverable, follow these instructions:
+
+1. Render your `.qmd` file(s) by either clicking the "Preview" button in Positron or running `quarto render` in the terminal.
+2. Open the rendered html file and make sure it looks good! Is all the formatting as you expected?
+3. Commit and push your work to your team's repo (`madd-f26/madd-team-<letter>`, where `<letter>` is your team letter) using GitHub Desktop: look at the diff, write a short commit message, click **Commit**, then **Push**.
+
+::: {.callout-note title="Remember"}
+This deliverable isn't submitted until it's **pushed** to your team repo. Any team member can push -- there's no need to designate just one person. Go look at your repo on GitHub.com and confirm the work is actually there before you call this done.
+:::

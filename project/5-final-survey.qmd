@@ -30,9 +30,9 @@ As a team, create your **final survey** by building on your initial pilot survey
 
 # 1. Get Organized
 
-Download and unzip the [choice-based conjoint survey template](https://github.com/surveydown-dev/template_conjoint_buttons/archive/refs/heads/main.zip) for your pilot survey. The folder contains the following files:
+Your team's repo (`madd-f26/madd-team-<letter>`) already has a `5-final-survey/` folder seeded with the [choice-based conjoint survey template](https://github.com/surveydown-dev/template_conjoint_buttons) for your final survey. Open your team repo in Positron (**File > Open Folder...**). The folder contains the following files:
 
-- `survey.Rproj`: An RStudio project file that ships with the template - you can ignore it. In Positron, open the unzipped folder itself (**File > Open Folder...**).
+- `survey.Rproj`: An RStudio project file that ships with the template - you can ignore it.
 - `code/1_make_choice_questions.R`: The code to generate the `data/choice_questions.csv` file (your survey design file...use the code you wrote in class for this).
 - `data/choice_questions.csv`: The survey choice question design file.
 - `survey.qmd`: The code for creating your survey content, which should include a welcome page, content form, and eligibility questions for screening our ineligible respondents. It should also include your education content and randomized conjoint choice questions, then any other questions you wish to ask your survey respondents (e.g. demographics).
@@ -41,11 +41,11 @@ Download and unzip the [choice-based conjoint survey template](https://github.co
 
 # 2. Target population
 
-Who should take your survey? When you submit your assignment on Blackboard, write down in Blackboard the eligibility requirements for who should be allowed to take your survey. Your survey should screen out people who don't qualify, but I will also use this information to try to pre-screen respondents so hopefully fewer will be screened out of your survey.
+Who should take your survey? Write down the eligibility requirements for who should be allowed to take your survey directly in your `survey.qmd` file (e.g., as a comment near your eligibility screening questions). Your survey should screen out people who don't qualify, but I will also use this information to try to pre-screen respondents so hopefully fewer will be screened out of your survey.
 
 # 3. Write your survey content
 
-The files included in the zip file are just example content based on the [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/) on building conjoint surveys in surveydown. **This is just placeholder content - you need to replace it with your survey content**.
+The files included are just example content based on the [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/) on building conjoint surveys in surveydown. **This is just placeholder content - you need to replace it with your survey content**.
 
 Follow these guidelines in inserting your content:
 
@@ -61,13 +61,13 @@ Only one person from your team should create an account for hosting your survey 
 
 # 5. Attribution
 
-Include a short description in your blackboard submission of the specific contributions of each team member for this report. If all members contributed equally, you can just put the single sentence "All members contributed equally".
+Include a short description of the specific contributions of each team member for this report. If all members contributed equally, you can just put the single sentence "All members contributed equally".
 
 Team members who do not make meaningful contributions to their projects will not receive the same grade as that of their team mates. If you are having any issues or disputes among team members, please contact Professor Helveston ASAP so we can find a resolution.
 
 # 6. Submit
 
-Create a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. **Only one person from your team should submit the report.**
+{{< include ../fragments/project-submit-app.qmd >}}
 
 # Grading Rubric
 

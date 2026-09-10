@@ -1,0 +1,5 @@
+To submit this deliverable, commit and push your survey files to your team's repo (`madd-f26/madd-team-<letter>`, where `<letter>` is your team letter) using GitHub Desktop: look at the diff, write a short commit message, click **Commit**, then **Push**.
+
+::: {.callout-note title="Remember"}
+This deliverable isn't submitted until it's **pushed** to your team repo, in addition to being deployed on shinyapps.io. Any team member can push -- there's no need to designate just one person. Go look at your repo on GitHub.com and confirm the work is actually there before you call this done.
+:::

@@ -73,7 +73,11 @@ Only one team member needs to publish the video.
 
 # 5. Submit
 
-Create a zip file of your slides as a pdf / pptx / qmd (whatever you used to make your slides) and submit it on the corresponding assignment submission on Blackboard. **Only one person from your team should submit.**
+Push your slides (as a pdf, pptx, or qmd -- whatever you used to make them) to your team's repo (`madd-f26/madd-team-<letter>`, where `<letter>` is your team letter), inside the `7-final-presentation/` folder, using GitHub Desktop.
+
+::: {.callout-note title="Remember"}
+This deliverable isn't submitted until it's **pushed** to your team repo. Any team member can push -- there's no need to designate just one person. Go look at your repo on GitHub.com and confirm the work is actually there before you call this done.
+:::
 
 # Grading Rubric
 

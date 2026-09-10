@@ -30,9 +30,9 @@ As a team, create a **pilot survey** - an initial draft of your final survey for
 
 # 1. Get Organized
 
-Download and unzip the [choice-based conjoint survey template](https://github.com/surveydown-dev/template_conjoint_buttons/archive/refs/heads/main.zip) for your pilot survey. The folder contains the following files:
+Your team's repo (`madd-f26/madd-team-<letter>`) already has a `3-pilot-survey/` folder seeded with the [choice-based conjoint survey template](https://github.com/surveydown-dev/template_conjoint_buttons) for your pilot survey. Open your team repo in Positron (**File > Open Folder...**). The folder contains the following files:
 
-- `survey.Rproj`: An RStudio project file that ships with the template - you can ignore it. In Positron, open the unzipped folder itself (**File > Open Folder...**).
+- `survey.Rproj`: An RStudio project file that ships with the template - you can ignore it.
 - `code/1_make_choice_questions.R`: The code to generate the `data/choice_questions.csv` file (your survey design file...use the code you wrote in class for this).
 - `data/choice_questions.csv`: The survey choice question design file.
 - `survey.qmd`: The code for creating your survey content, which should include a welcome page, content form, and eligibility questions for screening our ineligible respondents. It should also include your education content and randomized conjoint choice questions, then any other questions you wish to ask your survey respondents (e.g. demographics).
@@ -41,7 +41,7 @@ Download and unzip the [choice-based conjoint survey template](https://github.co
 
 # 2. Write your survey content
 
-The files included in the zip file are just example content based on the [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/) on building conjoint surveys in surveydown. **This is just placeholder content - you need to replace it with your survey content**.
+The files included are just example content based on the [blog post](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/) on building conjoint surveys in surveydown. **This is just placeholder content - you need to replace it with your survey content**.
 
 Follow these guidelines in inserting your content:
 
@@ -65,7 +65,7 @@ Team members who do not make meaningful contributions to their projects will not
 
 # 5. Submit
 
-Create a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. **Only one person from your team should submit the report.**
+{{< include ../fragments/project-submit-app.qmd >}}
 
 # Grading Rubric
 
