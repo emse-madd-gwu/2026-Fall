@@ -402,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Follow the guidelines below to prepare your analysis and report.</p>
 <section id="report-guidelines" class="level1">
 <h1>1. Report Guidelines</h1>
-<p>Download and unzip <a href="../templates/pilot-analysis.zip">this template</a> for your report. You should write your report in the <code>report.qmd</code> file. The template comes with some text and code explaining how to use it - you should delete this code &amp; text as it is only for explanatory purposes. Be sure to adjust the content in the YAML:</p>
+<p>Your team’s repo (<code>madd-f26/madd-team-&lt;letter&gt;</code>) already has a <code>4-pilot-analysis/</code> folder seeded with a <code>report.qmd</code> starter file – write your report there. The starter comes with some text and code explaining how to use it - you should delete this code &amp; text as it is only for explanatory purposes. Be sure to adjust the content in the YAML:</p>
 <ul>
 <li>Write your project title in the <code>title</code> field (and provide a subtitle if you wish, or delete the <code>subtitle</code> field).</li>
 <li>In the <code>author</code> field, list the names of all teammates, e.g.&nbsp;<code>author: Luke Skywalker, Leia Organa, and Han Solo</code>.</li>
@@ -417,7 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>2. Pilot Data Analysis</h1>
 <p>Before writing your report, you should first analyze your pilot data by following these steps:</p>
 <ol type="1">
-<li>Download the survey response data from your Supabase account. You can import the data directly using the <code>sd_get_data()</code> function (see the <a href="https://surveydown.org/docs/fetching-data">documentation page</a> for details). Save the raw data in the “data” folder in the report template.</li>
+<li>Download the survey response data from your Supabase account. You can import the data directly using the <code>sd_get_data()</code> function (see the <a href="https://surveydown.org/docs/fetching-data">documentation page</a> for details). Save the raw data in the “data” folder in your team repo’s <code>4-pilot-analysis/</code> folder.</li>
 <li>Open the <code>clean-data.R</code> file and write code to clean your pilot data and prepare it for modeling. Your cleaned choice data should be in a “long” format similar to the <a href="https://github.com/surveydown-dev/template_conjoint_buttons/blob/main/data/choice_data.csv">example choice data here</a>.</li>
 <li>Save your cleaned data file as a .csv file in the “data” folder.</li>
 <li>Open the <code>modeling.R</code> file and write code to estimate preliminary models using your cleaned choice data.</li>
@@ -497,7 +497,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="submit" class="level1">
 <h1>4. Submit</h1>
-<p>Render your <code>.qmd</code> files, then create a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. <strong>Only one person from your team should submit the report.</strong></p>
+<p>To submit this deliverable, follow these instructions:</p>
+<ol type="1">
+<li>Render your <code>.qmd</code> file(s) by either clicking the “Preview” button in Positron or running <code>quarto render</code> in the terminal.</li>
+<li>Open the rendered html file and make sure it looks good! Is all the formatting as you expected?</li>
+<li>Commit and push your work to your team’s repo (<code>madd-f26/madd-team-&lt;letter&gt;</code>, where <code>&lt;letter&gt;</code> is your team letter) using GitHub Desktop: look at the diff, write a short commit message, click <strong>Commit</strong>, then <strong>Push</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Remember">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Remember
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This deliverable isn’t submitted until it’s <strong>pushed</strong> to your team repo. Any team member can push – there’s no need to designate just one person. Go look at your repo on GitHub.com and confirm the work is actually there before you call this done.</p>
+</div>
+</div>
 </section>
 <section id="grading-rubric" class="level1">
 <h1>Grading Rubric</h1>

@@ -370,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The course instructor will review and grade your proposal and provide feedback in team meetings the week following the due date. If your proposal is approved, you are done and can move on towards the next project task. In some cases, the instructor may ask you to submit a revised proposal, most likely by focusing / adjusting the proposal scope. Follow the guidelines below to prepare your proposal.</p>
 <section id="get-organized" class="level2">
 <h2 class="anchored" data-anchor-id="get-organized">1. Get Organized</h2>
-<p>Download and unzip <a href="../templates/proposal.zip">this template</a> for your proposal. Open the unzipped folder in Positron (<strong>File &gt; Open Folder…</strong>) and write your proposal in the <code>proposal.qmd</code> file. The template comes with some text and code explaining how to use it - you should delete this code / text as it is only for explanatory purposes. Be sure to adjust the content in the header:</p>
+<p>Your team’s repo (<code>madd-f26/madd-team-&lt;letter&gt;</code>) already has a <code>1-proposal/</code> folder seeded with a <code>proposal.qmd</code> starter file – open your team repo in Positron (<strong>File &gt; Open Folder…</strong>) and write your proposal there. The starter comes with some text and code explaining how to use it - you should delete this code / text as it is only for explanatory purposes. Be sure to adjust the content in the header:</p>
 <ul>
 <li>Write your project title in the <code>title</code> field (and provide a subtitle if you wish, or delete the <code>subtitle</code> field).</li>
 <li>In the <code>author</code> field, list the names of all teammates, e.g.&nbsp;<code>author: Luke Skywalker, Leia Organa, and Han Solo</code>.</li>
@@ -445,7 +445,25 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="submit" class="level2">
 <h2 class="anchored" data-anchor-id="submit">4. Submit</h2>
-<p>Render your <code>proposal.qmd</code> file, then create a zip file of all the files in your R project folder for this assignment and submit it on the corresponding assignment submission on Blackboard. <strong>Only one person from your team should submit the report.</strong></p>
+<p>To submit this deliverable, follow these instructions:</p>
+<ol type="1">
+<li>Render your <code>.qmd</code> file(s) by either clicking the “Preview” button in Positron or running <code>quarto render</code> in the terminal.</li>
+<li>Open the rendered html file and make sure it looks good! Is all the formatting as you expected?</li>
+<li>Commit and push your work to your team’s repo (<code>madd-f26/madd-team-&lt;letter&gt;</code>, where <code>&lt;letter&gt;</code> is your team letter) using GitHub Desktop: look at the diff, write a short commit message, click <strong>Commit</strong>, then <strong>Push</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Remember">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Remember
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This deliverable isn’t submitted until it’s <strong>pushed</strong> to your team repo. Any team member can push – there’s no need to designate just one person. Go look at your repo on GitHub.com and confirm the work is actually there before you call this done.</p>
+</div>
+</div>
 <hr>
 </section>
 <section id="policy-proposal-contents" class="level2">
