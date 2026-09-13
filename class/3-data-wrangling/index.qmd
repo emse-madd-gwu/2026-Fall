@@ -680,7 +680,7 @@ Use the `yearOfBirth` variable to compute the age of each band member
 
 ```{r}
 beatles %>%
-  mutate(age = 2022 - yearOfBirth)
+  mutate(age = 2026 - yearOfBirth)
 ```
 
 ---
@@ -691,7 +691,7 @@ beatles %>%
 #| code-line-numbers: "4"
 beatles %>%
   mutate(
-    age = 2022 - yearOfBirth,
+    age = 2026 - yearOfBirth,
     meanAge = mean(age)
   )
 ```
@@ -742,7 +742,7 @@ Compute the band member age, then sort based on the youngest:
 
 ```{r}
 beatles %>%
-  mutate(age = 2022 - yearOfBirth) %>%
+  mutate(age = 2026 - yearOfBirth) %>%
   arrange(age)
 ```
 
