@@ -1,0 +1,37 @@
+---
+survey-settings:
+  mode: preview
+---
+
+```{r}
+library(surveydown)
+```
+
+--- welcome
+
+# Demo - Reactive Questions
+
+There are 2 questions in this survey. The first question is static. The second question is reactive, hidden by default, and will be shown as long as the first question is answered. Its question label and options will dynamically change based on the choice of the first question.
+
+This is done by defining a question in the `server()` function in `app.R`, and displaying it using `sd_output()` in `survey.qmd`.
+
+```{r}
+sd_question(
+  id     = "pet_type",
+  type   = "mc",
+  label  = "Which do you like more, dogs or cats?",
+  option = c("Dogs" = "dog", "Cats" = "cat")
+)
+
+sd_output(id = "pet_owner", type = "question")
+```
+
+--- end
+
+## End
+
+This is the end of the reactive questions demo.
+
+```{r}
+sd_close()
+```

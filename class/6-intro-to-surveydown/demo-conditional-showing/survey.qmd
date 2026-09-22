@@ -1,0 +1,161 @@
+---
+survey-settings:
+  mode: preview
+---
+
+```{r}
+library(surveydown)
+```
+
+--- welcome
+
+# Demo - Conditional Showing
+
+Hi! This is a showcase of the "conditional showing" feature that surveydown supports.
+
+It consists of:
+
+1. Simple conditional showing
+2. Complex conditional showing
+3. Conditional showing based on a numeric value
+4. Conditional showing based on multiple inputs
+
+Please proceed to the next page.
+
+--- basic_showif
+
+## 1. Simple conditional showing
+
+If the "**Other**" option is chosen, a question asking the other penguin type will appear.
+
+This is done by using the `sd_show_if()` function in the `server` of `app.R`.
+
+```{r}
+sd_question(
+  type  = 'mc',
+  id    = 'penguins_simple',
+  label = "Which is your favorite type of penguin?",
+  option = c(
+    'Adélie'    = 'adelie',
+    'Chinstrap' = 'chinstrap',
+    'Gentoo'    = 'gentoo',
+    'Other'     = 'other'
+  )
+)
+
+sd_question(
+  type  = "text",
+  id    = "penguins_simple_other",
+  label = "Please specify the other penguin type:"
+)
+```
+
+--- custom_showif
+
+## 2. Complex conditional showing
+
+Say that we want to have a more complicated `show_if` condition. Now there are 2 questions. Only if the user chooses both "**Other**" and "**Show**" will the other penguin question appear. This is also done by using the `sd_show_if()` function in the `server` of `app.R`.
+
+```{r}
+sd_question(
+  type  = 'mc',
+  id    = 'penguins_complex',
+  label = "Which is your favorite type of penguin?",
+  option = c(
+    'Adélie'    = 'adelie',
+    'Chinstrap' = 'chinstrap',
+    'Gentoo'    = 'gentoo',
+    'Other'     = 'other'
+  )
+)
+
+sd_question(
+  type  = 'mc',
+  id    = 'show_other',
+  label = "Should we show the 'other' option question?",
+  option = c(
+    'Show' = 'show',
+    'Hide' = 'hide'
+  )
+)
+
+sd_question(
+  type  = "text",
+  id    = "penguins_complex_other",
+  label = "Please specify the other penguin type:"
+)
+```
+
+--- numeric_show_if
+
+## 3. Conditional showing based on a numeric value
+
+Sometimes you may want to display a question based on a user input value. In the question below, if you type in a value greater than **1**, you'll see the conditional question.
+
+::: {.callout-note}
+The `sd_value()` function automatically converts numeric-looking values to numbers, so you can compare them directly, e.g. `sd_value("car_number") > 1`.
+:::
+
+```{r}
+sd_question(
+  type  = "numeric",
+  id    = "car_number",
+  label = "How many cars do you have in your household?"
+)
+
+sd_question(
+  type   = "mc",
+  id     = "ev_ownership",
+  label  = "Is your backup car a gasoline car or an EV?",
+  option = c(
+    "Gasoline" = "gasoline",
+    "EV"  = "ev"
+  )
+)
+```
+
+--- multi_show_if
+
+## 4. Conditional showing based on multiple inputs
+
+In other cases, you might display a question based on multiple user input values. The conditions are explained below:
+
+1. If you pick either Apple or Banana, you'll be popped with a question asking how many apples/bananas do you eat per day.
+2. If you pick more than 3 types, you'll be popped with a question as well.
+
+```{r}
+sd_question(
+  type  = "mc_multiple_buttons",
+  id    = "fav_fruits",
+  label = "Pick your favorite fruit(s):",
+  option = c(
+    "Apple"  = "apple",
+    "Banana" = "banana",
+    "Peach"  = "peach",
+    "Orange" = "orange",
+    "Grape"  = "grape"
+  )
+)
+
+sd_question(
+  type   = "mc_buttons",
+  id     = "apple_or_banana",
+  label  = glue::glue("How many {sd_output('fav_fruits', type = 'value')}(s) do you eat in a day?"),
+  option = seq(1,5)
+)
+
+sd_question(
+  type   = "mc_buttons",
+  id     = "fruit_number",
+  label  = "You picked a lot of fruit types. How many do you eat in a day?",
+  option = seq(1,5)
+)
+```
+
+--- end
+
+## This is the end of the demo of the conditional showing feature.
+
+```{r}
+sd_close()
+```

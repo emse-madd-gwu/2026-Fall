@@ -7,6 +7,7 @@ week: 5
 displaydate: September 23, 2026
 format: 
   lexis-revealjs:
+    code-block-height: "660px"
     link-external-newwindow: true
 mouse-wheel: true
 progress: false
@@ -26,11 +27,13 @@ execute:
 data <- mtcars
 bears <- read_csv(file.path('data', 'bear_killings.csv'))
 theme_set(theme_gray(base_size = 16))
+library(palmerpenguins)
 
 agenda_items <- c(
   "Intro to Quarto",
   "Intro to ggplot2",
-  "Project attributes & levels"
+  "Project attributes & levels",
+  "Conjoint survey components"
 )
 ```
 
@@ -74,31 +77,22 @@ agenda(1)
 
 ---
 
-{{< middle >}}
 {{< inverse >}}
+{{< middle >}}
 
 # [Quick demo]{.center}
 
-<br>
+## 1. Open `quarto_demo.qmd`
+## 2. Click "Preview"
 
-# 1. Open `quarto_demo.qmd`
-
-# 2. Click "Render"
-
-<center>
-<img src="images/how-qmd-works.png" width=100%>
-</center>
+![](images/how-qmd-works.png){width="100%"}
 
 ---
 
 # [Anatomy of a .qmd file]{.center}
 
-<br>
-
 # [Header]{.red}
-
 # Markdown text
-
 # R code
 
 ---
@@ -106,24 +100,21 @@ agenda(1)
 # Define overall document options in header
 
 ::: {.col}
-
 Basic html page
 
-```
+```yaml
 ---
 title: Your title
 author: Author name
 format: html
 ---
 ```
-
 :::
 
 ::: {.col}
-
 Add table of contents, change theme
 
-```
+```yaml
 ---
 title: Your title
 author: Author name
@@ -134,8 +125,7 @@ format:
 ---
 ```
 
-More on themes at https://quarto.org/docs/output-formats/html-themes.html
-
+More on themes at <https://quarto.org/docs/output-formats/html-themes.html>
 :::
 
 ---
@@ -143,10 +133,9 @@ More on themes at https://quarto.org/docs/output-formats/html-themes.html
 # Render to multiple outputs
 
 ::: {.col}
-
 ### PDF uses LaTeX
 
-```
+```yaml
 ---
 title: Your title
 author: Author name
@@ -156,62 +145,55 @@ format: pdf
 
 If you don't have LaTeX on your computer, install tinytex in R:
 
-```{r}
-#| eval: false
-
+```r
 tinytex::install_tinytex()
 ```
-
 :::
 
 ::: {.col}
-
 ### Microsoft Word
 
-```
+```yaml
 ---
 title: Your title
 author: Author name
 format: docx
 ---
 ```
-
 :::
 
 ---
 
 # [Anatomy of a .qmd file]{.center}
 
-<br>
-
 # ~~Header~~
-
 # [Markdown text]{.red}
-
 # R code
 
 ---
 
 {{< center >}}
+{{< middle >}}
 
-# Right now, bookmark this! 👇
+::: {.col valign="middle"}
 
-# https://commonmark.org/help/
+## Right now, bookmark this! 👇
 
-<br><hr><br>
+## <https://commonmark.org/help/>
 
-# (When you have 10 minutes, do this! 👇)
+<br>
 
-# https://commonmark.org/help/tutorial/
+## (When you have 10 minutes, do this! 👇)
+
+## <https://commonmark.org/help/tutorial/>
+
+:::
 
 ---
 
 # [Headers]{.center}
 
-. . .
-
 ::: {.col}
-
 ```markdown
 # HEADER 1
 
@@ -225,11 +207,9 @@ format: docx
 
 ###### HEADER 6
 ```
-
 :::
 
-::: {.col .fragment}
-
+::: {.col}
 # HEADER 1
 
 ## HEADER 2
@@ -241,7 +221,6 @@ format: docx
 ##### HEADER 5
 
 ###### HEADER 6
-
 :::
 
 ---
@@ -249,7 +228,6 @@ format: docx
 # [Basic Text Formatting]{.center}
 
 ::: {.col}
-
 ## Type this...
 
 - `normal text`
@@ -259,11 +237,9 @@ format: docx
 - `***bold italic text***`
 - `~~strikethrough~~`
 - `` `code text` ``
-
 :::
 
 ::: {.col}
-
 ## ..to get this
 
 - normal text
@@ -273,7 +249,6 @@ format: docx
 - ***bold italic text***
 - ~~strikethrough~~
 - `code text`
-
 :::
 
 ---
@@ -281,11 +256,9 @@ format: docx
 # [Lists]{.center}
 
 ::: {.col}
-
 Bullet list:
 
-```{r}
-#| eval: false
+```markdown
 - first item
 - second item
 - third item
@@ -294,15 +267,12 @@ Bullet list:
 - first item
 - second item
 - third item
-
 :::
 
 ::: {.col}
-
 Numbered list:
 
-```{r}
-#| eval: false
+```markdown
 1. first item
 2. second item
 3. third item
@@ -311,7 +281,6 @@ Numbered list:
 1. first item
 2. second item
 3. third item
-
 :::
 
 ---
@@ -320,8 +289,7 @@ Numbered list:
 
 Simple **url link** to another site:
 
-```{r}
-#| eval: false
+```markdown
 [Download R](http://www.r-project.org/)
 ```
 
@@ -329,27 +297,10 @@ Simple **url link** to another site:
 
 ---
 
-{{< middle >}}
-{{< center >}}
-
-# Don't want to use Markdown?
-
-# [Use Visual Mode!]{.red}
-
-<center>
-<img src="images/visual-mode.png" width=700>
-</center>
-
----
-
 # [Anatomy of a .qmd file]{.center}
 
-<br>
-
 # ~~Header (think of this as the "settings")~~
-
 # ~~Markdown text~~
-
 # [R code]{.red}
 
 ---
@@ -358,42 +309,34 @@ Simple **url link** to another site:
 
 # R Code
 
-. . .
-
 ::: {.col}
-
 ## Inline code
 
-```{r}
-#| eval: false
-`r insert code here`
+```markdown
+`r knitr::inline_expr("insert code here")`
 ```
-
 :::
 
 ::: {.col .fragment}
-
 ## Code chunks
 
 ````markdown
-`r ''````{r}
+```{{r}}
 insert code here
 insert more code here
 ```
 ````
-
 :::
 
 ---
 
 # Inline R code
 
-```{r}
-#| eval: false
-The sum of 3 and 4 is `r 3 + 4`
+```markdown
+The sum of 3 and 4 is `r knitr::inline_expr("3 + 4")`
 ```
 
-. . .
+<br>
 
 Produces this:
 
@@ -404,28 +347,34 @@ The sum of 3 and 4 is `r 3 + 4`
 # R Code chunks
 
 ::: {.col}
-
 This code chunk...
 
 ````markdown
-`r ''````{r}
+```{{r}}
 library(palmerpenguins)
 
-head(penguins)
+glimpse(penguins)
 ```
 ````
-
 :::
 
 ::: {.col .fragment}
-
-...will produce this when compiled:
+...will produce this when rendered:
 
 ```{r}
+#| eval: false
 library(palmerpenguins)
 
-head(penguins)
+glimpse(penguins)
 ```
+
+::: {.font60}
+```{r}
+#| echo: false
+
+glimpse(head(penguins, 4))
+```
+:::
 
 :::
 
@@ -439,8 +388,9 @@ All options [here](https://quarto.org/docs/reference/cells/cells-knitr.html)
 
 ```{r}
 #| echo: false
-#| out-width: '60%'
-knitr::include_graphics('images/chunks_options.png')
+#| out-width: 60%
+
+knitr::include_graphics("images/chunks_options.png")
 ```
 
 ---
@@ -449,12 +399,9 @@ knitr::include_graphics('images/chunks_options.png')
 
 [By default, code chunks print **code** + **output**]{.center}
 
-. . .
-
 ::: {.col}
-
 ````markdown
-`r ''````{r}
+```{{r}}
 #| echo: false
 
 cat('hello world!')
@@ -466,15 +413,13 @@ Prints only **output**<br>(doesn't show code)
 ```{r}
 #| echo: false
 
-cat('hello world!')
+cat("hello world!")
 ```
-
 :::
 
 ::: {.col .fragment}
-
 ````markdown
-`r ''````{r}
+```{{r}}
 #| eval: false
 
 cat('hello world!')
@@ -486,15 +431,13 @@ Prints only **code**<br>(doesn't run the code)
 ```{r}
 #| eval: false
 
-cat('hello world!')
+cat("hello world!")
 ```
-
 :::
 
 ::: {.col .fragment}
-
 ````markdown
-`r ''````{r}
+```{{r}}
 #| include: false
 
 cat('hello world!')
@@ -506,34 +449,8 @@ Runs, but doesn't print anything
 ```{r}
 #| include: false
 
-cat('hello world!')
+cat("hello world!")
 ```
-
-:::
-
----
-
-# message / warning
-
-![](https://www.tidyverse.org/images/tidyverse_1.2.0/tidyverse_1-2-0_pkg_load.gif)
-
----
-
-# message / warning
-
-Drop messages and warnings in chunk settings
-
-::: {.col}
-
-````markdown
-`r ''````{r}
-#| message: false
-#| warning: false
-
-library(tidyverse)
-```
-````
-
 :::
 
 ---
@@ -541,33 +458,27 @@ library(tidyverse)
 # A global `setup` chunk 🌍
 
 ::: {.col}
-
 ````markdown
-`r ''````{r}
+```{{r}}
 #| label: setup
 #| include: false
 
 knitr::opts_chunk$set(
-    warning = FALSE,
-    message = FALSE,
-    fig.path = "figs/",
-    fig.width = 7.252,
-    fig.height = 4,
-    comment = "#>",
-    fig.retina = 3
+  warning = FALSE,
+  message = FALSE,
+  fig.width = 7.252,
+  fig.height = 4,
+  comment = "#>"
 )
 ```
 ````
-
 :::
 
 ::: {.col}
-
 - Typically the first chunk
 - All following chunks will use these options (i.e., sets global chunk options)
 - You can (and should) use individual chunk options too
 - Often where I load libraries, etc.
-
 :::
 
 ---
@@ -577,12 +488,12 @@ knitr::opts_chunk$set(
 ```{r}
 #| echo: false
 countdown(
-    minutes = 15,
-    warn_when = 15,
-    update_every = 1,
-    top = 0,
-    right = 0,
-    font_size = '2em'
+  minutes = 15,
+  warn_when = 15,
+  update_every = 1,
+  top = 0,
+  right = 0,
+  font_size = '2em'
 )
 ```
 
@@ -646,9 +557,11 @@ Concept developed by Leland Wilkinson (1999)
 
 # Layer 1: The data
 
+::: {.font80}
 ```{r}
 head(mpg)
 ```
+:::
 
 ---
 
@@ -656,7 +569,7 @@ head(mpg)
 
 The `ggplot()` function initializes the plot with whatever data you're using
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| label: ggblank
@@ -684,7 +597,7 @@ mpg %>%
 
 The `aes()` function determines which variables will be _mapped_ to the geometries<br>(e.g. the axes)
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| label: ggaes
@@ -713,7 +626,7 @@ mpg %>%
 
 Use `+` to add geometries, e.g. `geom_points()` for points
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| label: ggpoint
@@ -743,7 +656,7 @@ mpg %>%
 
 Use `labs()` to modify most labels
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| label: gglabs
@@ -776,7 +689,7 @@ mpg %>%
 
 # Layer 5: The theme
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| label: ggtheme_bw
@@ -810,7 +723,7 @@ mpg %>%
 
 ### Common themes
 
-::: {.col}
+::: {.col .font80}
 
 `theme_bw()`
 
@@ -826,7 +739,7 @@ mpg %>%
 
 :::
 
-::: {.col}
+::: {.col .font80}
 
 `theme_minimal()`
 
@@ -846,7 +759,7 @@ mpg %>%
 
 ### Common themes
 
-::: {.col}
+::: {.col .font80}
 
 `theme_classic()`
 
@@ -862,7 +775,7 @@ mpg %>%
 
 :::
 
-::: {.col}
+::: {.col .font80}
 
 `theme_void()`
 
@@ -887,7 +800,7 @@ mpg %>%
 remotes::install_github("hrbrmstr/hrbrthemes")
 ```
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| fig-height: 4
@@ -901,7 +814,7 @@ mpg %>%
 
 :::
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| fig-height: 4
@@ -924,7 +837,7 @@ mpg %>%
 install.packages('ggthemes', dependencies = TRUE)
 ```
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| fig-height: 4
@@ -938,7 +851,7 @@ mpg %>%
 
 :::
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| fig-height: 4
@@ -993,18 +906,18 @@ mpg %>%
 ```{r}
 #| echo: false
 countdown(
-    minutes = 15,
-    warn_when = 15,
-    update_every = 1,
-    top = 0,
-    right = 0,
-    font_size = '2em'
+  minutes = 15,
+  warn_when = 15,
+  update_every = 1,
+  top = 0,
+  right = 0,
+  font_size = '2em'
 )
 ```
 
 ## Your turn
 
-Open `practice.qmd`
+In the "Practice" section of `ggplot2.qmd`
 
 Use the `mpg` data frame and ggplot to create these charts
 
@@ -1037,9 +950,9 @@ bears %>%
   ggplot() +
   geom_col(aes(x = year, y = n, fill = gender)) +
   labs(
-    x     = "Year",
-    y     = 'Number of killings',
-    fill  = "Victim gender",
+    x = "Year",
+    y = 'Number of killings',
+    fill = "Victim gender",
     title = "Annual deadly bear attacks over time"
   ) +
   theme_bw()
@@ -1054,19 +967,20 @@ bears %>%
 #| fig-width: 6
 #| echo: false
 mpg %>%
-    mutate(manufacturer = str_to_title(manufacturer)) %>%
-    group_by(manufacturer) %>%
-    summarise(mean_hwy = mean(hwy)) %>%
-    ggplot() +
-    geom_col(
-      aes(x = mean_hwy, y = reorder(manufacturer, mean_hwy)),
-      width = 0.9) +
-    labs(
-      x = 'Highway fuel economy (mpg)',
-      y = 'Vehicle manufacturer',
-      title = 'Mean fuel economy by automaker'
-    ) +
-    theme_minimal()
+  mutate(manufacturer = str_to_title(manufacturer)) %>%
+  group_by(manufacturer) %>%
+  summarise(mean_hwy = mean(hwy)) %>%
+  ggplot() +
+  geom_col(
+    aes(x = mean_hwy, y = reorder(manufacturer, mean_hwy)),
+    width = 0.9
+  ) +
+  labs(
+    x = 'Highway fuel economy (mpg)',
+    y = 'Vehicle manufacturer',
+    title = 'Mean fuel economy by automaker'
+  ) +
+  theme_minimal()
 ```
 
 :::
@@ -1122,7 +1036,249 @@ agenda(3)
 
 ---
 
-# Reminders:
+```{r}
+#| echo: false
+#| output: asis
+agenda(4)
+```
 
-- You have **11** days until your [Project Proposal](https://madd.seas.gwu.edu/2026-Fall/project/1-proposal.html) is due.
-- Next week: **Project Proposal Meetings** - sign up **[HERE](https://calendar.app.google/niXopBudj9t4pmbj7)**
+---
+
+# 3 Parts
+
+<br>
+
+::: {.font150}
+- **Part 1**: Intro
+- **Part 2**: Conjoint questions
+- **Part 3**: Other / demographic questions
+:::
+
+---
+
+# 3 Parts
+
+<br>
+
+::: {.font150}
+- **Part 1**: Intro → [screen for target population]{.red}
+- **Part 2**: Conjoint questions → [screen for random answers]{.red}
+- **Part 3**: Other / demographic questions
+:::
+
+---
+
+# [Think of your survey as a _conversation_]{.center}
+
+<br>
+
+- Include "transition" pages (e.g. Great job! Now we'll ask you about...)
+
+---
+
+{{< inverse >}}
+{{< center >}}
+{{< middle >}}
+
+# **Part 1**: Intro
+
+---
+
+{{< center >}}
+
+# Start with a welcome page
+
+<center>
+<img src="images/1welcome page.png" width=800>
+</center>
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+::: {.col width="30%"}
+
+# Consent form
+
+:::
+
+::: {.col width="70%"}
+
+<center>
+<img src="images/2consent.png" width=500>
+</center>
+
+:::
+
+---
+
+{{< center >}}
+
+## **Eligibility questions**: who is your target population?
+
+### [_Filter out respondents here_]{.red}
+
+<center>
+<img src="images/3filter.png" width=700>
+</center>
+
+---
+
+{{< inverse >}}
+{{< center >}}
+{{< middle >}}
+
+# **Part 2**: Conjoint questions
+
+---
+
+{{< center >}}
+{{< middle >}}
+
+# Education information
+
+<center>
+<img src="images/5education1.png" width=700>
+</center>
+
+---
+
+{{< center >}}
+
+# Education information
+
+::: {.col}
+
+<center>
+<img src="images/5education2.png">
+</center>
+
+:::
+
+::: {.col}
+
+<center>
+<img src="images/5education3.png">
+</center>
+
+:::
+
+---
+
+## [Can be helpful to provide relative comparisons]{.center}
+
+Weight:
+
+- 1/2 lbs (similar to 1 cup water)
+- 8 lbs (similar to 1 gallon of milk)
+
+---
+
+{{< center >}}
+
+# Conjoint intro
+
+<center>
+<img src="images/6conjoint_intro1.png" width=800>
+</center>
+
+---
+
+{{< center >}}
+
+## Practice conjoint (also attention check)
+
+### [_May also filter out respondents here_]{.red}
+
+<center>
+<img src="images/7conjoint_practice.png" width=650>
+</center>
+
+---
+
+{{< center >}}
+
+# Transition to actual conjoint questions
+
+<center>
+<img src="images/8conjoint_intro2.png" width=700>
+</center>
+
+---
+
+{{< middle >}}
+
+::: {.col width="40%"}
+
+# Conjoint questions
+
+### [_May also filter out respondents at the end_]{.red}
+
+(e.g. chose all same answers)
+
+:::
+
+::: {.col width="60%"}
+
+<center>
+<img src="images/9conjoint.png" width=700>
+</center>
+
+:::
+
+---
+
+{{< inverse >}}
+{{< center >}}
+{{< middle >}}
+
+# **Part 3**: Other / demographic questions
+
+---
+
+{{< center >}}
+
+# Transition
+
+<center>
+<img src="images/10wrap_up.png" width=700>
+</center>
+
+---
+
+{{< center >}}
+
+# Critical respondent information
+
+<center>
+<img src="images/4critical_info.png" width=900>
+</center>
+
+---
+
+{{< center >}}
+
+# Demographic / other questions
+
+<center>
+<img src="images/11demo.png" width=600>
+</center>
+
+---
+
+{{< center >}}
+
+# Finale
+
+<center>
+<img src="images/12end.png" width=900>
+</center>
+
+---
+
+{{< inverse >}}
+{{< center >}}
+{{< middle >}}
+
+# [Project survey plan](https://madd.seas.gwu.edu/2026-Fall/project/2-survey-plan.html)<br>(Due in 6 days - next Tuesday)
