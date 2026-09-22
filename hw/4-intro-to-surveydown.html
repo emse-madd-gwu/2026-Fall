@@ -402,35 +402,37 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Make your survey in a new folder <strong>outside</strong> of your course repo (e.g., in your Documents folder). Every surveydown survey should live in its own separate folder, and keeping it out of your course repo means it won’t interfere with rendering your <code>hw4.qmd</code> file.</p>
+<p>Make your survey in a <strong>new</strong> folder in your hw repo for this week. Every surveydown survey should live in its own separate folder.</p>
 </div>
 </div>
 <ol type="1">
-<li><p>If you haven’t already, install surveydown by running <code>install.packages("surveydown")</code> in the R console.</p></li>
-<li><p>Create a new survey from a template by running this in the R console, replacing the path with wherever you want your survey folder to go:</p>
+<li>If you haven’t already, install surveydown by running <code>install.packages("surveydown")</code> in the R console.</li>
+<li>Create a new survey from a template by running this in the R console, replacing the path with wherever you want your survey folder to go:</li>
+</ol>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>surveydown<span class="sc">::</span><span class="fu">sd_create_survey</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">template =</span> <span class="st">"default"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">"path/to/my-practice-survey"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="at">template =</span> <span class="st">"default"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="at">path =</span> <span class="st">"path/to/my-practice-survey"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
-<li><p>Open the new survey folder in Positron (<strong>File &gt; Open Folder…</strong>), then open the <code>app.R</code> file and click “Run App” (or run <code>shiny::runApp('app.R')</code> in the R console). The survey will open in the Viewer pane - click the button to open it in your browser if you prefer.</p></li>
-<li><p>Make edits to the survey to personalize it. Choose a topic that you find interesting, then modify the survey so that it has at least:</p>
+</div>
+<ol start="3" type="1">
+<li>Open the new survey folder in Positron (<strong>File &gt; Open Folder…</strong>), then open the <code>app.R</code> file and click the “Run App” arrow button (or run <code>shiny::runApp('app.R')</code> in the R console). The survey will open in the Viewer pane - click the button to open it in your browser if you prefer.</li>
+<li>Make edits to the survey to personalize it. Choose a topic that you find interesting, then modify the survey so that it has at least:
 <ul>
 <li>Three questions, each using a different <a href="https://surveydown.org/docs/question-types">question type</a>.</li>
 <li>Two pages.</li>
 <li>One piece of <a href="https://surveydown.org/docs/conditional-logic">conditional logic</a> (e.g., a question that only shows up, or a page that gets skipped, based on a previous answer).</li>
 </ul>
-<p>surveydown doesn’t update a running survey when you save your changes - stop the app and run it again to see your edits.</p></li>
-<li><p>Take a screenshot of one page of your survey, save it in your <code>hw4</code> folder, and insert it into your <code>hw4.qmd</code> file (e.g., <code>![](my-survey.png)</code>). Below the screenshot, write a few sentences describing your survey topic and the questions, pages, and conditional logic you added.</p></li>
+surveydown doesn’t always update a running survey when you save your changes - stop the app and run it again to see your edits.</li>
+<li>Take a screenshot of one page of your survey, save it in your <code>hw4</code> folder, and insert it into your <code>hw4.qmd</code> file (e.g., <code>![](my-survey.png)</code>). Below the screenshot, write a few sentences describing your survey topic and the questions, pages, and conditional logic you added.</li>
 </ol>
 </section>
 <section id="have-an-agent-build-a-survey" class="level1">
 <h1>4. Have an agent build a survey</h1>
 <p>Now let’s see what it’s like to have an agent build an entire survey from top to bottom. Using Claude Code in Positron (as we set up in <a href="1-agentic-workflows-and-github.html">HW1</a>), you’re going to direct an agent to build a complete survey, then verify that it actually works.</p>
 <ol type="1">
-<li>Make a new, empty folder <strong>outside</strong> of your course repo (e.g., <code>my-agent-survey</code> in your Documents folder), and open it in Positron (<strong>File &gt; Open Folder…</strong>).</li>
-<li>Open the terminal in Positron, run <code>claude</code> to start Claude Code, and ask it to build a complete surveydown survey about a topic of your choice. Be specific about what you want - the topic, the kinds of questions, how many pages, and any conditional logic. You might also point it to the surveydown documentation at <a href="https://surveydown.org/">surveydown.org</a> so it knows how the platform works.</li>
+<li>Make yet another new, empty folder in your hw repo folder for this week (e.g., <code>my-agent-survey</code>), and open it in Positron (<strong>File &gt; Open Folder…</strong>).</li>
+<li>Open the terminal in Positron, run <code>claude</code> to start Claude Code (or a different agent), and ask it to build a complete surveydown survey about a topic of your choice. Be specific about what you want - the topic, the kinds of questions, how many pages, conditional logic, etc.. You might also point it to the surveydown documentation at <a href="https://surveydown.org/">surveydown.org</a> so it knows how the platform works.</li>
 <li>When the agent says it’s done, run the app yourself and click through the whole survey. Does it run at all? Does every page show up? Do the questions and conditional logic behave the way you asked? If something is broken or not what you wanted, tell the agent and have it fix it.</li>
 <li>Take a screenshot of one page of the agent-built survey, save it in your <code>hw4</code> folder, and insert it into your <code>hw4.qmd</code> file. Below the screenshot, write a few sentences about the experience: What prompt did you give it? What did it get right on the first try, and what did you have to ask it to fix? How did you check that it was working?</li>
 </ol>
