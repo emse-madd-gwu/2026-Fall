@@ -7,7 +7,7 @@ week: 6
 displaydate: September 30, 2026
 format: 
   lexis-revealjs:
-    code-block-height: "660px"
+    code-block-height: "800px"
     link-external-newwindow: true
 mouse-wheel: true
 progress: false
@@ -492,12 +492,11 @@ countdown(
 
 **Step 1:** Open the `demo-question-types` folder in Positron<br>(**File › Open Folder…**)
 
-**Step 2:** Open `app.R` and click "Run App", or in the R console run:
+<br>
 
-```{r}
-#| eval: false
-shiny::runApp('app.R')
-```
+**Step 2:** Open `app.R` and click the "Run App" arrow in the top-left (near where the "preview" button usually is for Quarto docs)
+
+<br>
 
 **Step 3:** Click through the survey, then look at `survey.qmd` to see how each question was made
 
@@ -1962,7 +1961,3 @@ sd_output("id", type = "question")
 {{< middle >}}
 
 # [Blog post on conjoint in surveydown](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/)
-
-::: {.fragment}
-# Sign up for meeting slot next week<br>(link in #project channel)
-:::

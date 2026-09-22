@@ -101,7 +101,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-5ff6e335d0d52d86cbf631b2ed8909f0.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-87157d27a282c5e1492015bc674b9d3c.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1190,7 +1190,7 @@ built-in one.
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_7b6ed615" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_679687cb" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1200,10 +1200,9 @@ built-in one.
 Your turn
 </div>
 <p><strong>Step 1:</strong> Open the <code>demo-question-types</code> folder in Positron<br>(<strong>File › Open Folder…</strong>)</p>
-<p><strong>Step 2:</strong> Open <code>app.R</code> and click “Run App”, or in the R console run:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>shiny<span class="sc">::</span><span class="fu">runApp</span>(<span class="st">'app.R'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p><br></p>
+<p><strong>Step 2:</strong> Open <code>app.R</code> and click the “Run App” arrow in the top-left (near where the “preview” button usually is for Quarto docs)</p>
+<p><br></p>
 <p><strong>Step 3:</strong> Click through the survey, then look at <code>survey.qmd</code> to see how each question was made</p>
 </section>
 </section>
@@ -1212,14 +1211,14 @@ Your turn
 <h1>Start a new survey from a <a href="https://surveydown.org/templates">template</a></h1>
 <p>In the R console, run:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>surveydown<span class="sc">::</span><span class="fu">sd_create_survey</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>surveydown<span class="sc">::</span><span class="fu">sd_create_survey</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><em>Optional</em>: Specify a <code>path</code> and / or a <code>template</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>surveydown<span class="sc">::</span><span class="fu">sd_create_survey</span>(</span>
-<span id="cb12-2"><a href=""></a>  <span class="at">template =</span> <span class="st">"question_types"</span>,</span>
-<span id="cb12-3"><a href=""></a>  <span class="at">path =</span> <span class="st">"path/to/folder"</span></span>
-<span id="cb12-4"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>surveydown<span class="sc">::</span><span class="fu">sd_create_survey</span>(</span>
+<span id="cb11-2"><a href=""></a>  <span class="at">template =</span> <span class="st">"question_types"</span>,</span>
+<span id="cb11-3"><a href=""></a>  <span class="at">path =</span> <span class="st">"path/to/folder"</span></span>
+<span id="cb11-4"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -1253,24 +1252,24 @@ Your turn
 
 <h1>YAML header</h1>
 <p>All survey settings go in the YAML header at the top of <code>survey.qmd</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb13-2"><a href=""></a><span class="fu">theme-settings</span><span class="kw">:</span></span>
-<span id="cb13-3"><a href=""></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb13-4"><a href=""></a><span class="at">  </span><span class="fu">barposition</span><span class="kw">:</span><span class="at"> top</span></span>
-<span id="cb13-5"><a href=""></a><span class="fu">survey-settings</span><span class="kw">:</span></span>
-<span id="cb13-6"><a href=""></a><span class="at">  </span><span class="fu">mode</span><span class="kw">:</span><span class="at"> preview</span></span>
-<span id="cb13-7"><a href=""></a><span class="at">  </span><span class="fu">show-previous</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span>
-<span id="cb13-8"><a href=""></a><span class="at">  </span><span class="fu">all-required</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span>
-<span id="cb13-9"><a href=""></a><span class="at">  </span><span class="fu">required</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span>
-<span id="cb13-10"><a href=""></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb12-2"><a href=""></a><span class="fu">theme-settings</span><span class="kw">:</span></span>
+<span id="cb12-3"><a href=""></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb12-4"><a href=""></a><span class="at">  </span><span class="fu">barposition</span><span class="kw">:</span><span class="at"> top</span></span>
+<span id="cb12-5"><a href=""></a><span class="fu">survey-settings</span><span class="kw">:</span></span>
+<span id="cb12-6"><a href=""></a><span class="at">  </span><span class="fu">mode</span><span class="kw">:</span><span class="at"> preview</span></span>
+<span id="cb12-7"><a href=""></a><span class="at">  </span><span class="fu">show-previous</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span>
+<span id="cb12-8"><a href=""></a><span class="at">  </span><span class="fu">all-required</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span>
+<span id="cb12-9"><a href=""></a><span class="at">  </span><span class="fu">required</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span>
+<span id="cb12-10"><a href=""></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>No header at all? Everything uses the defaults.<br> Full list of settings on the <a href="https://surveydown.org/docs/survey-settings">Survey Settings</a> docs page</p>
 </section>
 <section class="slide level0">
 
 <h1>Survey <code>mode</code></h1>
 <p>Set under <code>survey-settings</code> in the YAML header:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a href=""></a><span class="fu">survey-settings</span><span class="kw">:</span></span>
-<span id="cb14-2"><a href=""></a><span class="at">  </span><span class="fu">mode</span><span class="kw">:</span><span class="at"> preview</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href=""></a><span class="fu">survey-settings</span><span class="kw">:</span></span>
+<span id="cb13-2"><a href=""></a><span class="at">  </span><span class="fu">mode</span><span class="kw">:</span><span class="at"> preview</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -1299,11 +1298,11 @@ Your turn
 
 <h1>Change the survey theme</h1>
 <p>Pick a different <a href="https://bootswatch.com">bootswatch theme</a> with the <code>theme</code> key:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href=""></a><span class="fu">theme-settings</span><span class="kw">:</span></span>
-<span id="cb15-2"><a href=""></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> united</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a href=""></a><span class="fu">theme-settings</span><span class="kw">:</span></span>
+<span id="cb14-2"><a href=""></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> united</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Make a custom theme with a <code>custom.scss</code> file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href=""></a><span class="fu">theme-settings</span><span class="kw">:</span></span>
-<span id="cb16-2"><a href=""></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">united</span><span class="kw">,</span><span class="at"> custom.scss</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href=""></a><span class="fu">theme-settings</span><span class="kw">:</span></span>
+<span id="cb15-2"><a href=""></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">united</span><span class="kw">,</span><span class="at"> custom.scss</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level0">
 
@@ -1312,13 +1311,13 @@ Your turn
 <div class="cols-row">
 <div class="col">
 <p>Change to any color with <code>barcolor</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href=""></a><span class="fu">theme-settings</span><span class="kw">:</span></span>
-<span id="cb17-2"><a href=""></a><span class="at">  </span><span class="fu">barcolor</span><span class="kw">:</span><span class="at"> </span><span class="st">"#768692"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href=""></a><span class="fu">theme-settings</span><span class="kw">:</span></span>
+<span id="cb16-2"><a href=""></a><span class="at">  </span><span class="fu">barcolor</span><span class="kw">:</span><span class="at"> </span><span class="st">"#768692"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="col">
 <p>Change position: <code>top</code>, <code>bottom</code>, or <code>none</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb18-1"><a href=""></a><span class="fu">theme-settings</span><span class="kw">:</span></span>
-<span id="cb18-2"><a href=""></a><span class="at">  </span><span class="fu">barposition</span><span class="kw">:</span><span class="at"> bottom</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href=""></a><span class="fu">theme-settings</span><span class="kw">:</span></span>
+<span id="cb17-2"><a href=""></a><span class="at">  </span><span class="fu">barposition</span><span class="kw">:</span><span class="at"> bottom</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -1326,19 +1325,19 @@ Your turn
 
 <h1>Inserting pages</h1>
 <p>Start each page with <code>---</code> and a page id:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href=""></a>--- page_id</span>
-<span id="cb19-2"><a href=""></a></span>
-<span id="cb19-3"><a href=""></a>Page content here</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href=""></a>--- page_id</span>
+<span id="cb18-2"><a href=""></a></span>
+<span id="cb18-3"><a href=""></a>Page content here</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p><strong>Next</strong> buttons are added automatically. Add a <strong>Previous</strong> button to every page in the YAML:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb20-1"><a href=""></a><span class="fu">survey-settings</span><span class="kw">:</span></span>
-<span id="cb20-2"><a href=""></a><span class="at">  </span><span class="fu">show-previous</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href=""></a><span class="fu">survey-settings</span><span class="kw">:</span></span>
+<span id="cb19-2"><a href=""></a><span class="at">  </span><span class="fu">show-previous</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <p>Or control one page’s buttons with <code>sd_nav()</code> (e.g.&nbsp;change the label):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb21-2"><a href=""></a><span class="fu">sd_nav</span>(<span class="at">label_next =</span> <span class="st">"Continue"</span>)</span>
-<span id="cb21-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb20-2"><a href=""></a><span class="fu">sd_nav</span>(<span class="at">label_next =</span> <span class="st">"Continue"</span>)</span>
+<span id="cb20-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level0">
@@ -1349,16 +1348,16 @@ Your turn
 <div class="col">
 <p><strong>Code</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb22-2"><a href=""></a>  <span class="at">type =</span> <span class="st">'mc'</span>,</span>
-<span id="cb22-3"><a href=""></a>  <span class="at">id =</span> <span class="st">'fruit'</span>,</span>
-<span id="cb22-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"1. Do you like fruit?"</span>,</span>
-<span id="cb22-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
-<span id="cb22-6"><a href=""></a>    <span class="st">'Yes!'</span> <span class="ot">=</span> <span class="st">'yes'</span>,</span>
-<span id="cb22-7"><a href=""></a>    <span class="st">'Kind of'</span> <span class="ot">=</span> <span class="st">'kind_of'</span>,</span>
-<span id="cb22-8"><a href=""></a>    <span class="st">'No :('</span> <span class="ot">=</span> <span class="st">'no'</span></span>
-<span id="cb22-9"><a href=""></a>  )</span>
-<span id="cb22-10"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb21-2"><a href=""></a>  <span class="at">type =</span> <span class="st">'mc'</span>,</span>
+<span id="cb21-3"><a href=""></a>  <span class="at">id =</span> <span class="st">'fruit'</span>,</span>
+<span id="cb21-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"1. Do you like fruit?"</span>,</span>
+<span id="cb21-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
+<span id="cb21-6"><a href=""></a>    <span class="st">'Yes!'</span> <span class="ot">=</span> <span class="st">'yes'</span>,</span>
+<span id="cb21-7"><a href=""></a>    <span class="st">'Kind of'</span> <span class="ot">=</span> <span class="st">'kind_of'</span>,</span>
+<span id="cb21-8"><a href=""></a>    <span class="st">'No :('</span> <span class="ot">=</span> <span class="st">'no'</span></span>
+<span id="cb21-9"><a href=""></a>  )</span>
+<span id="cb21-10"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Format is <code>"Label" = "value"</code></p>
 </div>
@@ -1457,19 +1456,19 @@ Your turn
 <div class="cols-row">
 <div class="col">
 <p>In <code>questions.yml</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb23-1"><a href=""></a><span class="fu">fruit</span><span class="kw">:</span></span>
-<span id="cb23-2"><a href=""></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> mc</span></span>
-<span id="cb23-3"><a href=""></a><span class="at">  </span><span class="fu">label</span><span class="kw">:</span><span class="at"> 1. Do you like fruit?</span></span>
-<span id="cb23-4"><a href=""></a><span class="at">  </span><span class="fu">options</span><span class="kw">:</span></span>
-<span id="cb23-5"><a href=""></a><span class="at">    </span><span class="fu">Yes!</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
-<span id="cb23-6"><a href=""></a><span class="at">    </span><span class="fu">Kind of</span><span class="kw">:</span><span class="at"> kind_of</span></span>
-<span id="cb23-7"><a href=""></a><span class="at">    No </span><span class="fu">:(</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb22-1"><a href=""></a><span class="fu">fruit</span><span class="kw">:</span></span>
+<span id="cb22-2"><a href=""></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> mc</span></span>
+<span id="cb22-3"><a href=""></a><span class="at">  </span><span class="fu">label</span><span class="kw">:</span><span class="at"> 1. Do you like fruit?</span></span>
+<span id="cb22-4"><a href=""></a><span class="at">  </span><span class="fu">options</span><span class="kw">:</span></span>
+<span id="cb22-5"><a href=""></a><span class="at">    </span><span class="fu">Yes!</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb22-6"><a href=""></a><span class="at">    </span><span class="fu">Kind of</span><span class="kw">:</span><span class="at"> kind_of</span></span>
+<span id="cb22-7"><a href=""></a><span class="at">    No </span><span class="fu">:(</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="col">
 <p>In <code>survey.qmd</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb24-2"><a href=""></a><span class="fu">sd_question</span>(<span class="st">"fruit"</span>)</span>
-<span id="cb24-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb23-2"><a href=""></a><span class="fu">sd_question</span>(<span class="st">"fruit"</span>)</span>
+<span id="cb23-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br> See the <code>demo-questions-yml</code> folder</p>
 </div>
 </div>
@@ -1478,9 +1477,9 @@ Your turn
 
 <h1>Embed images with html</h1>
 <p>I recommend just writing html code, like this</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb25-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">center</span><span class="dt">&gt;</span></span>
-<span id="cb25-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://surveydown.org/images/logo.png"</span><span class="ot"> width</span><span class="op">=</span><span class="st">250</span><span class="dt">&gt;</span></span>
-<span id="cb25-3"><a href=""></a><span class="dt">&lt;/</span><span class="kw">center</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb24-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">center</span><span class="dt">&gt;</span></span>
+<span id="cb24-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://surveydown.org/images/logo.png"</span><span class="ot"> width</span><span class="op">=</span><span class="st">250</span><span class="dt">&gt;</span></span>
+<span id="cb24-3"><a href=""></a><span class="dt">&lt;/</span><span class="kw">center</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <center>
 <img src="https://surveydown.org/images/logo.png" width="250">
 </center>
@@ -1488,7 +1487,7 @@ Your turn
 <section class="slide level0">
 
 <h1>Embed images with markdown</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href=""></a><span class="al">![](https://surveydown.org/images/logo.png)</span>{fig-align="center" width="250"}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href=""></a><span class="al">![](https://surveydown.org/images/logo.png)</span>{fig-align="center" width="250"}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <center>
 <img src="https://surveydown.org/images/logo.png" width="250">
 </center>
@@ -1506,7 +1505,7 @@ Your turn
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_21af353c" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_3499bbc6" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1593,25 +1592,25 @@ Your turn
 <p>Define both <em>conditional</em> and <em>target</em> questions in <code>survey.qmd</code></p>
 <div class="col font70" style="flex:0 1 70%;width:70%">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="co"># Conditional question</span></span>
-<span id="cb27-2"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb27-3"><a href=""></a>  <span class="at">type =</span> <span class="st">"mc"</span>,</span>
-<span id="cb27-4"><a href=""></a>  <span class="at">id =</span> <span class="st">"penguins"</span>,</span>
-<span id="cb27-5"><a href=""></a>  <span class="at">label =</span> <span class="st">"Which is your favorite type of penguin?"</span>,</span>
-<span id="cb27-6"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
-<span id="cb27-7"><a href=""></a>    <span class="st">"Adélie"</span> <span class="ot">=</span> <span class="st">"adelie"</span>,</span>
-<span id="cb27-8"><a href=""></a>    <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"chinstrap"</span>,</span>
-<span id="cb27-9"><a href=""></a>    <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"gentoo"</span>,</span>
-<span id="cb27-10"><a href=""></a>    <span class="st">"Other"</span> <span class="ot">=</span> <span class="st">"other"</span></span>
-<span id="cb27-11"><a href=""></a>  )</span>
-<span id="cb27-12"><a href=""></a>)</span>
-<span id="cb27-13"><a href=""></a></span>
-<span id="cb27-14"><a href=""></a><span class="co"># Target question</span></span>
-<span id="cb27-15"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb27-16"><a href=""></a>  <span class="at">type =</span> <span class="st">"text"</span>,</span>
-<span id="cb27-17"><a href=""></a>  <span class="at">id =</span> <span class="st">"penguins_other"</span>,</span>
-<span id="cb27-18"><a href=""></a>  <span class="at">label =</span> <span class="st">"Please specify the other penguin type:"</span></span>
-<span id="cb27-19"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="co"># Conditional question</span></span>
+<span id="cb26-2"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb26-3"><a href=""></a>  <span class="at">type =</span> <span class="st">"mc"</span>,</span>
+<span id="cb26-4"><a href=""></a>  <span class="at">id =</span> <span class="st">"penguins"</span>,</span>
+<span id="cb26-5"><a href=""></a>  <span class="at">label =</span> <span class="st">"Which is your favorite type of penguin?"</span>,</span>
+<span id="cb26-6"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
+<span id="cb26-7"><a href=""></a>    <span class="st">"Adélie"</span> <span class="ot">=</span> <span class="st">"adelie"</span>,</span>
+<span id="cb26-8"><a href=""></a>    <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"chinstrap"</span>,</span>
+<span id="cb26-9"><a href=""></a>    <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"gentoo"</span>,</span>
+<span id="cb26-10"><a href=""></a>    <span class="st">"Other"</span> <span class="ot">=</span> <span class="st">"other"</span></span>
+<span id="cb26-11"><a href=""></a>  )</span>
+<span id="cb26-12"><a href=""></a>)</span>
+<span id="cb26-13"><a href=""></a></span>
+<span id="cb26-14"><a href=""></a><span class="co"># Target question</span></span>
+<span id="cb26-15"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb26-16"><a href=""></a>  <span class="at">type =</span> <span class="st">"text"</span>,</span>
+<span id="cb26-17"><a href=""></a>  <span class="at">id =</span> <span class="st">"penguins_other"</span>,</span>
+<span id="cb26-18"><a href=""></a>  <span class="at">label =</span> <span class="st">"Please specify the other penguin type:"</span></span>
+<span id="cb26-19"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -1620,20 +1619,20 @@ Your turn
 <h2>Conditional question showing</h2>
 <p>Define condition with <code>sd_show_if()</code> in <code>app.R</code></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28" data-code-line-numbers="3,4,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb28-2"><a href=""></a>  <span class="fu">sd_show_if</span>(</span>
-<span id="cb28-3"><a href=""></a>    <span class="fu">sd_value</span>(<span class="st">"penguins"</span>) <span class="sc">==</span> <span class="st">"other"</span> <span class="sc">~</span> <span class="st">"penguins_other"</span></span>
-<span id="cb28-4"><a href=""></a>  )</span>
-<span id="cb28-5"><a href=""></a></span>
-<span id="cb28-6"><a href=""></a>  <span class="co"># ...other server code...</span></span>
-<span id="cb28-7"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27" data-code-line-numbers="3,4,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb27-2"><a href=""></a>  <span class="fu">sd_show_if</span>(</span>
+<span id="cb27-3"><a href=""></a>    <span class="fu">sd_value</span>(<span class="st">"penguins"</span>) <span class="sc">==</span> <span class="st">"other"</span> <span class="sc">~</span> <span class="st">"penguins_other"</span></span>
+<span id="cb27-4"><a href=""></a>  )</span>
+<span id="cb27-5"><a href=""></a></span>
+<span id="cb27-6"><a href=""></a>  <span class="co"># ...other server code...</span></span>
+<span id="cb27-7"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <ol type="1">
 <li>The structure of the condition is always:</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="sc">&lt;</span>condition<span class="sc">&gt;</span> <span class="er">~</span> <span class="st">"target_question_id"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="sc">&lt;</span>condition<span class="sc">&gt;</span> <span class="er">~</span> <span class="st">"target_question_id"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
@@ -1663,26 +1662,26 @@ Your turn
 <p>First, define all pages in your <code>survey.qmd</code> file:</p>
 <div class="cols-row">
 <div class="col">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href=""></a>--- page1</span>
-<span id="cb30-2"><a href=""></a></span>
-<span id="cb30-3"><a href=""></a>This is page 1</span>
-<span id="cb30-4"><a href=""></a></span>
-<span id="cb30-5"><a href=""></a>--- page2a</span>
-<span id="cb30-6"><a href=""></a></span>
-<span id="cb30-7"><a href=""></a>This is page 2A</span>
-<span id="cb30-8"><a href=""></a></span>
-<span id="cb30-9"><a href=""></a>--- page2b</span>
-<span id="cb30-10"><a href=""></a></span>
-<span id="cb30-11"><a href=""></a>This is page 2B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href=""></a>--- page1</span>
+<span id="cb29-2"><a href=""></a></span>
+<span id="cb29-3"><a href=""></a>This is page 1</span>
+<span id="cb29-4"><a href=""></a></span>
+<span id="cb29-5"><a href=""></a>--- page2a</span>
+<span id="cb29-6"><a href=""></a></span>
+<span id="cb29-7"><a href=""></a>This is page 2A</span>
+<span id="cb29-8"><a href=""></a></span>
+<span id="cb29-9"><a href=""></a>--- page2b</span>
+<span id="cb29-10"><a href=""></a></span>
+<span id="cb29-11"><a href=""></a>This is page 2B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="col">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href=""></a>--- page3</span>
-<span id="cb31-2"><a href=""></a></span>
-<span id="cb31-3"><a href=""></a>This is page 3</span>
-<span id="cb31-4"><a href=""></a></span>
-<span id="cb31-5"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb31-6"><a href=""></a><span class="fu">sd_close</span>()</span>
-<span id="cb31-7"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href=""></a>--- page3</span>
+<span id="cb30-2"><a href=""></a></span>
+<span id="cb30-3"><a href=""></a>This is page 3</span>
+<span id="cb30-4"><a href=""></a></span>
+<span id="cb30-5"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb30-6"><a href=""></a><span class="fu">sd_close</span>()</span>
+<span id="cb30-7"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -1692,21 +1691,21 @@ Your turn
 <div class="col">
 <p>In <code>app.R</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb32-2"><a href=""></a>  <span class="co"># Generate random condition</span></span>
-<span id="cb32-3"><a href=""></a>  rand_val <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'A'</span>, <span class="st">'B'</span>), <span class="dv">1</span>)</span>
-<span id="cb32-4"><a href=""></a></span>
-<span id="cb32-5"><a href=""></a>  <span class="co"># Store the condition value</span></span>
-<span id="cb32-6"><a href=""></a>  <span class="fu">sd_store_value</span>(rand_val)</span>
-<span id="cb32-7"><a href=""></a></span>
-<span id="cb32-8"><a href=""></a>  <span class="co"># Use sd_show_if to show target pages</span></span>
-<span id="cb32-9"><a href=""></a>  <span class="fu">sd_show_if</span>(</span>
-<span id="cb32-10"><a href=""></a>    rand_val <span class="sc">==</span> <span class="st">'A'</span> <span class="sc">~</span> <span class="st">'page2a'</span>,</span>
-<span id="cb32-11"><a href=""></a>    rand_val <span class="sc">==</span> <span class="st">'B'</span> <span class="sc">~</span> <span class="st">'page2b'</span></span>
-<span id="cb32-12"><a href=""></a>  )</span>
-<span id="cb32-13"><a href=""></a></span>
-<span id="cb32-14"><a href=""></a>  <span class="fu">sd_server</span>()</span>
-<span id="cb32-15"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb31-2"><a href=""></a>  <span class="co"># Generate random condition</span></span>
+<span id="cb31-3"><a href=""></a>  rand_val <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">'A'</span>, <span class="st">'B'</span>), <span class="dv">1</span>)</span>
+<span id="cb31-4"><a href=""></a></span>
+<span id="cb31-5"><a href=""></a>  <span class="co"># Store the condition value</span></span>
+<span id="cb31-6"><a href=""></a>  <span class="fu">sd_store_value</span>(rand_val)</span>
+<span id="cb31-7"><a href=""></a></span>
+<span id="cb31-8"><a href=""></a>  <span class="co"># Use sd_show_if to show target pages</span></span>
+<span id="cb31-9"><a href=""></a>  <span class="fu">sd_show_if</span>(</span>
+<span id="cb31-10"><a href=""></a>    rand_val <span class="sc">==</span> <span class="st">'A'</span> <span class="sc">~</span> <span class="st">'page2a'</span>,</span>
+<span id="cb31-11"><a href=""></a>    rand_val <span class="sc">==</span> <span class="st">'B'</span> <span class="sc">~</span> <span class="st">'page2b'</span></span>
+<span id="cb31-12"><a href=""></a>  )</span>
+<span id="cb31-13"><a href=""></a></span>
+<span id="cb31-14"><a href=""></a>  <span class="fu">sd_server</span>()</span>
+<span id="cb31-15"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="col">
@@ -1742,32 +1741,32 @@ Your turn
 <div class="col" style="flex:0 1 60%;width:60%">
 <p>In <code>survey.qmd</code>: Target screenout question</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb33-2"><a href=""></a>  <span class="at">type =</span> <span class="st">'mc'</span>,</span>
-<span id="cb33-3"><a href=""></a>  <span class="at">id =</span> <span class="st">'vehicle_ownership'</span>,</span>
-<span id="cb33-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"Do you own a vehicle?"</span>,</span>
-<span id="cb33-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
-<span id="cb33-6"><a href=""></a>    <span class="st">'Yes'</span> <span class="ot">=</span> <span class="st">'yes'</span>,</span>
-<span id="cb33-7"><a href=""></a>    <span class="st">'No'</span> <span class="ot">=</span> <span class="st">'no'</span></span>
-<span id="cb33-8"><a href=""></a>  )</span>
-<span id="cb33-9"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb32-2"><a href=""></a>  <span class="at">type =</span> <span class="st">'mc'</span>,</span>
+<span id="cb32-3"><a href=""></a>  <span class="at">id =</span> <span class="st">'vehicle_ownership'</span>,</span>
+<span id="cb32-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"Do you own a vehicle?"</span>,</span>
+<span id="cb32-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
+<span id="cb32-6"><a href=""></a>    <span class="st">'Yes'</span> <span class="ot">=</span> <span class="st">'yes'</span>,</span>
+<span id="cb32-7"><a href=""></a>    <span class="st">'No'</span> <span class="ot">=</span> <span class="st">'no'</span></span>
+<span id="cb32-8"><a href=""></a>  )</span>
+<span id="cb32-9"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In <code>app.R</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34" data-code-line-numbers="3,4,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb34-2"><a href=""></a>  <span class="fu">sd_skip_if</span>(</span>
-<span id="cb34-3"><a href=""></a>    <span class="fu">sd_value</span>(<span class="st">"vehicle_ownership"</span>) <span class="sc">==</span> <span class="st">"no"</span> <span class="sc">~</span> <span class="st">"screenout"</span></span>
-<span id="cb34-4"><a href=""></a>  )</span>
-<span id="cb34-5"><a href=""></a></span>
-<span id="cb34-6"><a href=""></a>  <span class="co"># ...other server code...</span></span>
-<span id="cb34-7"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33" data-code-line-numbers="3,4,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb33-2"><a href=""></a>  <span class="fu">sd_skip_if</span>(</span>
+<span id="cb33-3"><a href=""></a>    <span class="fu">sd_value</span>(<span class="st">"vehicle_ownership"</span>) <span class="sc">==</span> <span class="st">"no"</span> <span class="sc">~</span> <span class="st">"screenout"</span></span>
+<span id="cb33-4"><a href=""></a>  )</span>
+<span id="cb33-5"><a href=""></a></span>
+<span id="cb33-6"><a href=""></a>  <span class="co"># ...other server code...</span></span>
+<span id="cb33-7"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="col" style="flex:0 1 40%;width:40%">
 <p>Target screenout page</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href=""></a>--- screenout</span>
-<span id="cb35-2"><a href=""></a></span>
-<span id="cb35-3"><a href=""></a>Sorry, but you are not qualified to take our survey.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href=""></a>--- screenout</span>
+<span id="cb34-2"><a href=""></a></span>
+<span id="cb34-3"><a href=""></a>Sorry, but you are not qualified to take our survey.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -1784,7 +1783,7 @@ Your turn
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e42b9cc3" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_55e3b827" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1894,7 +1893,7 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <div class="col">
 <p>In your R console, run:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a>surveydown<span class="sc">::</span><span class="fu">sd_db_config</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a>surveydown<span class="sc">::</span><span class="fu">sd_db_config</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <p>Credentials are stored in a <code>.env</code> file in your survey folder.</p>
@@ -1916,23 +1915,23 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 </div>
 <div class="font70">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a><span class="fu">library</span>(surveydown)</span>
-<span id="cb37-2"><a href=""></a></span>
-<span id="cb37-3"><a href=""></a><span class="co"># Connects to database</span></span>
-<span id="cb37-4"><a href=""></a>db <span class="ot">&lt;-</span> <span class="fu">sd_db_connect</span>()</span>
-<span id="cb37-5"><a href=""></a></span>
-<span id="cb37-6"><a href=""></a><span class="co"># Main UI</span></span>
-<span id="cb37-7"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">sd_ui</span>()</span>
-<span id="cb37-8"><a href=""></a></span>
-<span id="cb37-9"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb37-10"><a href=""></a>  <span class="co"># Main server</span></span>
-<span id="cb37-11"><a href=""></a>  <span class="fu">sd_server</span>(db)</span>
-<span id="cb37-12"><a href=""></a>}</span>
-<span id="cb37-13"><a href=""></a></span>
-<span id="cb37-14"><a href=""></a>shiny<span class="sc">::</span><span class="fu">shinyApp</span>(</span>
-<span id="cb37-15"><a href=""></a>  <span class="at">ui =</span> ui,</span>
-<span id="cb37-16"><a href=""></a>  <span class="at">server =</span> server</span>
-<span id="cb37-17"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a><span class="fu">library</span>(surveydown)</span>
+<span id="cb36-2"><a href=""></a></span>
+<span id="cb36-3"><a href=""></a><span class="co"># Connects to database</span></span>
+<span id="cb36-4"><a href=""></a>db <span class="ot">&lt;-</span> <span class="fu">sd_db_connect</span>()</span>
+<span id="cb36-5"><a href=""></a></span>
+<span id="cb36-6"><a href=""></a><span class="co"># Main UI</span></span>
+<span id="cb36-7"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">sd_ui</span>()</span>
+<span id="cb36-8"><a href=""></a></span>
+<span id="cb36-9"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb36-10"><a href=""></a>  <span class="co"># Main server</span></span>
+<span id="cb36-11"><a href=""></a>  <span class="fu">sd_server</span>(db)</span>
+<span id="cb36-12"><a href=""></a>}</span>
+<span id="cb36-13"><a href=""></a></span>
+<span id="cb36-14"><a href=""></a>shiny<span class="sc">::</span><span class="fu">shinyApp</span>(</span>
+<span id="cb36-15"><a href=""></a>  <span class="at">ui =</span> ui,</span>
+<span id="cb36-16"><a href=""></a>  <span class="at">server =</span> server</span>
+<span id="cb36-17"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1958,7 +1957,7 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_720d36f9" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_166c3d2a" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1979,12 +1978,12 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <h1>Static data fetching</h1>
 <p>Once your database is properly set up, you can fetch the data using:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a>db <span class="ot">&lt;-</span> <span class="fu">sd_db_connect</span>()</span>
-<span id="cb38-2"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">sd_get_data</span>(db)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a>db <span class="ot">&lt;-</span> <span class="fu">sd_db_connect</span>()</span>
+<span id="cb37-2"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">sd_get_data</span>(db)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Or simply:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">sd_get_data</span>(<span class="fu">sd_db_connect</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">sd_get_data</span>(<span class="fu">sd_db_connect</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level0">
@@ -1994,13 +1993,13 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <p>In <code>app.R</code>:</p>
 <div class="col" style="flex:0 1 60%;width:60%">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a>db <span class="ot">&lt;-</span> <span class="fu">sd_db_connect</span>()</span>
-<span id="cb40-2"><a href=""></a></span>
-<span id="cb40-3"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb40-4"><a href=""></a>  data <span class="ot">&lt;-</span> <span class="fu">sd_get_data</span>(db, <span class="at">refresh_interval =</span> <span class="dv">5</span>)</span>
-<span id="cb40-5"><a href=""></a></span>
-<span id="cb40-6"><a href=""></a>  <span class="fu">sd_server</span>(db)</span>
-<span id="cb40-7"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a>db <span class="ot">&lt;-</span> <span class="fu">sd_db_connect</span>()</span>
+<span id="cb39-2"><a href=""></a></span>
+<span id="cb39-3"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb39-4"><a href=""></a>  data <span class="ot">&lt;-</span> <span class="fu">sd_get_data</span>(db, <span class="at">refresh_interval =</span> <span class="dv">5</span>)</span>
+<span id="cb39-5"><a href=""></a></span>
+<span id="cb39-6"><a href=""></a>  <span class="fu">sd_server</span>(db)</span>
+<span id="cb39-7"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -2012,24 +2011,24 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <div class="col" style="flex:0 1 55%;width:55%">
 <p>In <code>app.R</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb41-2"><a href=""></a>  data <span class="ot">&lt;-</span> <span class="fu">sd_get_data</span>(db, <span class="at">refresh_interval =</span> <span class="dv">5</span>)</span>
-<span id="cb41-3"><a href=""></a></span>
-<span id="cb41-4"><a href=""></a>  output<span class="sc">$</span>my_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb41-5"><a href=""></a>    my_data <span class="ot">&lt;-</span> <span class="fu">data</span>()</span>
-<span id="cb41-6"><a href=""></a></span>
-<span id="cb41-7"><a href=""></a>    <span class="co"># insert code here to make a plot</span></span>
-<span id="cb41-8"><a href=""></a>  })</span>
-<span id="cb41-9"><a href=""></a></span>
-<span id="cb41-10"><a href=""></a>  <span class="fu">sd_server</span>(db)</span>
-<span id="cb41-11"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb40-2"><a href=""></a>  data <span class="ot">&lt;-</span> <span class="fu">sd_get_data</span>(db, <span class="at">refresh_interval =</span> <span class="dv">5</span>)</span>
+<span id="cb40-3"><a href=""></a></span>
+<span id="cb40-4"><a href=""></a>  output<span class="sc">$</span>my_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb40-5"><a href=""></a>    my_data <span class="ot">&lt;-</span> <span class="fu">data</span>()</span>
+<span id="cb40-6"><a href=""></a></span>
+<span id="cb40-7"><a href=""></a>    <span class="co"># insert code here to make a plot</span></span>
+<span id="cb40-8"><a href=""></a>  })</span>
+<span id="cb40-9"><a href=""></a></span>
+<span id="cb40-10"><a href=""></a>  <span class="fu">sd_server</span>(db)</span>
+<span id="cb40-11"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="col" style="flex:0 1 45%;width:45%">
 <p>In <code>survey.qmd</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb42-2"><a href=""></a><span class="fu">plotOutput</span>(<span class="st">"my_plot"</span>)</span>
-<span id="cb42-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb41-2"><a href=""></a><span class="fu">plotOutput</span>(<span class="st">"my_plot"</span>)</span>
+<span id="cb41-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br> See the <code>demo-live-polling</code> folder</p>
 </div>
 </div>
@@ -2040,7 +2039,7 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_5c76b55c" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_3a51c5c9" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -2099,26 +2098,26 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <div class="cols-row">
 <div class="col" style="flex:0 1 45%;width:45%">
 <p>In <code>survey.qmd</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43" data-code-line-numbers="8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb43-2"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb43-3"><a href=""></a>  <span class="at">type  =</span> <span class="st">"text"</span>,</span>
-<span id="cb43-4"><a href=""></a>  <span class="at">id    =</span> <span class="st">"name"</span>,</span>
-<span id="cb43-5"><a href=""></a>  <span class="at">label =</span> <span class="st">"What is your name?"</span></span>
-<span id="cb43-6"><a href=""></a>)</span>
-<span id="cb43-7"><a href=""></a></span>
-<span id="cb43-8"><a href=""></a><span class="fu">textOutput</span>(<span class="st">"greeting"</span>)</span>
-<span id="cb43-9"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42" data-code-line-numbers="8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb42-2"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb42-3"><a href=""></a>  <span class="at">type  =</span> <span class="st">"text"</span>,</span>
+<span id="cb42-4"><a href=""></a>  <span class="at">id    =</span> <span class="st">"name"</span>,</span>
+<span id="cb42-5"><a href=""></a>  <span class="at">label =</span> <span class="st">"What is your name?"</span></span>
+<span id="cb42-6"><a href=""></a>)</span>
+<span id="cb42-7"><a href=""></a></span>
+<span id="cb42-8"><a href=""></a><span class="fu">textOutput</span>(<span class="st">"greeting"</span>)</span>
+<span id="cb42-9"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="col" style="flex:0 1 55%;width:55%">
 <p>In <code>app.R</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44" data-code-line-numbers="3,4,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb44-2"><a href=""></a>  output<span class="sc">$</span>greeting <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb44-3"><a href=""></a>    <span class="fu">paste0</span>(<span class="st">"Hello "</span>, <span class="fu">sd_value</span>(<span class="st">"name"</span>), <span class="st">"!"</span>)</span>
-<span id="cb44-4"><a href=""></a>  })</span>
-<span id="cb44-5"><a href=""></a></span>
-<span id="cb44-6"><a href=""></a>  <span class="fu">sd_server</span>()</span>
-<span id="cb44-7"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43" data-code-line-numbers="3,4,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb43-2"><a href=""></a>  output<span class="sc">$</span>greeting <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb43-3"><a href=""></a>    <span class="fu">paste0</span>(<span class="st">"Hello "</span>, <span class="fu">sd_value</span>(<span class="st">"name"</span>), <span class="st">"!"</span>)</span>
+<span id="cb43-4"><a href=""></a>  })</span>
+<span id="cb43-5"><a href=""></a></span>
+<span id="cb43-6"><a href=""></a>  <span class="fu">sd_server</span>()</span>
+<span id="cb43-7"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2129,22 +2128,22 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <div class="cols-row">
 <div class="col" style="flex:0 1 60%;width:60%">
 <p>In <code>survey.qmd</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45" data-code-line-numbers="9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb45-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb45-2"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb45-3"><a href=""></a>  <span class="at">type  =</span> <span class="st">"text"</span>,</span>
-<span id="cb45-4"><a href=""></a>  <span class="at">id    =</span> <span class="st">"name"</span>,</span>
-<span id="cb45-5"><a href=""></a>  <span class="at">label =</span> <span class="st">"What is your name?"</span></span>
-<span id="cb45-6"><a href=""></a>)</span>
-<span id="cb45-7"><a href=""></a><span class="in">```</span></span>
-<span id="cb45-8"><a href=""></a></span>
-<span id="cb45-9"><a href=""></a>Hello, <span class="in">`r sd_output("name", type = "value")`</span>!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44" data-code-line-numbers="9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb44-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb44-2"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb44-3"><a href=""></a>  <span class="at">type  =</span> <span class="st">"text"</span>,</span>
+<span id="cb44-4"><a href=""></a>  <span class="at">id    =</span> <span class="st">"name"</span>,</span>
+<span id="cb44-5"><a href=""></a>  <span class="at">label =</span> <span class="st">"What is your name?"</span></span>
+<span id="cb44-6"><a href=""></a>)</span>
+<span id="cb44-7"><a href=""></a><span class="in">```</span></span>
+<span id="cb44-8"><a href=""></a></span>
+<span id="cb44-9"><a href=""></a>Hello, <span class="in">`r sd_output("name", type = "value")`</span>!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="col" style="flex:0 1 40%;width:40%">
 <p>In <code>app.R</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb46-2"><a href=""></a>  <span class="fu">sd_server</span>()</span>
-<span id="cb46-3"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb45-2"><a href=""></a>  <span class="fu">sd_server</span>()</span>
+<span id="cb45-3"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2156,28 +2155,28 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <div class="col">
 <p>Question in <code>survey.qmd</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb47-2"><a href=""></a>  <span class="at">type =</span> <span class="st">"mc"</span>,</span>
-<span id="cb47-3"><a href=""></a>  <span class="at">id =</span> <span class="st">"penguins"</span>,</span>
-<span id="cb47-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"What's your favorite penguin?"</span>,</span>
-<span id="cb47-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
-<span id="cb47-6"><a href=""></a>    <span class="st">"Adélie"</span> <span class="ot">=</span> <span class="st">"adelie"</span>,</span>
-<span id="cb47-7"><a href=""></a>    <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"chinstrap"</span>,</span>
-<span id="cb47-8"><a href=""></a>    <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"gentoo"</span></span>
-<span id="cb47-9"><a href=""></a>  )</span>
-<span id="cb47-10"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb46-2"><a href=""></a>  <span class="at">type =</span> <span class="st">"mc"</span>,</span>
+<span id="cb46-3"><a href=""></a>  <span class="at">id =</span> <span class="st">"penguins"</span>,</span>
+<span id="cb46-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"What's your favorite penguin?"</span>,</span>
+<span id="cb46-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
+<span id="cb46-6"><a href=""></a>    <span class="st">"Adélie"</span> <span class="ot">=</span> <span class="st">"adelie"</span>,</span>
+<span id="cb46-7"><a href=""></a>    <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"chinstrap"</span>,</span>
+<span id="cb46-8"><a href=""></a>    <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"gentoo"</span></span>
+<span id="cb46-9"><a href=""></a>  )</span>
+<span id="cb46-10"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="col">
 <p>Display a question <em>value</em>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="fu">sd_output</span>(<span class="st">"penguins"</span>, <span class="at">type =</span> <span class="st">"value"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a><span class="fu">sd_output</span>(<span class="st">"penguins"</span>, <span class="at">type =</span> <span class="st">"value"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Example: <code>adelie</code></p>
 <p><br></p>
 <p>Display a question <em>option label</em>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a><span class="fu">sd_output</span>(<span class="st">"penguins"</span>, <span class="at">type =</span> <span class="st">"label_option"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="fu">sd_output</span>(<span class="st">"penguins"</span>, <span class="at">type =</span> <span class="st">"label_option"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Example: <code>Adélie</code></p>
 </div>
@@ -2190,22 +2189,22 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <div class="col">
 <p>Question in <code>survey.qmd</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb50-2"><a href=""></a>  <span class="at">type =</span> <span class="st">"mc"</span>,</span>
-<span id="cb50-3"><a href=""></a>  <span class="at">id =</span> <span class="st">"penguins"</span>,</span>
-<span id="cb50-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"What's your favorite penguin?"</span>,</span>
-<span id="cb50-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
-<span id="cb50-6"><a href=""></a>    <span class="st">"Adélie"</span> <span class="ot">=</span> <span class="st">"adelie"</span>,</span>
-<span id="cb50-7"><a href=""></a>    <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"chinstrap"</span>,</span>
-<span id="cb50-8"><a href=""></a>    <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"gentoo"</span></span>
-<span id="cb50-9"><a href=""></a>  )</span>
-<span id="cb50-10"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb49-2"><a href=""></a>  <span class="at">type =</span> <span class="st">"mc"</span>,</span>
+<span id="cb49-3"><a href=""></a>  <span class="at">id =</span> <span class="st">"penguins"</span>,</span>
+<span id="cb49-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"What's your favorite penguin?"</span>,</span>
+<span id="cb49-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
+<span id="cb49-6"><a href=""></a>    <span class="st">"Adélie"</span> <span class="ot">=</span> <span class="st">"adelie"</span>,</span>
+<span id="cb49-7"><a href=""></a>    <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"chinstrap"</span>,</span>
+<span id="cb49-8"><a href=""></a>    <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"gentoo"</span></span>
+<span id="cb49-9"><a href=""></a>  )</span>
+<span id="cb49-10"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="col">
 <p>Display a <em>question label</em>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href=""></a><span class="fu">sd_output</span>(<span class="st">"penguins"</span>, <span class="at">type =</span> <span class="st">"label_question"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a><span class="fu">sd_output</span>(<span class="st">"penguins"</span>, <span class="at">type =</span> <span class="st">"label_question"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Example:<br><code>What's your favorite penguin?</code></p>
 </div>
@@ -2217,7 +2216,7 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c7ed76d7" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_99c35efa" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -2227,10 +2226,10 @@ We use <a href="https://supabase.com/">Supabase</a> as a free, open-source optio
 Your turn
 </div>
 <p>In your survey, display a question <em>value</em> somewhere with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href=""></a><span class="in">`r sd_output("id", type = "value")`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb51-1"><a href=""></a><span class="in">`r sd_output("id", type = "value")`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 <p>In your survey, display a question <em>option label</em> somewhere with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb53-1"><a href=""></a><span class="in">`r sd_output("id", type = "label_option")`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href=""></a><span class="in">`r sd_output("id", type = "label_option")`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section class="slide level0">
@@ -2240,15 +2239,15 @@ Your turn
 <div class="col" style="flex:0 1 60%;width:60%">
 <p>In <code>survey.qmd</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb54-2"><a href=""></a>  <span class="at">id =</span> <span class="st">"pet_type"</span>,</span>
-<span id="cb54-3"><a href=""></a>  <span class="at">type =</span> <span class="st">"mc"</span>,</span>
-<span id="cb54-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"Which do you prefer, dogs or cats?"</span>,</span>
-<span id="cb54-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
-<span id="cb54-6"><a href=""></a>    <span class="st">"Dogs"</span> <span class="ot">=</span> <span class="st">"dog"</span>,</span>
-<span id="cb54-7"><a href=""></a>    <span class="st">"Cats"</span> <span class="ot">=</span> <span class="st">"cat"</span></span>
-<span id="cb54-8"><a href=""></a>  )</span>
-<span id="cb54-9"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb53-2"><a href=""></a>  <span class="at">id =</span> <span class="st">"pet_type"</span>,</span>
+<span id="cb53-3"><a href=""></a>  <span class="at">type =</span> <span class="st">"mc"</span>,</span>
+<span id="cb53-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"Which do you prefer, dogs or cats?"</span>,</span>
+<span id="cb53-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
+<span id="cb53-6"><a href=""></a>    <span class="st">"Dogs"</span> <span class="ot">=</span> <span class="st">"dog"</span>,</span>
+<span id="cb53-7"><a href=""></a>    <span class="st">"Cats"</span> <span class="ot">=</span> <span class="st">"cat"</span></span>
+<span id="cb53-8"><a href=""></a>  )</span>
+<span id="cb53-9"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="col" style="flex:0 1 40%;width:40%">
@@ -2266,7 +2265,39 @@ Your turn
 <h3 id="solution-define-the-entire-question-in-the-server"><strong>Solution</strong>: Define the entire question in the server</h3>
 <div class="col font70" style="flex:0 1 75%;width:75%">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href=""></a><span class="fu">library</span>(glue)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a><span class="fu">library</span>(glue)</span>
+<span id="cb54-2"><a href=""></a></span>
+<span id="cb54-3"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb54-4"><a href=""></a>  <span class="fu">observe</span>({</span>
+<span id="cb54-5"><a href=""></a>    <span class="co"># Trigger with any change to the pet_type question</span></span>
+<span id="cb54-6"><a href=""></a>    pet_type <span class="ot">&lt;-</span> <span class="fu">sd_value</span>(<span class="st">"pet_type"</span>)</span>
+<span id="cb54-7"><a href=""></a></span>
+<span id="cb54-8"><a href=""></a>    <span class="co"># Make the question</span></span>
+<span id="cb54-9"><a href=""></a>    <span class="fu">sd_question</span>(</span>
+<span id="cb54-10"><a href=""></a>      <span class="at">type =</span> <span class="st">"mc"</span>,</span>
+<span id="cb54-11"><a href=""></a>      <span class="at">id =</span> <span class="st">"pet_owner"</span>,</span>
+<span id="cb54-12"><a href=""></a>      <span class="at">label =</span> <span class="fu">glue</span>(<span class="st">"Are you a {pet_type} owner?"</span>),</span>
+<span id="cb54-13"><a href=""></a>      <span class="at">option =</span> <span class="fu">c</span>(<span class="st">"Yes"</span> <span class="ot">=</span> <span class="st">"yes"</span>, <span class="st">"No"</span> <span class="ot">=</span> <span class="st">"no"</span>)</span>
+<span id="cb54-14"><a href=""></a>    )</span>
+<span id="cb54-15"><a href=""></a>  })</span>
+<span id="cb54-16"><a href=""></a></span>
+<span id="cb54-17"><a href=""></a>  <span class="co"># Only show the pet_owner question if pet_type is answered</span></span>
+<span id="cb54-18"><a href=""></a>  <span class="fu">sd_show_if</span>(</span>
+<span id="cb54-19"><a href=""></a>    <span class="fu">sd_is_answered</span>(<span class="st">"pet_type"</span>) <span class="sc">~</span> <span class="st">"pet_owner"</span></span>
+<span id="cb54-20"><a href=""></a>  )</span>
+<span id="cb54-21"><a href=""></a></span>
+<span id="cb54-22"><a href=""></a>  <span class="fu">sd_server</span>()</span>
+<span id="cb54-23"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+<section class="slide level0">
+
+<h3 id="solution-define-the-entire-question-in-the-server-1"><strong>Solution</strong>: Define the entire question in the server</h3>
+<div class="cols-row">
+<div class="col font70" style="flex:0 1 75%;width:75%">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55" data-code-line-numbers="5,6,7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href=""></a><span class="fu">library</span>(glue)</span>
 <span id="cb55-2"><a href=""></a></span>
 <span id="cb55-3"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb55-4"><a href=""></a>  <span class="fu">observe</span>({</span>
@@ -2291,14 +2322,19 @@ Your turn
 <span id="cb55-23"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
+<div class="col" style="flex:0 1 25%;width:25%">
+<p><br></p>
+<p>Use <code>observe()</code> to detect any change to the <code>pet_type</code> question</p>
+</div>
+</div>
 </section>
 <section class="slide level0">
 
-<h3 id="solution-define-the-entire-question-in-the-server-1"><strong>Solution</strong>: Define the entire question in the server</h3>
+<h3 id="solution-define-the-entire-question-in-the-server-2"><strong>Solution</strong>: Define the entire question in the server</h3>
 <div class="cols-row">
 <div class="col font70" style="flex:0 1 75%;width:75%">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56" data-code-line-numbers="5,6,7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href=""></a><span class="fu">library</span>(glue)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56" data-code-line-numbers="10,11,12,13,14,15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href=""></a><span class="fu">library</span>(glue)</span>
 <span id="cb56-2"><a href=""></a></span>
 <span id="cb56-3"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb56-4"><a href=""></a>  <span class="fu">observe</span>({</span>
@@ -2324,18 +2360,18 @@ Your turn
 </div>
 </div>
 <div class="col" style="flex:0 1 25%;width:25%">
-<p><br></p>
-<p>Use <code>observe()</code> to detect any change to the <code>pet_type</code> question</p>
+<p><br><br><br><br><br></p>
+<p>Use <code>sd_question()</code> to define the question</p>
 </div>
 </div>
 </section>
 <section class="slide level0">
 
-<h3 id="solution-define-the-entire-question-in-the-server-2"><strong>Solution</strong>: Define the entire question in the server</h3>
+<h3 id="solution-define-the-entire-question-in-the-server-3"><strong>Solution</strong>: Define the entire question in the server</h3>
 <div class="cols-row">
 <div class="col font70" style="flex:0 1 75%;width:75%">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57" data-code-line-numbers="10,11,12,13,14,15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href=""></a><span class="fu">library</span>(glue)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57" data-code-line-numbers="19,20,21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href=""></a><span class="fu">library</span>(glue)</span>
 <span id="cb57-2"><a href=""></a></span>
 <span id="cb57-3"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb57-4"><a href=""></a>  <span class="fu">observe</span>({</span>
@@ -2361,43 +2397,6 @@ Your turn
 </div>
 </div>
 <div class="col" style="flex:0 1 25%;width:25%">
-<p><br><br><br><br><br></p>
-<p>Use <code>sd_question()</code> to define the question</p>
-</div>
-</div>
-</section>
-<section class="slide level0">
-
-<h3 id="solution-define-the-entire-question-in-the-server-3"><strong>Solution</strong>: Define the entire question in the server</h3>
-<div class="cols-row">
-<div class="col font70" style="flex:0 1 75%;width:75%">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58" data-code-line-numbers="19,20,21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href=""></a><span class="fu">library</span>(glue)</span>
-<span id="cb58-2"><a href=""></a></span>
-<span id="cb58-3"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb58-4"><a href=""></a>  <span class="fu">observe</span>({</span>
-<span id="cb58-5"><a href=""></a>    <span class="co"># Trigger with any change to the pet_type question</span></span>
-<span id="cb58-6"><a href=""></a>    pet_type <span class="ot">&lt;-</span> <span class="fu">sd_value</span>(<span class="st">"pet_type"</span>)</span>
-<span id="cb58-7"><a href=""></a></span>
-<span id="cb58-8"><a href=""></a>    <span class="co"># Make the question</span></span>
-<span id="cb58-9"><a href=""></a>    <span class="fu">sd_question</span>(</span>
-<span id="cb58-10"><a href=""></a>      <span class="at">type =</span> <span class="st">"mc"</span>,</span>
-<span id="cb58-11"><a href=""></a>      <span class="at">id =</span> <span class="st">"pet_owner"</span>,</span>
-<span id="cb58-12"><a href=""></a>      <span class="at">label =</span> <span class="fu">glue</span>(<span class="st">"Are you a {pet_type} owner?"</span>),</span>
-<span id="cb58-13"><a href=""></a>      <span class="at">option =</span> <span class="fu">c</span>(<span class="st">"Yes"</span> <span class="ot">=</span> <span class="st">"yes"</span>, <span class="st">"No"</span> <span class="ot">=</span> <span class="st">"no"</span>)</span>
-<span id="cb58-14"><a href=""></a>    )</span>
-<span id="cb58-15"><a href=""></a>  })</span>
-<span id="cb58-16"><a href=""></a></span>
-<span id="cb58-17"><a href=""></a>  <span class="co"># Only show the pet_owner question if pet_type is answered</span></span>
-<span id="cb58-18"><a href=""></a>  <span class="fu">sd_show_if</span>(</span>
-<span id="cb58-19"><a href=""></a>    <span class="fu">sd_is_answered</span>(<span class="st">"pet_type"</span>) <span class="sc">~</span> <span class="st">"pet_owner"</span></span>
-<span id="cb58-20"><a href=""></a>  )</span>
-<span id="cb58-21"><a href=""></a></span>
-<span id="cb58-22"><a href=""></a>  <span class="fu">sd_server</span>()</span>
-<span id="cb58-23"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="col" style="flex:0 1 25%;width:25%">
 <p><br><br><br><br><br><br><br><br><br><br></p>
 <p>Hide the <code>pet_owner</code> question until <code>pet_type</code> is answered</p>
 </div>
@@ -2410,17 +2409,17 @@ Your turn
 <div class="col" style="flex:0 1 60%;width:60%">
 <p>In <code>survey.qmd</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59" data-code-line-numbers="11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb59-2"><a href=""></a>  <span class="at">id =</span> <span class="st">"pet_type"</span>,</span>
-<span id="cb59-3"><a href=""></a>  <span class="at">type =</span> <span class="st">"mc"</span>,</span>
-<span id="cb59-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"Which do you prefer, dogs or cats?"</span>,</span>
-<span id="cb59-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
-<span id="cb59-6"><a href=""></a>    <span class="st">"Dogs"</span> <span class="ot">=</span> <span class="st">"dog"</span>,</span>
-<span id="cb59-7"><a href=""></a>    <span class="st">"Cats"</span> <span class="ot">=</span> <span class="st">"cat"</span></span>
-<span id="cb59-8"><a href=""></a>  )</span>
-<span id="cb59-9"><a href=""></a>)</span>
-<span id="cb59-10"><a href=""></a></span>
-<span id="cb59-11"><a href=""></a><span class="fu">sd_output</span>(<span class="st">"pet_owner"</span>, <span class="at">type =</span> <span class="st">"question"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58" data-code-line-numbers="11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb58-2"><a href=""></a>  <span class="at">id =</span> <span class="st">"pet_type"</span>,</span>
+<span id="cb58-3"><a href=""></a>  <span class="at">type =</span> <span class="st">"mc"</span>,</span>
+<span id="cb58-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"Which do you prefer, dogs or cats?"</span>,</span>
+<span id="cb58-5"><a href=""></a>  <span class="at">option =</span> <span class="fu">c</span>(</span>
+<span id="cb58-6"><a href=""></a>    <span class="st">"Dogs"</span> <span class="ot">=</span> <span class="st">"dog"</span>,</span>
+<span id="cb58-7"><a href=""></a>    <span class="st">"Cats"</span> <span class="ot">=</span> <span class="st">"cat"</span></span>
+<span id="cb58-8"><a href=""></a>  )</span>
+<span id="cb58-9"><a href=""></a>)</span>
+<span id="cb58-10"><a href=""></a></span>
+<span id="cb58-11"><a href=""></a><span class="fu">sd_output</span>(<span class="st">"pet_owner"</span>, <span class="at">type =</span> <span class="st">"question"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>See the <code>demo-reactive-questions</code> folder</p>
 </div>
@@ -2440,7 +2439,7 @@ Your turn
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_af4501f3" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_87ee9f9f" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -2450,21 +2449,21 @@ Your turn
 <div class="col" style="flex:0 1 70%;width:70%">
 <p>Define a question inside your server (<code>app.R</code> file):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb60-2"><a href=""></a>  <span class="fu">observe</span>({</span>
-<span id="cb60-3"><a href=""></a>    <span class="fu">sd_question</span>(</span>
-<span id="cb60-4"><a href=""></a>      <span class="at">type =</span> <span class="st">"mc"</span>,</span>
-<span id="cb60-5"><a href=""></a>      <span class="at">id =</span> <span class="st">"id"</span>,</span>
-<span id="cb60-6"><a href=""></a>      ...</span>
-<span id="cb60-7"><a href=""></a>    )</span>
-<span id="cb60-8"><a href=""></a>  })</span>
-<span id="cb60-9"><a href=""></a></span>
-<span id="cb60-10"><a href=""></a>  <span class="fu">sd_server</span>()</span>
-<span id="cb60-11"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb59-2"><a href=""></a>  <span class="fu">observe</span>({</span>
+<span id="cb59-3"><a href=""></a>    <span class="fu">sd_question</span>(</span>
+<span id="cb59-4"><a href=""></a>      <span class="at">type =</span> <span class="st">"mc"</span>,</span>
+<span id="cb59-5"><a href=""></a>      <span class="at">id =</span> <span class="st">"id"</span>,</span>
+<span id="cb59-6"><a href=""></a>      ...</span>
+<span id="cb59-7"><a href=""></a>    )</span>
+<span id="cb59-8"><a href=""></a>  })</span>
+<span id="cb59-9"><a href=""></a></span>
+<span id="cb59-10"><a href=""></a>  <span class="fu">sd_server</span>()</span>
+<span id="cb59-11"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Display the question inside your survey (<code>survey.qmd</code> file):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href=""></a><span class="fu">sd_output</span>(<span class="st">"id"</span>, <span class="at">type =</span> <span class="st">"question"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href=""></a><span class="fu">sd_output</span>(<span class="st">"id"</span>, <span class="at">type =</span> <span class="st">"question"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -2473,11 +2472,6 @@ Your turn
 
 <section id="blog-post-on-conjoint-in-surveydown" class="inverse center middle">
 <h1><a href="https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/">Blog post on conjoint in surveydown</a></h1>
-<div class="fragment">
-<div id="sign-up-for-meeting-slot-next-week-link-in-project-channel" class="h1">
-Sign up for meeting slot next week<br>(link in #project channel)
-</div>
-</div>
 </section>
 
 </section>

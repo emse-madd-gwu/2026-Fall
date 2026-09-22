@@ -5,4 +5,62 @@ params:
   purpose: 'The purpose of this assignment is to get familiar with the [surveydown](https://surveydown.org/) survey platform, which we will be using to implement our surveys.'
 ---
 
-Coming soon!
+```{r child = here::here("fragments", "hw.qmd")}
+```
+
+{{< include ../fragments/hw-get-organized.qmd >}}
+
+# 2. Readings
+
+We will implement our project surveys using [surveydown](https://surveydown.org/), which is a markdown-based platform for designing surveys. The platform allows you to use R or markdown code (just like you would in a .qmd file) to define everything you see in an online survey. While you will be editing a Quarto document, it renders into a [Shiny](https://shiny.posit.co/) app, which you can then use to administer your survey. We'll dig into surveydown in class next week, and after that we'll use it to build the conjoint surveys for your projects.
+
+To get familiar with the platform, read the [Getting Started](https://surveydown.org/docs/getting-started) and [Basic Components](https://surveydown.org/docs/basic-components) documentation pages on the surveydown website. **Take notes** as you read the docs. You'll also want to skim the [Question Types](https://surveydown.org/docs/question-types) and [Conditional Logic](https://surveydown.org/docs/conditional-logic) pages for the next step.
+
+# 3. Make a practice survey
+
+For practice, build a survey of your own starting from one of the [template surveys](https://surveydown.org/templates) listed on the surveydown website. The [default](https://surveydown.org/templates/default) template will be the easiest to start from, but try another template if you are interested.
+
+::: {.callout-important}
+Make your survey in a new folder **outside** of your course repo (e.g., in your Documents folder). Every surveydown survey should live in its own separate folder, and keeping it out of your course repo means it won't interfere with rendering your ``r hw_file`` file.
+:::
+
+1. If you haven't already, install surveydown by running `install.packages("surveydown")` in the R console.
+2. Create a new survey from a template by running this in the R console, replacing the path with wherever you want your survey folder to go:
+
+   ```{r}
+   #| eval: false
+   surveydown::sd_create_survey(
+     template = "default",
+     path = "path/to/my-practice-survey"
+   )
+   ```
+
+3. Open the new survey folder in Positron (**File > Open Folder...**), then open the `app.R` file and click "Run App" (or run `shiny::runApp('app.R')` in the R console). The survey will open in the Viewer pane - click the button to open it in your browser if you prefer.
+4. Make edits to the survey to personalize it. Choose a topic that you find interesting, then modify the survey so that it has at least:
+   - Three questions, each using a different [question type](https://surveydown.org/docs/question-types).
+   - Two pages.
+   - One piece of [conditional logic](https://surveydown.org/docs/conditional-logic) (e.g., a question that only shows up, or a page that gets skipped, based on a previous answer).
+
+   surveydown doesn't update a running survey when you save your changes - stop the app and run it again to see your edits.
+5. Take a screenshot of one page of your survey, save it in your ``r hw_dir`` folder, and insert it into your ``r hw_file`` file (e.g., `![](my-survey.png)`). Below the screenshot, write a few sentences describing your survey topic and the questions, pages, and conditional logic you added.
+
+# 4. Have an agent build a survey
+
+Now let's see what it's like to have an agent build an entire survey from top to bottom. Using Claude Code in Positron (as we set up in [HW1](1-agentic-workflows-and-github.html)), you're going to direct an agent to build a complete survey, then verify that it actually works.
+
+1. Make a new, empty folder **outside** of your course repo (e.g., `my-agent-survey` in your Documents folder), and open it in Positron (**File > Open Folder...**).
+2. Open the terminal in Positron, run `claude` to start Claude Code, and ask it to build a complete surveydown survey about a topic of your choice. Be specific about what you want - the topic, the kinds of questions, how many pages, and any conditional logic. You might also point it to the surveydown documentation at [surveydown.org](https://surveydown.org/) so it knows how the platform works.
+3. When the agent says it's done, run the app yourself and click through the whole survey. Does it run at all? Does every page show up? Do the questions and conditional logic behave the way you asked? If something is broken or not what you wanted, tell the agent and have it fix it.
+4. Take a screenshot of one page of the agent-built survey, save it in your ``r hw_dir`` folder, and insert it into your ``r hw_file`` file. Below the screenshot, write a few sentences about the experience: What prompt did you give it? What did it get right on the first try, and what did you have to ask it to fix? How did you check that it was working?
+
+# 5. Reflect
+
+Reflect on what you've learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? How did building a survey yourself compare to having an agent build one? Write at least a paragraph in your ``r hw_file`` file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.
+
+If you're unsure where to start with a reflection, try filling out this template:
+
+> "I used to think ______, now I think ______ 🤔"
+
+# 6. Submit
+
+{{< include ../fragments/hw-submit.qmd >}}
