@@ -1,0 +1,39 @@
+---
+survey-settings:
+  mode: database
+  all-required: yes
+  use-cookies: no
+---
+
+```{r}
+library(surveydown)
+```
+
+--- welcome
+
+# Demo - Live Polling
+
+Here is a basic "multiple choice" question. The results will be displayed on the next page, showing both the choice you made as well as a summary of all the choices made by other participants.
+
+```{r}
+sd_question(
+  type  = 'mc',
+  id    = 'penguins',
+  label = "Which type of penguin do you like the best?",
+  option = c(
+    'Adélie'    = 'adelie',
+    'Chinstrap' = 'chinstrap',
+    'Gentoo'    = 'gentoo'
+  )
+)
+```
+
+--- results
+
+You chose: **`r sd_output("penguins", type = "value")`**
+
+Summary of what everyone else has chosen:
+
+```{r}
+shiny::plotOutput('penguin_plot')
+```

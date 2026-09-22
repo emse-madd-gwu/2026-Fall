@@ -1,0 +1,316 @@
+---
+format:
+  typst:
+    papersize: us-letter
+    margin:
+      x: 1.4cm
+      y: 1.2cm
+    fontsize: 8.6pt
+    mainfont: "Source Sans Pro"
+    keep-typ: false
+---
+
+{{< include ../_summary-styles.qmd >}}
+
+```{=typst}
+#summary-header(5, "Quarto & Plotting", "September 23, 2026")
+#show: rest => columns(2, rest)
+```
+
+# Why Quarto: literate programming
+
+> *Treat programs as a "literature" understandable to **human beings**.*
+> — Donald Knuth
+
+An analysis is more than its code. Someone (a teammate, a reviewer, you in
+three months) needs to know *why* each step happened and what the results mean.
+A Quarto document (`.qmd`) weaves **prose, code, and the code's output** into one
+file, then renders it to a finished HTML page, PDF, or Word doc. Change the data,
+re-render, and every number and chart updates — nothing is copy-pasted by hand.
+
+Every project deliverable this semester is a `.qmd`, so this is the format your
+work gets graded in. To try it: open `quarto_demo.qmd` in Positron and click
+**Preview**.
+
+# Anatomy of a .qmd file
+
+A `.qmd` has three parts: a **YAML header** (the settings), **markdown text**,
+and **R code**.
+
+## 1. The header
+
+The header sits between two `---` lines at the very top of the file:
+
+```yaml
+---
+title: Your title
+author: Author name
+toc: true
+format:
+  html:
+    theme: united
+---
+```
+
+| Setting | Effect |
+|---------|--------|
+| `format: html` | Web page (the default for our work) |
+| `format: pdf` | PDF via LaTeX |
+| `format: docx` | Microsoft Word |
+| `toc: true` | Adds a table of contents |
+| `theme: united` | Changes the HTML look |
+
+No LaTeX for PDF output? Run `tinytex::install_tinytex()` once in R.
+
+## 2. Markdown text
+
+Bookmark [commonmark.org/help](https://commonmark.org/help/), and when you have
+10 minutes, do its [tutorial](https://commonmark.org/help/tutorial/).
+
+| Type this | To get |
+|-----------|--------|
+| `# Header 1` (up to six) | Section headers |
+| `*italic*` or `_italic_` | *italic* |
+| `**bold**` | **bold** |
+| `~~strikethrough~~` | ~~strikethrough~~ |
+| backticks around text | `code text` |
+| a dash and a space | bulleted list item |
+| `1.` and a space | numbered list item |
+| `[Download R](http://r-project.org)` | [Download R](http://r-project.org) |
+
+## 3. R code
+
+**Inline code** runs inside a sentence: writing `` `r 3 + 4` `` in the text
+prints *7* in the rendered document.
+
+**Code chunks** start with three backticks and `{r}` on their own line and end
+with three backticks. Positron's **Insert Code Cell** does this for you.
+**Chunk options** go at the top of the chunk, each on a line starting with a
+hash and a pipe:
+
+| Option | Shows code? | Shows output? | Runs? |
+|--------|-------------|---------------|-------|
+| *(default)* | yes | yes | yes |
+| `echo: false` | no | yes | yes |
+| `eval: false` | yes | no | no |
+| `include: false` | no | no | yes |
+
+Also handy: `warning: false`, `message: false`, `fig-width`, `fig-height`. All
+options are in the
+[Quarto cell reference](https://quarto.org/docs/reference/cells/cells-knitr.html).
+
+## The setup chunk
+
+Make the first chunk a `setup` chunk with `include: false`. It sets global
+options, loads libraries, and reads the data, so every later chunk can use them:
+
+```r
+#| label: setup
+#| include: false
+
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  fig.width = 7.252,
+  fig.height = 4
+)
+
+library(tidyverse)
+bears <- read_csv(file.path('data', 'bear_killings.csv'))
+```
+
+A rendered `.qmd` starts from a **clean R session**. An object that exists only
+in your console doesn't exist when you render. If the document needs it, create
+it in a chunk.
+
+## Putting it together
+
+A complete, renderable `.qmd`, in the shape of the `bears.qmd` practice:
+
+<!-- Built as a Typst raw block, not a markdown fence: knitr executes any line
+     that starts with a chunk fence, even inside a code block. -->
+
+```{=typst}
+#raw(block: true, lang: "markdown", (
+  "---",
+  "title: \"Bears Analysis\"",
+  "format: html",
+  "---",
+  "",
+  "```{r}",
+  "#| label: setup",
+  "#| include: false",
+  "library(tidyverse)",
+  "bears <- read_csv(file.path('data', 'bear_killings.csv'))",
+  "```",
+  "",
+  "### Which months have the most bear killings?",
+  "",
+  "```{r}",
+  "bears %>%",
+  "  count(month) %>%",
+  "  arrange(desc(n))",
+  "```",
+).join("\n"))
+```
+
+`count(variable)` counts the rows for each unique value, the quickest way to
+answer "which is more common?" Add `arrange(desc(n))` to put the largest first.
+
+# Plotting with ggplot2
+
+ggplot2 (Hadley Wickham, 2005) implements Leland Wilkinson's *Grammar of
+Graphics*: a chart is built from **layers**, added one at a time with `+`.
+
+| Layer | Function | Question it answers |
+|-------|----------|---------------------|
+| 1. Data | `ggplot()` | What data? |
+| 2. Aesthetics | `aes()` | Which variables go where? |
+| 3. Geometries | `geom_*()` | Points? Bars? Lines? |
+| 4. Labels | `labs()` | What do the axes say? |
+| 5. Theme | `theme_*()` | How does it look? |
+
+| Aesthetic | Controls |
+|-----------|----------|
+| `x`, `y` | Position on the axes |
+| `color` | Points, lines, and bar outlines |
+| `fill` | Inside of bars and areas |
+| `shape` | Point symbol (max 6 groups) |
+| `size` | Point size or line width |
+| `alpha` | Transparency, 0 to 1 |
+
+Map any of these aesthetics to a variable inside `aes()`, or set it to a
+constant outside `aes()`. A full chart, all five layers:
+
+```r
+mpg %>%
+  ggplot(aes(x = displ, y = hwy)) +
+  geom_point() +
+  labs(
+    x = "Engine displacement (liters)",
+    y = "Highway fuel economy (mpg)",
+    title = "Larger engines are less fuel efficient"
+  ) +
+  theme_bw()
+```
+
+Note the two different joiners: the pipe passes data *into* `ggplot()`; after
+that, layers are joined with a plus sign.
+
+## Mapping vs. setting
+
+```{=typst}
+#keypoint[
+  *Inside `aes()` you map a variable; outside `aes()` you set a constant.*
+  `geom_point(aes(color = class))` colors each point by its vehicle class.
+  `geom_point(color = 'blue')` makes every point blue. Put a fixed value inside
+  `aes()` and ggplot treats it as a one-level variable, not a color.
+]
+```
+
+**Where to put `aes()`.** In `ggplot(aes(...))` the mapping applies to *every*
+layer. Inside one geom, say `geom_point(aes(...))`, it applies to that layer
+only, so a following `geom_line()` with no mapping errors out.
+
+## The main geoms
+
+| Geom | Makes | Notes |
+|------|-------|-------|
+| `geom_point()` | Scatterplot | Map `color` or `shape` |
+| `geom_line()` | Connects dots, left to right | Messy on scattered data |
+| `geom_smooth()` | Best-fit trend line | `se = FALSE` drops the band |
+| `geom_col()` | Bars of a given height | Summarize first, e.g. `count()` |
+
+**Points and lines use `color`; bars use `fill`.** `color` on a bar only outlines it.
+
+## Bar chart recipe
+
+```r
+mpg %>%
+  count(class, drv) %>%
+  ggplot() +
+  geom_col(
+    aes(x = reorder(class, n), y = n, fill = drv),
+    position = "dodge",  # side-by-side, not stacked
+    width = 0.7
+  )
+```
+
+- `count(class)` makes the summary data frame; a `fill` variable must be counted
+  too, as in `count(class, drv)`.
+- `reorder(class, n)` sorts bars by count instead of alphabetically.
+- For many long category names, put them on the y axis to keep them readable.
+
+## Facets
+
+Too many colors to tell apart? Split the chart into small multiples:
+
+| Code | Result |
+|------|--------|
+| `facet_wrap(~class)` | One panel per class |
+| `facet_grid(drv ~ cyl)` | Rows by `drv`, columns by `cyl` |
+
+## Themes
+
+Built in: `theme_bw()`, `theme_minimal()`, `theme_classic()`, `theme_void()`.
+More in the **ggthemes** package (`ggthemes::theme_economist()`) and
+**hrbrthemes** (`hrbrthemes::theme_ipsum()`).
+
+# Your project: defining attribute levels
+
+Now that your attributes are in the Model Relationships Table, give each one
+**levels**, the specific values respondents will see.
+
+| Kind | Example levels |
+|------|----------------|
+| Continuous | Price: 1, 2, 3, 4, 5 (\$) |
+| Continuous | Power output: 60, 80, 120 (W) |
+| Discrete | Color: Red, Blue, Yellow |
+| Discrete | Material: Plastic, Aluminum, Glass |
+
+Look at competitors. Choose values that cover the full range on the market today,
+and maybe some of the future.
+
+# Conjoint survey components
+
+Think of the survey as a **conversation**: add transition pages ("Great job!
+Now we'll ask you about…") between sections.
+
+| Part | Contents | Screen for |
+|------|----------|------------|
+| 1. Intro | Welcome, consent, eligibility | Target population |
+| 2. Conjoint | Education, practice question, choices | Random answers |
+| 3. Other | Critical info, demographics, finale | — |
+
+- **Education pages** explain each attribute before the choices. Relative
+  comparisons help: "1/2 lb, about 1 cup of water".
+- **The practice question** doubles as an **attention check**.
+- **After the choices**, you can also drop respondents who picked the same
+  option every time.
+
+# Errors you will hit this week
+
+| Problem | Usual cause |
+|---------|-------------|
+| `object not found` on render | Created in console, not in a chunk |
+| `could not find function "ggplot"` | No `library(tidyverse)` in setup |
+| `cannot open file 'data/...'` | Folder not opened in Positron |
+| Plot doesn't show the geom | Plus sign at the start of a line, not the end |
+| Bars ignore the color | Used `color`; bars need `fill` |
+| Every point is one odd color | Constant put inside `aes()` |
+| `missing aesthetics: x and y` | `aes()` is only in another geom |
+
+# Before next class
+
+- Do [HW 4: Intro to surveydown](https://madd.seas.gwu.edu/2026-Fall/hw/4-intro-to-surveydown.html), due **Mon, Sep 28**.
+- With your team, write the [Survey Plan](https://madd.seas.gwu.edu/2026-Fall/project/2-survey-plan.html), due **Tue, Sep 29**.
+- Finish `bears.qmd` and the practice charts in `ggplot2.qmd` if you didn't in class.
+
+You should be able to:
+
+- Create a `.qmd` with a header, markdown text, and code chunks, and render it.
+- Choose between `echo`, `eval`, and `include` to control what a chunk shows.
+- Build a ggplot layer by layer, from data to theme.
+- Explain the difference between mapping a variable and setting a constant.
+- Make sorted, filled bar charts and faceted plots.
+- Define levels for your project's attributes and sketch your survey's three parts.
