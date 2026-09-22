@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -331,9 +366,107 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon!</p>
+<blockquote class="blockquote">
+<p><strong>Due</strong>: Sep 28 by 11:59pm</p>
+<p><strong>Weight</strong>: This assignment is worth 2.5% of your final grade.</p>
+<p><strong>Purpose</strong>: The purpose of this assignment is to get familiar with the <a href="https://surveydown.org/">surveydown</a> survey platform, which we will be using to implement our surveys.</p>
+<p><strong>Submit</strong>: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).</p>
+<p><strong>Assessment</strong>: This assignment is graded using a check system:</p>
+<ul>
+<li>✔+ (110%): Responses show phenomenal thought and engagement with the course content. I will not assign these often.</li>
+<li>✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.</li>
+<li>✔− (50%): Responses are hastily composed, too short, and/or only cursorily engage with the course content. This grade signals that you need to improve next time. I will <em>hopefully</em> not assign these often.</li>
+</ul>
+<p>Notice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is <strong>not enough</strong>. Write at least a paragraph and show me that you did the readings assigned.</p>
+</blockquote>
+<section id="get-organized" class="level1">
+<h1>1. Get Organized</h1>
+<p>Open your course repo (<code>madd-f26/madd-netID</code>) in Positron using <strong>File &gt; Open Folder…</strong> - open the folder itself, not a file inside it. If you haven’t cloned your course repo yet, follow the steps in <a href="1-agentic-workflows-and-github.html#clone-your-course-repo">HW1</a> first.</p>
+<p>Everything for this assignment lives in the <code>hw4</code> folder. Open the <code>hw4.qmd</code> file inside it - that’s the only file you need to edit. Take notes and write example code under the “Begin notes here” heading as you go through the readings and exercises below, then write your reflection under the “Reflection” heading at the end.</p>
+</section>
+<section id="readings" class="level1">
+<h1>2. Readings</h1>
+<p>We will implement our project surveys using <a href="https://surveydown.org/">surveydown</a>, which is a markdown-based platform for designing surveys. The platform allows you to use R or markdown code (just like you would in a .qmd file) to define everything you see in an online survey. While you will be editing a Quarto document, it renders into a <a href="https://shiny.posit.co/">Shiny</a> app, which you can then use to administer your survey. We’ll dig into surveydown in class next week, and after that we’ll use it to build the conjoint surveys for your projects.</p>
+<p>To get familiar with the platform, read the <a href="https://surveydown.org/docs/getting-started">Getting Started</a> and <a href="https://surveydown.org/docs/basic-components">Basic Components</a> documentation pages on the surveydown website. <strong>Take notes</strong> as you read the docs. You’ll also want to skim the <a href="https://surveydown.org/docs/question-types">Question Types</a> and <a href="https://surveydown.org/docs/conditional-logic">Conditional Logic</a> pages for the next step.</p>
+</section>
+<section id="make-a-practice-survey" class="level1">
+<h1>3. Make a practice survey</h1>
+<p>For practice, build a survey of your own starting from one of the <a href="https://surveydown.org/templates">template surveys</a> listed on the surveydown website. The <a href="https://surveydown.org/templates/default">default</a> template will be the easiest to start from, but try another template if you are interested.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make your survey in a new folder <strong>outside</strong> of your course repo (e.g., in your Documents folder). Every surveydown survey should live in its own separate folder, and keeping it out of your course repo means it won’t interfere with rendering your <code>hw4.qmd</code> file.</p>
+</div>
+</div>
+<ol type="1">
+<li><p>If you haven’t already, install surveydown by running <code>install.packages("surveydown")</code> in the R console.</p></li>
+<li><p>Create a new survey from a template by running this in the R console, replacing the path with wherever you want your survey folder to go:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>surveydown<span class="sc">::</span><span class="fu">sd_create_survey</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">template =</span> <span class="st">"default"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">"path/to/my-practice-survey"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
+<li><p>Open the new survey folder in Positron (<strong>File &gt; Open Folder…</strong>), then open the <code>app.R</code> file and click “Run App” (or run <code>shiny::runApp('app.R')</code> in the R console). The survey will open in the Viewer pane - click the button to open it in your browser if you prefer.</p></li>
+<li><p>Make edits to the survey to personalize it. Choose a topic that you find interesting, then modify the survey so that it has at least:</p>
+<ul>
+<li>Three questions, each using a different <a href="https://surveydown.org/docs/question-types">question type</a>.</li>
+<li>Two pages.</li>
+<li>One piece of <a href="https://surveydown.org/docs/conditional-logic">conditional logic</a> (e.g., a question that only shows up, or a page that gets skipped, based on a previous answer).</li>
+</ul>
+<p>surveydown doesn’t update a running survey when you save your changes - stop the app and run it again to see your edits.</p></li>
+<li><p>Take a screenshot of one page of your survey, save it in your <code>hw4</code> folder, and insert it into your <code>hw4.qmd</code> file (e.g., <code>![](my-survey.png)</code>). Below the screenshot, write a few sentences describing your survey topic and the questions, pages, and conditional logic you added.</p></li>
+</ol>
+</section>
+<section id="have-an-agent-build-a-survey" class="level1">
+<h1>4. Have an agent build a survey</h1>
+<p>Now let’s see what it’s like to have an agent build an entire survey from top to bottom. Using Claude Code in Positron (as we set up in <a href="1-agentic-workflows-and-github.html">HW1</a>), you’re going to direct an agent to build a complete survey, then verify that it actually works.</p>
+<ol type="1">
+<li>Make a new, empty folder <strong>outside</strong> of your course repo (e.g., <code>my-agent-survey</code> in your Documents folder), and open it in Positron (<strong>File &gt; Open Folder…</strong>).</li>
+<li>Open the terminal in Positron, run <code>claude</code> to start Claude Code, and ask it to build a complete surveydown survey about a topic of your choice. Be specific about what you want - the topic, the kinds of questions, how many pages, and any conditional logic. You might also point it to the surveydown documentation at <a href="https://surveydown.org/">surveydown.org</a> so it knows how the platform works.</li>
+<li>When the agent says it’s done, run the app yourself and click through the whole survey. Does it run at all? Does every page show up? Do the questions and conditional logic behave the way you asked? If something is broken or not what you wanted, tell the agent and have it fix it.</li>
+<li>Take a screenshot of one page of the agent-built survey, save it in your <code>hw4</code> folder, and insert it into your <code>hw4.qmd</code> file. Below the screenshot, write a few sentences about the experience: What prompt did you give it? What did it get right on the first try, and what did you have to ask it to fix? How did you check that it was working?</li>
+</ol>
+</section>
+<section id="reflect" class="level1">
+<h1>5. Reflect</h1>
+<p>Reflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? How did building a survey yourself compare to having an agent build one? Write at least a paragraph in your <code>hw4.qmd</code> file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.</p>
+<p>If you’re unsure where to start with a reflection, try filling out this template:</p>
+<blockquote class="blockquote">
+<p>“I used to think ______, now I think ______ 🤔”</p>
+</blockquote>
+</section>
+<section id="submit" class="level1">
+<h1>6. Submit</h1>
+<p>To submit your assignment, follow these instructions:</p>
+<ol type="1">
+<li>Render your .qmd file by either clicking the “Preview” button in Positron or running <code>quarto render</code> in the terminal.</li>
+<li>Open the rendered html file and make sure it looks good! Is all the formatting as you expected?</li>
+<li>Commit and push your work using GitHub Desktop: look at the diff, write a short commit message, click <strong>Commit</strong>, then <strong>Push</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Remember">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Remember
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your work isn’t submitted until you’ve <strong>pushed</strong> it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
