@@ -60,7 +60,7 @@ countdown(
 ::: {.col}
 <br>
 
-![](https://github.com/emse-p4a-gwu/2022-Spring/raw/main/images/quiz_doge.png){width="400"}
+![](https://github.com/emse-madd-gwu/2026-Fall/raw/main/images/quiz_doge.png){width="400"}
 :::
 
 ---
