@@ -26,7 +26,7 @@ maxPoints <- rubric %>%
 ```{r child = here::here("fragments", "project.qmd")}
 ```
 
-As a team, write a **survey plan** to guide your survey design in formr. This plan does not have to be "set in stone" but rather a first attempt at defining the scope and general content of your survey. The course instructor will review and grade your plan and provide written feedback to guide the development of your pilot survey. Follow the instructions below to prepare your survey plan.
+As a team, write a **survey plan** to guide your survey design in surveydown (your next deliverable after this one). This plan does not have to be "set in stone" but rather a first attempt at defining the scope and general content of your survey (e.g., the question phrasing, images, information you plan to show, etc.). The course instructor will review and grade your plan and provide written feedback to guide the development of your pilot survey. Follow the instructions below to prepare your survey plan.
 
 # 1. Get Organized
 
@@ -45,13 +45,15 @@ By default, we will pay users on [prolific.co](https://www.prolific.co/) (i.e. p
 
 # 3. Attributes and Levels for Choice Questions
 
-Write the text of the choice question you plan on asking your respondents. Below your question, list in a table the attributes and levels you will include in your choice questions (these may change between now and the actual final survey).
+The main questions in your eventual survey are your **choice questions**. You'll be defining them formally in your next deliverable (the pilot survey), but for now you should include in your plan the basic content needed to start defining the choice questions.
 
-For example, for a survey on car preferences, you might use this as a choice question:
+First, write the text of the choice question you plan on asking your respondents. For example, for a survey on car preferences, you might use this as a choice question:
 
 > "If these were your only options, which vehicle would you choose?"
 
-And you might use these as your attributes and levels:
+Below your question, list in a table the attributes and levels you will include in your choice questions (these may change between now and the actual final survey). Consider including images as well if relevant to your project.
+
+For example, a survey on car preferences might have a table like this:
 
 Attribute | Levels | Unit
 ----------|--------|--------
