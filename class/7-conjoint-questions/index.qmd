@@ -139,44 +139,6 @@ agenda_items <- c(
 ---
 
 {{< inverse >}}
-
-# Quiz 2
-
-```{r}
-#| echo: false
-countdown(
-  minutes      = 12,
-  warn_when    = 30,
-  update_every = 1,
-  top          = 0,
-  right        = 0,
-  font_size    = '3em'
-)
-```
-
-::: {.col}
-
-## Write your name on the quiz!
-
-## Rules:
-
-- Work alone; no outside help of any kind is allowed.
-- No calculators, no notes, no books, no computers, no phones.
-
-:::
-
-::: {.col}
-
-<br>
-<center>
-<img src="https://github.com/emse-madd-gwu/2026-Fall/raw/main/images/quiz_doge.png" width="400">
-</center>
-
-:::
-
----
-
-{{< inverse >}}
 {{< middle >}}
 {{< center >}}
 
