@@ -987,6 +987,28 @@ mpg %>%
 
 ---
 
+{{< inverse >}}
+{{< center >}}
+
+# [Break]{.fancy}
+
+```{r}
+#| echo: false
+countdown(
+  minutes = 5,
+  warn_when = 30,
+  update_every = 1,
+  left = 0,
+  right = 0,
+  top = 1,
+  bottom = 0,
+  margin = "5%",
+  font_size = "8em"
+)
+```
+
+---
+
 ```{r}
 #| echo: false
 #| output: asis
