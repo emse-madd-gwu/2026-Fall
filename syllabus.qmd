@@ -124,7 +124,7 @@ Item                  | Weight | Notes
 ----------------------|--------|-------------------------------------
 Participation / Attendance | 5%     | (Yes, I take attendance)
 Homework (13)             | 30 %    | Weekly assignment (12 x 2.5%), lowest 1 dropped
-Quizzes (6)               | 10 %    | Lowest 1 dropped
+Quizzes (5)               | 10 %    | Lowest 1 dropped
 Final Exam            | 10 %   | In class, closed book, on paper (12/2)
 Project Proposal      | 5 %    | Teams of 3-4 students
 Survey Plan           | 5 %    |
