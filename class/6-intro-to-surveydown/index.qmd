@@ -42,13 +42,14 @@ agenda_items <- c(
 
 ```{r}
 #| echo: false
+
 countdown(
   minutes = 10,
   warn_when = 30,
   update_every = 1,
-  top = '0.5em',
-  right = '0.5em',
-  font_size = '3em'
+  top = 0,
+  right = 0,
+  font_size = '2em'
 )
 ```
 
@@ -517,13 +518,14 @@ Make standard UI
 
 ```{r}
 #| echo: false
+
 countdown(
   minutes = 5,
   warn_when = 30,
   update_every = 1,
-  top = '0.5em',
-  right = '0.5em',
-  font_size = '3em'
+  top = 0,
+  right = 0,
+  font_size = '2em'
 )
 ```
 
@@ -844,19 +846,18 @@ I recommend just writing html code, like this
 
 ```{r}
 #| echo: false
+
 countdown(
   minutes = 10,
   warn_when = 30,
   update_every = 1,
-  top = '0.5em',
-  right = '0.5em',
-  font_size = '3em'
+  top = 0,
+  right = 0,
+  font_size = '2em'
 )
 ```
 
 ## Your turn
-
-<br>
 
 - Make a new survey with `surveydown::sd_create_survey()` and open its folder in Positron.
 - Pick a topic for your survey (a food, an animal, a sports team...whatever).
@@ -1146,13 +1147,14 @@ See the `demo-conditional-showing` and<br>`demo-conditional-skipping` folders
 
 ```{r}
 #| echo: false
+
 countdown(
   minutes = 15,
   warn_when = 30,
   update_every = 1,
-  top = '0.5em',
-  right = '0.5em',
-  font_size = '3em'
+  top = 0,
+  right = 0,
+  font_size = '2em'
 )
 ```
 
@@ -1365,8 +1367,11 @@ Then set `mode: database` in `survey.qmd`<br>(or delete the `mode` line — it's
 
 ```{r}
 #| echo: false
+
 countdown(
   minutes = 10,
+  warn_when = 30,
+  update_every = 1,
   top = 0,
   right = 0,
   font_size = '2em'
@@ -1380,113 +1385,6 @@ countdown(
 - Change `mode: preview` to `mode: database` in your `survey.qmd`.
 - Run your survey locally, answer questions to generate data.
 - View your response data with `sdstudio::launch()`
-
----
-
-# Static data fetching
-
-Once your database is properly set up, you can fetch the data using:
-
-```{r}
-#| eval: false
-db <- sd_db_connect()
-data <- sd_get_data(db)
-```
-
-Or simply:
-
-```{r}
-#| eval: false
-data <- sd_get_data(sd_db_connect())
-```
-
----
-
-## Reactive data fetching
-
-You can also reactively fetch the data live inside the survey
-
-In `app.R`:
-
-::: {.col width="60%"}
-
-```{r}
-#| eval: false
-
-db <- sd_db_connect()
-
-server <- function(input, output, session) {
-  data <- sd_get_data(db, refresh_interval = 5)
-
-  sd_server(db)
-}
-```
-
-:::
-
----
-
-## Reactive data fetching
-
-Use the reactive data to create some output
-
-::: {.col width="55%"}
-
-In `app.R`:
-
-```{r}
-#| eval: false
-
-server <- function(input, output, session) {
-  data <- sd_get_data(db, refresh_interval = 5)
-
-  output$my_plot <- renderPlot({
-    my_data <- data()
-
-    # insert code here to make a plot
-  })
-
-  sd_server(db)
-}
-```
-
-:::
-
-::: {.col width="45%"}
-
-In `survey.qmd`:
-
-````markdown
-`r ''````{r}
-plotOutput("my_plot")
-```
-````
-
-<br>
-See the `demo-live-polling` folder
-
-:::
-
----
-
-{{< inverse >}}
-
-```{r}
-#| echo: false
-countdown(
-  minutes = 10,
-  top = 0,
-  right = 0,
-  font_size = '2em'
-)
-```
-
-## Your turn
-
-- Use `sd_get_data(db)` to read in a copy of your survey response data.
-- Edit your `app.R` file to reactively access your survey data.
-- Use your data to make a plot about your data.
-- Display your plot in your `survey.qmd` file with `plotOutput("my_plot")`
 
 ---
 
@@ -1533,7 +1431,9 @@ agenda(5)
 
 In `survey.qmd`:
 
-````{.markdown code-line-numbers="8"}
+::: {.font80}
+
+````{.markdown}
 `r ''````{r}
 sd_question(
   type  = "text",
@@ -1544,13 +1444,14 @@ sd_question(
 textOutput("greeting")
 ```
 ````
-
+:::
 :::
 
 ::: {.col width="55%"}
 
 In `app.R`:
 
+::: {.font80}
 ```{r}
 #| eval: false
 
@@ -1562,7 +1463,7 @@ server <- function(input, output, session) {
   sd_server()
 }
 ```
-
+:::
 :::
 
 ---
@@ -1573,7 +1474,8 @@ server <- function(input, output, session) {
 
 In `survey.qmd`:
 
-````{.markdown code-line-numbers="9"}
+::: {.font80}
+````{.markdown }
 `r ''````{r}
 sd_question(
   type  = "text",
@@ -1586,11 +1488,13 @@ Hello, `r "\x60r sd_output(\"name\", type = \"value\")\x60"`!
 ````
 
 :::
+:::
 
 ::: {.col width="40%"}
 
 In `app.R`:
 
+::: {.font80}
 ```{r}
 #| eval: false
 
@@ -1599,6 +1503,7 @@ server <- function(input, output, session) {
 }
 ```
 
+:::
 :::
 
 ---
@@ -1609,6 +1514,7 @@ server <- function(input, output, session) {
 
 Question in `survey.qmd`:
 
+::: {.font80}
 ```{r}
 #| eval: false
 
@@ -1623,17 +1529,19 @@ sd_question(
   )
 )
 ```
-
+:::
 :::
 
 ::: {.col}
 
 Display a question _value_:
 
+::: {.font80}
 ```{r}
 #| eval: false
 sd_output("penguins", type = "value")
 ```
+:::
 
 Example: `adelie`
 
@@ -1641,10 +1549,12 @@ Example: `adelie`
 
 Display a question _option label_:
 
+::: {.font80}
 ```{r}
 #| eval: false
 sd_output("penguins", type = "label_option")
 ```
+:::
 
 Example: `Adélie`
 
@@ -1658,6 +1568,7 @@ Example: `Adélie`
 
 Question in `survey.qmd`:
 
+::: {.font80}
 ```{r}
 #| eval: false
 
@@ -1674,15 +1585,18 @@ sd_question(
 ```
 
 :::
+:::
 
 ::: {.col}
 
 Display a _question label_:
 
+::: {.font80}
 ```{r}
 #| eval: false
 sd_output("penguins", type = "label_question")
 ```
+:::
 
 Example:<br>`What's your favorite penguin?`
 
@@ -1720,305 +1634,10 @@ In your survey, display a question _option label_ somewhere with:
 
 ---
 
-## Change the question text based on respondent choices
-
-::: {.col width="60%"}
-
-In `survey.qmd`:
-
-```{r}
-#| eval: false
-
-sd_question(
-  id = "pet_type",
-  type = "mc",
-  label = "Which do you prefer, dogs or cats?",
-  option = c(
-    "Dogs" = "dog",
-    "Cats" = "cat"
-  )
-)
-```
-
-:::
-
-::: {.col width="40%"}
-
-Follow up question:
-
-If `dog`:
-
-Are you a **dog** owner?
-
-<br>
-
-If `cat`:
-
-Are you a **cat** owner?
-
-:::
-
----
-
-### **Solution**: Define the entire question in the server
-
-::: {.col width="75%" .font70}
-
-```{r}
-#| eval: false
-
-library(glue)
-
-server <- function(input, output, session) {
-  observe({
-    # Trigger with any change to the pet_type question
-    pet_type <- sd_value("pet_type")
-
-    # Make the question
-    sd_question(
-      type = "mc",
-      id = "pet_owner",
-      label = glue("Are you a {pet_type} owner?"),
-      option = c("Yes" = "yes", "No" = "no")
-    )
-  })
-
-  # Only show the pet_owner question if pet_type is answered
-  sd_show_if(
-    sd_is_answered("pet_type") ~ "pet_owner"
-  )
-
-  sd_server()
-}
-```
-
-:::
-
----
-
-### **Solution**: Define the entire question in the server
-
-::: {.col width="75%" .font70}
-
-```{r}
-#| eval: false
-
-library(glue)
-
-server <- function(input, output, session) {
-  observe({
-    # Trigger with any change to the pet_type question
-    pet_type <- sd_value("pet_type")
-
-    # Make the question
-    sd_question(
-      type = "mc",
-      id = "pet_owner",
-      label = glue("Are you a {pet_type} owner?"),
-      option = c("Yes" = "yes", "No" = "no")
-    )
-  })
-
-  # Only show the pet_owner question if pet_type is answered
-  sd_show_if(
-    sd_is_answered("pet_type") ~ "pet_owner"
-  )
-
-  sd_server()
-}
-```
-
-:::
-
-::: {.col width="25%"}
-
-<br>
-
-Use `observe()` to detect any change to the `pet_type` question
-
-:::
-
----
-
-### **Solution**: Define the entire question in the server
-
-::: {.col width="75%" .font70}
-
-```{r}
-#| eval: false
-
-library(glue)
-
-server <- function(input, output, session) {
-  observe({
-    # Trigger with any change to the pet_type question
-    pet_type <- sd_value("pet_type")
-
-    # Make the question
-    sd_question(
-      type = "mc",
-      id = "pet_owner",
-      label = glue("Are you a {pet_type} owner?"),
-      option = c("Yes" = "yes", "No" = "no")
-    )
-  })
-
-  # Only show the pet_owner question if pet_type is answered
-  sd_show_if(
-    sd_is_answered("pet_type") ~ "pet_owner"
-  )
-
-  sd_server()
-}
-```
-
-:::
-
-::: {.col width="25%"}
-
-<br><br><br><br><br>
-
-Use `sd_question()` to define the question
-
-:::
-
----
-
-### **Solution**: Define the entire question in the server
-
-::: {.col width="75%" .font70}
-
-```{r}
-#| eval: false
-
-library(glue)
-
-server <- function(input, output, session) {
-  observe({
-    # Trigger with any change to the pet_type question
-    pet_type <- sd_value("pet_type")
-
-    # Make the question
-    sd_question(
-      type = "mc",
-      id = "pet_owner",
-      label = glue("Are you a {pet_type} owner?"),
-      option = c("Yes" = "yes", "No" = "no")
-    )
-  })
-
-  # Only show the pet_owner question if pet_type is answered
-  sd_show_if(
-    sd_is_answered("pet_type") ~ "pet_owner"
-  )
-
-  sd_server()
-}
-```
-
-:::
-
-::: {.col width="25%"}
-
-<br><br><br><br><br><br><br><br><br><br>
-
-Hide the `pet_owner` question until `pet_type` is answered
-
-:::
-
----
-
-## Use `sd_output()` to display the reactive question
-
-::: {.col width="60%"}
-
-In `survey.qmd`:
-
-```{r}
-#| eval: false
-
-sd_question(
-  id = "pet_type",
-  type = "mc",
-  label = "Which do you prefer, dogs or cats?",
-  option = c(
-    "Dogs" = "dog",
-    "Cats" = "cat"
-  )
-)
-
-sd_output("pet_owner", type = "question")
-```
-
-See the `demo-reactive-questions` folder
-
-:::
-
-::: {.col width="40%"}
-
-Follow up question:
-
-If `dog`:
-
-Are you a **dog** owner?
-
-<br>
-
-If `cat`:
-
-Are you a **cat** owner?
-
-:::
-
----
-
-{{< inverse >}}
-
-```{r}
-#| echo: false
-countdown(
-  minutes = 10,
-  top = 0,
-  right = 0,
-  font_size = '2em'
-)
-```
-
-## Your turn
-
-::: {.col width="70%"}
-
-Define a question inside your server (`app.R` file):
-
-```{r}
-#| eval: false
-
-server <- function(input, output, session) {
-  observe({
-    sd_question(
-      type = "mc",
-      id = "id",
-      ...
-    )
-  })
-
-  sd_server()
-}
-```
-
-Display the question inside your survey (`survey.qmd` file):
-
-```{r}
-#| eval: false
-sd_output("id", type = "question")
-```
-
-:::
-
----
-
 {{< inverse >}}
 {{< center >}}
 {{< middle >}}
 
 # [Blog post on conjoint in surveydown](https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/)
+
+# Next team deliverable: <br> [Pilot Survey](https://madd.seas.gwu.edu/2026-Fall/project/3-pilot-survey.html) (Due 10/13)

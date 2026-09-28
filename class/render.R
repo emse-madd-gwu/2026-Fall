@@ -41,9 +41,7 @@ practice_extras <- list(
     'demo-question-types',
     'demo-questions-yml',
     'demo-conditional-showing',
-    'demo-conditional-skipping',
-    'demo-live-polling',
-    'demo-reactive-questions'
+    'demo-conditional-skipping'
   ),
   '7-conjoint-questions' = c(
     'conjoint_buttons',
