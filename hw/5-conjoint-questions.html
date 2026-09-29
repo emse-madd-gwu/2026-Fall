@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -351,12 +386,59 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="readings" class="level1">
 <h1>2. Readings</h1>
-<p>Your next major team assignment is your survey plan. The central questions of your eventual survey will be your conjoint questions, which are the sets of randomized choice questions where respondents will be asked to make choices from different sets of alternatives. We have not yet gotten into all the details of how to set up those randomized questions (that will come soon!). But it is helpful at this stage to see an overview of the overall survey structure and how a conjoint survey can be built in surveydown.</p>
-<p>With that in mind, read through <a href="https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/">this blog post</a> I wrote on how to implement a choice-based conjoint survey in surveydown. It may not yet be immediately clear what every single piece of code is doing, but reading it at least once will help as we go forward with the class. You will probably want to use this blog post as a guide to implement your own conjoint surveys later in the class.</p>
-<p>Once you have an understanding of how things are working, try downloading the <a href="https://github.com/surveydown-dev/template_conjoint_buttons">template</a> on how to implement a conjoint survey using the button format discussed in the blog. You should be able to use that template to re-create a working survey where the choice questions are shown randomly according to the design of experiment in the template.</p>
+<p>Your next team deliverable is your <a href="../project/3-pilot-survey.html">Pilot Survey</a>, which you’ll build in surveydown. The central questions of that survey are your conjoint questions: sets of randomized choice questions where respondents choose from different sets of alternatives. We haven’t yet gotten into all the details of how to generate those randomized questions (that will come soon!). But it helps at this stage to see how a whole conjoint survey fits together in surveydown, since the template you’ll use in this assignment is the one your team will most likely start the pilot survey from.</p>
+<p>With that in mind, read through <a href="https://surveydown.org/blog/2024-08-28-choice-based-conjoint-surveys-with-surveydown/">this blog post</a> I wrote on how to implement a choice-based conjoint survey in surveydown. It may not yet be clear what every piece of code is doing, and that’s fine - the questions in part 4 below will point you to the pieces that matter most. You will probably want to come back to this post as a guide when you build your own survey.</p>
+</section>
+<section id="run-the-conjoint-template" class="level1">
+<h1>3. Run the conjoint template</h1>
+<p>Now you’re going to make a working copy of the <a href="https://github.com/surveydown-dev/template_conjoint_buttons">conjoint buttons template</a> described in the blog post.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make the survey in a <strong>new</strong> folder inside your <code>hw5</code> folder. Every surveydown survey should live in its own separate folder.</p>
+</div>
+</div>
+<ol type="1">
+<li>With your course repo open in Positron, create the survey from the template by running this in the R console:</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>surveydown<span class="sc">::</span><span class="fu">sd_create_survey</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">template =</span> <span class="st">"conjoint_buttons"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">"hw5/conjoint-practice"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="2" type="1">
+<li>Open the new <code>conjoint-practice</code> folder in Positron (<strong>File &gt; Open Folder…</strong>), then open the <code>app.R</code> file and click the “Run App” arrow button. If R complains that a package is missing (e.g.&nbsp;<code>glue</code>), install it with <code>install.packages()</code> and run the app again.</li>
+<li>Click through the whole survey. Note that there’s a screening question partway through - if you give the “wrong” answer, you’ll get screened out and sent to the end of the survey. Take the survey a few times so that you see it both ways.</li>
+<li>Take a screenshot of one of the choice questions, save it in your <code>hw5</code> folder, and insert it into your <code>hw5.qmd</code> file (e.g., <code>![](choice-question.png)</code>).</li>
+<li>Because the survey runs in <code>mode: preview</code>, each time you complete it your responses are saved to <code>preview_data.csv</code> in the survey folder. Open that file and find your most recent response. What was your <code>respID</code>? Now open <code>data/choice_questions.csv</code> and find the rows with that same <code>respID</code>. In your <code>hw5.qmd</code> file, write a few sentences explaining how those rows relate to the choice questions you saw in the survey. Did the alternatives you saw match the rows in the file?</li>
+</ol>
+</section>
+<section id="read-the-code" class="level1">
+<h1>4. Read the code</h1>
+<p>Open the <code>app.R</code> and <code>survey.qmd</code> files in your <code>conjoint-practice</code> folder, and use the blog post to help you answer the following questions in your <code>hw5.qmd</code> file. A few sentences each is plenty.</p>
+<ol type="1">
+<li>What does the <code>make_cbc_options()</code> function do? What goes in, and what comes out?</li>
+<li>Where in the code does the survey decide which set of choice questions a particular respondent will see? How is that decision made?</li>
+<li>Why does the survey store <code>respID</code> with <code>sd_store_value()</code>? What would you be unable to do later in your analysis if it didn’t?</li>
+<li>The choice questions are <em>created</em> in <code>app.R</code>, but they <em>appear</em> in <code>survey.qmd</code>. How do they get from one file to the other?</li>
+<li>Suppose your team’s survey will show only <strong>two</strong> alternatives per question instead of three. What would you need to change in <code>app.R</code>?</li>
+</ol>
+</section>
+<section id="make-a-change" class="level1">
+<h1>5. Make a change</h1>
+<p>Now make one small modification to the survey to prove to yourself that you can edit it. For example, change how an attribute is displayed in each option (e.g.&nbsp;the price formatting or the text label), change the wording of the choice question labels, or add a sentence of instructions to the page that introduces the choice questions.</p>
+<p>Stop the app and run it again to see your change (surveydown doesn’t always update a running survey when you save). Take a screenshot showing your change, save it in your <code>hw5</code> folder, and insert it into your <code>hw5.qmd</code> file. Below the screenshot, write a sentence or two describing what you changed and which file(s) you had to edit.</p>
 </section>
 <section id="reflect" class="level1">
-<h1>3. Reflect</h1>
+<h1>6. Reflect</h1>
 <p>Reflect on what you’ve learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your <code>hw5.qmd</code> file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.</p>
 <p>If you’re unsure where to start with a reflection, try filling out this template:</p>
 <blockquote class="blockquote">
@@ -364,7 +446,7 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 </section>
 <section id="submit" class="level1">
-<h1>4. Submit</h1>
+<h1>7. Submit</h1>
 <p>To submit your assignment, follow these instructions:</p>
 <ol type="1">
 <li>Render your .qmd file by either clicking the “Preview” button in Positron or running <code>quarto render</code> in the terminal.</li>
