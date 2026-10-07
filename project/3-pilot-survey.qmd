@@ -51,11 +51,11 @@ Follow these guidelines in inserting your content:
 
 > Be sure to render your `survey.qmd` file often to an html file so you can preview that everything is displaying as expected, then also run the `app.R` file to preview your choice questions locally as a Shiny app.
 
-# 3. Upload your survey to shinyapps.io
+# 3. Upload your survey to Posit Connect Cloud
 
-Only one person from your team should create an account for hosting your survey on shinyapps.io. Follow the documentation on [deploying the app](https://surveydown.org/docs/deployment).
+Only one person from your team should create an account for hosting your survey on Posit Connect Cloud. Follow the documentation on [deploying the app](https://surveydown.org/docs/deployment).
 
-> Be sure to run the `app.R` file to preview your choice questions locally as a Shiny app before deploying to shinyapps.io.
+> Be sure to run the `app.R` file to preview your choice questions locally as a Shiny app before deploying to Posit Connect Cloud.
 
 # 4. Attribution
 
