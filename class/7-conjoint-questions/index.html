@@ -1544,14 +1544,14 @@ This markdown…
 </section>
 <section class="slide level0">
 
-<h2>Download &amp; unzip:</h2>
-<h2 id="logitr-cars">- <a href="https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip">logitr-cars</a></h2>
-<h2 id="todays-practice-notes-2-survey-templates">- <a href="https://madd.seas.gwu.edu/2026-Fall/class/7-conjoint-questions.html">today’s practice notes (2 survey templates)</a></h2>
-</section>
-<section class="slide level0">
-
-<section id="open-the-logitr-cars-folder-in-positron" class="middle inverse center">
-<h1>Open the <code>logitr-cars</code> folder in Positron</h1>
+<section class="lexis-slide-title middle inverse">
+<h1 class="lexis-slide-title"></h1>
+<div id="download-todays-notes-then" class="h1">
+1. Download today’s notes, then
+</div>
+<div id="open-the-conjoint_buttons-folder-in-positron" class="h1">
+2. Open the <code>conjoint_buttons</code> folder in Positron
+</div>
 </section>
 </section>
 <section class="slide level0">
@@ -1591,28 +1591,22 @@ Question 1
 <td style="text-align: left;">3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Price:</td>
-<td style="text-align: left;">$15</td>
-<td style="text-align: left;">$25</td>
-<td style="text-align: left;">$25</td>
+<td style="text-align: left;">Type:</td>
+<td style="text-align: left;">Fuji</td>
+<td style="text-align: left;">Pink Lady</td>
+<td style="text-align: left;">Fuji</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Fuel Economy:</td>
-<td style="text-align: left;">25 (mpg)</td>
-<td style="text-align: left;">25 (mpg)</td>
-<td style="text-align: left;">25 (mpg)</td>
+<td style="text-align: left;">Price:</td>
+<td style="text-align: left;">$4.00</td>
+<td style="text-align: left;">$1.50</td>
+<td style="text-align: left;">$2.50</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Accel. Time:</td>
-<td style="text-align: left;">6 (s)</td>
-<td style="text-align: left;">7 (s)</td>
-<td style="text-align: left;">8 (s)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Powertrain:</td>
-<td style="text-align: left;">Electric</td>
-<td style="text-align: left;">Gasoline</td>
-<td style="text-align: left;">Electric</td>
+<td style="text-align: left;">Freshness:</td>
+<td style="text-align: left;">Excellent</td>
+<td style="text-align: left;">Poor</td>
+<td style="text-align: left;">Average</td>
 </tr>
 </tbody>
 </table>
@@ -1634,28 +1628,22 @@ Question 2
 <td style="text-align: left;">3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Price:</td>
-<td style="text-align: left;">$20</td>
-<td style="text-align: left;">$25</td>
-<td style="text-align: left;">$25</td>
+<td style="text-align: left;">Type:</td>
+<td style="text-align: left;">Pink Lady</td>
+<td style="text-align: left;">Gala</td>
+<td style="text-align: left;">Gala</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Fuel Economy:</td>
-<td style="text-align: left;">25 (mpg)</td>
-<td style="text-align: left;">20 (mpg)</td>
-<td style="text-align: left;">25 (mpg)</td>
+<td style="text-align: left;">Price:</td>
+<td style="text-align: left;">$2.00</td>
+<td style="text-align: left;">$4.00</td>
+<td style="text-align: left;">$1.50</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Accel. Time:</td>
-<td style="text-align: left;">7 (s)</td>
-<td style="text-align: left;">6 (s)</td>
-<td style="text-align: left;">7 (s)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Powertrain:</td>
-<td style="text-align: left;">Gasoline</td>
-<td style="text-align: left;">Gasoline</td>
-<td style="text-align: left;">Electric</td>
+<td style="text-align: left;">Freshness:</td>
+<td style="text-align: left;">Excellent</td>
+<td style="text-align: left;">Average</td>
+<td style="text-align: left;">Average</td>
 </tr>
 </tbody>
 </table>
@@ -1667,9 +1655,58 @@ Question 2
 </section>
 <section class="slide level0">
 
-<section id="labeled-design" class="center">
-<h1>Labeled Design</h1>
-<p>One attribute is used as the “label” - choice options are fixed according to the label</p>
+<h1><span class="center">This is exactly what’s in</span><br><span class="center"><code>code/1_make_choice_questions.R</code></span></h1>
+<div class="font80">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>profiles <span class="ot">&lt;-</span> <span class="fu">cbc_profiles</span>(</span>
+<span id="cb4-2"><a href=""></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Fuji"</span>, <span class="st">"Gala"</span>, <span class="st">"Honeycrisp"</span>, <span class="st">"Pink Lady"</span>, <span class="st">"Red Delicious"</span>),</span>
+<span id="cb4-3"><a href=""></a>  <span class="at">price =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="fl">0.5</span>), <span class="co"># Price ($ / lb)</span></span>
+<span id="cb4-4"><a href=""></a>  <span class="at">freshness =</span> <span class="fu">c</span>(<span class="st">"Excellent"</span>, <span class="st">"Average"</span>, <span class="st">"Poor"</span>)</span>
+<span id="cb4-5"><a href=""></a>)</span>
+<span id="cb4-6"><a href=""></a></span>
+<span id="cb4-7"><a href=""></a>design <span class="ot">&lt;-</span> <span class="fu">cbc_design</span>(</span>
+<span id="cb4-8"><a href=""></a>  <span class="at">profiles =</span> profiles,</span>
+<span id="cb4-9"><a href=""></a>  <span class="at">n_resp =</span> <span class="dv">2000</span>, <span class="co"># Number of respondents</span></span>
+<span id="cb4-10"><a href=""></a>  <span class="at">n_alts =</span> <span class="dv">3</span>, <span class="co"># Number of alternatives per question</span></span>
+<span id="cb4-11"><a href=""></a>  <span class="at">n_q =</span> <span class="dv">6</span> <span class="co"># Number of questions per respondent</span></span>
+<span id="cb4-12"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+<section class="slide level0">
+
+<section class="lexis-slide-title inverse">
+<h1 class="lexis-slide-title"></h1>
+<div class="cell">
+<div class="cell-output-display">
+<countdown-timer class="countdown" id="timer_1a1ad1ad" minutes="15" seconds="0" warn-when="10" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
+</div>
+</div>
+<h2 id="your-turn">Your Turn</h2>
+<h2 id="open-the-conjoint_buttons-template-folder-in-positron">Open the <code>conjoint_buttons</code> template folder in Positron</h2>
+<p>In <code>code/1_make_choice_questions.R</code>, replace the apple <code>profiles</code> with your own team’s attributes and levels</p>
+<p>Leave <code>cbc_design()</code> at its default values for now - just get a basic design of your own running</p>
+</section>
+</section>
+<section class="slide level0">
+
+<section id="three-design-choices-to-consider" class="inverse middle center">
+<h1>Three design choices to consider</h1>
+</section>
+</section>
+<section class="slide level0">
+
+<h1><span class="center">Three design choices to consider</span></h1>
+<p><br></p>
+<h3 id="regular-or-labeled">1. Regular or labeled?</h3>
+<h3 id="include-a-none-option-outside-good-or-not">2. Include a “none” option (outside good) or not?</h3>
+<h3 id="include-restrictions">3. Include restrictions?</h3>
+</section>
+<section class="slide level0">
+
+<section id="regular-or-labeled-1" class="center">
+<h1>1. Regular or labeled?</h1>
+<p>A <strong>labeled</strong> design fixes one attribute to a specific option position<br>e.g.&nbsp;Option 1 is always “Local”, option 2 is always “Imported”</p>
 <div class="cols-row">
 <div class="col font90">
 <div id="question-1-1" class="h2">
@@ -1681,23 +1718,23 @@ Question 1
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Option:</td>
-<td style="text-align: left;">Gasoline</td>
-<td style="text-align: left;">Electric</td>
+<td style="text-align: left;">Local</td>
+<td style="text-align: left;">Imported</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Price:</td>
-<td style="text-align: left;">$20</td>
-<td style="text-align: left;">$25</td>
+<td style="text-align: left;">Type:</td>
+<td style="text-align: left;">Fuji</td>
+<td style="text-align: left;">Honeycrisp</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Fuel Economy:</td>
-<td style="text-align: left;">20 (mpg)</td>
-<td style="text-align: left;">25 (mpg)</td>
+<td style="text-align: left;">Price:</td>
+<td style="text-align: left;">$2.50</td>
+<td style="text-align: left;">$2.00</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Accel. Time:</td>
-<td style="text-align: left;">8 (s)</td>
-<td style="text-align: left;">8 (s)</td>
+<td style="text-align: left;">Miles traveled:</td>
+<td style="text-align: left;">500 mi</td>
+<td style="text-align: left;">1500 mi</td>
 </tr>
 </tbody>
 </table>
@@ -1714,23 +1751,23 @@ Question 2
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Option:</td>
-<td style="text-align: left;">Gasoline</td>
-<td style="text-align: left;">Electric</td>
+<td style="text-align: left;">Local</td>
+<td style="text-align: left;">Imported</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Price:</td>
-<td style="text-align: left;">$20</td>
-<td style="text-align: left;">$25</td>
+<td style="text-align: left;">Type:</td>
+<td style="text-align: left;">Gala</td>
+<td style="text-align: left;">Fuji</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Fuel Economy:</td>
-<td style="text-align: left;">20 (mpg)</td>
-<td style="text-align: left;">20 (mpg)</td>
+<td style="text-align: left;">Price:</td>
+<td style="text-align: left;">$2.00</td>
+<td style="text-align: left;">$1.50</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Accel. Time:</td>
-<td style="text-align: left;">6 (s)</td>
-<td style="text-align: left;">8 (s)</td>
+<td style="text-align: left;">Miles traveled:</td>
+<td style="text-align: left;">500 mi</td>
+<td style="text-align: left;">3000 mi</td>
 </tr>
 </tbody>
 </table>
@@ -1742,11 +1779,27 @@ Question 2
 </section>
 <section class="slide level0">
 
-<section id="design-with-a-none-option" class="center">
-<h1>Design with a “None” option</h1>
-<p>A “none” option means they can choose an “other” option</p>
+<h1><span class="center">Code: labeled design</span></h1>
+<div class="font80">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>design_labeled <span class="ot">&lt;-</span> <span class="fu">cbc_design</span>(</span>
+<span id="cb5-2"><a href=""></a>  <span class="at">profiles =</span> profiles,</span>
+<span id="cb5-3"><a href=""></a>  <span class="at">n_resp =</span> <span class="dv">500</span>,</span>
+<span id="cb5-4"><a href=""></a>  <span class="at">n_alts =</span> <span class="dv">2</span>, <span class="co"># must equal the # of levels in the label attribute</span></span>
+<span id="cb5-5"><a href=""></a>  <span class="at">n_q =</span> <span class="dv">6</span>,</span>
+<span id="cb5-6"><a href=""></a>  <span class="at">label =</span> <span class="st">"sourcing"</span></span>
+<span id="cb5-7"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p>Use a labeled design when respondents are really comparing <strong>named alternatives</strong> (brands, powertrains, sourcing…) rather than unlabeled bundles of attributes</p>
+</section>
+<section class="slide level0">
+
+<section id="include-a-none-option" class="center">
+<h1>2. Include a “none” option?</h1>
+<p>A “none” option lets respondents say “I wouldn’t buy any of these”</p>
 <div class="cols-row">
-<div class="col font90">
+<div class="col font80">
 <div id="question-1-2" class="h2">
 Question 1
 </div>
@@ -1762,31 +1815,24 @@ Question 1
 <td style="text-align: left;">None</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Price:</td>
-<td style="text-align: left;">$15</td>
-<td style="text-align: left;">$20</td>
-<td style="text-align: left;">$15</td>
+<td style="text-align: left;">Type:</td>
+<td style="text-align: left;">Honeycrisp</td>
+<td style="text-align: left;">Gala</td>
+<td style="text-align: left;">Fuji</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Fuel Economy:</td>
-<td style="text-align: left;">25 (mpg)</td>
-<td style="text-align: left;">25 (mpg)</td>
-<td style="text-align: left;">30 (mpg)</td>
+<td style="text-align: left;">Price:</td>
+<td style="text-align: left;">$4.00</td>
+<td style="text-align: left;">$2.00</td>
+<td style="text-align: left;">$1.00</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Accel. Time:</td>
-<td style="text-align: left;">8 (s)</td>
-<td style="text-align: left;">8 (s)</td>
-<td style="text-align: left;">7 (s)</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Powertrain:</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
+<td style="text-align: left;">Freshness:</td>
+<td style="text-align: left;">Average</td>
+<td style="text-align: left;">Average</td>
+<td style="text-align: left;">Poor</td>
 <td style="text-align: left;"></td>
 </tr>
 </tbody>
@@ -1794,7 +1840,7 @@ Question 1
 </div>
 </div>
 </div>
-<div class="col font90">
+<div class="col font80">
 <div id="question-2-2" class="h2">
 Question 2
 </div>
@@ -1810,31 +1856,24 @@ Question 2
 <td style="text-align: left;">None</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Price:</td>
-<td style="text-align: left;">$15</td>
-<td style="text-align: left;">$15</td>
-<td style="text-align: left;">$25</td>
+<td style="text-align: left;">Type:</td>
+<td style="text-align: left;">Pink Lady</td>
+<td style="text-align: left;">Honeycrisp</td>
+<td style="text-align: left;">Gala</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Fuel Economy:</td>
-<td style="text-align: left;">25 (mpg)</td>
-<td style="text-align: left;">30 (mpg)</td>
-<td style="text-align: left;">30 (mpg)</td>
+<td style="text-align: left;">Price:</td>
+<td style="text-align: left;">$1.50</td>
+<td style="text-align: left;">$3.50</td>
+<td style="text-align: left;">$3.50</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Accel. Time:</td>
-<td style="text-align: left;">6 (s)</td>
-<td style="text-align: left;">8 (s)</td>
-<td style="text-align: left;">6 (s)</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Powertrain:</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">Freshness:</td>
+<td style="text-align: left;">Poor</td>
+<td style="text-align: left;">Poor</td>
+<td style="text-align: left;">Excellent</td>
 <td style="text-align: left;"></td>
 </tr>
 </tbody>
@@ -1847,24 +1886,93 @@ Question 2
 </section>
 <section class="slide level0">
 
+<h1><span class="center">Code: a “none” option</span></h1>
+<div class="font80">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>design_no_choice <span class="ot">&lt;-</span> <span class="fu">cbc_design</span>(</span>
+<span id="cb6-2"><a href=""></a>  <span class="at">profiles =</span> profiles,</span>
+<span id="cb6-3"><a href=""></a>  <span class="at">n_resp =</span> <span class="dv">2000</span>,</span>
+<span id="cb6-4"><a href=""></a>  <span class="at">n_alts =</span> <span class="dv">3</span>,</span>
+<span id="cb6-5"><a href=""></a>  <span class="at">n_q =</span> <span class="dv">6</span>,</span>
+<span id="cb6-6"><a href=""></a>  <span class="at">no_choice =</span> <span class="cn">TRUE</span></span>
+<span id="cb6-7"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p>Without this, respondents are forced to pick one of the alternatives shown, even if they wouldn’t choose any of them in real life</p>
+</section>
+<section class="slide level0">
+
 <h1><span class="center">Attribute-specific features</span></h1>
 <p>Some attributes may only be valid for certain levels of other attributes</p>
 <blockquote>
-<p><strong>Example</strong>: The driving range of an electric vehicle (EV) only applies to EVs and not gasoline-powered vehicles.</p>
+<p><strong>Example</strong>: “Miles traveled” only makes sense for <strong>imported</strong> apples (locally grown apples don’t really have a meaningful travel distance).</p>
 </blockquote>
 <div class="fragment">
 <p><br></p>
-<p>To implement this, you may need to add restrictions to your <code>profiles</code> with <code>cbc_restrict()</code></p>
-<p>(see <code>logitr-cars</code> code 1.2)</p>
+<p>To implement this, add restrictions to your <code>profiles</code> with <code>cbc_restrict()</code></p>
+</div>
+</section>
+<section class="slide level0">
+
+<h1><span class="center">Code: restrictions</span></h1>
+<div class="font70">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>profiles <span class="ot">&lt;-</span> <span class="fu">cbc_profiles</span>(</span>
+<span id="cb7-2"><a href=""></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Fuji"</span>, <span class="st">"Gala"</span>, <span class="st">"Honeycrisp"</span>),</span>
+<span id="cb7-3"><a href=""></a>  <span class="at">price =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="fl">0.5</span>),</span>
+<span id="cb7-4"><a href=""></a>  <span class="at">sourcing =</span> <span class="fu">c</span>(<span class="st">"Local"</span>, <span class="st">"Imported"</span>),</span>
+<span id="cb7-5"><a href=""></a>  <span class="at">milesTraveled =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">500</span>, <span class="dv">1500</span>, <span class="dv">3000</span>)</span>
+<span id="cb7-6"><a href=""></a>)</span>
+<span id="cb7-7"><a href=""></a></span>
+<span id="cb7-8"><a href=""></a><span class="co"># Local apples only get the lowest ("~0") miles traveled value</span></span>
+<span id="cb7-9"><a href=""></a>profiles_restricted <span class="ot">&lt;-</span> profiles <span class="sc">%&gt;%</span></span>
+<span id="cb7-10"><a href=""></a>  <span class="fu">cbc_restrict</span>(</span>
+<span id="cb7-11"><a href=""></a>    sourcing <span class="sc">==</span> <span class="st">"Local"</span> <span class="sc">&amp;</span> milesTraveled <span class="sc">&gt;</span> <span class="dv">50</span></span>
+<span id="cb7-12"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </div>
 </section>
 <section class="slide level0">
 
 <h1><span class="red">Warning</span>: Restrictions can lead to imbalances</h1>
-<p><br></p>
-<p>Use <code>balance_by</code> in <code>cbc_design()</code> to fix imbalances</p>
-<p><br></p>
-<p>(see <code>logitr-cars</code> code 1.2)</p>
+<p>Design the questions from the restricted profiles…</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>design_restricted <span class="ot">&lt;-</span> <span class="fu">cbc_design</span>(</span>
+<span id="cb8-2"><a href=""></a>  <span class="at">profiles =</span> profiles_restricted,</span>
+<span id="cb8-3"><a href=""></a>  <span class="at">n_resp =</span> <span class="dv">500</span>,</span>
+<span id="cb8-4"><a href=""></a>  <span class="at">n_alts =</span> <span class="dv">2</span>,</span>
+<span id="cb8-5"><a href=""></a>  <span class="at">n_q =</span> <span class="dv">6</span></span>
+<span id="cb8-6"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt;    Local Imported 
+#&gt;     1171     4829</code></pre>
+</div>
+</div>
+<p>“Imported” apples show up far more often, since they have more valid attribute combinations left after restricting</p>
+</section>
+<section class="slide level0">
+
+<h1>Fix imbalances with <code>balance_by</code></h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>design_balanced <span class="ot">&lt;-</span> <span class="fu">cbc_design</span>(</span>
+<span id="cb10-2"><a href=""></a>  <span class="at">profiles =</span> profiles_restricted,</span>
+<span id="cb10-3"><a href=""></a>  <span class="at">n_resp =</span> <span class="dv">500</span>,</span>
+<span id="cb10-4"><a href=""></a>  <span class="at">n_alts =</span> <span class="dv">2</span>,</span>
+<span id="cb10-5"><a href=""></a>  <span class="at">n_q =</span> <span class="dv">6</span>,</span>
+<span id="cb10-6"><a href=""></a>  <span class="at">balance_by =</span> <span class="st">"sourcing"</span></span>
+<span id="cb10-7"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt;    Local Imported 
+#&gt;     3011     2989</code></pre>
+</div>
+</div>
+<p>Now “Local” and “Imported” show up about equally often</p>
 </section>
 <section class="slide level0">
 
@@ -1872,18 +1980,17 @@ Question 2
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_2be51b8b" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_e09b6dec" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
-<h2 id="your-turn">Your Turn</h2>
-<h2 id="open-the-conjoint_buttons-template-folder-in-positron">Open the “conjoint_buttons” template folder in Positron</h2>
+<h2 id="your-turn-1">Your Turn</h2>
 <p>With your team, discuss the specific choice question design for your project</p>
 <ul>
 <li>Regular or labeled?</li>
 <li>Include a “none” option (outside good) or not?</li>
 <li>Include restrictions?</li>
 </ul>
-<p>Then edit the <code>make-choice-questions.R</code> file to design your choice questions.</p>
+<p>Then update <code>code/1_make_choice_questions.R</code> to match</p>
 </section>
 </section>
 <section class="slide level0">
@@ -1911,7 +2018,7 @@ Question 2
 
 <h3 id="read-in-the-design-file-choice_questions.csv-1">1. Read in the design file (<code>choice_questions.csv</code>)</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>design <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"choice_questions.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>design <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"choice_questions.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level0">
@@ -1919,11 +2026,11 @@ Question 2
 <h3 id="sample-and-store-a-random-respondent-id-1">2. Sample and store a random respondent ID</h3>
 <p>Sample a random respondentID</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>respondentID <span class="ot">&lt;-</span> <span class="fu">sample</span>(design<span class="sc">$</span>respID, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>respondentID <span class="ot">&lt;-</span> <span class="fu">sample</span>(design<span class="sc">$</span>respID, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Store the respondentID</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">sd_store_value</span>(respondentID, <span class="st">"respID"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">sd_store_value</span>(respondentID, <span class="st">"respID"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In your survey data, you will have a <code>respID</code> column</p>
 </section>
@@ -1931,25 +2038,25 @@ Question 2
 
 <h3 id="filter-the-design-for-the-respondentid-1">3. Filter the design for the respondentID</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>df <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href=""></a>  <span class="fu">filter</span>(respID <span class="sc">==</span> respondentID) <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">image =</span> <span class="fu">paste0</span>(<span class="st">"images/"</span>, image))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>df <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href=""></a>  <span class="fu">filter</span>(respID <span class="sc">==</span> respondentID) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">image =</span> <span class="fu">paste0</span>(<span class="st">"images/"</span>, image))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Images are stored in <code>"images"</code> folder, so we paste on that path</p>
 <div class="fragment">
 <p>Result looks like this:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">head</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">head</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 6 × 9
 #&gt;   profileID respID   qID altID obsID type          price freshness image                  
 #&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;                  
-#&gt; 1        29    399     1     1  2389 Pink Lady       3.5 Excellent images/pinkLady.jpg    
-#&gt; 2        68    399     1     2  2389 Honeycrisp      4   Average   images/honeycrisp.jpg  
-#&gt; 3        17    399     1     3  2389 Gala            2.5 Excellent images/gala.jpg        
-#&gt; 4        33    399     2     1  2390 Honeycrisp      4   Excellent images/honeycrisp.jpg  
-#&gt; 5        69    399     2     2  2390 Pink Lady       4   Average   images/pinkLady.jpg    
-#&gt; 6        45    399     2     3  2390 Red Delicious   1.5 Average   images/redDelicious.jpg</code></pre>
+#&gt; 1        45     28     1     1   163 Red Delicious   1.5 Average   images/redDelicious.jpg
+#&gt; 2        77     28     1     2   163 Gala            1.5 Poor      images/gala.jpg        
+#&gt; 3        94     28     1     3   163 Pink Lady       3   Poor      images/pinkLady.jpg    
+#&gt; 4         8     28     2     1   164 Honeycrisp      1.5 Excellent images/honeycrisp.jpg  
+#&gt; 5        85     28     2     2   164 Red Delicious   2   Poor      images/redDelicious.jpg
+#&gt; 6        80     28     2     3   164 Red Delicious   1.5 Poor      images/redDelicious.jpg</code></pre>
 </div>
 </div>
 </div>
@@ -1964,41 +2071,41 @@ Question 2
 </div>
 <div class="col font60">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>make_cbc_options <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
-<span id="cb10-2"><a href=""></a>  alt1 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">1</span>)</span>
-<span id="cb10-3"><a href=""></a>  alt2 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">2</span>)</span>
-<span id="cb10-4"><a href=""></a>  alt3 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">3</span>)</span>
-<span id="cb10-5"><a href=""></a></span>
-<span id="cb10-6"><a href=""></a>  options <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"option_1"</span>, <span class="st">"option_2"</span>, <span class="st">"option_3"</span>)</span>
-<span id="cb10-7"><a href=""></a></span>
-<span id="cb10-8"><a href=""></a>  <span class="fu">names</span>(options) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb10-9"><a href=""></a>    <span class="fu">glue</span>(</span>
-<span id="cb10-10"><a href=""></a>      <span class="st">"</span></span>
-<span id="cb10-11"><a href=""></a><span class="st">      **Option 1**&lt;br&gt;</span></span>
-<span id="cb10-12"><a href=""></a><span class="st">      &lt;img src='{alt1$image}' width=100&gt;&lt;br&gt;</span></span>
-<span id="cb10-13"><a href=""></a><span class="st">      **Type**: {alt1$type}&lt;br&gt;</span></span>
-<span id="cb10-14"><a href=""></a><span class="st">      **Price**: $ {alt1$price} / lb</span></span>
-<span id="cb10-15"><a href=""></a><span class="st">    "</span></span>
-<span id="cb10-16"><a href=""></a>    ),</span>
-<span id="cb10-17"><a href=""></a>    <span class="fu">glue</span>(</span>
-<span id="cb10-18"><a href=""></a>      <span class="st">"</span></span>
-<span id="cb10-19"><a href=""></a><span class="st">      **Option 2**&lt;br&gt;</span></span>
-<span id="cb10-20"><a href=""></a><span class="st">      &lt;img src='{alt2$image}' width=100&gt;&lt;br&gt;</span></span>
-<span id="cb10-21"><a href=""></a><span class="st">      **Type**: {alt2$type}&lt;br&gt;</span></span>
-<span id="cb10-22"><a href=""></a><span class="st">      **Price**: $ {alt2$price} / lb</span></span>
-<span id="cb10-23"><a href=""></a><span class="st">    "</span></span>
-<span id="cb10-24"><a href=""></a>    ),</span>
-<span id="cb10-25"><a href=""></a>    <span class="fu">glue</span>(</span>
-<span id="cb10-26"><a href=""></a>      <span class="st">"</span></span>
-<span id="cb10-27"><a href=""></a><span class="st">      **Option 3**&lt;br&gt;</span></span>
-<span id="cb10-28"><a href=""></a><span class="st">      &lt;img src='{alt3$image}' width=100&gt;&lt;br&gt;</span></span>
-<span id="cb10-29"><a href=""></a><span class="st">      **Type**: {alt3$type}&lt;br&gt;</span></span>
-<span id="cb10-30"><a href=""></a><span class="st">      **Price**: $ {alt3$price} / lb</span></span>
-<span id="cb10-31"><a href=""></a><span class="st">    "</span></span>
-<span id="cb10-32"><a href=""></a>    )</span>
-<span id="cb10-33"><a href=""></a>  )</span>
-<span id="cb10-34"><a href=""></a>  <span class="fu">return</span>(options)</span>
-<span id="cb10-35"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>make_cbc_options <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
+<span id="cb18-2"><a href=""></a>  alt1 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb18-3"><a href=""></a>  alt2 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb18-4"><a href=""></a>  alt3 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">3</span>)</span>
+<span id="cb18-5"><a href=""></a></span>
+<span id="cb18-6"><a href=""></a>  options <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"option_1"</span>, <span class="st">"option_2"</span>, <span class="st">"option_3"</span>)</span>
+<span id="cb18-7"><a href=""></a></span>
+<span id="cb18-8"><a href=""></a>  <span class="fu">names</span>(options) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb18-9"><a href=""></a>    <span class="fu">glue</span>(</span>
+<span id="cb18-10"><a href=""></a>      <span class="st">"</span></span>
+<span id="cb18-11"><a href=""></a><span class="st">      **Option 1**&lt;br&gt;</span></span>
+<span id="cb18-12"><a href=""></a><span class="st">      &lt;img src='{alt1$image}' width=100&gt;&lt;br&gt;</span></span>
+<span id="cb18-13"><a href=""></a><span class="st">      **Type**: {alt1$type}&lt;br&gt;</span></span>
+<span id="cb18-14"><a href=""></a><span class="st">      **Price**: $ {alt1$price} / lb</span></span>
+<span id="cb18-15"><a href=""></a><span class="st">    "</span></span>
+<span id="cb18-16"><a href=""></a>    ),</span>
+<span id="cb18-17"><a href=""></a>    <span class="fu">glue</span>(</span>
+<span id="cb18-18"><a href=""></a>      <span class="st">"</span></span>
+<span id="cb18-19"><a href=""></a><span class="st">      **Option 2**&lt;br&gt;</span></span>
+<span id="cb18-20"><a href=""></a><span class="st">      &lt;img src='{alt2$image}' width=100&gt;&lt;br&gt;</span></span>
+<span id="cb18-21"><a href=""></a><span class="st">      **Type**: {alt2$type}&lt;br&gt;</span></span>
+<span id="cb18-22"><a href=""></a><span class="st">      **Price**: $ {alt2$price} / lb</span></span>
+<span id="cb18-23"><a href=""></a><span class="st">    "</span></span>
+<span id="cb18-24"><a href=""></a>    ),</span>
+<span id="cb18-25"><a href=""></a>    <span class="fu">glue</span>(</span>
+<span id="cb18-26"><a href=""></a>      <span class="st">"</span></span>
+<span id="cb18-27"><a href=""></a><span class="st">      **Option 3**&lt;br&gt;</span></span>
+<span id="cb18-28"><a href=""></a><span class="st">      &lt;img src='{alt3$image}' width=100&gt;&lt;br&gt;</span></span>
+<span id="cb18-29"><a href=""></a><span class="st">      **Type**: {alt3$type}&lt;br&gt;</span></span>
+<span id="cb18-30"><a href=""></a><span class="st">      **Price**: $ {alt3$price} / lb</span></span>
+<span id="cb18-31"><a href=""></a><span class="st">    "</span></span>
+<span id="cb18-32"><a href=""></a>    )</span>
+<span id="cb18-33"><a href=""></a>  )</span>
+<span id="cb18-34"><a href=""></a>  <span class="fu">return</span>(options)</span>
+<span id="cb18-35"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2017,56 +2124,56 @@ Question 2
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; Rows: 1
 #&gt; Columns: 9
-#&gt; $ profileID &lt;dbl&gt; 29
-#&gt; $ respID    &lt;dbl&gt; 399
+#&gt; $ profileID &lt;dbl&gt; 45
+#&gt; $ respID    &lt;dbl&gt; 28
 #&gt; $ qID       &lt;dbl&gt; 1
 #&gt; $ altID     &lt;dbl&gt; 1
-#&gt; $ obsID     &lt;dbl&gt; 2389
-#&gt; $ type      &lt;chr&gt; "Pink Lady"
-#&gt; $ price     &lt;dbl&gt; 3.5
-#&gt; $ freshness &lt;chr&gt; "Excellent"
-#&gt; $ image     &lt;chr&gt; "images/pinkLady.jpg"</code></pre>
+#&gt; $ obsID     &lt;dbl&gt; 163
+#&gt; $ type      &lt;chr&gt; "Red Delicious"
+#&gt; $ price     &lt;dbl&gt; 1.5
+#&gt; $ freshness &lt;chr&gt; "Average"
+#&gt; $ image     &lt;chr&gt; "images/redDelicious.jpg"</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="col font60">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>make_cbc_options <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
-<span id="cb12-2"><a href=""></a>  alt1 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">1</span>)</span>
-<span id="cb12-3"><a href=""></a>  alt2 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">2</span>)</span>
-<span id="cb12-4"><a href=""></a>  alt3 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">3</span>)</span>
-<span id="cb12-5"><a href=""></a></span>
-<span id="cb12-6"><a href=""></a>  options <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"option_1"</span>, <span class="st">"option_2"</span>, <span class="st">"option_3"</span>)</span>
-<span id="cb12-7"><a href=""></a></span>
-<span id="cb12-8"><a href=""></a>  <span class="fu">names</span>(options) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb12-9"><a href=""></a>    <span class="fu">glue</span>(</span>
-<span id="cb12-10"><a href=""></a>      <span class="st">"</span></span>
-<span id="cb12-11"><a href=""></a><span class="st">      **Option 1**&lt;br&gt;</span></span>
-<span id="cb12-12"><a href=""></a><span class="st">      &lt;img src='{alt1$image}' width=100&gt;&lt;br&gt;</span></span>
-<span id="cb12-13"><a href=""></a><span class="st">      **Type**: {alt1$type}&lt;br&gt;</span></span>
-<span id="cb12-14"><a href=""></a><span class="st">      **Price**: $ {alt1$price} / lb</span></span>
-<span id="cb12-15"><a href=""></a><span class="st">    "</span></span>
-<span id="cb12-16"><a href=""></a>    ),</span>
-<span id="cb12-17"><a href=""></a>    <span class="fu">glue</span>(</span>
-<span id="cb12-18"><a href=""></a>      <span class="st">"</span></span>
-<span id="cb12-19"><a href=""></a><span class="st">      **Option 2**&lt;br&gt;</span></span>
-<span id="cb12-20"><a href=""></a><span class="st">      &lt;img src='{alt2$image}' width=100&gt;&lt;br&gt;</span></span>
-<span id="cb12-21"><a href=""></a><span class="st">      **Type**: {alt2$type}&lt;br&gt;</span></span>
-<span id="cb12-22"><a href=""></a><span class="st">      **Price**: $ {alt2$price} / lb</span></span>
-<span id="cb12-23"><a href=""></a><span class="st">    "</span></span>
-<span id="cb12-24"><a href=""></a>    ),</span>
-<span id="cb12-25"><a href=""></a>    <span class="fu">glue</span>(</span>
-<span id="cb12-26"><a href=""></a>      <span class="st">"</span></span>
-<span id="cb12-27"><a href=""></a><span class="st">      **Option 3**&lt;br&gt;</span></span>
-<span id="cb12-28"><a href=""></a><span class="st">      &lt;img src='{alt3$image}' width=100&gt;&lt;br&gt;</span></span>
-<span id="cb12-29"><a href=""></a><span class="st">      **Type**: {alt3$type}&lt;br&gt;</span></span>
-<span id="cb12-30"><a href=""></a><span class="st">      **Price**: $ {alt3$price} / lb</span></span>
-<span id="cb12-31"><a href=""></a><span class="st">    "</span></span>
-<span id="cb12-32"><a href=""></a>    )</span>
-<span id="cb12-33"><a href=""></a>  )</span>
-<span id="cb12-34"><a href=""></a>  <span class="fu">return</span>(options)</span>
-<span id="cb12-35"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>make_cbc_options <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
+<span id="cb20-2"><a href=""></a>  alt1 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb20-3"><a href=""></a>  alt2 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb20-4"><a href=""></a>  alt3 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">3</span>)</span>
+<span id="cb20-5"><a href=""></a></span>
+<span id="cb20-6"><a href=""></a>  options <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"option_1"</span>, <span class="st">"option_2"</span>, <span class="st">"option_3"</span>)</span>
+<span id="cb20-7"><a href=""></a></span>
+<span id="cb20-8"><a href=""></a>  <span class="fu">names</span>(options) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb20-9"><a href=""></a>    <span class="fu">glue</span>(</span>
+<span id="cb20-10"><a href=""></a>      <span class="st">"</span></span>
+<span id="cb20-11"><a href=""></a><span class="st">      **Option 1**&lt;br&gt;</span></span>
+<span id="cb20-12"><a href=""></a><span class="st">      &lt;img src='{alt1$image}' width=100&gt;&lt;br&gt;</span></span>
+<span id="cb20-13"><a href=""></a><span class="st">      **Type**: {alt1$type}&lt;br&gt;</span></span>
+<span id="cb20-14"><a href=""></a><span class="st">      **Price**: $ {alt1$price} / lb</span></span>
+<span id="cb20-15"><a href=""></a><span class="st">    "</span></span>
+<span id="cb20-16"><a href=""></a>    ),</span>
+<span id="cb20-17"><a href=""></a>    <span class="fu">glue</span>(</span>
+<span id="cb20-18"><a href=""></a>      <span class="st">"</span></span>
+<span id="cb20-19"><a href=""></a><span class="st">      **Option 2**&lt;br&gt;</span></span>
+<span id="cb20-20"><a href=""></a><span class="st">      &lt;img src='{alt2$image}' width=100&gt;&lt;br&gt;</span></span>
+<span id="cb20-21"><a href=""></a><span class="st">      **Type**: {alt2$type}&lt;br&gt;</span></span>
+<span id="cb20-22"><a href=""></a><span class="st">      **Price**: $ {alt2$price} / lb</span></span>
+<span id="cb20-23"><a href=""></a><span class="st">    "</span></span>
+<span id="cb20-24"><a href=""></a>    ),</span>
+<span id="cb20-25"><a href=""></a>    <span class="fu">glue</span>(</span>
+<span id="cb20-26"><a href=""></a>      <span class="st">"</span></span>
+<span id="cb20-27"><a href=""></a><span class="st">      **Option 3**&lt;br&gt;</span></span>
+<span id="cb20-28"><a href=""></a><span class="st">      &lt;img src='{alt3$image}' width=100&gt;&lt;br&gt;</span></span>
+<span id="cb20-29"><a href=""></a><span class="st">      **Type**: {alt3$type}&lt;br&gt;</span></span>
+<span id="cb20-30"><a href=""></a><span class="st">      **Price**: $ {alt3$price} / lb</span></span>
+<span id="cb20-31"><a href=""></a><span class="st">    "</span></span>
+<span id="cb20-32"><a href=""></a>    )</span>
+<span id="cb20-33"><a href=""></a>  )</span>
+<span id="cb20-34"><a href=""></a>  <span class="fu">return</span>(options)</span>
+<span id="cb20-35"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2080,12 +2187,12 @@ Question 2
 </div>
 <div class="font80">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>alt1[<span class="fu">c</span>(<span class="st">'image'</span>, <span class="st">'type'</span>, <span class="st">'price'</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>alt1[<span class="fu">c</span>(<span class="st">'image'</span>, <span class="st">'type'</span>, <span class="st">'price'</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 1 × 3
-#&gt;   image               type      price
-#&gt;   &lt;chr&gt;               &lt;chr&gt;     &lt;dbl&gt;
-#&gt; 1 images/pinkLady.jpg Pink Lady   3.5</code></pre>
+#&gt;   image                   type          price
+#&gt;   &lt;chr&gt;                   &lt;chr&gt;         &lt;dbl&gt;
+#&gt; 1 images/redDelicious.jpg Red Delicious   1.5</code></pre>
 </div>
 </div>
 </div>
@@ -2094,50 +2201,50 @@ Question 2
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; **Option 1**&lt;br&gt;
-#&gt; &lt;img src='images/pinkLady.jpg' width=100&gt;&lt;br&gt;
-#&gt; **Type**: Pink Lady&lt;br&gt;
-#&gt; **Price**: $ 3.5 / lb</code></pre>
+#&gt; &lt;img src='images/redDelicious.jpg' width=100&gt;&lt;br&gt;
+#&gt; **Type**: Red Delicious&lt;br&gt;
+#&gt; **Price**: $ 1.5 / lb</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="col font60">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>make_cbc_options <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
-<span id="cb16-2"><a href=""></a>  alt1 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">1</span>)</span>
-<span id="cb16-3"><a href=""></a>  alt2 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">2</span>)</span>
-<span id="cb16-4"><a href=""></a>  alt3 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">3</span>)</span>
-<span id="cb16-5"><a href=""></a></span>
-<span id="cb16-6"><a href=""></a>  options <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"option_1"</span>, <span class="st">"option_2"</span>, <span class="st">"option_3"</span>)</span>
-<span id="cb16-7"><a href=""></a></span>
-<span id="cb16-8"><a href=""></a>  <span class="fu">names</span>(options) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb16-9"><a href=""></a>    <span class="fu">glue</span>(</span>
-<span id="cb16-10"><a href=""></a>      <span class="st">"</span></span>
-<span id="cb16-11"><a href=""></a><span class="st">      **Option 1**&lt;br&gt;</span></span>
-<span id="cb16-12"><a href=""></a><span class="st">      &lt;img src='{alt1$image}' width=100&gt;&lt;br&gt;</span></span>
-<span id="cb16-13"><a href=""></a><span class="st">      **Type**: {alt1$type}&lt;br&gt;</span></span>
-<span id="cb16-14"><a href=""></a><span class="st">      **Price**: $ {alt1$price} / lb</span></span>
-<span id="cb16-15"><a href=""></a><span class="st">    "</span></span>
-<span id="cb16-16"><a href=""></a>    ),</span>
-<span id="cb16-17"><a href=""></a>    <span class="fu">glue</span>(</span>
-<span id="cb16-18"><a href=""></a>      <span class="st">"</span></span>
-<span id="cb16-19"><a href=""></a><span class="st">      **Option 2**&lt;br&gt;</span></span>
-<span id="cb16-20"><a href=""></a><span class="st">      &lt;img src='{alt2$image}' width=100&gt;&lt;br&gt;</span></span>
-<span id="cb16-21"><a href=""></a><span class="st">      **Type**: {alt2$type}&lt;br&gt;</span></span>
-<span id="cb16-22"><a href=""></a><span class="st">      **Price**: $ {alt2$price} / lb</span></span>
-<span id="cb16-23"><a href=""></a><span class="st">    "</span></span>
-<span id="cb16-24"><a href=""></a>    ),</span>
-<span id="cb16-25"><a href=""></a>    <span class="fu">glue</span>(</span>
-<span id="cb16-26"><a href=""></a>      <span class="st">"</span></span>
-<span id="cb16-27"><a href=""></a><span class="st">      **Option 3**&lt;br&gt;</span></span>
-<span id="cb16-28"><a href=""></a><span class="st">      &lt;img src='{alt3$image}' width=100&gt;&lt;br&gt;</span></span>
-<span id="cb16-29"><a href=""></a><span class="st">      **Type**: {alt3$type}&lt;br&gt;</span></span>
-<span id="cb16-30"><a href=""></a><span class="st">      **Price**: $ {alt3$price} / lb</span></span>
-<span id="cb16-31"><a href=""></a><span class="st">    "</span></span>
-<span id="cb16-32"><a href=""></a>    )</span>
-<span id="cb16-33"><a href=""></a>  )</span>
-<span id="cb16-34"><a href=""></a>  <span class="fu">return</span>(options)</span>
-<span id="cb16-35"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>make_cbc_options <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
+<span id="cb24-2"><a href=""></a>  alt1 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb24-3"><a href=""></a>  alt2 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb24-4"><a href=""></a>  alt3 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">filter</span>(altID <span class="sc">==</span> <span class="dv">3</span>)</span>
+<span id="cb24-5"><a href=""></a></span>
+<span id="cb24-6"><a href=""></a>  options <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"option_1"</span>, <span class="st">"option_2"</span>, <span class="st">"option_3"</span>)</span>
+<span id="cb24-7"><a href=""></a></span>
+<span id="cb24-8"><a href=""></a>  <span class="fu">names</span>(options) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb24-9"><a href=""></a>    <span class="fu">glue</span>(</span>
+<span id="cb24-10"><a href=""></a>      <span class="st">"</span></span>
+<span id="cb24-11"><a href=""></a><span class="st">      **Option 1**&lt;br&gt;</span></span>
+<span id="cb24-12"><a href=""></a><span class="st">      &lt;img src='{alt1$image}' width=100&gt;&lt;br&gt;</span></span>
+<span id="cb24-13"><a href=""></a><span class="st">      **Type**: {alt1$type}&lt;br&gt;</span></span>
+<span id="cb24-14"><a href=""></a><span class="st">      **Price**: $ {alt1$price} / lb</span></span>
+<span id="cb24-15"><a href=""></a><span class="st">    "</span></span>
+<span id="cb24-16"><a href=""></a>    ),</span>
+<span id="cb24-17"><a href=""></a>    <span class="fu">glue</span>(</span>
+<span id="cb24-18"><a href=""></a>      <span class="st">"</span></span>
+<span id="cb24-19"><a href=""></a><span class="st">      **Option 2**&lt;br&gt;</span></span>
+<span id="cb24-20"><a href=""></a><span class="st">      &lt;img src='{alt2$image}' width=100&gt;&lt;br&gt;</span></span>
+<span id="cb24-21"><a href=""></a><span class="st">      **Type**: {alt2$type}&lt;br&gt;</span></span>
+<span id="cb24-22"><a href=""></a><span class="st">      **Price**: $ {alt2$price} / lb</span></span>
+<span id="cb24-23"><a href=""></a><span class="st">    "</span></span>
+<span id="cb24-24"><a href=""></a>    ),</span>
+<span id="cb24-25"><a href=""></a>    <span class="fu">glue</span>(</span>
+<span id="cb24-26"><a href=""></a>      <span class="st">"</span></span>
+<span id="cb24-27"><a href=""></a><span class="st">      **Option 3**&lt;br&gt;</span></span>
+<span id="cb24-28"><a href=""></a><span class="st">      &lt;img src='{alt3$image}' width=100&gt;&lt;br&gt;</span></span>
+<span id="cb24-29"><a href=""></a><span class="st">      **Type**: {alt3$type}&lt;br&gt;</span></span>
+<span id="cb24-30"><a href=""></a><span class="st">      **Price**: $ {alt3$price} / lb</span></span>
+<span id="cb24-31"><a href=""></a><span class="st">    "</span></span>
+<span id="cb24-32"><a href=""></a>    )</span>
+<span id="cb24-33"><a href=""></a>  )</span>
+<span id="cb24-34"><a href=""></a>  <span class="fu">return</span>(options)</span>
+<span id="cb24-35"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2146,7 +2253,7 @@ Question 2
 
 <h3 id="create-the-options-for-each-choice-question-1">5. Create the options for each choice question</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>cbc1_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>cbc1_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Value stored in your data:</p>
 <div class="cell">
@@ -2159,7 +2266,7 @@ Question 2
 <p>Label:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [1] "  **Option 1**&lt;br&gt;\n  &lt;img src='images/pinkLady.jpg' width=100&gt;&lt;br&gt;\n  **Type**: Pink Lady&lt;br&gt;\n  **Price**: $ 3.5 / lb"</code></pre>
+<pre><code>#&gt; [1] "  **Option 1**&lt;br&gt;\n  &lt;img src='images/redDelicious.jpg' width=100&gt;&lt;br&gt;\n  **Type**: Red Delicious&lt;br&gt;\n  **Price**: $ 1.5 / lb"</code></pre>
 </div>
 </div>
 </div>
@@ -2168,9 +2275,9 @@ Question 2
 <div class="cell">
 <div class="cell-output-display">
   **Option 1**<br>
-  <img src="images/pinkLady.jpg" width="100"><br>
-  **Type**: Pink Lady<br>
-  **Price**: $ 3.5 / lb
+  <img src="images/redDelicious.jpg" width="100"><br>
+  **Type**: Red Delicious<br>
+  **Price**: $ 1.5 / lb
 </div>
 </div>
 </div>
@@ -2181,12 +2288,12 @@ Question 2
 <h3 id="create-the-options-for-each-choice-question-2">5. Create the options for each choice question</h3>
 <p>Now make the options for each question</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>cbc1_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">1</span>))</span>
-<span id="cb20-2"><a href=""></a>cbc2_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">2</span>))</span>
-<span id="cb20-3"><a href=""></a>cbc3_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">3</span>))</span>
-<span id="cb20-4"><a href=""></a>cbc4_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">4</span>))</span>
-<span id="cb20-5"><a href=""></a>cbc5_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">5</span>))</span>
-<span id="cb20-6"><a href=""></a>cbc6_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">6</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a>cbc1_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">1</span>))</span>
+<span id="cb28-2"><a href=""></a>cbc2_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">2</span>))</span>
+<span id="cb28-3"><a href=""></a>cbc3_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">3</span>))</span>
+<span id="cb28-4"><a href=""></a>cbc4_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">4</span>))</span>
+<span id="cb28-5"><a href=""></a>cbc5_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">5</span>))</span>
+<span id="cb28-6"><a href=""></a>cbc6_options <span class="ot">&lt;-</span> <span class="fu">make_cbc_options</span>(df <span class="sc">|&gt;</span> <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">6</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level0">
@@ -2197,12 +2304,12 @@ Question 2
 <p>Code:</p>
 <div class="font80">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">sd_question</span>(</span>
-<span id="cb21-2"><a href=""></a>  <span class="at">type =</span> <span class="st">'mc_buttons'</span>,</span>
-<span id="cb21-3"><a href=""></a>  <span class="at">id =</span> <span class="st">'cbc_q1'</span>,</span>
-<span id="cb21-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"(1 of 6) If these were your only options, which would you choose?"</span>,</span>
-<span id="cb21-5"><a href=""></a>  <span class="at">option =</span> cbc1_options</span>
-<span id="cb21-6"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="fu">sd_question</span>(</span>
+<span id="cb29-2"><a href=""></a>  <span class="at">type =</span> <span class="st">'mc_buttons'</span>,</span>
+<span id="cb29-3"><a href=""></a>  <span class="at">id =</span> <span class="st">'cbc_q1'</span>,</span>
+<span id="cb29-4"><a href=""></a>  <span class="at">label =</span> <span class="st">"(1 of 6) If these were your only options, which would you choose?"</span>,</span>
+<span id="cb29-5"><a href=""></a>  <span class="at">option =</span> cbc1_options</span>
+<span id="cb29-6"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2219,26 +2326,26 @@ Question 2
 <h2><span class="center">TABLE layout: Show options in a table with <code>kable()</code></span></h2>
 <div class="font80">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb22-2"><a href=""></a></span>
-<span id="cb22-3"><a href=""></a>alts <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb22-4"><a href=""></a>  <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb22-5"><a href=""></a>  <span class="fu">mutate</span>(</span>
-<span id="cb22-6"><a href=""></a>    <span class="co"># Add $ sign to price and html code for image path</span></span>
-<span id="cb22-7"><a href=""></a>    <span class="at">price =</span> <span class="fu">paste</span>(scales<span class="sc">::</span><span class="fu">dollar</span>(price), <span class="st">"/ lb"</span>),</span>
-<span id="cb22-8"><a href=""></a>    <span class="at">image =</span> <span class="fu">paste0</span>(<span class="st">'&lt;img src="'</span>, image, <span class="st">'" width=100&gt;'</span>)</span>
-<span id="cb22-9"><a href=""></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb22-10"><a href=""></a>  <span class="co"># Make nicer attribute labels</span></span>
-<span id="cb22-11"><a href=""></a>  <span class="fu">select</span>(</span>
-<span id="cb22-12"><a href=""></a>    <span class="st">`</span><span class="at">Option:</span><span class="st">`</span> <span class="ot">=</span> altID,</span>
-<span id="cb22-13"><a href=""></a>    <span class="st">`</span><span class="at"> </span><span class="st">`</span> <span class="ot">=</span> image,</span>
-<span id="cb22-14"><a href=""></a>    <span class="st">`</span><span class="at">Price:</span><span class="st">`</span> <span class="ot">=</span> price,</span>
-<span id="cb22-15"><a href=""></a>    <span class="st">`</span><span class="at">Type:</span><span class="st">`</span> <span class="ot">=</span> type,</span>
-<span id="cb22-16"><a href=""></a>    <span class="st">`</span><span class="at">Freshness:</span><span class="st">`</span> <span class="ot">=</span> freshness</span>
-<span id="cb22-17"><a href=""></a>  )</span>
-<span id="cb22-18"><a href=""></a></span>
-<span id="cb22-19"><a href=""></a><span class="co"># Drop row names</span></span>
-<span id="cb22-20"><a href=""></a><span class="fu">row.names</span>(alts) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-2"><a href=""></a></span>
+<span id="cb30-3"><a href=""></a>alts <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb30-4"><a href=""></a>  <span class="fu">filter</span>(qID <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-5"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb30-6"><a href=""></a>    <span class="co"># Add $ sign to price and html code for image path</span></span>
+<span id="cb30-7"><a href=""></a>    <span class="at">price =</span> <span class="fu">paste</span>(scales<span class="sc">::</span><span class="fu">dollar</span>(price), <span class="st">"/ lb"</span>),</span>
+<span id="cb30-8"><a href=""></a>    <span class="at">image =</span> <span class="fu">paste0</span>(<span class="st">'&lt;img src="'</span>, image, <span class="st">'" width=100&gt;'</span>)</span>
+<span id="cb30-9"><a href=""></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb30-10"><a href=""></a>  <span class="co"># Make nicer attribute labels</span></span>
+<span id="cb30-11"><a href=""></a>  <span class="fu">select</span>(</span>
+<span id="cb30-12"><a href=""></a>    <span class="st">`</span><span class="at">Option:</span><span class="st">`</span> <span class="ot">=</span> altID,</span>
+<span id="cb30-13"><a href=""></a>    <span class="st">`</span><span class="at"> </span><span class="st">`</span> <span class="ot">=</span> image,</span>
+<span id="cb30-14"><a href=""></a>    <span class="st">`</span><span class="at">Price:</span><span class="st">`</span> <span class="ot">=</span> price,</span>
+<span id="cb30-15"><a href=""></a>    <span class="st">`</span><span class="at">Type:</span><span class="st">`</span> <span class="ot">=</span> type,</span>
+<span id="cb30-16"><a href=""></a>    <span class="st">`</span><span class="at">Freshness:</span><span class="st">`</span> <span class="ot">=</span> freshness</span>
+<span id="cb30-17"><a href=""></a>  )</span>
+<span id="cb30-18"><a href=""></a></span>
+<span id="cb30-19"><a href=""></a><span class="co"># Drop row names</span></span>
+<span id="cb30-20"><a href=""></a><span class="fu">row.names</span>(alts) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -2248,12 +2355,12 @@ Question 2
 <p>Display the <em>transpose</em>, <code>t(alts)</code></p>
 <div class="font80">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">kbl</span>(<span class="fu">t</span>(alts), <span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb23-2"><a href=""></a>  <span class="fu">kable_styling</span>(</span>
-<span id="cb23-3"><a href=""></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>),</span>
-<span id="cb23-4"><a href=""></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb23-5"><a href=""></a>    <span class="at">position =</span> <span class="st">"center"</span></span>
-<span id="cb23-6"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="fu">kbl</span>(<span class="fu">t</span>(alts), <span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href=""></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb31-3"><a href=""></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>),</span>
+<span id="cb31-4"><a href=""></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb31-5"><a href=""></a>    <span class="at">position =</span> <span class="st">"center"</span></span>
+<span id="cb31-6"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="table table-striped table-hover table-condensed caption-top" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <tbody>
@@ -2265,27 +2372,27 @@ Question 2
 </tr>
 <tr class="even">
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><img data-src="images/pinkLady.jpg" width="100"></td>
-<td style="text-align: left;"><img data-src="images/honeycrisp.jpg" width="100"></td>
+<td style="text-align: left;"><img data-src="images/redDelicious.jpg" width="100"></td>
 <td style="text-align: left;"><img data-src="images/gala.jpg" width="100"></td>
+<td style="text-align: left;"><img data-src="images/pinkLady.jpg" width="100"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Price:</td>
-<td style="text-align: left;">$3.50 / lb</td>
-<td style="text-align: left;">$4.00 / lb</td>
-<td style="text-align: left;">$2.50 / lb</td>
+<td style="text-align: left;">$1.50 / lb</td>
+<td style="text-align: left;">$1.50 / lb</td>
+<td style="text-align: left;">$3.00 / lb</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Type:</td>
-<td style="text-align: left;">Pink Lady</td>
-<td style="text-align: left;">Honeycrisp</td>
+<td style="text-align: left;">Red Delicious</td>
 <td style="text-align: left;">Gala</td>
+<td style="text-align: left;">Pink Lady</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Freshness:</td>
-<td style="text-align: left;">Excellent</td>
 <td style="text-align: left;">Average</td>
-<td style="text-align: left;">Excellent</td>
+<td style="text-align: left;">Poor</td>
+<td style="text-align: left;">Poor</td>
 </tr>
 </tbody>
 </table>
@@ -2309,10 +2416,10 @@ Question 2
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_b8411b85" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_081004bf" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
-<h2 id="your-turn-1">Your Turn</h2>
+<h2 id="your-turn-2">Your Turn</h2>
 <p>With your team, choose a format to work with (buttons or table) for your choice question, then modify the example survey to match your project.</p>
 <p><br></p>
 <h2 id="versions">Versions:</h2>

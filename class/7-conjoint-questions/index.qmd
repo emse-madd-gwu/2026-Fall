@@ -29,88 +29,117 @@ library(glue)
 set.seed(123)
 
 # Define profiles with attributes and levels
+# (this matches the conjoint_buttons / conjoint_tables templates)
 profiles <- cbc_profiles(
-  price = c(15, 20, 25), # Price ($1,000)
-  fuelEconomy = c(20, 25, 30), # Fuel economy (mpg)
-  accelTime = c(6, 7, 8), # 0-60 mph acceleration time (s)
-  powertrain = c("Gasoline", "Electric")
+  type = c("Fuji", "Gala", "Honeycrisp", "Pink Lady", "Red Delicious"),
+  price = seq(1, 4, 0.5), # Price ($ / lb)
+  freshness = c("Excellent", "Average", "Poor")
 )
-# Make a full-factorial design of experiment
+
+# Make a basic full-factorial design of experiment
 design <- cbc_design(
   profiles = profiles,
-  n_resp = 500, # Number of respondents
+  n_resp = 2000, # Number of respondents
   n_alts = 3, # Number of alternatives per question
-  n_q = 8 # Number of questions per respondent
+  n_q = 6 # Number of questions per respondent
+)
+
+# A second set of profiles with an extra "sourcing" attribute, used to
+# illustrate labeled designs, restrictions, and balance_by
+profiles2 <- cbc_profiles(
+  type = c("Fuji", "Gala", "Honeycrisp"),
+  price = seq(1, 4, 0.5),
+  sourcing = c("Local", "Imported"),
+  milesTraveled = c(50, 500, 1500, 3000)
 )
 
 # Make a labeled full-factorial design of experiment
 design_labeled <- cbc_design(
-  profiles = profiles,
+  profiles = profiles2,
   n_resp = 500, # Number of respondents
-  n_alts = 2, # Number of alternatives per question
-  n_q = 8, # Number of questions per respondent
-  label = "powertrain"
+  n_alts = 2, # Number of alternatives per question (= # of label levels)
+  n_q = 6, # Number of questions per respondent
+  label = "sourcing"
 )
 
 # Make a survey with no choice option
 design_no_choice <- cbc_design(
   profiles = profiles,
-  n_resp = 500, # Number of respondents
+  n_resp = 2000, # Number of respondents
   n_alts = 3, # Number of alternatives per question
-  n_q = 8, # Number of questions per respondent
+  n_q = 6, # Number of questions per respondent
   no_choice = TRUE
+)
+
+# "milesTraveled" only makes sense for imported apples, so restrict local
+# apples to the lowest ("~0") value
+profiles2_restricted <- cbc_restrict(
+  profiles2,
+  sourcing == "Local" & milesTraveled > 50
+)
+
+# Restricting creates an imbalance: "Imported" apples have more valid
+# attribute combinations left, so they get sampled more often
+design_restricted <- cbc_design(
+  profiles = profiles2_restricted,
+  n_resp = 500,
+  n_alts = 2,
+  n_q = 6
+)
+
+# Fix the imbalance with balance_by
+design_balanced <- cbc_design(
+  profiles = profiles2_restricted,
+  n_resp = 500,
+  n_alts = 2,
+  n_q = 6,
+  balance_by = "sourcing"
 )
 
 design_short <- design %>%
   mutate(
-    price = scales::dollar(price),
-    fuelEconomy = paste0(fuelEconomy, " (mpg)"),
-    accelTime = paste0(accelTime, " (s)")
+    price = scales::dollar(price)
   ) %>%
   select(
     respID,
     qID,
     `Option:` = altID,
+    `Type:` = type,
     `Price:` = price,
-    `Fuel Economy:` = fuelEconomy,
-    `Accel. Time:` = accelTime,
-    `Powertrain:` = powertrain
+    `Freshness:` = freshness
   ) %>%
   as.data.frame()
 design_labeled_short <- design_labeled %>%
   mutate(
     price = scales::dollar(price),
-    fuelEconomy = paste0(fuelEconomy, " (mpg)"),
-    accelTime = paste0(accelTime, " (s)")
+    milesTraveled = paste0(milesTraveled, " mi")
   ) %>%
   select(
     respID,
     qID,
-    `Option:` = powertrain,
+    `Option:` = sourcing,
+    `Type:` = type,
     `Price:` = price,
-    `Fuel Economy:` = fuelEconomy,
-    `Accel. Time:` = accelTime
+    `Miles traveled:` = milesTraveled
   ) %>%
   as.data.frame()
 design_no_choice_short <- design_no_choice %>%
   mutate(
+    type = as.character(type),
+    freshness = as.character(freshness),
     price = scales::dollar(price),
-    fuelEconomy = paste0(fuelEconomy, " (mpg)"),
-    accelTime = paste0(accelTime, " (s)"),
     price = ifelse(altID == 4, "", price),
-    fuelEconomy = ifelse(altID == 4, "", fuelEconomy),
-    accelTime = ifelse(altID == 4, "", accelTime),
-    powertrain = ifelse(altID == 4, "", powertrain),
+    type = ifelse(altID == 4, "", type),
+    freshness = ifelse(altID == 4, "", freshness),
     altID = ifelse(altID == 4, "None", altID)
   ) %>%
   select(
     respID,
     qID,
     `Option:` = altID,
+    `Type:` = type,
     `Price:` = price,
-    `Fuel Economy:` = fuelEconomy,
-    `Accel. Time:` = accelTime,
-    `Powertrain:` = powertrain
+    `Freshness:` = freshness
   ) %>%
   as.data.frame()
 row.names(design_no_choice_short) <- seq(nrow(design_no_choice_short))
@@ -264,19 +293,12 @@ agenda(1)
 
 ---
 
-## Download & unzip:
-
-## - [logitr-cars](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip)
-
-## - [today's practice notes (2 survey templates)](https://madd.seas.gwu.edu/2026-Fall/class/7-conjoint-questions.html)
-
----
-
 {{< middle >}}
 {{< inverse >}}
-{{< center >}}
 
-# Open the `logitr-cars` folder in Positron
+# 1. Download today's notes, then
+
+# 2. Open the `conjoint_buttons` folder in Positron
 
 ---
 
@@ -333,11 +355,79 @@ kable(t(design_q2))
 
 ---
 
+# [This is exactly what's in]{.center}<br>[`code/1_make_choice_questions.R`]{.center}
+
+::: {.font80}
+
+```{r}
+#| eval: false
+profiles <- cbc_profiles(
+  type = c("Fuji", "Gala", "Honeycrisp", "Pink Lady", "Red Delicious"),
+  price = seq(1, 4, 0.5), # Price ($ / lb)
+  freshness = c("Excellent", "Average", "Poor")
+)
+
+design <- cbc_design(
+  profiles = profiles,
+  n_resp = 2000, # Number of respondents
+  n_alts = 3, # Number of alternatives per question
+  n_q = 6 # Number of questions per respondent
+)
+```
+
+:::
+
+---
+
+{{< inverse >}}
+
+```{r}
+#| echo: false
+countdown(
+  minutes = 15,
+  warn_when = 10,
+  update_every = 1,
+  top = "0.5em",
+  right = "0.5em",
+  font_size = '2em'
+)
+```
+
+## Your Turn
+
+## Open the `conjoint_buttons` template folder in Positron
+
+In `code/1_make_choice_questions.R`, replace the apple `profiles` with your own team's attributes and levels
+
+Leave `cbc_design()` at its default values for now - just get a basic design of your own running
+
+---
+
+{{< inverse >}}
+{{< middle >}}
 {{< center >}}
 
-# Labeled Design
+# Three design choices to consider
 
-One attribute is used as the "label" - choice options are fixed according to the label
+---
+
+# [Three design choices to consider]{.center}
+
+<br>
+
+### 1. Regular or labeled?
+
+### 2. Include a "none" option (outside good) or not?
+
+### 3. Include restrictions?
+
+---
+
+{{< center >}}
+
+# 1. Regular or labeled?
+
+A **labeled** design fixes one attribute to a specific option position<br>e.g. Option 1 is always "Local", option 2 is always "Imported"
 
 ::: {.col .font90}
 
@@ -363,13 +453,34 @@ kable(t(design_labeled_q2))
 
 ---
 
+# [Code: labeled design]{.center}
+
+::: {.font80}
+
+```{r}
+#| eval: false
+design_labeled <- cbc_design(
+  profiles = profiles,
+  n_resp = 500,
+  n_alts = 2, # must equal the # of levels in the label attribute
+  n_q = 6,
+  label = "sourcing"
+)
+```
+
+:::
+
+Use a labeled design when respondents are really comparing **named alternatives** (brands, powertrains, sourcing...) rather than unlabeled bundles of attributes
+
+---
+
 {{< center >}}
 
-# Design with a "None" option
+# 2. Include a "none" option?
 
-A "none" option means they can choose an "other" option
+A "none" option lets respondents say "I wouldn't buy any of these"
 
-::: {.col .font90}
+::: {.col .font80}
 
 ## Question 1
 
@@ -380,7 +491,7 @@ kable(t(design_no_choice_q1))
 
 :::
 
-::: {.col .font90}
+::: {.col .font80}
 
 ## Question 2
 
@@ -393,31 +504,107 @@ kable(t(design_no_choice_q2))
 
 ---
 
+# [Code: a "none" option]{.center}
+
+::: {.font80}
+
+```{r}
+#| eval: false
+design_no_choice <- cbc_design(
+  profiles = profiles,
+  n_resp = 2000,
+  n_alts = 3,
+  n_q = 6,
+  no_choice = TRUE
+)
+```
+
+:::
+
+Without this, respondents are forced to pick one of the alternatives shown, even if they wouldn't choose any of them in real life
+
+---
+
 # [Attribute-specific features]{.center}
 
 Some attributes may only be valid for certain levels of other attributes
 
-> **Example**: The driving range of an electric vehicle (EV) only applies to EVs and not gasoline-powered vehicles.
+> **Example**: "Miles traveled" only makes sense for **imported** apples (locally grown apples don't really have a meaningful travel distance).
 
 . . .
 
 <br>
 
-To implement this, you may need to add restrictions to your `profiles` with `cbc_restrict()`
+To implement this, add restrictions to your `profiles` with `cbc_restrict()`
 
-(see `logitr-cars` code 1.2)
+---
+
+# [Code: restrictions]{.center}
+
+::: {.font70}
+
+```{r}
+#| eval: false
+profiles <- cbc_profiles(
+  type = c("Fuji", "Gala", "Honeycrisp"),
+  price = seq(1, 4, 0.5),
+  sourcing = c("Local", "Imported"),
+  milesTraveled = c(50, 500, 1500, 3000)
+)
+
+# Local apples only get the lowest ("~0") miles traveled value
+profiles_restricted <- profiles %>%
+  cbc_restrict(
+    sourcing == "Local" & milesTraveled > 50
+  )
+```
+
+:::
 
 ---
 
 # [Warning]{.red}: Restrictions can lead to imbalances
 
-<br>
+Design the questions from the restricted profiles...
 
-Use `balance_by` in `cbc_design()` to fix imbalances
+```{r}
+#| eval: false
+design_restricted <- cbc_design(
+  profiles = profiles_restricted,
+  n_resp = 500,
+  n_alts = 2,
+  n_q = 6
+)
+```
 
-<br>
+```{r}
+#| echo: false
+table(design_restricted$sourcing)
+```
 
-(see `logitr-cars` code 1.2)
+"Imported" apples show up far more often, since they have more valid attribute combinations left after restricting
+
+---
+
+# Fix imbalances with `balance_by`
+
+```{r}
+#| eval: false
+design_balanced <- cbc_design(
+  profiles = profiles_restricted,
+  n_resp = 500,
+  n_alts = 2,
+  n_q = 6,
+  balance_by = "sourcing"
+)
+```
+
+```{r}
+#| echo: false
+table(design_balanced$sourcing)
+```
+
+Now "Local" and "Imported" show up about equally often
 
 ---
 
@@ -437,15 +624,13 @@ countdown(
 
 ## Your Turn
 
-## Open the "conjoint_buttons" template folder in Positron
-
 With your team, discuss the specific choice question design for your project
 
 - Regular or labeled?
 - Include a "none" option (outside good) or not?
 - Include restrictions?
 
-Then edit the `make-choice-questions.R` file to design your choice questions.
+Then update `code/1_make_choice_questions.R` to match
 
 ---
 

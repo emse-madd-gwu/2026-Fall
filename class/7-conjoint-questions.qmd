@@ -7,7 +7,7 @@ execute:
   message: false
 params:
   class: "7-conjoint-questions"
-  logitrcars: true
+  logitrcars: false
 ---
 
 ```{r child = here::here("fragments", "class.qmd")}
