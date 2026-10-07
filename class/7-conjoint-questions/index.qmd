@@ -7,6 +7,7 @@ week: 7
 displaydate: October 07, 2026
 format: 
   lexis-revealjs:
+    code-block-height: "800px"
     link-external-newwindow: true
 mouse-wheel: true
 progress: false
@@ -29,35 +30,35 @@ set.seed(123)
 
 # Define profiles with attributes and levels
 profiles <- cbc_profiles(
-    price       = c(15, 20, 25), # Price ($1,000)
-    fuelEconomy = c(20, 25, 30), # Fuel economy (mpg)
-    accelTime   = c(6, 7, 8),    # 0-60 mph acceleration time (s)
-    powertrain  = c("Gasoline", "Electric")
+  price = c(15, 20, 25), # Price ($1,000)
+  fuelEconomy = c(20, 25, 30), # Fuel economy (mpg)
+  accelTime = c(6, 7, 8), # 0-60 mph acceleration time (s)
+  powertrain = c("Gasoline", "Electric")
 )
 # Make a full-factorial design of experiment
 design <- cbc_design(
-    profiles = profiles,
-    n_resp   = 500, # Number of respondents
-    n_alts   = 3,   # Number of alternatives per question
-    n_q      = 8    # Number of questions per respondent
-) %>%
-  cbc_decode()
+  profiles = profiles,
+  n_resp = 500, # Number of respondents
+  n_alts = 3, # Number of alternatives per question
+  n_q = 8 # Number of questions per respondent
+)
+
 # Make a labeled full-factorial design of experiment
 design_labeled <- cbc_design(
-    profiles = profiles,
-    n_resp   = 500, # Number of respondents
-    n_alts   = 2,   # Number of alternatives per question
-    n_q      = 8,   # Number of questions per respondent
-    label    = "powertrain"
-) %>%
-  cbc_decode()
+  profiles = profiles,
+  n_resp = 500, # Number of respondents
+  n_alts = 2, # Number of alternatives per question
+  n_q = 8, # Number of questions per respondent
+  label = "powertrain"
+)
+
 # Make a survey with no choice option
 design_no_choice <- cbc_design(
-    profiles = profiles,
-    n_resp   = 500, # Number of respondents
-    n_alts   = 3,   # Number of alternatives per question
-    n_q      = 8,   # Number of questions per respondent
-    no_choice = TRUE
+  profiles = profiles,
+  n_resp = 500, # Number of respondents
+  n_alts = 3, # Number of alternatives per question
+  n_q = 8, # Number of questions per respondent
+  no_choice = TRUE
 )
 
 design_short <- design %>%
@@ -67,7 +68,8 @@ design_short <- design %>%
     accelTime = paste0(accelTime, " (s)")
   ) %>%
   select(
-    respID, qID,
+    respID,
+    qID,
     `Option:` = altID,
     `Price:` = price,
     `Fuel Economy:` = fuelEconomy,
@@ -82,7 +84,8 @@ design_labeled_short <- design_labeled %>%
     accelTime = paste0(accelTime, " (s)")
   ) %>%
   select(
-    respID, qID,
+    respID,
+    qID,
     `Option:` = powertrain,
     `Price:` = price,
     `Fuel Economy:` = fuelEconomy,
@@ -97,12 +100,12 @@ design_no_choice_short <- design_no_choice %>%
     price = ifelse(altID == 4, "", price),
     fuelEconomy = ifelse(altID == 4, "", fuelEconomy),
     accelTime = ifelse(altID == 4, "", accelTime),
-    powertrain = ifelse(powertrainElectric == 1, "Electric", "Gasoline"),
     powertrain = ifelse(altID == 4, "", powertrain),
     altID = ifelse(altID == 4, "None", altID)
   ) %>%
   select(
-    respID, qID,
+    respID,
+    qID,
     `Option:` = altID,
     `Price:` = price,
     `Fuel Economy:` = fuelEconomy,
@@ -233,7 +236,7 @@ The Eiffel Tower is 324 meters tall<sup>1</sup>
 
 **Complex (but more complete) approach**: Use bibtex
 
-https://quarto.org/docs/authoring/footnotes-and-citations.html
+<https://quarto.org/docs/authoring/footnotes-and-citations.html>
 
 You can insert citations with `[@citekey]`, and a "References" table will be automatically created.
 
@@ -265,7 +268,7 @@ agenda(1)
 
 ## - [logitr-cars](https://github.com/jhelvy/logitr-cars/archive/refs/heads/main.zip)
 
-## - [today's practice notes (2 survey templates)](https://madd.seas.gwu.edu/2026-Fall/class/6-conjoint-questions.html)
+## - [today's practice notes (2 survey templates)](https://madd.seas.gwu.edu/2026-Fall/class/7-conjoint-questions.html)
 
 ---
 
@@ -285,7 +288,7 @@ Install with:
 
 ```{r}
 #| eval: false
-pak::pak("jhelvy/cbcTools")
+remotes::install_github("jhelvy/cbcTools")
 ```
 
 ---
@@ -426,8 +429,8 @@ countdown(
   minutes = 20,
   warn_when = 15,
   update_every = 1,
-  top = 0,
-  right = 0,
+  top = "0.5em",
+  right = "0.5em",
   font_size = '2em'
 )
 ```
@@ -496,7 +499,6 @@ In your survey data, you will have a `respID` column
 ### 3. Filter the design for the respondentID
 
 ```{r}
-#| code-line-numbers: "1,2"
 df <- design %>%
   filter(respID == respondentID) %>%
   mutate(image = paste0("images/", image))
@@ -520,7 +522,7 @@ head(df)
 
 :::
 
-::: {.col .font70}
+::: {.col .font60}
 
 ```{r}
 make_cbc_options <- function(df) {
@@ -531,24 +533,30 @@ make_cbc_options <- function(df) {
   options <- c("option_1", "option_2", "option_3")
 
   names(options) <- c(
-    glue("
+    glue(
+      "
       **Option 1**<br>
       <img src='{alt1$image}' width=100><br>
       **Type**: {alt1$type}<br>
       **Price**: $ {alt1$price} / lb
-    "),
-    glue("
+    "
+    ),
+    glue(
+      "
       **Option 2**<br>
       <img src='{alt2$image}' width=100><br>
       **Type**: {alt2$type}<br>
       **Price**: $ {alt2$price} / lb
-    "),
-    glue("
+    "
+    ),
+    glue(
+      "
       **Option 3**<br>
       <img src='{alt3$image}' width=100><br>
       **Type**: {alt3$type}<br>
       **Price**: $ {alt3$price} / lb
-    ")
+    "
+    )
   )
   return(options)
 }
@@ -566,6 +574,7 @@ Make one-row data frames for each alternative.
 
 For example, `alt1` looks like this:
 
+::: {.font80}
 ```{r}
 #| echo: false
 
@@ -575,14 +584,13 @@ alt1 <- df %>%
 
 glimpse(alt1)
 ```
-
+:::
 :::
 
-::: {.col .font70}
+::: {.col .font60}
 
 ```{r}
 #| eval: false
-#| code-line-numbers: "2,3,4"
 
 make_cbc_options <- function(df) {
   alt1 <- df |> filter(altID == 1)
@@ -592,24 +600,30 @@ make_cbc_options <- function(df) {
   options <- c("option_1", "option_2", "option_3")
 
   names(options) <- c(
-    glue("
+    glue(
+      "
       **Option 1**<br>
       <img src='{alt1$image}' width=100><br>
       **Type**: {alt1$type}<br>
       **Price**: $ {alt1$price} / lb
-    "),
-    glue("
+    "
+    ),
+    glue(
+      "
       **Option 2**<br>
       <img src='{alt2$image}' width=100><br>
       **Type**: {alt2$type}<br>
       **Price**: $ {alt2$price} / lb
-    "),
-    glue("
+    "
+    ),
+    glue(
+      "
       **Option 3**<br>
       <img src='{alt3$image}' width=100><br>
       **Type**: {alt3$type}<br>
       **Price**: $ {alt3$price} / lb
-    ")
+    "
+    )
   )
   return(options)
 }
@@ -623,30 +637,34 @@ make_cbc_options <- function(df) {
 
 ### 4. Define a function to create question options
 
+::: {.font80}
 ```{r}
 alt1[c('image', 'type', 'price')]
 ```
+:::
 
-Highlighted section renders as:
+Renders as:
 
+::: {.font80}
 ```{r}
 #| echo: false
 
-cat(glue("
+cat(glue(
+  "
   **Option 1**<br>
   <img src='{alt1$image}' width=100><br>
   **Type**: {alt1$type}<br>
   **Price**: $ {alt1$price} / lb
-"))
+"
+))
 ```
-
+:::
 :::
 
-::: {.col .font70}
+::: {.col .font60}
 
 ```{r}
 #| eval: false
-#| code-line-numbers: "9-14"
 
 make_cbc_options <- function(df) {
   alt1 <- df |> filter(altID == 1)
@@ -656,24 +674,30 @@ make_cbc_options <- function(df) {
   options <- c("option_1", "option_2", "option_3")
 
   names(options) <- c(
-    glue("
+    glue(
+      "
       **Option 1**<br>
       <img src='{alt1$image}' width=100><br>
       **Type**: {alt1$type}<br>
       **Price**: $ {alt1$price} / lb
-    "),
-    glue("
+    "
+    ),
+    glue(
+      "
       **Option 2**<br>
       <img src='{alt2$image}' width=100><br>
       **Type**: {alt2$type}<br>
       **Price**: $ {alt2$price} / lb
-    "),
-    glue("
+    "
+    ),
+    glue(
+      "
       **Option 3**<br>
       <img src='{alt3$image}' width=100><br>
       **Type**: {alt3$type}<br>
       **Price**: $ {alt3$price} / lb
-    ")
+    "
+    )
   )
   return(options)
 }
@@ -744,17 +768,18 @@ cbc6_options <- make_cbc_options(df |> filter(qID == 6))
 
 Code:
 
+::: {.font80}
 ```{r}
 #| eval: false
 
 sd_question(
-  type   = 'mc_buttons',
-  id     = 'cbc_q1',
-  label  = "(1 of 6) If these were your only options, which would you choose?",
+  type = 'mc_buttons',
+  id = 'cbc_q1',
+  label = "(1 of 6) If these were your only options, which would you choose?",
   option = cbc1_options
 )
 ```
-
+:::
 :::
 
 ::: {.col}
@@ -771,6 +796,7 @@ Renders as:
 
 ## [TABLE layout: Show options in a table with `kable()`]{.center}
 
+::: {.font80}
 ```{r}
 library(dplyr)
 
@@ -779,18 +805,21 @@ alts <- df %>%
   mutate(
     # Add $ sign to price and html code for image path
     price = paste(scales::dollar(price), "/ lb"),
-    image = paste0('<img src="', image, '" width=100>')) %>%
+    image = paste0('<img src="', image, '" width=100>')
+  ) %>%
   # Make nicer attribute labels
   select(
-    `Option:`    = altID,
-    ` `          = image,
-    `Price:`     = price,
-    `Type:`      = type,
-    `Freshness:` = freshness)
+    `Option:` = altID,
+    ` ` = image,
+    `Price:` = price,
+    `Type:` = type,
+    `Freshness:` = freshness
+  )
 
 # Drop row names
 row.names(alts) <- NULL
 ```
+:::
 
 ---
 
@@ -798,6 +827,7 @@ row.names(alts) <- NULL
 
 Display the _transpose_, `t(alts)`
 
+::: {.font80}
 ```{r}
 kbl(t(alts), escape = FALSE) %>%
   kable_styling(
@@ -806,6 +836,7 @@ kbl(t(alts), escape = FALSE) %>%
     position = "center"
   )
 ```
+:::
 
 ---
 
@@ -816,7 +847,7 @@ kbl(t(alts), escape = FALSE) %>%
 Your choice question can be defined in the `survey.qmd`<br>file as it is just choosing one of three options:
 
 <center>
-<img src="images/example-table.png" width=550>
+<img src="images/example-table.png" width=700>
 </center>
 
 ---
@@ -826,12 +857,12 @@ Your choice question can be defined in the `survey.qmd`<br>file as it is just ch
 ```{r}
 #| echo: false
 countdown(
-    minutes = 20,
-    warn_when = 15,
-    update_every = 1,
-    top = 0,
-    right = 0,
-    font_size = '2em'
+  minutes = 20,
+  warn_when = 15,
+  update_every = 1,
+  top = "0.5em",
+  right = "0.5em",
+  font_size = '2em'
 )
 ```
 

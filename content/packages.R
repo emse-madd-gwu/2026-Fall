@@ -14,6 +14,7 @@ install.packages(c(
     "knitr",
     "logitr",
     "MASS",
+    "pak",
     "quarto",
     "remotes",
     "rmarkdown",
@@ -24,3 +25,4 @@ install.packages(c(
 # Install development packages from GitHub
 
 remotes::install_github("jhelvy/jph")
+remotes::install_github("jhelvy/cbcTools")
