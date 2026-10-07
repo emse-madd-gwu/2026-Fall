@@ -53,11 +53,11 @@ Follow these guidelines in inserting your content:
 - In your `survey.qmd` file, you should have your randomized sets of choice questions working using your `choice_questions.csv` design file.
 - Setup a [database connection](https://surveydown.org/docs/storing-data) on Supabase and make sure your survey data is being stored properly in the database.
 
-# 4. Upload your survey to shinyapps.io
+# 4. Upload your survey to Posit Connect Cloud
 
-Only one person from your team should create an account for hosting your survey on shinyapps.io. Follow the documentation on [deploying the app](https://surveydown.org/docs/deployment).
+Only one person from your team should create an account for hosting your survey on Posit Connect Cloud. Follow the documentation on [deploying the app](https://surveydown.org/docs/deployment).
 
-> Be sure to run the `app.R` file to preview your choice questions locally as a Shiny app before deploying to shinyapps.io.
+> Be sure to run the `app.R` file to preview your choice questions locally as a Shiny app before deploying to Posit Connect Cloud.
 
 # 5. Attribution
 
