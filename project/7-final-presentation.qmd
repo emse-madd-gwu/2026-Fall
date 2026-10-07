@@ -41,7 +41,7 @@ Below is a list of specific items your presentation should include.
 - Your presentation should be no longer than 10 minutes in length.
 - Each team member must present at least one slide.
 - You may use as many slides as you feel helps you communicate your ideas (but keep the 10 minute limit in mind).
-- Your title slide should include the project title, team member names, and the presentation date: December 10, 2025.
+- Your title slide should include the project title, team member names, and the presentation date: December 9, 2026.
 - All slides should be numbered in the bottom-left or bottom-right corners.
 - Review the slide design guidelines discussed in [class](https://madd.seas.gwu.edu/2026-Fall/class/14-communicating-results.html) as a check list when designing your slides.
 

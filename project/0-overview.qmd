@@ -21,13 +21,13 @@ Teams will apply topics covered in class to develop quantitative models of consu
 <div style="width:600px">
 Item            | Weight towards<br>final grade | Due Date<br>(by 11:59pm)
 ----------------|----------------------------|--------------------
-Project Proposal      | 5 %    | Sep. 21
-Survey Plan           | 5 %    | Sep. 30
-Pilot Survey          | 5 %    | Oct. 14
-Pilot Analysis        | 5 %    | Nov. 02
-Final Survey          | 5 %    | Nov. 16
-Final Analysis Report | 15 %   | Dec. 07
-Final Presentation    | 5 %    | Dec. 09
+Project Proposal      | 5 %    | Sep. 20
+Survey Plan           | 5 %    | Sep. 29
+Pilot Survey          | 5 %    | Oct. 13
+Pilot Analysis        | 5 %    | Nov. 01
+Final Survey          | 5 %    | Nov. 15
+Final Analysis Report | 15 %   | Dec. 06
+Final Presentation    | 5 %    | Dec. 08
 </div>
 
 # Project Selection
