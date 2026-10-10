@@ -7,6 +7,7 @@ week: 11
 displaydate: November 04, 2026
 format: 
   lexis-revealjs:
+    code-block-height: "800px"
     link-external-newwindow: true
 mouse-wheel: true
 progress: false
@@ -62,7 +63,7 @@ countdown(
 
 <br>
 <center>
-<img src="https://github.com/emse-madd-gwu/2026-Fall/raw/main/images/quiz_doge.png" width="400">
+<img src="https://github.com/emse-madd-gwu/2026-Fall/raw/main/images/quiz_doge.png" width="530">
 </center>
 
 :::
@@ -98,7 +99,7 @@ agenda(1)
 # [Full design space for 3 effects: A, B, C]{.center}
 
 <center>
-<img src="images/doe_cube.png" width=600>
+<img src="images/doe_cube.png" width=730>
 </center>
 
 ---
@@ -155,7 +156,7 @@ $$
 ::: {.col width="60%"}
 
 <center>
-<img src="images/main_a.png" width=550>
+<img src="images/main_a.png" width=730>
 </center>
 
 :::
@@ -186,7 +187,7 @@ $$
 ::: {.col}
 
 <center>
-<img src="images/int_ab.png" width=550>
+<img src="images/int_ab.png" width=710>
 </center>
 
 :::
@@ -434,6 +435,7 @@ Price     | $20k, $40k, $100k
 
 ::: {.col}
 
+::: {.cell-output .cell-output-stdout}
 ```
 Attribute counts:
 
@@ -446,11 +448,13 @@ price:
  20k  40k 100k
   9    9   9
 ```
+:::
 
 :::
 
 ::: {.col .fragment}
 
+::: {.cell-output .cell-output-stdout}
 ```
 Pairwise attribute counts:
 
@@ -461,6 +465,7 @@ brand & price:
   BMW       4   5    2
   Ferrari   2   4    0
 ```
+:::
 
 :::
 
@@ -479,6 +484,7 @@ Price     | $20k, $40k, $100k
 
 ::: {.col}
 
+::: {.cell-output .cell-output-stdout}
 ```
 Attribute counts:
 
@@ -491,11 +497,13 @@ price:
   20k  40k 100k
   91   84   95
 ```
+:::
 
 :::
 
 ::: {.col .fragment}
 
+::: {.cell-output .cell-output-stdout}
 ```
 Pairwise attribute counts:
 
@@ -506,6 +514,7 @@ brand & price:
   BMW     25  25  30
   Ferrari 35  28  35
 ```
+:::
 
 :::
 

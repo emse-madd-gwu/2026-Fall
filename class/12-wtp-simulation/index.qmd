@@ -7,6 +7,7 @@ week: 12
 displaydate: November 11, 2026
 format: 
   lexis-revealjs:
+    code-block-height: "800px"
     link-external-newwindow: true
 mouse-wheel: true
 progress: false
@@ -157,7 +158,7 @@ head(draws)
 
 ## $$\hat{\boldsymbol{\omega}} = \frac{\hat{\boldsymbol{\beta}}}{-\hat{\alpha}}$$
 
-::: {.col .fragment width="55%"}
+::: {.col .fragment width="55%" .font80}
 
 ```{r}
 draws_other <- draws[,2:ncol(draws)]
@@ -168,7 +169,7 @@ head(draws_wtp)
 
 :::
 
-::: {.col .fragment width="45%"}
+::: {.col .fragment width="45%" .font80}
 
 Mean WTP with confidence interal
 
@@ -297,7 +298,7 @@ agenda(3)
 # WTP space models have **non-convex**<br>log-likelihood functions!
 
 <center>
-<img src="images/conditions.png" width=850>
+<img src="images/conditions.png" width=1120>
 </center>
 
 ---
@@ -378,8 +379,8 @@ agenda(4)
 ## We want to find $\boldsymbol{\beta}$ by maximizing the log-likelihood
 
 <center>
-<img src="images/mle1.png" width=1000>
-<img src="images/mle2.png" width=500>
+<img src="images/mle1.png" width=1320>
+<img src="images/mle2.png" width=660>
 </center>
 
 ---
@@ -399,7 +400,7 @@ agenda(4)
 # [Simulate Market Shares]{.center}
 
 <center>
-<img src="images/matrixmath.png" width=700>
+<img src="images/matrixmath.png" width=930>
 </center>
 
 ---
@@ -411,7 +412,7 @@ agenda(4)
 ::: {.col width="70%"}
 
 <center>
-<img src="images/matrixmath.png" width=700>
+<img src="images/matrixmath.png" width=930>
 </center>
 
 :::

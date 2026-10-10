@@ -7,6 +7,7 @@ week: 9
 displaydate: October 21, 2026
 format: 
   lexis-revealjs:
+    code-block-height: "800px"
     link-external-newwindow: true
 mouse-wheel: true
 progress: false
@@ -65,7 +66,7 @@ countdown(
 
 <br>
 <center>
-<img src="https://github.com/emse-madd-gwu/2026-Fall/raw/main/images/quiz_doge.png" width="400">
+<img src="https://github.com/emse-madd-gwu/2026-Fall/raw/main/images/quiz_doge.png" width="530">
 </center>
 
 :::
@@ -142,7 +143,7 @@ $\mathcal{L}(\theta | x)$: probability that $\theta$ are the true parameters, gi
 ## We actually compute the _log_-likelihood<br>(converts multiplication to addition)
 
 <center>
-<img src="images/logl.png" width=700>
+<img src="images/logl.png" width=930>
 </center>
 
 ---
@@ -244,7 +245,7 @@ agenda(2)
 {{< middle >}}
 
 <center>
-<img src="images/conditions.png" width=1000>
+<img src="images/conditions.png" width=1320>
 </center>
 
 ---
@@ -254,7 +255,7 @@ agenda(2)
 {{< middle >}}
 
 <center>
-<img src="images/algorithms.png" width=1200>
+<img src="images/algorithms.png" width=1440>
 </center>
 
 ---
@@ -284,7 +285,7 @@ Using the starting point $x = 1$ and the step size $\gamma =  0.3$, apply the gr
 {{< middle >}}
 
 <center>
-<img src="images/conditions.png" width=1000>
+<img src="images/conditions.png" width=1320>
 </center>
 
 ---
@@ -393,7 +394,7 @@ agenda(3)
 ## What's wrong with this map?
 
 <center>
-<img src="images/join_fail.png" height=500>
+<img src="images/join_fail.png" height=660>
 </center>
 
 ---
@@ -468,7 +469,7 @@ band_members %>%
 
 <br>
 <center>
-<img src="images/inner_join.gif">
+<img width="630" src="images/inner_join.gif">
 </center>
 
 :::
@@ -490,7 +491,7 @@ band_members %>%
 
 <br>
 <center>
-<img src="images/full_join.gif">
+<img width="630" src="images/full_join.gif">
 </center>
 
 :::
@@ -512,7 +513,7 @@ band_members %>%
 
 <br>
 <center>
-<img src="images/left_join.gif">
+<img width="630" src="images/left_join.gif">
 </center>
 
 :::
@@ -534,7 +535,7 @@ band_members %>%
 
 <br>
 <center>
-<img src="images/right_join.gif">
+<img width="630" src="images/right_join.gif">
 </center>
 
 :::
@@ -573,7 +574,7 @@ If the names differ, use `by = c("left_name" = "joining_name")`
 
 . . .
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 band_members
@@ -584,7 +585,7 @@ band_instruments2
 
 :::
 
-::: {.col .fragment}
+::: {.col .fragment .font80}
 
 ```{r}
 #| code-line-numbers: "3"
@@ -601,7 +602,7 @@ band_members %>%
 
 Or just rename the joining variable in a pipe
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 band_members
@@ -612,7 +613,7 @@ band_instruments2
 
 :::
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| code-line-numbers: "2,4"

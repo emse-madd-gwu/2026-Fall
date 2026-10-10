@@ -7,6 +7,7 @@ week: 13
 displaydate: November 18, 2026
 format: 
   lexis-revealjs:
+    code-block-height: "800px"
     link-external-newwindow: true
 mouse-wheel: true
 progress: false
@@ -61,7 +62,7 @@ countdown(
 
 <br>
 <center>
-<img src="https://github.com/emse-madd-gwu/2026-Fall/raw/main/images/quiz_doge.png" width="400">
+<img src="https://github.com/emse-madd-gwu/2026-Fall/raw/main/images/quiz_doge.png" width="530">
 </center>
 
 :::
@@ -113,7 +114,7 @@ agenda(1)
 :::
 
 <center>
-<img src="images/heterogeneity.png" width=1000>
+<img src="images/heterogeneity.png" width=1320>
 </center>
 
 ---
@@ -127,7 +128,7 @@ agenda(1)
 ::: {.col}
 
 <center>
-<img src="images/mixed_par.png" width=500>
+<img src="images/mixed_par.png" width=660>
 </center>
 
 :::
@@ -343,7 +344,7 @@ agenda(2)
 :::
 
 <center>
-<img src="images/heterogeneity.png" width=1000>
+<img src="images/heterogeneity.png" width=1320>
 </center>
 
 ---

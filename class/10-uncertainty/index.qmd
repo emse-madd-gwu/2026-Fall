@@ -7,7 +7,11 @@ week: 10
 displaydate: October 28, 2026
 format: 
   lexis-revealjs:
+    code-block-height: "800px"
     link-external-newwindow: true
+include-in-header:
+  - text: |
+      <style>.reveal pre code { max-height: none; }</style>
 mouse-wheel: true
 progress: false
 execute:
@@ -88,7 +92,7 @@ agenda(1)
 ### The _curvature_ of the log-likelihood function is related to the hessian
 
 <center>
-<img src="images/covariance.png" width=500>
+<img src="images/covariance.png" width=660>
 </center>
 
 ---
@@ -100,7 +104,7 @@ agenda(1)
 ### The _curvature_ of the log-likelihood function is related to the hessian
 
 <center>
-<img src="images/covariance2.png" width=900>
+<img src="images/covariance2.png" width=1190>
 </center>
 
 ---
@@ -112,7 +116,7 @@ agenda(1)
 ### Usually report parameter uncertainty ("standard errors") with $\sigma$ values
 
 <center>
-<img src="images/uncertainty.png" width=1100>
+<img src="images/uncertainty.png" width=1440>
 </center>
 
 ---
@@ -350,7 +354,7 @@ dim(fed_spend_long)
 - Each **observation** has its own **row**
 
 <center>
-<img src="images/tidy-data.png" width = "1000">
+<img src="images/tidy-data.png" width="1320">
 </center>
 
 ---
@@ -374,7 +378,7 @@ head(fed_spend_long)
 :::
 
 <center>
-<img src="images/tidy-data.png" width = "1000">
+<img src="images/tidy-data.png" width="1320">
 </center>
 
 ---
@@ -495,7 +499,7 @@ lotr_words %>%
 ::: {.col width="60%"}
 
 <center>
-<img src="images/tidyr-pivoting.gif" width=530>
+<img src="images/tidyr-pivoting.gif" width=700>
 </center>
 
 :::
@@ -505,7 +509,7 @@ lotr_words %>%
 ## [From "long" to "wide" with `pivot_wider()`]{.center}
 
 <center>
-<img src="images/tidy-wider.png" width=600>
+<img src="images/tidy-wider.png" width=790>
 </center>
 
 ---
@@ -539,7 +543,7 @@ head(fed_spend_wide)
 ## [From "wide" to "long" with `pivot_longer()`]{.center}
 
 <center>
-<img src="images/tidy-longer.png" width=600>
+<img src="images/tidy-longer.png" width=790>
 </center>
 
 ---
