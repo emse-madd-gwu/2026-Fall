@@ -7,6 +7,7 @@ week: 1
 displaydate: August 26, 2026
 format: 
   lexis-revealjs:
+    code-block-height: "800px"
     link-external-newwindow: true
 mouse-wheel: true
 progress: false

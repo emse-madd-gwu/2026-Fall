@@ -7,6 +7,7 @@ week: 8
 displaydate: October 14, 2026
 format: 
   lexis-revealjs:
+    code-block-height: "800px"
     link-external-newwindow: true
 mouse-wheel: true
 progress: false
@@ -70,7 +71,7 @@ agenda(1)
 # $$\tilde{u}_j = v_j + \tilde{\varepsilon}_j$$
 
 <center>
-<img src="images/utility.png" width=600>
+<img src="images/utility.png" width=790>
 </center>
 
 ---
@@ -100,7 +101,7 @@ c) The value of a random variable, $\tilde{x}$, is determined by rolling one fai
 ## $$\tilde{u}_j = v_j + \tilde{\varepsilon}_j$$
 
 <center>
-<img src="images/utility.png" width=450>
+<img src="images/utility.png" width=600>
 </center>
 
 :::

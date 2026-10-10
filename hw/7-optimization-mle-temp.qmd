@@ -8,6 +8,14 @@ params:
 ```{r child = here::here("fragments", "hw.qmd")}
 ```
 
+# Pilot Surveys
+
+In addition to the assignment below, this week you should also help out your fellow classmates by providing feedback on their pilot surveys. For every team other than your own, answer their pilot survey and provide any feedback you have in a row in [this spreadsheet](https://docs.google.com/spreadsheets/d/1FO66fC4U12_gjDF101WOxzuAys19u3AIMcIuETAXSR8/edit?usp=sharing). Feedback should be **anonymous, constructive, and objective**. Note things that didn't work and / or things that weren't clear or were confusing.
+
+If you got screened out early in the survey, go back and take it again and pick a response so that you won't get screened out. Do your best to actually answer the conjoint questions honestly (don't just click randomly).
+
+Completing all the surveys shouldn't take more than an hour. In addition to giving everyone very useful feedback, this exercise may also give you new ideas for improving your own survey.
+
 {{< include ../fragments/hw-get-organized.qmd >}}
 
 # 2. Readings

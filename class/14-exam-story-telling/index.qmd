@@ -7,6 +7,7 @@ week: 14
 displaydate: December 02, 2026
 format: 
   lexis-revealjs:
+    code-block-height: "800px"
     link-external-newwindow: true
 mouse-wheel: true
 progress: false
@@ -94,7 +95,7 @@ agenda(2)
 
 <br>
 <center>
-<img src="images/kv-01.png" width=800>
+<img src="images/kv-01.png" width=1060>
 </center>
 
 [source](https://sivers.org/drama)
@@ -107,7 +108,7 @@ agenda(2)
 
 <br>
 <center>
-<img src="images/kv-02.png" width=750>
+<img src="images/kv-02.png" width=990>
 </center>
 
 [source](https://sivers.org/drama)
@@ -120,7 +121,7 @@ agenda(2)
 
 <br>
 <center>
-<img src="images/kv-03.png" width=800>
+<img src="images/kv-03.png" width=1060>
 </center>
 
 [source](https://sivers.org/drama)
@@ -135,7 +136,7 @@ agenda(2)
 ## [Freytag's Pyramid](https://en.wikipedia.org/wiki/Gustav_Freytag)
 
 <center>
-<img src="images/freytag_pyramid.png" width=800>
+<img src="images/freytag_pyramid.png" width=1060>
 </center>
 
 ---
@@ -146,7 +147,7 @@ agenda(2)
 ## Freytag's Pyramid: **[King Kong](https://en.wikipedia.org/wiki/King_Kong)**
 
 <center>
-<img src="images/freytag_pyramid_king_kong.jpg" width=900>
+<img src="images/freytag_pyramid_king_kong.jpg" width=1190>
 </center>
 
 [source](http://writinghorrorfiction.blogspot.com/2011/03/putting-freytags-pyramid-to-use-in.html)
@@ -159,7 +160,7 @@ agenda(2)
 ## Freytag's Pyramid: **Research Project**
 
 <center>
-<img src="images/freytag_pyramid_research.png" width=1000>
+<img src="images/freytag_pyramid_research.png" width=1320>
 </center>
 
 ---
@@ -170,7 +171,7 @@ agenda(2)
 ## Freytag's Pyramid: **Research Project**
 
 <center>
-<img src="images/freytag_pyramid_research_labeled.png" width=1000>
+<img src="images/freytag_pyramid_research_labeled.png" width=1320>
 </center>
 
 ---
@@ -187,7 +188,7 @@ agenda(2)
 ## Freytag's Pyramid: **Research Project**
 
 <center>
-<img src="images/freytag_pyramid_research_charts.png" width=1000>
+<img src="images/freytag_pyramid_research_charts.png" width=1320>
 </center>
 
 ---
@@ -199,7 +200,7 @@ agenda(2)
 . . .
 
 <center>
-<img src="images/pevSales1.png" width=900>
+<img src="images/pevSales1.png" width=1190>
 </center>
 
 ---
@@ -209,7 +210,7 @@ agenda(2)
 ## Use **layers** to build tension / provide context
 
 <center>
-<img src="images/pevSales2.png" width=900>
+<img src="images/pevSales2.png" width=1190>
 </center>
 
 ---
@@ -219,7 +220,7 @@ agenda(2)
 ## Use **layers** to build tension / provide context
 
 <center>
-<img src="images/pevSales3.png" width=900>
+<img src="images/pevSales3.png" width=1190>
 </center>
 
 ---
@@ -229,7 +230,7 @@ agenda(2)
 ## Use **animation** to build tension / provide context
 
 <center>
-<img src="images/unemployment_chart_vox.jpg" width=900>
+<img src="images/unemployment_chart_vox.jpg" width=1190>
 </center>
 
 [source](https://www.vox.com/2020/4/2/21203850/unemployment-initial-claims-march-28)
@@ -241,7 +242,7 @@ agenda(2)
 ## Use **animation** to build tension / provide context
 
 <center>
-<img src="images/unemployment_chart.gif">
+<img width="630" src="images/unemployment_chart.gif">
 </center>
 
 [source](https://twitter.com/maoam_guy/status/1245887052027232256)
@@ -256,7 +257,7 @@ agenda(2)
 . . .
 
 <center>
-<img src="images/wilke-generals-1.png" width=700>
+<img src="images/wilke-generals-1.png" width=930>
 </center>
 
 [source](https://serialmentor.com/dataviz/telling-a-story.html#make-a-figure-for-the-generals)
@@ -297,7 +298,7 @@ agenda(2)
 . . .
 
 <center>
-<img src="images/wilke-complex-1.png" width=400>
+<img src="images/wilke-complex-1.png" width=530>
 </center>
 
 [source](https://serialmentor.com/dataviz/telling-a-story.html#build-up-towards-complex-figures)
@@ -309,7 +310,7 @@ agenda(2)
 # Build up towards complex figures
 
 <center>
-<img src="images/wilke-complex-2.png" width=1100>
+<img src="images/wilke-complex-2.png" width=1440>
 </center>
 
 [source](https://serialmentor.com/dataviz/telling-a-story.html#build-up-towards-complex-figures)
@@ -325,7 +326,7 @@ agenda(2)
 ::: {.col}
 
 <center>
-<img src="images/wilke-repetitive-1.png" width=500>
+<img src="images/wilke-repetitive-1.png" width=660>
 </center>
 
 [source](https://serialmentor.com/dataviz/telling-a-story.html#be-consistent-but-dont-be-repetitive)
@@ -335,7 +336,7 @@ agenda(2)
 ::: {.col .fragment}
 
 <center>
-<img src="images/wilke-repetitive-2.png" width=500>
+<img src="images/wilke-repetitive-2.png" width=660>
 </center>
 
 [source](https://serialmentor.com/dataviz/telling-a-story.html#be-consistent-but-dont-be-repetitive)
@@ -359,7 +360,7 @@ agenda(3)
 # Hitchcock's rule
 
 <center>
-<img src="images/Visual-Storytelling-Rules-The-Hitchcock-Rule-1.png" width=900>
+<img src="images/Visual-Storytelling-Rules-The-Hitchcock-Rule-1.png" width=1190>
 </center>
 
 ---
@@ -408,7 +409,7 @@ agenda(3)
 # Except for Tesla, EV adoption in the U.S. is **flat**
 
 <center>
-<img src="images/pevSales3.png" width=900>
+<img src="images/pevSales3.png" width=1190>
 </center>
 
 ---
@@ -418,15 +419,15 @@ agenda(3)
 # Tesla's Model 3 is a Game Changer for EVs
 
 <center>
-<img src="images/pevSales3.png" width=900>
+<img src="images/pevSales3.png" width=1190>
 </center>
 
 ---
 
 {{< center >}}
 
-<p style="font-size:40pt;">> 40pt font for titles</p>
-<p style="font-size:24pt;">> 24pt font for all other text</p>
+<p style="font-size:40pt;">&gt; 40pt font for titles</p>
+<p style="font-size:24pt;">&gt; 24pt font for all other text</p>
 
 (Exception: footer text can be small)
 
@@ -443,7 +444,7 @@ agenda(3)
 ::: {.col}
 
 <center>
-<img src="images/fonts_matter_fast_taco.jpg" width=600>
+<img src="images/fonts_matter_fast_taco.jpg" width=710>
 </center>
 
 "Fast Taco"
@@ -453,7 +454,7 @@ agenda(3)
 ::: {.col}
 
 <center>
-<img src="images/fonts_matter_megaflicks.jpg" width=600>
+<img src="images/fonts_matter_megaflicks.jpg" width=710>
 </center>
 
 "Mega Flicks"
@@ -467,7 +468,7 @@ agenda(3)
 {{< middle >}}
 
 <center>
-<img src="images/fonts_matter.jpg" width=600>
+<img src="images/fonts_matter.jpg" width=790>
 </center>
 
 ---
@@ -762,5 +763,5 @@ spelling::spell_check_files("report.qmd")
 
 <br>
 
-- ### We'll watch these during class period on Dec 11
+- ### We'll watch these during class period on Dec 9
 - ### 6 projects x 10 mins each
