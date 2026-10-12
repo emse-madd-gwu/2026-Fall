@@ -651,6 +651,22 @@ body.reveal-viewport {
   box-shadow: none;
 }
 
+// ---- Code line highlighting (code-line-numbers): tint, don't dim ----------
+// Quarto's line-highlight plugin ships
+// `code.has-line-highlights > span:not(.highlight-line) { opacity: .4 }`
+// (plugin/quarto-line-highlight/line-highlight.css), fading every
+// non-highlighted line. That reads as too-light/washed-out code, so undo it
+// and mark the highlighted line(s) with a light yellow background wash
+// instead — the rest of the block stays full-opacity, normal color.
+.reveal div.sourceCode pre code.has-line-highlights > span:not(.highlight-line) {
+  opacity: 1 !important;
+}
+.reveal div.sourceCode pre code .highlight-line {
+  display: inline-block;
+  width: 100%;
+  background-color: rgba($color-yellow, 0.3);
+}
+
 // ---- Printed code OUTPUT: white text on gray (mirrors .remark-code) --------
 // The inner <code> must be targeted too: Quarto's default
 // `.reveal pre code { background-color:#eae9ea; color:#000 }` otherwise paints
