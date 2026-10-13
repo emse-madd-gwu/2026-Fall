@@ -2,11 +2,13 @@
 
 # Install packages
 # install.packages("remotes")
+# install.packages("fastDummies")
 # remotes::install_github("jhelvy/cbcTools")
 
 # Load libraries
 library(cbcTools)
 library(logitr)
+library(fastDummies)
 
 # Define profiles with attributes and levels
 profiles <- cbc_profiles(
@@ -52,8 +54,13 @@ data <- cbc_choices(
 )
 
 # Simulated choices use standard coding (powertrain is a factor).
-# Dummy code it before estimating a model (Gasoline is the reference level):
-data <- cbc_encode(data, coding = "dummy")
+# Dummy code it before estimating a model. Gasoline is the reference level,
+# so we leave powertrain_Gasoline out of "pars" below.
+data <- dummy_cols(data, "powertrain")
+
+# NOTE: If your design has a no_choice option, cbc_choices() has already dummy
+# coded your data. Skip the step above and use the column names it created
+# (powertrainHybrid, powertrainElectric) in "pars" below.
 
 # Estimate a model
 model <- logitr(
@@ -64,8 +71,8 @@ model <- logitr(
     "price",
     "fuelEconomy",
     "accelTime",
-    "powertrainHybrid",
-    "powertrainElectric"
+    "powertrain_Hybrid",
+    "powertrain_Electric"
   )
 )
 

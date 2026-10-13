@@ -1054,7 +1054,7 @@ Discrete: <span class="math inline">\(\delta_j\)</span>
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_a05db09c" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_410f7846" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1347,7 +1347,7 @@ Model <em>price</em> as <em>discrete</em>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Rule:</strong><br>Use <code>dummy_cols()</code> for any data frame<br>Use <code>cbc_encode()</code> for data made with {cbcTools}.</p>
+<p><strong>Rule:</strong><br>Use <code>dummy_cols()</code> for any data frame (simulated or from a file)<br>Use <code>cbc_encode()</code> to preview {cbcTools} designs, e.g.&nbsp;with a <em>no choice</em> option</p>
 </div>
 </section>
 <section class="slide level0">
@@ -1436,7 +1436,7 @@ Model <em>price</em> as <em>discrete</em>
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_688d79e2" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_5f5d6825" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1489,7 +1489,7 @@ Model <em>price</em> as <em>discrete</em>
 <h1><span class="fancy">Break</span></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_49e18e69" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
+<div class="countdown" id="timer_ddf8d951" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1526,6 +1526,39 @@ Model <em>price</em> as <em>discrete</em>
 </section>
 <section class="slide level0">
 
+<h1><span class="center">Dummy coding with a <em>No Choice</em> option</span></h1>
+<div class="cols-row">
+<div class="col" style="flex:0 1 50%;width:50%">
+<p>The “no choice” rows have <code>NA</code> for every attribute</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href=""></a>  <span class="fu">dummy_cols</span>(<span class="st">"powertrain"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><code>powertrain_NA</code> = 1 on the no-choice rows. <strong>Do not</strong> include it in the model!</p>
+</div>
+<div class="col fragment" style="flex:0 1 50%;width:50%">
+<p>Replace the <code>NA</code>s with 0 for the <strong>named</strong> columns only</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-3"><a href=""></a>    <span class="fu">across</span>(</span>
+<span id="cb16-4"><a href=""></a>      <span class="fu">c</span>(</span>
+<span id="cb16-5"><a href=""></a>        price,</span>
+<span id="cb16-6"><a href=""></a>        fuelEconomy,</span>
+<span id="cb16-7"><a href=""></a>        accelTime,</span>
+<span id="cb16-8"><a href=""></a>        powertrain_Gasoline,</span>
+<span id="cb16-9"><a href=""></a>        powertrain_Hybrid,</span>
+<span id="cb16-10"><a href=""></a>        powertrain_Electric</span>
+<span id="cb16-11"><a href=""></a>      ),</span>
+<span id="cb16-12"><a href=""></a>      <span class="sc">~</span> <span class="fu">replace_na</span>(.x, <span class="dv">0</span>)</span>
+<span id="cb16-13"><a href=""></a>    )</span>
+<span id="cb16-14"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level0">
+
 <section id="week-8-utility-models-5" class="inverse middle">
 <h1>Week 8: <span class="fancy">Utility Models</span></h1>
 <div style="height: 1.5em;">
@@ -1546,9 +1579,9 @@ Model <em>price</em> as <em>discrete</em>
 <p><span class="center">Random choices</span></p>
 <div class="font90">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">cbc_choices</span>(</span>
-<span id="cb15-2"><a href=""></a>  <span class="at">design =</span> design</span>
-<span id="cb15-3"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">cbc_choices</span>(</span>
+<span id="cb17-2"><a href=""></a>  <span class="at">design =</span> design</span>
+<span id="cb17-3"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1559,20 +1592,20 @@ Model <em>price</em> as <em>discrete</em>
 </div>
 <div class="font90">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>priors <span class="ot">&lt;-</span> <span class="fu">cbc_priors</span>(</span>
-<span id="cb16-2"><a href=""></a>  <span class="at">profiles =</span> profiles,</span>
-<span id="cb16-3"><a href=""></a>  <span class="at">price =</span> <span class="sc">-</span><span class="fl">0.7</span>,</span>
-<span id="cb16-4"><a href=""></a>  <span class="at">fuelEconomy =</span> <span class="fl">0.1</span>,</span>
-<span id="cb16-5"><a href=""></a>  <span class="at">accelTime =</span> <span class="sc">-</span><span class="fl">0.2</span>,</span>
-<span id="cb16-6"><a href=""></a>  <span class="at">powertrain =</span> <span class="fu">c</span>(</span>
-<span id="cb16-7"><a href=""></a>    <span class="at">Hybrid =</span> <span class="fl">0.5</span>,</span>
-<span id="cb16-8"><a href=""></a>    <span class="at">Electric =</span> <span class="sc">-</span><span class="fl">4.0</span></span>
-<span id="cb16-9"><a href=""></a>  )</span>
-<span id="cb16-10"><a href=""></a>)</span>
-<span id="cb16-11"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">cbc_choices</span>(</span>
-<span id="cb16-12"><a href=""></a>  <span class="at">design =</span> design,</span>
-<span id="cb16-13"><a href=""></a>  <span class="at">priors =</span> priors</span>
-<span id="cb16-14"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>priors <span class="ot">&lt;-</span> <span class="fu">cbc_priors</span>(</span>
+<span id="cb18-2"><a href=""></a>  <span class="at">profiles =</span> profiles,</span>
+<span id="cb18-3"><a href=""></a>  <span class="at">price =</span> <span class="sc">-</span><span class="fl">0.7</span>,</span>
+<span id="cb18-4"><a href=""></a>  <span class="at">fuelEconomy =</span> <span class="fl">0.1</span>,</span>
+<span id="cb18-5"><a href=""></a>  <span class="at">accelTime =</span> <span class="sc">-</span><span class="fl">0.2</span>,</span>
+<span id="cb18-6"><a href=""></a>  <span class="at">powertrain =</span> <span class="fu">c</span>(</span>
+<span id="cb18-7"><a href=""></a>    <span class="at">Hybrid =</span> <span class="fl">0.5</span>,</span>
+<span id="cb18-8"><a href=""></a>    <span class="at">Electric =</span> <span class="sc">-</span><span class="fl">4.0</span></span>
+<span id="cb18-9"><a href=""></a>  )</span>
+<span id="cb18-10"><a href=""></a>)</span>
+<span id="cb18-11"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">cbc_choices</span>(</span>
+<span id="cb18-12"><a href=""></a>  <span class="at">design =</span> design,</span>
+<span id="cb18-13"><a href=""></a>  <span class="at">priors =</span> priors</span>
+<span id="cb18-14"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1585,19 +1618,19 @@ Model <em>price</em> as <em>discrete</em>
 <div class="col" style="flex:0 1 55%;width:55%">
 <p><code>cbc_suggest_priors()</code> proposes a starting point based on your attribute levels</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">cbc_suggest_priors</span>(profiles)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">cbc_suggest_priors</span>(profiles)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>priors <span class="ot">&lt;-</span> <span class="fu">cbc_priors</span>(</span>
-<span id="cb18-2"><a href=""></a>  <span class="at">profiles =</span> profiles,</span>
-<span id="cb18-3"><a href=""></a>  <span class="at">price =</span> <span class="sc">-</span><span class="fl">0.065</span>,</span>
-<span id="cb18-4"><a href=""></a>  <span class="at">fuelEconomy =</span> <span class="fl">0.065</span>,</span>
-<span id="cb18-5"><a href=""></a>  <span class="at">accelTime =</span> <span class="sc">-</span><span class="fl">0.325</span>,</span>
-<span id="cb18-6"><a href=""></a>  <span class="at">powertrain =</span> <span class="fu">c</span>(</span>
-<span id="cb18-7"><a href=""></a>    <span class="at">Hybrid =</span> <span class="fl">0.2</span>,</span>
-<span id="cb18-8"><a href=""></a>    <span class="at">Electric =</span> <span class="sc">-</span><span class="fl">0.4</span></span>
-<span id="cb18-9"><a href=""></a>  )</span>
-<span id="cb18-10"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>priors <span class="ot">&lt;-</span> <span class="fu">cbc_priors</span>(</span>
+<span id="cb20-2"><a href=""></a>  <span class="at">profiles =</span> profiles,</span>
+<span id="cb20-3"><a href=""></a>  <span class="at">price =</span> <span class="sc">-</span><span class="fl">0.065</span>,</span>
+<span id="cb20-4"><a href=""></a>  <span class="at">fuelEconomy =</span> <span class="fl">0.065</span>,</span>
+<span id="cb20-5"><a href=""></a>  <span class="at">accelTime =</span> <span class="sc">-</span><span class="fl">0.325</span>,</span>
+<span id="cb20-6"><a href=""></a>  <span class="at">powertrain =</span> <span class="fu">c</span>(</span>
+<span id="cb20-7"><a href=""></a>    <span class="at">Hybrid =</span> <span class="fl">0.2</span>,</span>
+<span id="cb20-8"><a href=""></a>    <span class="at">Electric =</span> <span class="sc">-</span><span class="fl">0.4</span></span>
+<span id="cb20-9"><a href=""></a>  )</span>
+<span id="cb20-10"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="col fragment" style="flex:0 1 45%;width:45%">
@@ -1617,21 +1650,22 @@ Model <em>price</em> as <em>discrete</em>
 <p><span class="math display">\[v_j = \beta_1 x_j^{\mathrm{price}} + \beta_2 x_j^{\mathrm{fuelEconomy}} + \beta_3 x_j^{\mathrm{accelTime}} + \beta_4 \delta_j^{\mathrm{hybrid}} + \beta_5 \delta_j^{\mathrm{electric}}\]</span></p>
 <div class="font90">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="co"># Simulated choices use standard coding, so dummy code first</span></span>
-<span id="cb19-2"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">cbc_encode</span>(data, <span class="at">coding =</span> <span class="st">"dummy"</span>)</span>
-<span id="cb19-3"><a href=""></a></span>
-<span id="cb19-4"><a href=""></a>model <span class="ot">&lt;-</span> <span class="fu">logitr</span>(</span>
-<span id="cb19-5"><a href=""></a>  <span class="at">data =</span> data,</span>
-<span id="cb19-6"><a href=""></a>  <span class="at">outcome =</span> <span class="st">"choice"</span>,</span>
-<span id="cb19-7"><a href=""></a>  <span class="at">obsID =</span> <span class="st">"obsID"</span>,</span>
-<span id="cb19-8"><a href=""></a>  <span class="at">pars =</span> <span class="fu">c</span>(</span>
-<span id="cb19-9"><a href=""></a>    <span class="st">"price"</span>,</span>
-<span id="cb19-10"><a href=""></a>    <span class="st">"fuelEconomy"</span>,</span>
-<span id="cb19-11"><a href=""></a>    <span class="st">"accelTime"</span>,</span>
-<span id="cb19-12"><a href=""></a>    <span class="st">"powertrainHybrid"</span>,</span>
-<span id="cb19-13"><a href=""></a>    <span class="st">"powertrainElectric"</span></span>
-<span id="cb19-14"><a href=""></a>  )</span>
-<span id="cb19-15"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="co"># Simulated choices use standard coding, so dummy code first</span></span>
+<span id="cb21-2"><a href=""></a><span class="fu">library</span>(fastDummies)</span>
+<span id="cb21-3"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">dummy_cols</span>(data, <span class="st">"powertrain"</span>)</span>
+<span id="cb21-4"><a href=""></a></span>
+<span id="cb21-5"><a href=""></a>model <span class="ot">&lt;-</span> <span class="fu">logitr</span>(</span>
+<span id="cb21-6"><a href=""></a>  <span class="at">data =</span> data,</span>
+<span id="cb21-7"><a href=""></a>  <span class="at">outcome =</span> <span class="st">"choice"</span>,</span>
+<span id="cb21-8"><a href=""></a>  <span class="at">obsID =</span> <span class="st">"obsID"</span>,</span>
+<span id="cb21-9"><a href=""></a>  <span class="at">pars =</span> <span class="fu">c</span>(</span>
+<span id="cb21-10"><a href=""></a>    <span class="st">"price"</span>,</span>
+<span id="cb21-11"><a href=""></a>    <span class="st">"fuelEconomy"</span>,</span>
+<span id="cb21-12"><a href=""></a>    <span class="st">"accelTime"</span>,</span>
+<span id="cb21-13"><a href=""></a>    <span class="st">"powertrain_Hybrid"</span>,</span>
+<span id="cb21-14"><a href=""></a>    <span class="st">"powertrain_Electric"</span></span>
+<span id="cb21-15"><a href=""></a>  )</span>
+<span id="cb21-16"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -1641,7 +1675,7 @@ Model <em>price</em> as <em>discrete</em>
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_9dbacf90" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_c16dac7d" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

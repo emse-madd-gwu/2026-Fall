@@ -463,7 +463,7 @@ design |>
 
 ::: {.fragment}
 
-**Rule:**<br>Use `dummy_cols()` for any data frame<br>Use `cbc_encode()` for data made with {cbcTools}.
+**Rule:**<br>Use `dummy_cols()` for any data frame (simulated or from a file)<br>Use `cbc_encode()` to preview {cbcTools} designs, e.g. with a _no choice_ option
 
 :::
 
@@ -615,6 +615,48 @@ agenda(4)
 
 ---
 
+# [Dummy coding with a _No Choice_ option]{.center}
+
+::: {.col width="50%"}
+
+The "no choice" rows have `NA` for every attribute
+
+```{r}
+#| eval: false
+data <- data %>%
+  dummy_cols("powertrain")
+```
+
+`powertrain_NA` = 1 on the no-choice rows. **Do not** include it in the model!
+
+:::
+
+::: {.col .fragment width="50%"}
+
+Replace the `NA`s with 0 for the **named** columns only
+
+```{r}
+#| eval: false
+data <- data %>%
+  mutate(
+    across(
+      c(
+        price,
+        fuelEconomy,
+        accelTime,
+        powertrain_Gasoline,
+        powertrain_Hybrid,
+        powertrain_Electric
+      ),
+      ~ replace_na(.x, 0)
+    )
+  )
+```
+
+:::
+
+---
+
 ```{r}
 #| echo: false
 #| output: asis
@@ -719,7 +761,8 @@ $$v_j = \beta_1 x_j^{\mathrm{price}} + \beta_2 x_j^{\mathrm{fuelEconomy}} + \bet
 ```{r}
 #| eval: false
 # Simulated choices use standard coding, so dummy code first
-data <- cbc_encode(data, coding = "dummy")
+library(fastDummies)
+data <- dummy_cols(data, "powertrain")
 
 model <- logitr(
   data = data,
@@ -729,8 +772,8 @@ model <- logitr(
     "price",
     "fuelEconomy",
     "accelTime",
-    "powertrainHybrid",
-    "powertrainElectric"
+    "powertrain_Hybrid",
+    "powertrain_Electric"
   )
 )
 ```
