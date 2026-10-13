@@ -21,6 +21,7 @@ library(knitr)
 library(patchwork)
 library(kableExtra)
 library(logitr)
+library(fastDummies)
 ```
 
 # HW Question 1
@@ -286,6 +287,9 @@ data <- read_csv(file.path('data', 'data.csv'))
 $$u_j = \beta_1 x_j^{\mathrm{price}} + \beta_2 x_j^{\mathrm{\%cacao}} + \beta_3 \delta_j^{\mathrm{crispy}} + \beta_4 \delta_j^{\mathrm{hershey}} + \beta_5 \delta_j^{\mathrm{lindt}} + \varepsilon_j$$
 
 ```{r}
+# Make dummy-coded columns for brand (Ghirardelli is the reference level)
+data <- dummy_cols(data, "brand")
+
 model <- logitr(
   data = data,
   outcome = "choice",

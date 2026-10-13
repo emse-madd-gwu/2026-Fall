@@ -21,6 +21,7 @@ library(knitr)
 library(patchwork)
 library(kableExtra)
 library(logitr)
+library(fastDummies)
 ```
 
 # HW Question 1
