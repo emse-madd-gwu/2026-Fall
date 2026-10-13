@@ -120,7 +120,7 @@ c) The value of a random variable, $\tilde{x}$, is determined by rolling one fai
 
 # Practice Question 2
 
-a) A consumer is making a choice between two bars of chocolate:
+a\) A consumer is making a choice between two bars of chocolate:
 
 - Milk chocolate $(m)$
 - Dark chocolate $(d)$
@@ -129,7 +129,7 @@ Assume that we know the observed utility of each bar to be $v_m = 3$ and $v_d = 
 
 . . .
 
-b) A third bar of chocolate is now added to the choice set. It is the exact same as the milk chocolate bar, but it has a slightly different wrapper (which has no effect on the consumer's utility). Now, $v_{m1} = v_{m2} = 3$, and $v_d = 4$. Based on the probabilities from question a), what would we expect the probabilities of choosing each bar to be? What probabilities does the logit model produce?
+b\) A third bar of chocolate is now added to the choice set. It is the exact same as the milk chocolate bar, but it has a slightly different wrapper (which has no effect on the consumer's utility). Now, $v_{m1} = v_{m2} = 3$, and $v_d = 4$. Based on the probabilities from question a), what would we expect the probabilities of choosing each bar to be? What probabilities does the logit model produce?
 
 ---
 
@@ -159,11 +159,12 @@ b) A third bar of chocolate is now added to the choice set. It is the exact same
 
 ## $$u_j = \beta_1 x_{j}^{\mathrm{price}} + \dots$$
 
+::: {.font90}
 ```{r}
 #| echo: false
 data.frame(price = c(1, 2, 3))
 ```
-
+:::
 :::
 
 ::: {.col}
@@ -172,11 +173,12 @@ data.frame(price = c(1, 2, 3))
 
 ## $$u_j = \beta_1 \delta_{j}^{\mathrm{ford}} + \beta_2 \delta_{j}^{\mathrm{gm}} \dots$$
 
+::: {.font90}
 ```{r}
 #| echo: false
 fastDummies::dummy_cols(data.frame(brand = c("Ford", "GM", "BMW")))
 ```
-
+:::
 :::
 
 ---
@@ -322,19 +324,25 @@ agenda(3)
 
 # [Dummy-coded variables]{.center}
 
-[**Dummy coding**: 1 = "Yes", 0 = "No"]{.center}
+::: {.center}
+**Dummy coding**: 1 = "Yes", 0 = "No"
+:::
 
 ::: {.fragment}
 
-::: {.col}
+::: {.col width="45%"}
 
 Data frame with one variable: _price_
 
+::: {.font90}
 ```{r}
-data <- data.frame(price = c(10, 20, 30))
+data <- data.frame(
+  price = c(10, 20, 30)
+)
 
 data
 ```
+:::
 
 :::
 
@@ -342,12 +350,13 @@ data
 
 Add dummy columns for each price "level"
 
+::: {.font90}
 ```{r}
 library(fastDummies)
 
 dummy_cols(data, "price")
 ```
-
+:::
 :::
 
 :::
@@ -362,15 +371,17 @@ dummy_cols(data, "price")
 $v_j = \beta_1 x^\mathrm{price}$
 :::
 
+::: {.font90}
 ```{r}
 #| eval: false
 model <- logitr(
-    data   = data,
+    data = data,
     choice = "choice",
-    obsID  = "obsID",
-    pars   = "price"
+    obsID = "obsID",
+    pars = "price"
 )
 ```
+:::
 
 <br>
 
@@ -388,15 +399,17 @@ Coef. | Interpretation
 $v_j = \beta_1 \delta^\mathrm{price = 20} +  \beta_2 \delta^\mathrm{price = 30}$
 :::
 
+::: {.font90}
 ```{r}
 #| eval: false
 model <- logitr(
-    data   = data,
+    data = data,
     choice = "choice",
-    obsID  = "obsID",
-    pars   = c("price_20", "price_30")
+    obsID = "obsID",
+    pars = c("price_20", "price_30")
 )
 ```
+:::
 
 [Reference level: _price=10_]{.center}
 
@@ -404,6 +417,104 @@ Coef. | Interpretation
 ------|------------------
 β1 | utility for _price=20_ relative to _price=10_
 β2 | utility for _price=30_ relative to _price=10_
+
+:::
+
+---
+
+# [Dummy coding categorical variables with `cbc_encode()`]{.center}
+
+::: {.font90}
+```{r}
+#| echo: false
+library(cbcTools)
+set.seed(1)
+profiles <- cbc_profiles(powertrain = c("Gasoline", "Hybrid", "Electric"))
+design <- cbc_design(profiles, n_resp = 1, n_alts = 3, n_q = 1)
+```
+:::
+
+::: {.col width="45%"}
+
+**Standard** coding (human-readable)
+
+::: {.font90}
+```{r}
+design |>
+  select(altID, powertrain)
+```
+:::
+
+:::
+
+::: {.col .fragment}
+
+**Dummy** coding (what `logitr()` needs)
+
+::: {.font90}
+```{r}
+design |>
+  cbc_encode(coding = "dummy") |>
+  select(altID, starts_with("powertrain"))
+```
+:::
+
+:::
+
+::: {.fragment}
+
+**Rule:**<br>Use `dummy_cols()` for any data frame<br>Use `cbc_encode()` for data made with {cbcTools}.
+
+:::
+
+---
+
+# [Choosing the reference level]{.center}
+
+::: {.col width="45%"}
+
+Default: first level is the reference
+
+::: {.font90}
+```{r}
+#| eval: false
+cbc_encode(
+  design,
+  coding = "dummy"
+)
+```
+:::
+
+$v_j = \beta_1 \delta^\mathrm{hybrid} + \beta_2 \delta^\mathrm{electric}$
+
+Coef. | Interpretation
+------|------------------
+β1 | utility of _Hybrid_ relative to _Gasoline_
+β2 | utility of _Electric_ relative to _Gasoline_
+
+:::
+
+::: {.col .fragment width="55%"}
+
+Pick a different reference level:
+
+::: {.font90}
+```{r}
+#| eval: false
+cbc_encode(
+  design,
+  coding = "dummy",
+  ref_levels = list(powertrain = "Electric")
+)
+```
+:::
+
+$v_j = \beta_1 \delta^\mathrm{gasoline} + \beta_2 \delta^\mathrm{hybrid}$
+
+Coef. | Interpretation
+------|------------------
+β1 | utility of _Gasoline_ relative to _Electric_
+β2 | utility of _Hybrid_ relative to _Electric_
 
 :::
 
@@ -468,12 +579,15 @@ $$u_j = \beta_1 x_j^{\mathrm{price}} + \beta_2 x_j^{\mathrm{\%cacao}} + \beta_3 
 ```{r}
 #| echo: false
 countdown(
-    minutes      = 5,
-    warn_when    = 30,
+    minutes = 5,
+    warn_when = 30,
     update_every = 1,
-    left         = 0, right = 0, top = 1, bottom = 0,
-    margin       = "5%",
-    font_size    = "8em"
+    left = 0,
+    right = 0,
+    top = 1,
+    bottom = 0,
+    margin = "5%",
+    font_size = "8em"
 )
 ```
 
@@ -511,42 +625,87 @@ agenda(5)
 
 # [Simulating choice data]{.center}
 
-::: {.col width="40%"}
+::: {.col width="35%"}
 
 [Random choices]{.center}
 
+::: {.font90}
 ```{r}
 #| eval: false
 data <- cbc_choices(
   design = design
 )
 ```
-
+:::
 :::
 
-::: {.col .fragment width="60%"}
+::: {.col .fragment width="65%"}
 
 [Choices according to assumed model]{.center}
 
 ::: {.center .font80}
-$v_j = -0.7 x_j^{\mathrm{price}} + 0.1 x_j^{\mathrm{fuelEconomy}} - 0.2 x_j^{\mathrm{accelTime}} -4 \delta_j^{\mathrm{electric}}$
+$v_j = -0.7 x_j^{\mathrm{price}} + 0.1 x_j^{\mathrm{fuelEconomy}} - 0.2 x_j^{\mathrm{accelTime}} + 0.5 \delta_j^{\mathrm{hybrid}} - 4 \delta_j^{\mathrm{electric}}$
 :::
 
+::: {.font90}
 ```{r}
 #| eval: false
 
 priors <- cbc_priors(
   profiles = profiles,
-  price       = -0.7,
+  price = -0.7,
   fuelEconomy = 0.1,
-  accelTime   = -0.2,
-  powertrainElectric = -4.0
+  accelTime = -0.2,
+  powertrain = c(
+    Hybrid = 0.5,
+    Electric = -4.0
+  )
 )
 data <- cbc_choices(
-    design = design,
-    priors = priors
+  design = design,
+  priors = priors
 )
 ```
+:::
+:::
+
+---
+
+# [Not sure what coefficients to use?]{.center}
+
+::: {.col width="55%"}
+
+`cbc_suggest_priors()` proposes a starting point based on your attribute levels
+
+```{r}
+#| eval: false
+cbc_suggest_priors(profiles)
+```
+
+```{r}
+#| eval: false
+priors <- cbc_priors(
+  profiles = profiles,
+  price = -0.065,
+  fuelEconomy = 0.065,
+  accelTime = -0.325,
+  powertrain = c(
+    Hybrid = 0.2,
+    Electric = -0.4
+  )
+)
+```
+
+:::
+
+::: {.col .fragment width="45%"}
+
+**These are only a starting point:**
+
+- Continuous attributes get small, same-sized effects
+- Categorical levels are relative to the reference level
+- **Signs are all positive**, so flip them where you expect a _negative_ effect (e.g. price)
+- Adjust using your own domain knowledge
 
 :::
 
@@ -554,19 +713,28 @@ data <- cbc_choices(
 
 # [Estimate a choice model]{.center}
 
-$$v_j = \beta_1 x_j^{\mathrm{price}} + \beta_2 x_j^{\mathrm{fuelEconomy}} + \beta_3 x_j^{\mathrm{accelTime}} + \beta_4 \delta_j^{\mathrm{electric}}$$
+$$v_j = \beta_1 x_j^{\mathrm{price}} + \beta_2 x_j^{\mathrm{fuelEconomy}} + \beta_3 x_j^{\mathrm{accelTime}} + \beta_4 \delta_j^{\mathrm{hybrid}} + \beta_5 \delta_j^{\mathrm{electric}}$$
 
+::: {.font90}
 ```{r}
 #| eval: false
+# Simulated choices use standard coding, so dummy code first
+data <- cbc_encode(data, coding = "dummy")
+
 model <- logitr(
-  data    = data,
+  data = data,
   outcome = "choice",
-  obsID   = "obsID",
-  pars    = c(
-      "price", "fuelEconomy", "accelTime", "powertrainElectric"
+  obsID = "obsID",
+  pars = c(
+    "price",
+    "fuelEconomy",
+    "accelTime",
+    "powertrainHybrid",
+    "powertrainElectric"
   )
 )
 ```
+:::
 
 ---
 

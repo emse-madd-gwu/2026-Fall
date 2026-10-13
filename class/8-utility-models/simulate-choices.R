@@ -1,13 +1,11 @@
 # Make conjoint surveys using the cbcTools package
 
 # Install packages
-# install.packages("fastDummies")
 # install.packages("remotes")
 # remotes::install_github("jhelvy/cbcTools")
 
 # Load libraries
 library(cbcTools)
-library(fastDummies)
 library(logitr)
 
 # Define profiles with attributes and levels
@@ -15,7 +13,7 @@ profiles <- cbc_profiles(
   price = c(15, 20, 25), # Price ($1,000)
   fuelEconomy = c(20, 25, 30), # Fuel economy (mpg)
   accelTime = c(6, 7, 8), # 0-60 mph acceleration time (s)
-  powertrain = c("Gasoline", "Electric")
+  powertrain = c("Gasoline", "Hybrid", "Electric")
 )
 
 # Make a full-factorial design of experiment
@@ -35,13 +33,17 @@ data <- cbc_choices(
   design = design
 )
 
+# Use cbcTools package to get some reasonable starting assumptions
+# for prior parameter values
+cbc_suggest_priors(profiles)
+
 # Simulate choices according to an assumed utility model
 priors <- cbc_priors(
   profiles = profiles,
   price = -0.7,
   fuelEconomy = 0.1,
   accelTime = -0.2,
-  powertrain = c('Electric' = -4.0)
+  powertrain = c('Hybrid' = 0.5, 'Electric' = -4.0)
 )
 
 data <- cbc_choices(
@@ -49,12 +51,22 @@ data <- cbc_choices(
   priors = priors
 )
 
+# Simulated choices use standard coding (powertrain is a factor).
+# Dummy code it before estimating a model (Gasoline is the reference level):
+data <- cbc_encode(data, coding = "dummy")
+
 # Estimate a model
 model <- logitr(
   data = data,
   outcome = "choice",
   obsID = "obsID",
-  pars = c("price", "fuelEconomy", "accelTime", "powertrainElectric")
+  pars = c(
+    "price",
+    "fuelEconomy",
+    "accelTime",
+    "powertrainHybrid",
+    "powertrainElectric"
+  )
 )
 
 summary(model)
