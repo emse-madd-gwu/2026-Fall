@@ -37,9 +37,10 @@ b) A random variable, $\tilde{x}$, has a uniform distribution between the values
 #| fig.height: 3
 
 plotData <- data.frame(
-    x   = c(-0.5, 0, 0, 1, 1, 1.5),
+    x = c(-0.5, 0, 0, 1, 1, 1.5),
     pdf = c(0, 0, 1, 1, 0, 0),
-    cdf = c(0, 0, 0, 1, 1, 1))
+    cdf = c(0, 0, 0, 1, 1, 1)
+)
 
 uniform_pdf <- ggplot(plotData, aes(x = x, y = pdf)) +
     geom_path(size = 0.5) +
@@ -48,7 +49,7 @@ uniform_pdf <- ggplot(plotData, aes(x = x, y = pdf)) +
 
 uniform_cdf <- ggplot(plotData, aes(x = x, y = cdf)) +
     geom_path(size = 0.5) +
-    labs(x =' x', y = 'CDF') +
+    labs(x = ' x', y = 'CDF') +
     theme_bw()
 
 uniform_pdf + uniform_cdf
@@ -61,8 +62,9 @@ c) The value of a random variable, $\tilde{x}$, is determined by rolling one fai
 #| fig.height: 3
 
 plotData <- data.frame(
-    x   = seq(6),
-    pdf = rep(1/6, 6))
+    x = seq(6),
+    pdf = rep(1 / 6, 6)
+)
 
 dice_pdf <- ggplot(plotData, aes(x = x, y = pdf)) +
     geom_segment(aes(x = x, xend = x, y = 0, yend = pdf), linetype = 'dashed') +
@@ -71,9 +73,10 @@ dice_pdf <- ggplot(plotData, aes(x = x, y = pdf)) +
     theme_bw()
 
 plotData <- data.frame(
-    x   = c(0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7),
-    cdf = c(0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6)/6)
-dice_cdf = ggplot(plotData, aes(x = x, y = cdf)) +
+    x = c(0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7),
+    cdf = c(0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6) / 6
+)
+dice_cdf <- ggplot(plotData, aes(x = x, y = cdf)) +
     geom_path(size = 0.5) +
     labs(x = 'x', y = 'CDF') +
     scale_x_continuous(breaks = c(0, seq(6), 7)) +
@@ -141,10 +144,11 @@ tibble(
   `Bar 2` = c("$1.50", "60%"),
   `Bar 3` = c("$3.00", "80%"),
 ) %>%
-  kable() %>% 
+  kable() %>%
   kable_styling(
-      bootstrap_options = c("hover", "condensed"), 
-      full_width = FALSE)
+    bootstrap_options = c("hover", "condensed"),
+    full_width = FALSE
+  )
 ```
 
 a) Write out a model for the observed utility of each chocolate bar in the above set.
@@ -164,8 +168,8 @@ b) If the coefficient for the _price_ attribute was -0.1 and the coefficient for
 ```{r}
 b1 <- -0.1
 b2 <- 0.1
-v1 <- b1*1.2 + b2*0.1
-v3 <- b1*3.0 + b2*0.8
+v1 <- b1 * 1.2 + b2 * 0.1
+v3 <- b1 * 3.0 + b2 * 0.8
 v3 - v1
 ```
 
@@ -180,10 +184,11 @@ tibble(
   `Bar 2` = c("$1.50", "60%", "Lindt"),
   `Bar 3` = c("$3.00", "80%", "Ghirardelli"),
 ) %>%
-  kable() %>% 
+  kable() %>%
   kable_styling(
-      bootstrap_options = c("hover", "condensed"), 
-      full_width = FALSE)
+    bootstrap_options = c("hover", "condensed"),
+    full_width = FALSE
+  )
 ```
 
 Let's say $\beta_3$ represents the utility of having the brand _Hershey_, and $\beta_4$ represents the utility of having the brand _Lindt_ (thus setting the reference level to _Ghirardelli_). Then the general model for the observed utility would be: 
@@ -230,10 +235,11 @@ tibble(
   `Bar 2` = c("$1.50", "60%", "Lindt"),
   `Bar 3` = c("$3.00", "80%", "Ghirardelli"),
 ) %>%
-  kable() %>% 
+  kable() %>%
   kable_styling(
-      bootstrap_options = c("hover", "condensed"), 
-      full_width = FALSE)
+    bootstrap_options = c("hover", "condensed"),
+    full_width = FALSE
+  )
 ```
 
 ```{r}
@@ -244,9 +250,9 @@ b3 <- -2.0
 b4 <- -0.1
 
 # Compute the observed utility for each chocolate bar
-v1 <- b1*1.2 + b2*0.1 + b3
-v2 <- b1*1.5 + b2*0.6 + b4
-v3 <- b1*3 + b2*0.8
+v1 <- b1 * 1.2 + b2 * 0.1 + b3
+v2 <- b1 * 1.5 + b2 * 0.6 + b4
+v3 <- b1 * 3 + b2 * 0.8
 
 # Compute the probabilities using the logit fraction
 denom <- exp(v1) + exp(v2) + exp(v3)
@@ -269,7 +275,7 @@ $$log(e^{v_1} + e^{v_3}) = \beta_1 x^{\mathrm{price}} + \beta_2(0.6) + \beta_4$$
 $$x^{\mathrm{price}} = \frac{1}{\beta_1} \left[ log(e^{v_1} + e^{v_3}) - \beta_2(0.6) - \beta_4 \right]$$
 
 ```{r}
-(1/ b1) * (log(exp(v1) + exp(v3)) - b2*0.6 - b4)
+(1 / b1) * (log(exp(v1) + exp(v3)) - b2 * 0.6 - b4)
 ```
 
 
@@ -295,7 +301,11 @@ model <- logitr(
   outcome = "choice",
   obsID = "obsID",
   pars = c(
-    "price", "percent_cacao", "crispy_rice", "brand_Hershey", "brand_Lindt"
+    "price",
+    "percent_cacao",
+    "crispy_rice",
+    "brand_Hershey",
+    "brand_Lindt"
   )
 )
 
@@ -312,17 +322,18 @@ coefs <- coef(model)
 #   level   = The attribute level (x-axis)
 #   utility = The utility associated with each level (y-axis)
 price_levels <- unique(data$price)
-df_price <- data.frame(level = price_levels) %>% 
+df_price <- data.frame(level = price_levels) %>%
     mutate(
-      diff    = level - min(level),
-      utility = diff*coefs['price'])
+        diff = level - min(level),
+        utility = diff * coefs['price']
+    )
 
 # Get upper and lower bounds (plots should have the same y-axis)
 ymin <- floor(min(df_price$utility))
 ymax <- ceiling(max(df_price$utility))
 
 # Plot the utility for each attribute
-plot_price <- df_price %>% 
+plot_price <- df_price %>%
     ggplot() +
     geom_line(aes(x = level, y = utility)) +
     scale_y_continuous(limits = c(ymin, ymax)) +
