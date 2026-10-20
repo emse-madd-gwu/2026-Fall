@@ -9,6 +9,7 @@ format:
   lexis-revealjs:
     code-block-height: "800px"
     link-external-newwindow: true
+    html-math-method: katex
 mouse-wheel: true
 progress: false
 execute:
@@ -42,12 +43,12 @@ agenda_items <- c(
 ```{r}
 #| echo: false
 countdown(
-  minutes      = 12,
-  warn_when    = 30,
+  minutes = 10,
+  warn_when = 30,
   update_every = 1,
-  top          = 0,
-  right        = 0,
-  font_size    = '3em'
+  top = 0,
+  right = 0,
+  font_size = '3em'
 )
 ```
 
@@ -370,12 +371,15 @@ Using the starting point $\underline{x}_0 = [1, 1]$ and the step size $\gamma = 
 ```{r}
 #| echo: false
 countdown(
-  minutes      = 5,
-  warn_when    = 30,
+  minutes = 5,
+  warn_when = 30,
   update_every = 1,
-  left         = 0, right = 0, top = 1, bottom = 0,
-  margin       = "5%",
-  font_size    = "8em"
+  left = 0,
+  right = 0,
+  top = 1,
+  bottom = 0,
+  margin = "5%",
+  font_size = "8em"
 )
 ```
 
@@ -406,7 +410,7 @@ agenda(3)
 ```{r}
 #| echo: false
 names <- data.frame(state_name = sort(abbs$state_name))
-abbs  <- data.frame(state_abb = sort(abbs$state_abb))
+abbs <- data.frame(state_abb = sort(abbs$state_abb))
 ```
 ```{r}
 head(names)
@@ -544,7 +548,7 @@ band_members %>%
 
 ## Specify the joining variable name
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| message: true
@@ -554,14 +558,17 @@ band_members %>%
 
 :::
 
-::: {.col .fragment}
+::: {.col .fragment .font80}
 
 ```{r}
 #| message: true
-#| code-line-numbers: "3"
+#| code-line-numbers: "4"
+
 band_members %>%
-    left_join(band_instruments,
-              by = 'name')
+    left_join(
+        band_instruments,
+        by = 'name'
+    )
 ```
 
 :::
@@ -588,10 +595,12 @@ band_instruments2
 ::: {.col .fragment .font80}
 
 ```{r}
-#| code-line-numbers: "3"
+#| code-line-numbers: "4"
 band_members %>%
-    left_join(band_instruments2,
-              by = c("name" = "artist"))
+    left_join(
+        band_instruments2,
+        by = c("name" = "artist")
+    )
 ```
 
 :::
@@ -616,11 +625,13 @@ band_instruments2
 ::: {.col .font80}
 
 ```{r}
-#| code-line-numbers: "2,4"
+#| code-line-numbers: "2,5"
 band_members %>%
     rename(artist = name) %>%
-    left_join(band_instruments2,
-              by = "artist")
+    left_join(
+        band_instruments2,
+        by = "artist"
+    )
 ```
 
 :::
@@ -632,12 +643,12 @@ band_members %>%
 ```{r}
 #| echo: false
 countdown(
-    minutes      = 15,
-    warn_when    = 15,
+    minutes = 15,
+    warn_when = 15,
     update_every = 1,
-    top          = 0,
-    right        = 0,
-    font_size    = '2em'
+    top = 0,
+    right = 0,
+    font_size = '2em'
 )
 ```
 
@@ -713,26 +724,22 @@ agenda(4)
 
 ---
 
+{{< inverse >}}
+
 # [Cleaning surveydown survey data]{.center}
 
 <br>
 
 ::: {.col width="80%"}
 
+## For the rest of class, work with your team to pull in your pilot survey responses and clean your pilot data.
+
+<br>
+
 ## 1. Open the `survey` folder in Positron
 
-## 2. Open `code/3_data_cleaning.R`
+## 2. Open `code/2_get_raw_data.R`
 
-:::
-
----
-
-{{< inverse >}}
-
-## Team time
-
-::: {.col width="80%"}
-
-### For the rest of class, work with your team to finalize your pilot surveys and get them live!
+## 3. Open `code/3_data_cleaning.R`
 
 :::
