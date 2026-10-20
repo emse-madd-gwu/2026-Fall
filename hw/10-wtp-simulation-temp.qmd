@@ -18,9 +18,7 @@ This week, we'll begin considering these questions as we learn how to use estima
 
 Click [here](../content/slides_wtp_simulation.pdf) to download the slides in the video as a PDF.
 
-<center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/A24eDCZeQd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+{{< video https://www.youtube.com/embed/A24eDCZeQd4 >}}
 
 # 3. Reflect
 

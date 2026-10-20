@@ -14,13 +14,11 @@ params:
 
 Last week we introduced how we can use maximum likelihood estimation to estimate the unknown parameters of utility models. This week we'll learn about how to quantify the _uncertainty_ associated with those parameter estimates by watching the third video in [our Youtube playlist](https://www.youtube.com/playlist?list=PLzFdSE-D7jUQnbczxdjohRqlBBrrsaFFg) on choice modeling: _Uncertainty_
 
-**Take notes** as you watch the video. Throughout the video, I ask practice questions at several places - you should answer to those questions as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.
+**Take notes** as you watch the video. Throughout the video, I ask practice questions at several places - you should answer those questions as part of your reflection. You may submit your answers however you wish, e.g. type them in your ``r hw_file`` file and / or hand-write them on paper and take a picture. If you take a picture, save it in your ``r hw_dir`` folder, embed it in ``r hw_file`` (e.g. `![](answers.jpg)`), and commit it along with the rest of your work.
 
 Click [here](../content/slides_uncertainty.pdf) to download the slides in the video as a PDF.
 
-<center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/PmDhvrgB47g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+{{< video https://www.youtube.com/embed/PmDhvrgB47g >}}
 
 # 3. Reflect
 
