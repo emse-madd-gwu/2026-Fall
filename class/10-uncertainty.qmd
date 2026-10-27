@@ -11,5 +11,5 @@ params:
   surveydown: true
 ---
 
-```{r child = here::here("fragments", "placeholder.qmd")}
+```{r child = here::here("fragments", "class.qmd")}
 ```

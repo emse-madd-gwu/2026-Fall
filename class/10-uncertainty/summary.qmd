@@ -1,0 +1,254 @@
+---
+engine: markdown
+format:
+  typst:
+    papersize: us-letter
+    margin:
+      x: 1.4cm
+      y: 1.2cm
+    fontsize: 8.6pt
+    mainfont: "Source Sans Pro"
+    keep-typ: false
+---
+
+{{< include ../_summary-styles.qmd >}}
+
+```{=typst}
+#summary-header(10, "Uncertainty", "October 28, 2026")
+#show: rest => columns(2, rest)
+```
+
+# The point of this week
+
+**An estimated coefficient is a best guess, not a fact.** Fit the same model to
+a different sample of respondents and every $\hat{\beta}$ moves a little. A
+result reported without its uncertainty can't tell anyone whether "people prefer
+Fuji apples" is a real finding or noise from 12 pilot respondents.
+
+So from now on every coefficient comes with a **standard error** and a
+**confidence interval**, and every plot of your results shows uncertainty
+bounds. The Pilot Analysis report requires both.
+
+The second half of the week is a data skill you need to get there: reshaping
+your raw survey responses into the "long" `choiceData` format that `logitr`
+estimates models from.
+
+# Where uncertainty comes from
+
+## The shape of the log-likelihood
+
+Maximum likelihood finds the $\beta$ that minimizes the negative log-likelihood,
+$-\ln(\mathcal{L}) = -\sum_j y_j \ln[P_j(\beta | x)]$. The *location* of the
+peak gives $\hat{\beta}$. The *curvature* of the peak gives the uncertainty. If
+the peak is flat, many other values of $\beta$ fit the data almost as well.
+
+| Peak of $\ln(\mathcal{L})$ | $\hat{\beta}$ is |
+|----------------------------|------------------|
+| Flat, broad | Less certain |
+| Sharp, narrow | More certain |
+
+## From the hessian to standard errors
+
+The **hessian** is the matrix of second derivatives of $\ln(\mathcal{L})$ — it
+measures that curvature. Its negative inverse is the covariance matrix of
+$\hat{\beta}$:
+
+$$
+\Sigma_{\beta} = -\left[\nabla^2_{\beta} \ln(\mathcal{L})\right]^{-1}
+$$
+
+The diagonal of $\Sigma_{\beta}$ holds the variances $\sigma^2_1, \sigma^2_2,
+\dots$; their square roots are the **standard errors** reported next to each
+estimate. A 95% confidence interval is approximately
+$[\hat{\beta} - 2\sigma, \; \hat{\beta} + 2\sigma]$.
+
+```{=typst}
+#keypoint[
+  Standard errors are the square roots of the diagonal of the negative inverse
+  hessian. A sharper log-likelihood peak means bigger (more negative) hessian
+  entries, smaller standard errors, and a tighter confidence interval.
+]
+```
+
+```r
+hessian <- matrix(c(-6000, 60, 60, -700),
+                  ncol = 2, byrow = TRUE)
+covariance <- -1 * solve(hessian)
+se <- sqrt(diag(covariance))
+
+beta <- c(-0.4, 0.5)
+beta - 2 * se   # lower bounds
+beta + 2 * se   # upper bounds
+```
+
+# Simulating uncertainty
+
+Instead of the $\pm 2\sigma$ formula, take thousands of **draws** from a
+multivariate normal distribution centered on $\hat{\beta}$ with covariance
+$\Sigma_{\beta}$. Each row of draws is one plausible set of coefficients. The
+mean of the draws recovers $\hat{\beta}$, and the 2.5% and 97.5% quantiles give
+the 95% interval.
+
+```r
+draws <- MASS::mvrnorm(10^4, beta, covariance)
+mean(draws[, 1])
+quantile(draws[, 1], c(0.025, 0.975))
+logitr::ci(draws, level = 0.95)  # all columns
+```
+
+Why bother when the formula works? Because the draws carry through *any*
+calculation. Compute WTP or a market share from each row of draws and you get
+that quantity's uncertainty for free. That is how we'll do it in the coming
+weeks.
+
+## With an estimated `logitr` model
+
+| Function | Returns |
+|----------|---------|
+| `summary(model)` | Estimates, std. errors, z, p-values |
+| `coef(model)` | The $\hat{\beta}$ vector |
+| `vcov(model)` | The covariance matrix $\Sigma_{\beta}$ |
+| `MASS::mvrnorm(n, mu, Sigma)` | `n` draws of the coefficients |
+| `ci(draws, level = 0.95)` | Mean, lower, upper for each column |
+
+```r
+coefs <- coef(model)
+covariance <- vcov(model)
+coef_draws <- as.data.frame(
+  MASS::mvrnorm(10^4, coefs, covariance))
+coef_ci <- ci(coef_draws, level = 0.95)
+```
+
+## Plotting it
+
+Plot the utility of each attribute level relative to its lowest level, with the
+interval around it (see `code/5.1-uncertainty.R` in `logitr-cars`):
+
+| Attribute type | Geoms |
+|----------------|-------|
+| Continuous (price, mpg) | `geom_line()` + `geom_ribbon(alpha = 0.2)` |
+| Categorical (powertrain) | `geom_point()` + `geom_errorbar()` |
+
+Map `ymin = lower` and `ymax = upper`, and give every panel the **same y-axis**
+so the attributes can be compared by eye.
+
+# Tidy data: "long" vs. "wide"
+
+Tidy data is **"long"** format:
+
+- Each **variable** has its own **column**
+- Each **observation** has its own **row**
+
+The quick test: **do the column names describe the values?** In a long table,
+`department`, `year`, and `rd_budget_mil` say what's in each column. In a wide
+table the names *are* values — `DOD`, `NASA`, `DOE` are levels of a department
+variable that got spread across columns.
+
+| Data | Format |
+|------|--------|
+| `country, year, cases, population` | Long |
+| `Film, Race, Female, Male` | Wide (`Female` and `Male` are values of gender) |
+| `Film, Race, Gender, Word_Count` | Long |
+
+## Reshaping with `tidyr`
+
+```r
+# wide -> long
+fed_spend_long <- fed_spend_wide %>%
+  pivot_longer(
+    names_to = "department",
+    values_to = "rd_budget_mil",
+    cols = DOD:Other)
+
+# long -> wide
+fed_spend_wide <- fed_spend_long %>%
+  pivot_wider(
+    names_from = department,
+    values_from = rd_budget_mil)
+```
+
+| Argument | Says |
+|----------|------|
+| `cols` | Columns to stack |
+| `names_to` | New column for the old names |
+| `values_to` | New column for the values |
+| `names_from` | Column that becomes names |
+| `values_from` | Column that fills them |
+
+`cols` takes a range (`DOD:Other`) or everything except some columns
+(`-year`). The new names in `names_to` and `values_to` are quoted; the
+existing columns in `names_from` and `values_from` are not.
+
+# From pilot responses to `choiceData`
+
+Your survey export has **one row per respondent**, with one column per choice
+question (`cbc_q1` … `cbc_q6`) holding the option they picked. `logitr` needs
+**one row per alternative, per question, per respondent**, with `choice` equal to
+1 for the chosen alternative and 0 otherwise. Getting there is a
+`pivot_longer()`:
+
+```r
+choice_data <- data %>%
+  pivot_longer(
+    cols = cbc_q1:cbc_q6,
+    names_to = "qID",
+    values_to = "choice") %>%
+  mutate(qID = parse_number(qID),
+         choice = parse_number(choice))
+```
+
+Then join the design (`choice_questions.csv`) by `respID` and `qID`, and
+recode with `choice = ifelse(choice == altID, 1, 0)`. The template walks
+through every step, including the filters that drop incomplete, speeding, and
+straight-lined responses.
+
+| Step | File in `template_conjoint_buttons` |
+|------|-------------------------------------|
+| Clean, build `choiceData` | `code/3_data_cleaning.R` |
+| Estimate models | `code/4_modeling.R` |
+
+Open the downloaded `template_conjoint_buttons-main` folder in Positron, not the
+individual script, so the `file.path("data", ...)` paths resolve.
+
+# Reading your pilot results
+
+- **Sign first.** A negative price coefficient is expected. A dummy coefficient
+  is utility *relative to the reference level* you left out.
+- **Does the 95% interval include zero?** If it does, the data can't tell that
+  attribute's effect apart from no effect.
+- **Expect wide intervals.** A pilot has few respondents, so standard errors are
+  large. Wide intervals are a reason to keep the attribute and collect more
+  data, not proof it doesn't matter. Next week's power analysis is about
+  choosing a sample size that shrinks them.
+- $\pm 2\sigma$ is shorthand for $\pm 1.96\sigma$, so simulated quantiles and
+  the formula agree to about two decimals.
+
+# Errors you will hit this week
+
+| Message | Usual cause |
+|---------|-------------|
+| `exactly singular` | `solve()` on a hessian from an unidentified model, e.g. a dummy for every level |
+| `NaNs produced` | Forgot the minus sign: `sqrt()` of negative variances |
+| `not positive definite` | Passed the hessian to `mvrnorm()`, not the covariance |
+| `not uniquely identified` | `pivot_wider()` found two values for one cell; an ID column is missing |
+| `Can't combine` | `pivot_longer()` stacking text and number columns; narrow `cols` |
+
+# Before next class
+
+- [Pilot Analysis report](https://madd.seas.gwu.edu/2026-Fall/project/4-pilot-analysis.html)
+  — due **Nov 1**. Coefficient table *with standard errors*, and figures *with
+  uncertainty bounds*.
+- [HW 9: Design of Experiment](https://madd.seas.gwu.edu/2026-Fall/hw/9-doe-power-analysis.html)
+  — due **Nov 2**.
+- **Quiz 4** is at the start of class on Nov 4.
+
+You should be able to:
+
+- Explain why a flatter log-likelihood means a less certain estimate.
+- Compute standard errors and a 95% CI from a hessian by hand in R.
+- Simulate coefficient draws with `mvrnorm()` and summarize them with `ci()`.
+- Plot estimated utilities with error bars or ribbons.
+- Tell long from wide data, and convert between them with `pivot_longer()` and
+  `pivot_wider()`.
+- Turn your pilot survey responses into a long `choiceData` data frame and
+  estimate a preliminary model with `logitr`.

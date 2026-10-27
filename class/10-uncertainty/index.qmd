@@ -173,7 +173,9 @@ hessian <- matrix(c(
 
 ```{r}
 covariance <- -1*solve(hessian)
-draws <- MASS::mvrnorm(10^5, beta, covariance)
+draws <- MASS::mvrnorm(
+  10^5, beta, covariance
+)
 
 head(draws)
 ```
@@ -618,7 +620,7 @@ countdown(
 
 # Your turn: Reshaping Data
 
-Open the `practice.Rmd` file.
+Open the `practice.qmd` file.
 
 Run the code chunk to read in the following two data files:
 
@@ -662,7 +664,7 @@ agenda(3)
 {{< center >}}
 {{< middle >}}
 
-## Download the [demo-choice-based-conjoint](https://github.com/surveydown-dev/demo-choice-based-conjoint/archive/refs/heads/main.zip) repo
+## Download the [conjoint_buttons](https://github.com/surveydown-dev/template_conjoint_buttons/archive/refs/heads/main.zip) template repo
 
 ---
 
@@ -674,7 +676,7 @@ agenda(3)
 
 ## 1. Open the `survey` folder in Positron
 
-## 2. Open `code/data_cleaning.R`
+## 2. Open `code/3_data_cleaning.R`
 
 :::
 
@@ -716,7 +718,7 @@ agenda(4)
 
 ## 1. Open the `survey` folder in Positron
 
-## 2. Open `code/modeling.R`
+## 2. Open `code/4_modeling.R`
 
 :::
 
