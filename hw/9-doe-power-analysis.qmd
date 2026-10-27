@@ -5,4 +5,29 @@ params:
   purpose: "The purpose of this assignment is to introduce the concept of design of experiments and to understand how experiment design can impact the amount of information available about different model effects."
 ---
 
-Coming soon!
+```{r child = here::here("fragments", "hw.qmd")}
+```
+
+{{< include ../fragments/hw-get-organized.qmd >}}
+
+# 2. Readings
+
+Last week we discussed how we quantify parameter uncertainty from maximizing the log-likelihood. This week, we'll begin considering the relationship between parameter uncertainty and how we design our experiment.
+
+**Take notes** as you watch the video. At the end of the video, I ask one practice question - you should answer this questions as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.
+
+Click [here](../content/slides_doe.pdf) to download the slides in the video as a PDF.
+
+{{< video https://www.youtube.com/embed/xmlGINu0_k8 >}}
+
+# 3. Reflect
+
+Reflect on what you've learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your ``r hw_file`` file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.
+
+If you're unsure where to start with a reflection, try filling out this template:
+
+> "I used to think ______, now I think ______ 🤔"
+
+# 4. Submit
+
+{{< include ../fragments/hw-submit.qmd >}}
