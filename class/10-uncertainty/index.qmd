@@ -12,6 +12,9 @@ format:
 include-in-header:
   - text: |
       <style>.reveal pre code { max-height: none; }</style>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({"HTML-CSS": {availableFonts: [], preferredFont: null, webFont: "TeX"}});
+      </script>
 mouse-wheel: true
 progress: false
 execute:
@@ -46,7 +49,7 @@ agenda_items <- c(
 
 # [Pilot Analysis Report](https://madd.seas.gwu.edu/2026-Fall/project/4-pilot-analysis.html)
 
-### Due 11/01 (that's 9 days from now)
+### Due 11/01 (that's 4 days from now)
 
 ---
 
@@ -465,6 +468,7 @@ lotr_words
 
 **Description**: Word counts in LOTR trilogy
 
+::: {.font80}
 ```{r}
 #| echo: false
 lotr_words %>%
@@ -475,6 +479,7 @@ lotr_words %>%
     ) %>%
     head(15)
 ```
+:::
 
 ---
 
@@ -672,9 +677,9 @@ agenda(3)
 
 <br>
 
-::: {.col width="80%"}
+::: {.col width="100%"}
 
-## 1. Open the `survey` folder in Positron
+## 1. Open the `template_conjoint_buttons-main` folder in Positron
 
 ## 2. Open `code/3_data_cleaning.R`
 
@@ -714,9 +719,9 @@ agenda(4)
 
 <br>
 
-::: {.col width="80%"}
+::: {.col width="100%"}
 
-## 1. Open the `survey` folder in Positron
+## 1. Open the `template_conjoint_buttons-main` folder in Positron
 
 ## 2. Open `code/4_modeling.R`
 

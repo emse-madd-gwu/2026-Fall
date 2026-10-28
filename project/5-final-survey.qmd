@@ -39,6 +39,8 @@ Your team's repo (`madd-f26/madd-team-<letter>`) already has a `5-final-survey/`
 - `app.R`: The file to run the Shiny app.
 - `images`: A folder of images (if you're using any in your survey).
 
+You will also add one new file to this folder: `power-analysis.qmd` (see [section 4](#design-of-experiment-power-analysis) below).
+
 # 2. Target population
 
 Who should take your survey? Write down the eligibility requirements for who should be allowed to take your survey directly in your `survey.qmd` file (e.g., as a comment near your eligibility screening questions). Your survey should screen out people who don't qualify, but I will also use this information to try to pre-screen respondents so hopefully fewer will be screened out of your survey.
@@ -53,19 +55,30 @@ Follow these guidelines in inserting your content:
 - In your `survey.qmd` file, you should have your randomized sets of choice questions working using your `choice_questions.csv` design file.
 - Setup a [database connection](https://surveydown.org/docs/storing-data) on Supabase and make sure your survey data is being stored properly in the database.
 
-# 4. Upload your survey to Posit Connect Cloud
+# 4. Design of experiment & power analysis {#design-of-experiment-power-analysis}
+
+Your final survey should use a design of experiment that you can justify. Create a `power-analysis.qmd` file in your `5-final-survey/` folder that contains both the code and a written justification for the design you used to make your `data/choice_questions.csv` file. Use the `power-analysis.qmd` file from [class 11](https://madd.seas.gwu.edu/2026-Fall/class/11-doe-power-analysis.html) as a guide. Your file should include the following:
+
+- **The design you used**. Describe the attributes and levels, the number of alternatives per question, the number of questions per respondent, and the design method you chose in `cbc_design()` (e.g., random, `"modfed"`, `"cea"`). If you used priors, state where they came from (e.g., your pilot analysis estimates).
+- **Balance and orthogonality**. Use `cbc_inspect()` to summarize your design, and discuss how balanced and orthogonal it is.
+- **A power analysis**. Simulate choices on your design with `cbc_choices()` and use `cbc_power()` to estimate models across a range of sample sizes. Include a summary figure of your power analysis results (standard errors versus sample size).
+- **Your conclusions**. What sample size do you need to identify each of your effects with reasonable precision? Do you expect to be able to obtain that sample size? If you compared more than one design, explain why you chose the one in your final survey.
+
+Your `power-analysis.qmd` file should render to html without errors.
+
+# 5. Upload your survey to Posit Connect Cloud
 
 Only one person from your team should create an account for hosting your survey on Posit Connect Cloud. Follow the documentation on [deploying the app](https://surveydown.org/docs/deployment).
 
 > Be sure to run the `app.R` file to preview your choice questions locally as a Shiny app before deploying to Posit Connect Cloud.
 
-# 5. Attribution
+# 6. Attribution
 
 Include a short description of the specific contributions of each team member for this report. If all members contributed equally, you can just put the single sentence "All members contributed equally".
 
 Team members who do not make meaningful contributions to their projects will not receive the same grade as that of their team mates. If you are having any issues or disputes among team members, please contact Professor Helveston ASAP so we can find a resolution.
 
-# 6. Submit
+# 7. Submit
 
 {{< include ../fragments/project-submit-app.qmd >}}
 
