@@ -2,12 +2,15 @@ order,category,label,rating,maxPoints,points,description
 1,organization,Organization & Formatting,Excellent,5,5,All formatting guidelines are followed.
 1,organization,Organization & Formatting,Good,5,4,Most formatting guidelines are followed; only one or two components from the template are missing.
 1,organization,Organization & Formatting,Needs work,5,3,Most formatting guidelines are followed; several components from the template are missing or incomplete.
-2,targetPopulation,Survey Content,Excellent,10,10 / 9,Rmd files are complete and compile without error to html pages. All referenced files are on the web (not local).
-2,targetPopulation,Survey Content,Good,10,8 / 7 / 6,Rmd files are complete and compile to html pages mostly without error (may need one or two small fixeds). All referenced files are on the web (not local).
-2,targetPopulation,Survey Content,Needs work,10,5 / 4 / 3,"Rmd files are incomplete and / or missing, and they require multiple fixes to compile into html files. References local files that are not yet on the web."
-3,conjointQuestions,Conjoint Questions,Excellent,10,10 / 9,Randomized conjoint questions render on live formr survey without error.
-3,conjointQuestions,Conjoint Questions,Good,10,8 / 7 / 6,Randomized conjoint questions render on live formr survey with only one or two errors (e.g. image load fail). 
-3,conjointQuestions,Conjoint Questions,Needs work,10,5 / 4 / 3,Randomized conjoint questions have major issues rendering on the live formr survey. Page load fails or content is displayed in an unintelligle manner.
+2,targetPopulation,Survey Content,Excellent,10,10 / 9,Survey content in survey.qmd is complete and renders without error. All referenced files (e.g. images) are included in the survey folder.
+2,targetPopulation,Survey Content,Good,10,8 / 7 / 6,Survey content in survey.qmd is complete and renders mostly without error (may need one or two small fixes). All referenced files (e.g. images) are included in the survey folder.
+2,targetPopulation,Survey Content,Needs work,10,5 / 4 / 3,"Survey content in survey.qmd is incomplete and / or missing, and it requires multiple fixes to render. Referenced files (e.g. images) are missing from the survey folder."
+3,conjointQuestions,Conjoint Questions,Excellent,10,10 / 9,Randomized conjoint questions render on the live survey without error.
+3,conjointQuestions,Conjoint Questions,Good,10,8 / 7 / 6,Randomized conjoint questions render on the live survey with only one or two errors (e.g. image load fail).
+3,conjointQuestions,Conjoint Questions,Needs work,10,5 / 4 / 3,Randomized conjoint questions have major issues rendering on the live survey. Page load fails or content is displayed in an unintelligible manner.
 4,deployment,surveydown,Excellent,10,10 / 9,"Entire survey renders on live survey without errors, user can get to end and questions are clear and understandable."
-4,deployment,surveydown,Good,10,8 / 7 / 6,"The survey contains one or two errors when rendering on shinyapps.io, but the user can still get to the end of the survey."
+4,deployment,surveydown,Good,10,8 / 7 / 6,"The survey contains one or two errors when rendering on Posit Connect Cloud, but the user can still get to the end of the survey."
 4,deployment,surveydown,Needs work,10,5 / 4 / 3,"An error page displays preventing continuation in the survey, or multiple major errors exist in the survey making it difficult to understand the questions."
+5,powerAnalysis,Design & Power Analysis,Excellent,10,10 / 9,"The design of experiment is fully described and justified, including balance and orthogonality and a power analysis with a figure of standard errors versus sample size. The power-analysis.qmd file renders without error."
+5,powerAnalysis,Design & Power Analysis,Good,10,8 / 7 / 6,"The design of experiment is described and justified, but the discussion of balance, orthogonality, or the power analysis may be unclear or missing details. The power-analysis.qmd file may need one or two small fixes to render."
+5,powerAnalysis,Design & Power Analysis,Needs work,10,5 / 4 / 3,"The design justification or power analysis is incomplete or missing, or the power-analysis.qmd file requires multiple fixes to render."

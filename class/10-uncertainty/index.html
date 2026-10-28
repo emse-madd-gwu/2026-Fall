@@ -744,6 +744,9 @@
   <link href="index_files/libs/countdown/countdown.css" rel="stylesheet">
   <script src="index_files/libs/countdown/countdown.js"></script>
   <style>.reveal pre code { max-height: none; }</style>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": {availableFonts: [], preferredFont: null, webFont: "TeX"}});
+  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -788,7 +791,7 @@ built-in one.
 <section class="slide level0">
 
 <h1><a href="https://madd.seas.gwu.edu/2026-Fall/project/4-pilot-analysis.html">Pilot Analysis Report</a></h1>
-<h3 id="due-1101-thats-9-days-from-now">Due 11/01 (that’s 9 days from now)</h3>
+<h3 id="due-1101-thats-4-days-from-now">Due 11/01 (that’s 4 days from now)</h3>
 </section>
 <section class="slide level0">
 
@@ -914,12 +917,12 @@ built-in one.
 <span id="cb2-6"><a href=""></a><span class="fu">head</span>(draws)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;            [,1]       [,2]      [,3]
-#&gt; [1,] -0.7220879 0.11330149 -4.020710
-#&gt; [2,] -0.6899298 0.12236852 -3.908402
-#&gt; [3,] -0.7238147 0.07461359 -3.898860
-#&gt; [4,] -0.6938826 0.15389371 -3.945582
-#&gt; [5,] -0.7094796 0.04408102 -3.938905
-#&gt; [6,] -0.6946108 0.11134020 -3.919875</code></pre>
+#&gt; [1,] -0.6911536 0.10922755 -3.981369
+#&gt; [2,] -0.7107502 0.07416692 -3.981956
+#&gt; [3,] -0.6780508 0.08397502 -3.916559
+#&gt; [4,] -0.6997417 0.08142976 -4.041525
+#&gt; [5,] -0.7106325 0.09235613 -3.966221
+#&gt; [6,] -0.6873777 0.12248389 -3.999070</code></pre>
 </div>
 </div>
 </div>
@@ -1333,6 +1336,7 @@ Tidy data
 
 <h1><strong>Quick practice 3</strong>: “long” or “wide” format?</h1>
 <p><strong>Description</strong>: Word counts in LOTR trilogy</p>
+<div class="font80">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 15 × 4
@@ -1353,6 +1357,7 @@ Tidy data
 #&gt; 13 The Two Towers             Elf    Female        331
 #&gt; 14 The Two Towers             Elf    Male          513
 #&gt; 15 The Two Towers             Hobbit Female          0</code></pre>
+</div>
 </div>
 </div>
 </section>
@@ -1527,7 +1532,7 @@ Reshaping data
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_15185b78" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_0a1fbce9" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1555,7 +1560,7 @@ Your turn: Reshaping Data
 <h1><span class="fancy">Break</span></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_47c90da7" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
+<div class="countdown" id="timer_b72ed052" data-warn-when="30" data-update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;margin:5%;font-size:8em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1586,9 +1591,9 @@ Your turn: Reshaping Data
 
 <h1><span class="center">Cleaning surveydown survey data</span></h1>
 <p><br></p>
-<div class="col" style="flex:0 1 80%;width:80%">
-<div id="open-the-survey-folder-in-positron" class="h2">
-1. Open the <code>survey</code> folder in Positron
+<div class="col" style="flex:0 1 100%;width:100%">
+<div id="open-the-template_conjoint_buttons-main-folder-in-positron" class="h2">
+1. Open the <code>template_conjoint_buttons-main</code> folder in Positron
 </div>
 <div id="open-code3_data_cleaning.r" class="h2">
 2. Open <code>code/3_data_cleaning.R</code>
@@ -1601,7 +1606,7 @@ Your turn: Reshaping Data
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_a7cd4653" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_15bd9574" data-warn-when="15" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1632,9 +1637,9 @@ As a team, pick up where you left off last week and create a <code>choiceData</c
 
 <h1><span class="center">Estimating pilot data models</span></h1>
 <p><br></p>
-<div class="col" style="flex:0 1 80%;width:80%">
-<div id="open-the-survey-folder-in-positron-1" class="h2">
-1. Open the <code>survey</code> folder in Positron
+<div class="col" style="flex:0 1 100%;width:100%">
+<div id="open-the-template_conjoint_buttons-main-folder-in-positron-1" class="h2">
+1. Open the <code>template_conjoint_buttons-main</code> folder in Positron
 </div>
 <div id="open-code4_modeling.r" class="h2">
 2. Open <code>code/4_modeling.R</code>

@@ -316,9 +316,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#get-organized" id="toc-get-organized" class="nav-link active" data-scroll-target="#get-organized">1. Get Organized</a></li>
   <li><a href="#target-population" id="toc-target-population" class="nav-link" data-scroll-target="#target-population">2. Target population</a></li>
   <li><a href="#write-your-survey-content" id="toc-write-your-survey-content" class="nav-link" data-scroll-target="#write-your-survey-content">3. Write your survey content</a></li>
-  <li><a href="#upload-your-survey-to-posit-connect-cloud" id="toc-upload-your-survey-to-posit-connect-cloud" class="nav-link" data-scroll-target="#upload-your-survey-to-posit-connect-cloud">4. Upload your survey to Posit Connect Cloud</a></li>
-  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">5. Attribution</a></li>
-  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">6. Submit</a></li>
+  <li><a href="#design-of-experiment-power-analysis" id="toc-design-of-experiment-power-analysis" class="nav-link" data-scroll-target="#design-of-experiment-power-analysis">4. Design of experiment &amp; power analysis</a></li>
+  <li><a href="#upload-your-survey-to-posit-connect-cloud" id="toc-upload-your-survey-to-posit-connect-cloud" class="nav-link" data-scroll-target="#upload-your-survey-to-posit-connect-cloud">5. Upload your survey to Posit Connect Cloud</a></li>
+  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">6. Attribution</a></li>
+  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">7. Submit</a></li>
   <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/emse-madd-gwu/2026-Fall/edit/main/project/5-final-survey.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/emse-madd-gwu/2026-Fall/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -362,6 +363,7 @@ ul.task-list li input[type="checkbox"] {
 <li><code>app.R</code>: The file to run the Shiny app.</li>
 <li><code>images</code>: A folder of images (if you’re using any in your survey).</li>
 </ul>
+<p>You will also add one new file to this folder: <code>power-analysis.qmd</code> (see <a href="#design-of-experiment-power-analysis">section 4</a> below).</p>
 </section>
 <section id="target-population" class="level1">
 <h1>2. Target population</h1>
@@ -377,20 +379,31 @@ ul.task-list li input[type="checkbox"] {
 <li>Setup a <a href="https://surveydown.org/docs/storing-data">database connection</a> on Supabase and make sure your survey data is being stored properly in the database.</li>
 </ul>
 </section>
+<section id="design-of-experiment-power-analysis" class="level1">
+<h1>4. Design of experiment &amp; power analysis</h1>
+<p>Your final survey should use a design of experiment that you can justify. Create a <code>power-analysis.qmd</code> file in your <code>5-final-survey/</code> folder that contains both the code and a written justification for the design you used to make your <code>data/choice_questions.csv</code> file. Use the <code>power-analysis.qmd</code> file from <a href="https://madd.seas.gwu.edu/2026-Fall/class/11-doe-power-analysis.html">class 11</a> as a guide. Your file should include the following:</p>
+<ul>
+<li><strong>The design you used</strong>. Describe the attributes and levels, the number of alternatives per question, the number of questions per respondent, and the design method you chose in <code>cbc_design()</code> (e.g., random, <code>"modfed"</code>, <code>"cea"</code>). If you used priors, state where they came from (e.g., your pilot analysis estimates).</li>
+<li><strong>Balance and orthogonality</strong>. Use <code>cbc_inspect()</code> to summarize your design, and discuss how balanced and orthogonal it is.</li>
+<li><strong>A power analysis</strong>. Simulate choices on your design with <code>cbc_choices()</code> and use <code>cbc_power()</code> to estimate models across a range of sample sizes. Include a summary figure of your power analysis results (standard errors versus sample size).</li>
+<li><strong>Your conclusions</strong>. What sample size do you need to identify each of your effects with reasonable precision? Do you expect to be able to obtain that sample size? If you compared more than one design, explain why you chose the one in your final survey.</li>
+</ul>
+<p>Your <code>power-analysis.qmd</code> file should render to html without errors.</p>
+</section>
 <section id="upload-your-survey-to-posit-connect-cloud" class="level1">
-<h1>4. Upload your survey to Posit Connect Cloud</h1>
+<h1>5. Upload your survey to Posit Connect Cloud</h1>
 <p>Only one person from your team should create an account for hosting your survey on Posit Connect Cloud. Follow the documentation on <a href="https://surveydown.org/docs/deployment">deploying the app</a>.</p>
 <blockquote class="blockquote">
 <p>Be sure to run the <code>app.R</code> file to preview your choice questions locally as a Shiny app before deploying to Posit Connect Cloud.</p>
 </blockquote>
 </section>
 <section id="attribution" class="level1">
-<h1>5. Attribution</h1>
+<h1>6. Attribution</h1>
 <p>Include a short description of the specific contributions of each team member for this report. If all members contributed equally, you can just put the single sentence “All members contributed equally”.</p>
 <p>Team members who do not make meaningful contributions to their projects will not receive the same grade as that of their team mates. If you are having any issues or disputes among team members, please contact Professor Helveston ASAP so we can find a resolution.</p>
 </section>
 <section id="submit" class="level1">
-<h1>6. Submit</h1>
+<h1>7. Submit</h1>
 <p>To submit this deliverable, commit and push your survey files to your team’s repo (<code>madd-f26/madd-team-&lt;letter&gt;</code>, where <code>&lt;letter&gt;</code> is your team letter) using GitHub Desktop: look at the diff, write a short commit message, click <strong>Commit</strong>, then <strong>Push</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Remember">
 <div class="callout-header d-flex align-content-center">
@@ -408,7 +421,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="grading-rubric" class="level1">
 <h1>Grading Rubric</h1>
-<p><strong>35 Total Points</strong></p>
+<p><strong>45 Total Points</strong></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="table table-striped caption-top table-sm small">
@@ -433,29 +446,38 @@ Most formatting guidelines are followed; several components from the template ar
 <tr class="even">
 <td style="text-align: left;">Survey Content</td>
 <td style="text-align: left;"><strong>10 / 9</strong><br>
-Rmd files are complete and compile without error to html pages. All referenced files are on the web (not local).</td>
+Survey content in survey.qmd is complete and renders without error. All referenced files (e.g. images) are included in the survey folder.</td>
 <td style="text-align: left;"><strong>8 / 7 / 6</strong><br>
-Rmd files are complete and compile to html pages mostly without error (may need one or two small fixeds). All referenced files are on the web (not local).</td>
+Survey content in survey.qmd is complete and renders mostly without error (may need one or two small fixes). All referenced files (e.g. images) are included in the survey folder.</td>
 <td style="text-align: left;"><strong>5 / 4 / 3</strong><br>
-Rmd files are incomplete and / or missing, and they require multiple fixes to compile into html files. References local files that are not yet on the web.</td>
+Survey content in survey.qmd is incomplete and / or missing, and it requires multiple fixes to render. Referenced files (e.g. images) are missing from the survey folder.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Conjoint Questions</td>
 <td style="text-align: left;"><strong>10 / 9</strong><br>
-Randomized conjoint questions render on live formr survey without error.</td>
+Randomized conjoint questions render on the live survey without error.</td>
 <td style="text-align: left;"><strong>8 / 7 / 6</strong><br>
-Randomized conjoint questions render on live formr survey with only one or two errors (e.g. image load fail).</td>
+Randomized conjoint questions render on the live survey with only one or two errors (e.g. image load fail).</td>
 <td style="text-align: left;"><strong>5 / 4 / 3</strong><br>
-Randomized conjoint questions have major issues rendering on the live formr survey. Page load fails or content is displayed in an unintelligle manner.</td>
+Randomized conjoint questions have major issues rendering on the live survey. Page load fails or content is displayed in an unintelligible manner.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">surveydown</td>
 <td style="text-align: left;"><strong>10 / 9</strong><br>
 Entire survey renders on live survey without errors, user can get to end and questions are clear and understandable.</td>
 <td style="text-align: left;"><strong>8 / 7 / 6</strong><br>
-The survey contains one or two errors when rendering on shinyapps.io, but the user can still get to the end of the survey.</td>
+The survey contains one or two errors when rendering on Posit Connect Cloud, but the user can still get to the end of the survey.</td>
 <td style="text-align: left;"><strong>5 / 4 / 3</strong><br>
 An error page displays preventing continuation in the survey, or multiple major errors exist in the survey making it difficult to understand the questions.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Design &amp; Power Analysis</td>
+<td style="text-align: left;"><strong>10 / 9</strong><br>
+The design of experiment is fully described and justified, including balance and orthogonality and a power analysis with a figure of standard errors versus sample size. The power-analysis.qmd file renders without error.</td>
+<td style="text-align: left;"><strong>8 / 7 / 6</strong><br>
+The design of experiment is described and justified, but the discussion of balance, orthogonality, or the power analysis may be unclear or missing details. The power-analysis.qmd file may need one or two small fixes to render.</td>
+<td style="text-align: left;"><strong>5 / 4 / 3</strong><br>
+The design justification or power analysis is incomplete or missing, or the power-analysis.qmd file requires multiple fixes to render.</td>
 </tr>
 </tbody>
 </table>

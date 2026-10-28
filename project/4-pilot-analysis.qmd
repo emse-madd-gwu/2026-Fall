@@ -62,7 +62,6 @@ Before writing your report, you should first analyze your pilot data by followin
 2. Open the `clean-data.R` file and write code to clean your pilot data and prepare it for modeling. Your cleaned choice data should be in a "long" format similar to the [example choice data here](https://github.com/surveydown-dev/template_conjoint_buttons/blob/main/data/choice_data.csv).
 3. Save your cleaned data file as a .csv file in the "data" folder.
 4. Open the `modeling.R` file and write code to estimate preliminary models using your cleaned choice data.
-5. Open the `power-analysis.R` file and write code to conduct a power analysis to inform the sample size requirements for your final survey.
 
 # 3. Pilot Analysis Report
 
@@ -113,16 +112,11 @@ Describe any filtering process you applied to your data. Summarize how many acce
 
 Write out the specific utility model you estimated. [This online LaTeX equation editor](https://www.codecogs.com/latex/eqneditor.php) might come in handy for this (also, some example LaTeX equations can be found in the class notes from previous classes). Include a summary table of your utility coefficient estimates with standard errors. You should also include summary figures of the estimated coefficients for all attributes. **Your figures should include uncertainty bounds**. Interpret and discuss the implications of your findings.
 
-#### Power Analysis
-
-You should also include a description of conclusions from your power analysis, including a summary figure of your power analysis results (standard errors versus sample size).
-
 ### Changes to Final Survey
 
 Based on your analyses, write a description of any changes you plan on making to your final survey (which should be based on your pilot survey). Consider the following:
 
 - Did you make any changes to the product attributes and / or levels?
-- Do you expect to be able to obtain the necessary sample size for your analysis?
 - Other useful feedback did you receive from respondents / classmates that informed a design change.
 
 ### Attribution
