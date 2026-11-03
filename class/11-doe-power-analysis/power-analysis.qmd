@@ -20,22 +20,39 @@ knitr::opts_chunk$set(
 
 library(tidyverse)
 library(cbcTools)
+
+set.seed(5678)
 ```
 
-First, define the attributes and levels:
+First, define the attributes and levels. These are the same as in
+`design-efficiency.qmd` (and the same car survey from class 8):
 
 ```{r}
 profiles <- cbc_profiles(
-  price       = c(15, 20, 25), # Price ($1,000)
-  fuelEconomy = c(20, 25, 30), # Fuel economy (mpg)
-  accelTime   = c(6, 7, 8),    # 0-60 mph acceleration time (s)
-  powertrain  = c('Gasoline', 'Electric')
+  price       = c(15, 20, 25),              # Price ($1,000)
+  fuelEconomy = c(20, 25, 30),              # Fuel economy (mpg)
+  accelTime   = c(6, 7, 8),                 # 0-60 mph acceleration time (s)
+  powertrain  = c('Gasoline', 'Hybrid', 'Electric')
+)
+```
+
+We need priors for two separate jobs: to find a D-efficient design, and to
+simulate the choices we'll run the power analysis on. Same priors as class 8:
+
+```{r}
+priors <- cbc_priors(
+  profiles,
+  price       = -0.7,
+  fuelEconomy = 0.1,
+  accelTime   = -0.2,
+  powertrain  = c('Hybrid' = 0.5, 'Electric' = -4.0)
 )
 ```
 
 # Random design
 
-Make a randomized full-factorial design:
+Make a random design (each respondent gets their own randomly sampled
+questions):
 
 ```{r}
 design_rand <- cbc_design(
@@ -50,39 +67,40 @@ head(design_rand)
 cbc_inspect(design_rand)
 ```
 
-Simulate random choices
+Simulate choices according to our assumed priors:
 
 ```{r}
-priors <- cbc_priors(
-  profiles,
-  price       = -0.1,
-  fuelEconomy = 0.1,
-  accelTime   = -0.1,
-  powertrain  = -4
-)
-
 choices_rand <- cbc_choices(
-    design = design_rand,
-    priors = priors
+  design = design_rand,
+  priors = priors
 )
 ```
 
-Run power analysis
+Run the power analysis. This estimates the model repeatedly on larger and
+larger subsets of the respondents, so we can see how the standard errors
+shrink as sample size grows:
 
 ```{r}
 power_rand <- cbc_power(
-    data = choices_rand,
-    outcome = "choice",
-    obsID = "obsID",
-    n_q = 6,
-    n_breaks = 10,
-    pars    = c("price", "fuelEconomy", "accelTime", "powertrain")
+  data     = choices_rand,
+  outcome  = "choice",
+  obsID    = "obsID",
+  n_q      = 6,
+  n_breaks = 10,
+  pars     = c("price", "fuelEconomy", "accelTime", "powertrain")
 )
 
 power_rand
 ```
 
-Here is a summary of the standard errors for each sample size:
+Note that `pars` takes the attribute names, not the dummy-coded column names -
+`cbc_power()` dummy codes `powertrain` for us and reports
+`powertrainHybrid` and `powertrainElectric` separately. (Leaving `pars` out
+entirely does the same thing by auto-detecting every attribute.) This is
+different from calling `logitr()` directly, as we did in class 8, where we had
+to dummy code the data ourselves first.
+
+Plot the results:
 
 ```{r}
 plot(
@@ -96,71 +114,108 @@ plot(
 )
 ```
 
-
-
-# Bayesian D-efficient design
-
-Make a Bayesian D-efficient fractional factorial design:
+`summary()` answers the actual question - how many respondents do we need?
 
 ```{r}
-priors <- cbc_priors(
+summary(power_rand)
+```
+
+Our assumed effects are large, so almost every coefficient clears 80% power at
+the smallest sample size we tested. That's a real answer, but it means the
+power curves don't tell us much. The `type = "se"` plot is more informative
+here, since standard errors keep shrinking after power has maxed out.
+
+It also means we should check a less optimistic scenario. Power analysis is
+only as good as the priors you feed it, so test a conservative set too:
+
+```{r}
+priors_conservative <- cbc_priors(
   profiles,
   price       = -0.1,
   fuelEconomy = 0.1,
   accelTime   = -0.1,
-  powertrain  = -4
+  powertrain  = c('Hybrid' = 0.1, 'Electric' = -0.4)
 )
 
-design_db_eff <- cbc_design(
-  profiles  = profiles,
-  n_resp    = 500, # Number of respondents
-  n_alts    = 3,   # Number of alternatives per question
-  n_q       = 6,   # Number of questions per respondent
-  n_start   = 10, 
-  n_blocks  = 1,
-  priors = priors, 
-  method = 'modfed'
+power_conservative <- cbc_power(
+  data     = cbc_choices(design = design_rand, priors = priors_conservative),
+  outcome  = "choice",
+  obsID    = "obsID",
+  n_q      = 6,
+  n_breaks = 10,
+  pars     = c("price", "fuelEconomy", "accelTime", "powertrain")
 )
 
-cbc_inspect(design_db_eff)
+plot(
+  power_conservative,
+  type = "power"
+)
+
+summary(power_conservative)
 ```
 
-Simulate choices
+With smaller effects the curves actually rise, and the required sample size is
+much larger. When you report a sample size, report which priors it came from.
+
+# Bayesian D-efficient design
+
+Make a Bayesian D-efficient fractional factorial design (see
+`design-efficiency.qmd` for what the tuning parameters do):
 
 ```{r}
-choices_db_eff <- cbc_choices(
-    design = design_db_eff,
-    priors = priors
+design_opt <- cbc_design(
+  profiles = profiles,
+  n_resp   = 500, # Number of respondents
+  n_alts   = 3,   # Number of alternatives per question
+  n_q      = 6,   # Number of questions per respondent
+  priors   = priors,
+  method   = 'modfed',
+  n_start  = 5,
+  n_blocks = 1
 )
+
+cbc_inspect(design_opt)
 ```
 
-Run power analysis
+Simulate choices on this design, using the same priors so the comparison with
+the random design is fair:
 
 ```{r}
-power_db_eff <- cbc_power(
-    data = choices_db_eff,
-    outcome = "choice",
-    obsID = "obsID",
-    n_q = 6,
-    n_breaks = 10,
-    pars    = c("price", "fuelEconomy", "accelTime", "powertrain")
+choices_opt <- cbc_choices(
+  design = design_opt,
+  priors = priors
 )
-
-power_db_eff
 ```
 
-Here is a summary of the standard errors for each sample size:
+Run the power analysis:
+
+```{r}
+power_opt <- cbc_power(
+  data     = choices_opt,
+  outcome  = "choice",
+  obsID    = "obsID",
+  n_q      = 6,
+  n_breaks = 10,
+  pars     = c("price", "fuelEconomy", "accelTime", "powertrain")
+)
+
+power_opt
+```
 
 ```{r}
 plot(
-  power_db_eff,
+  power_opt,
   type = "power"
 )
 
 plot(
-  power_db_eff,
+  power_opt,
   type = "se"
 )
+```
+
+```{r}
+summary(power_opt)
 ```
 
 # Compare designs
@@ -168,13 +223,17 @@ plot(
 ```{r}
 plot_compare_power(
   Random = power_rand,
-  Modfed = power_db_eff,
+  Modfed = power_opt,
   type = "power"
 )
 
 plot_compare_power(
   Random = power_rand,
-  Modfed = power_db_eff,
+  Modfed = power_opt,
   type = "se"
 )
 ```
+
+The D-efficient design reaches any given level of precision with fewer
+respondents - the same thing the D-error comparison in `design-efficiency.qmd`
+told us, now expressed in the units you actually have to budget for.

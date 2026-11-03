@@ -420,6 +420,50 @@ c) Are any main effects confounded? If so, what are they confounded with?
 agenda(2)
 ```
 
+```{r}
+#| include: false
+
+# Designs behind the balance / overlap output on the next few slides.
+# Computed live so the numbers can never drift from what cbcTools returns.
+doe_profiles <- cbc_profiles(
+  brand = c("GM", "BMW", "Ferrari"),
+  price = c("20k", "40k", "100k")
+)
+
+doe_priors <- cbc_priors(
+  doe_profiles,
+  brand = c(BMW = 1, Ferrari = 2),
+  price = c(`40k` = -1, `100k` = -4)
+)
+
+set.seed(42)
+doe_small <- cbc_design(doe_profiles, n_resp = 1, n_alts = 3, n_q = 9)
+
+set.seed(42)
+doe_big <- cbc_design(doe_profiles, n_resp = 10, n_alts = 3, n_q = 9)
+
+set.seed(42)
+doe_opt <- cbc_design(
+  doe_profiles,
+  n_resp = 10, n_alts = 3, n_q = 9, n_blocks = 1,
+  priors = doe_priors, method = "modfed", n_start = 5, use_idefix = FALSE
+)
+
+doe_price <- function(d) factor(d$price, levels = c("20k", "40k", "100k"))
+
+counts <- function(d) {
+  cat("Attribute counts:\n\nbrand:\n")
+  print(table(d$brand))
+  cat("\nprice:\n")
+  print(table(doe_price(d)))
+}
+
+pairs_counts <- function(d) {
+  cat("Pairwise attribute counts:\n\nbrand & price:\n")
+  print(table(d$brand, doe_price(d)))
+}
+```
+
 ---
 
 # [A simple conjoint experiment about _cars_]{.center}
@@ -435,37 +479,19 @@ Price     | $20k, $40k, $100k
 
 ::: {.col}
 
-::: {.cell-output .cell-output-stdout}
+```{r}
+#| echo: false
+counts(doe_small)
 ```
-Attribute counts:
-
-brand:
-  GM   BMW  Ferrari
-  10    11    6
-
-price:
-
- 20k  40k 100k
-  9    9   9
-```
-:::
 
 :::
 
 ::: {.col .fragment}
 
-::: {.cell-output .cell-output-stdout}
+```{r}
+#| echo: false
+pairs_counts(doe_small)
 ```
-Pairwise attribute counts:
-
-brand & price:
-
-          20k 40k 100k
-  GM        3   0    7
-  BMW       4   5    2
-  Ferrari   2   4    0
-```
-:::
 
 :::
 
@@ -484,37 +510,19 @@ Price     | $20k, $40k, $100k
 
 ::: {.col}
 
-::: {.cell-output .cell-output-stdout}
+```{r}
+#| echo: false
+counts(doe_big)
 ```
-Attribute counts:
-
-brand:
-  GM    BMW   Ferrari
-  92    80     98
-
-price:
-
-  20k  40k 100k
-  91   84   95
-```
-:::
 
 :::
 
 ::: {.col .fragment}
 
-::: {.cell-output .cell-output-stdout}
+```{r}
+#| echo: false
+pairs_counts(doe_big)
 ```
-Pairwise attribute counts:
-
-brand & price:
-
-          20k 40k 100k
-  GM      31  31  30
-  BMW     25  25  30
-  Ferrari 35  28  35
-```
-:::
 
 :::
 
@@ -546,32 +554,18 @@ Price     | $20k, $40k, $100k | 0, -1, -4
 
 ::: {.col}
 
-```
-Attribute counts:
-
-brand:
-  GM    BMW   Ferrari
-  93    90     86
-
-price:
-
-  20k  40k 100k
-  97   93   78
+```{r}
+#| echo: false
+counts(doe_opt)
 ```
 
 :::
 
 ::: {.col .fragment}
 
-```
-Pairwise attribute counts:
-
-brand & price:
-
-          20k 40k 100k
-  GM      52  41  0
-  BMW     30  30  30
-  Ferrari 15  22  49
+```{r}
+#| echo: false
+pairs_counts(doe_opt)
 ```
 
 :::
@@ -593,6 +587,20 @@ brand & price:
 ## $$D = |\boldsymbol{I}(\boldsymbol{\beta})| ^{-1/p}$$
 
 where $p$ is the number of coefficients in the model
+
+---
+
+# [Getting the D-error of a design]{.center}
+
+<br>
+
+### `cbc_inspect()` reports a D-error, but only for designs built with a D-optimal method (`"stochastic"`, `"modfed"`, `"cea"`)
+
+. . .
+
+### To compare an efficient design against a random one, we have to compute it ourselves - which is just the two equations above, in about 20 lines of code
+
+### We'll write that function in `design-efficiency.qmd`
 
 ---
 
@@ -623,7 +631,9 @@ countdown(
 
 1. Individually, create a Bayesian D-efficient fractional factorial survey design. Inspect the attribute balance and overlap.
 
-2. Compare your results with your teammates.
+2. Compute the D-error of your design and of a random design with the same number of questions. Which is lower?
+
+3. Compare your results with your teammates.
 
 ---
 
@@ -711,8 +721,10 @@ countdown(
 
 Individually:
 
-1. Using the survey design you created in the last practice, conduct a power analysis to determine the necessary sample size to achieve a 0.05 significance level on your parameter estimates.
+1. Using the survey design you created in the last practice, conduct a power analysis. Use `summary()` to find the sample size you need to reach 80% power (at $\alpha = 0.05$) on every parameter.
 
-2. Compare your results with your teammates.
+2. Re-run it with a more conservative set of priors. How much does your required sample size change?
+
+3. Compare your results with your teammates.
 
 :::

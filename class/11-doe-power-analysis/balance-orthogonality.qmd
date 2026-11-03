@@ -31,11 +31,13 @@ B: Warranty? (Yes+ or No-)
 C: Ford? (Yes+ or No-)
 
 ```{r}
-profiles <- cbc_profiles(
+# data.frame() strips the "cbc_profiles" class so that printing, count(),
+# and row subsetting below all show plain tables
+profiles <- data.frame(cbc_profiles(
     electric = c(1, 0),
     warranty = c(1, 0),
     ford     = c(1, 0)
-)
+))
 
 profiles
 ```
