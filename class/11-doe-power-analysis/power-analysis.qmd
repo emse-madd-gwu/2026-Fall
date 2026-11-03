@@ -163,7 +163,7 @@ Make a Bayesian D-efficient fractional factorial design (see
 `design-efficiency.qmd` for what the tuning parameters do):
 
 ```{r}
-design_opt <- cbc_design(
+design_modfed <- cbc_design(
   profiles = profiles,
   n_resp   = 500, # Number of respondents
   n_alts   = 3,   # Number of alternatives per question
@@ -174,15 +174,15 @@ design_opt <- cbc_design(
   n_blocks = 1
 )
 
-cbc_inspect(design_opt)
+cbc_inspect(design_modfed)
 ```
 
 Simulate choices on this design, using the same priors so the comparison with
 the random design is fair:
 
 ```{r}
-choices_opt <- cbc_choices(
-  design = design_opt,
+choices_modfed <- cbc_choices(
+  design = design_modfed,
   priors = priors
 )
 ```
@@ -190,8 +190,8 @@ choices_opt <- cbc_choices(
 Run the power analysis:
 
 ```{r}
-power_opt <- cbc_power(
-  data     = choices_opt,
+power_modfed <- cbc_power(
+  data     = choices_modfed,
   outcome  = "choice",
   obsID    = "obsID",
   n_q      = 6,
@@ -199,23 +199,23 @@ power_opt <- cbc_power(
   pars     = c("price", "fuelEconomy", "accelTime", "powertrain")
 )
 
-power_opt
+power_modfed
 ```
 
 ```{r}
 plot(
-  power_opt,
+  power_modfed,
   type = "power"
 )
 
 plot(
-  power_opt,
+  power_modfed,
   type = "se"
 )
 ```
 
 ```{r}
-summary(power_opt)
+summary(power_modfed)
 ```
 
 # Compare designs
@@ -223,13 +223,13 @@ summary(power_opt)
 ```{r}
 plot_compare_power(
   Random = power_rand,
-  Modfed = power_opt,
+  Modfed = power_modfed,
   type = "power"
 )
 
 plot_compare_power(
   Random = power_rand,
-  Modfed = power_opt,
+  Modfed = power_modfed,
   type = "se"
 )
 ```
