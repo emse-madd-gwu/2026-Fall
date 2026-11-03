@@ -274,7 +274,7 @@ steak | red
 
 :::
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 library(cbcTools)
@@ -316,7 +316,7 @@ All pairs of levels appear together an equal number of times.
 
 :::
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 library(cbcTools)
@@ -358,7 +358,7 @@ All pairs of levels appear together an equal number of times.
 
 :::
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| eval: false
