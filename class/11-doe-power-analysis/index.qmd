@@ -594,13 +594,15 @@ where $p$ is the number of coefficients in the model
 
 <br>
 
-### `cbc_inspect()` reports a D-error, but only for designs built with a D-optimal method (`"stochastic"`, `"modfed"`, `"cea"`)
+### `cbc_inspect()` and `cbc_compare()` report a design's D-error
 
 . . .
 
-### To compare an efficient design against a random one, we have to compute it ourselves - which is just the two equations above, in about 20 lines of code
+### But only for designs built with a D-optimal method (`"stochastic"`, `"modfed"`, `"cea"`) - D-error gets computed _during_ the optimization
 
-### We'll write that function in `design-efficiency.qmd`
+. . .
+
+### So a random design has no D-error to report. To find out whether an efficient design beats a random one, we need [power analysis]{.orange}
 
 ---
 
@@ -631,7 +633,7 @@ countdown(
 
 1. Individually, create a Bayesian D-efficient fractional factorial survey design. Inspect the attribute balance and overlap.
 
-2. Compute the D-error of your design and of a random design with the same number of questions. Which is lower?
+2. Try all three D-optimal methods and compare them with `cbc_compare()`. Which gives the lowest D-error? Which is the most balanced?
 
 3. Compare your results with your teammates.
 

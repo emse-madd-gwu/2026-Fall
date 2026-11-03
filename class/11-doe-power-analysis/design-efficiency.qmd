@@ -26,7 +26,7 @@ set.seed(5678)
 
 # Measuring D-efficiency of experiment designs
 
-Make a simple design of experiment for a conjoint survey on cars.
+Make a design of experiment for a conjoint survey on cars.
 
 First, define the attributes and levels (the same car survey from class 8):
 
@@ -39,8 +39,10 @@ profiles <- cbc_profiles(
 )
 ```
 
-We'll also need priors - our assumptions about the coefficients. These are the
-same priors we used to simulate choices in class 8:
+We'll also need priors - our assumptions about the coefficients. A D-efficient
+design is efficient *for an assumed set of coefficients*, so we have to say
+what we think they are. These are the same priors we used to simulate choices
+in class 8:
 
 ```{r}
 priors <- cbc_priors(
@@ -75,7 +77,7 @@ cbc_inspect(design_rand)
 Make a Bayesian D-efficient fractional factorial design:
 
 ```{r}
-design_opt <- cbc_design(
+design_modfed <- cbc_design(
   profiles = profiles,
   n_resp   = 500, # Number of respondents
   n_alts   = 3,   # Number of alternatives per question
@@ -86,10 +88,13 @@ design_opt <- cbc_design(
   n_blocks = 1
 )
 
-head(design_opt)
+head(design_modfed)
 
-cbc_inspect(design_opt)
+cbc_inspect(design_modfed)
 ```
+
+Note the `SUMMARY METRICS` section: this design has a D-error, and the random
+design above did not. More on that below.
 
 Tuning parameters:
 
@@ -113,114 +118,61 @@ Tuning parameters:
 
 # Comparing designs
 
+Make a design with each of the three D-optimal methods so we have something to
+compare:
+
+```{r}
+design_stochastic <- cbc_design(
+  profiles = profiles,
+  n_resp   = 500,
+  n_alts   = 3,
+  n_q      = 6,
+  priors   = priors,
+  method   = 'stochastic',
+  n_start  = 5,
+  n_blocks = 1
+)
+
+design_cea <- cbc_design(
+  profiles = profiles,
+  n_resp   = 500,
+  n_alts   = 3,
+  n_q      = 6,
+  priors   = priors,
+  method   = 'cea',
+  n_start  = 5,
+  n_blocks = 1
+)
+```
+
 `cbc_compare()` puts the key metrics for any number of designs side by side:
 
 ```{r}
 cbc_compare(
-  Random = design_rand,
-  Modfed = design_opt,
-  metrics = c("efficiency", "balance", "overlap")
+  Random     = design_rand,
+  Stochastic = design_stochastic,
+  Modfed     = design_modfed,
+  CEA        = design_cea,
+  metrics    = c("efficiency", "balance", "overlap")
 )
 ```
 
-Notice two things:
+Three things to take away from that table:
 
-1. The D-error columns are `NA` for the random design. {cbcTools} only records a
-   D-error for designs built with a D-optimal method, because D-error gets
-   computed _during_ the optimization. We'll compute it ourselves below.
-2. The random design is actually _more balanced_ than the D-efficient one. That
-   is not a bug. Balance and efficiency are different goals, and a D-optimal
-   algorithm will happily sacrifice balance to buy information about the
-   coefficients you said you care about.
+1. **The D-optimal methods differ from each other.** They are all searching for
+   a low D-error, but they search differently, so they land in different
+   places. It's worth trying more than one.
 
-# Computing D-error ourselves
+2. **The random design has no D-error at all** - the column is `NA`. {cbcTools}
+   computes D-error *during* the optimization, so it only has one to report for
+   designs built with a D-optimal method. There's no function that will score
+   an arbitrary design after the fact.
 
-Recall from the slides that the information matrix for one choice question is
+3. **The random design is the most balanced of the four.** That is not a bug.
+   Balance and efficiency are different goals, and a D-optimal algorithm will
+   happily sacrifice balance to buy information about the coefficients you told
+   it to care about.
 
-$$\boldsymbol{I}_q = \boldsymbol{X}_q^{\top}\left(\text{diag}(\boldsymbol{P}_q) - \boldsymbol{P}_q \boldsymbol{P}_q^{\top}\right)\boldsymbol{X}_q$$
-
-where $\boldsymbol{P}_q$ are the choice probabilities implied by our priors. Sum
-over the questions one respondent sees to get $\boldsymbol{I}$, then
-
-$$D = \left|\boldsymbol{I}\right|^{-1/K}$$
-
-where $K$ is the number of coefficients. That's the whole calculation, and it's
-short enough to write out:
-
-```{r}
-d_error <- function(design, priors = NULL) {
-  # Dummy code the design so the columns line up with the coefficients
-  design <- cbc_encode(design, coding = "dummy")
-
-  # With no priors, every coefficient is assumed to be 0 (the "D0-error")
-  beta <- priors$pars
-  if (is.null(beta)) {
-    pars <- setdiff(
-      names(design),
-      c("profileID", "blockID", "respID", "qID", "altID", "obsID", "choice")
-    )
-    beta <- setNames(rep(0, length(pars)), pars)
-  }
-  X <- as.matrix(design[, names(beta), drop = FALSE])
-
-  # D-error is a property of the set of questions ONE respondent sees,
-  # so compute it separately for each respondent
-  blocks <- split(seq_len(nrow(design)), design$respID)
-  vapply(blocks, function(rows) {
-    info <- matrix(0, length(beta), length(beta))
-    for (q in unique(design$obsID[rows])) {
-      Xq <- X[rows[design$obsID[rows] == q], , drop = FALSE]
-      p  <- exp(Xq %*% beta)
-      p  <- as.vector(p / sum(p))
-      info <- info + t(Xq) %*% (diag(p) - p %*% t(p)) %*% Xq
-    }
-    # A block that can't identify the model has a singular information
-    # matrix - treat that as infinitely bad rather than NA
-    error <- det(info)^(-1 / length(beta))
-    if (is.finite(error)) error else Inf
-  }, numeric(1))
-}
-```
-
-Check it against {cbcTools}. Every respondent sees the same block in our
-D-efficient design (`n_blocks = 1`), so there is a single D-error to compare:
-
-```{r}
-# Ours:
-median(d_error(design_opt, priors))  # Dp-error, using the priors
-median(d_error(design_opt))          # D0-error, assuming all coefficients are 0
-
-# What cbc_inspect() reported above:
-cbc_inspect(design_opt, sections = "efficiency")
-```
-
-Now the comparison we actually wanted - the same calculation on the random
-design:
-
-```{r}
-errors_rand <- d_error(design_rand, priors)
-errors_opt  <- d_error(design_opt, priors)
-
-median(errors_rand)
-median(errors_opt)
-```
-
-The D-efficient design has a much lower D-error, which is the whole point: for
-the same 6 questions per respondent, it extracts substantially more information
-about the coefficients.
-
-One more thing worth noticing. Because each respondent in a random design gets
-their own questions, each one has their own D-error, and some of them are
-terrible:
-
-```{r}
-summary(errors_rand)
-
-# How many respondents got a block of questions that can't even identify
-# the model (an information matrix with no inverse)?
-sum(!is.finite(errors_rand))
-```
-
-A handful of respondents saw 6 questions from which these 5 coefficients cannot
-be estimated at all. The D-efficient design guarantees that never happens,
-because every respondent gets the block the algorithm chose.
+So if D-error can't tell us whether the efficient design beats a random one,
+what can? Power analysis - which measures the same thing in units you can
+actually budget for. That's `power-analysis.qmd`.
