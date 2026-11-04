@@ -87,7 +87,8 @@ power_rand <- cbc_power(
   obsID    = "obsID",
   n_q      = 6,
   n_breaks = 10,
-  pars     = c("price", "fuelEconomy", "accelTime", "powertrain")
+  pars     = c("price", "fuelEconomy", "accelTime", "powertrain"), 
+  n_cores = 1
 )
 
 power_rand
@@ -120,13 +121,9 @@ plot(
 summary(power_rand)
 ```
 
-Our assumed effects are large, so almost every coefficient clears 80% power at
-the smallest sample size we tested. That's a real answer, but it means the
-power curves don't tell us much. The `type = "se"` plot is more informative
-here, since standard errors keep shrinking after power has maxed out.
+Our assumed effects are large, so almost every coefficient clears 80% power at the smallest sample size we tested. That's a real answer, but it means the power curves don't tell us much. 
 
-It also means we should check a less optimistic scenario. Power analysis is
-only as good as the priors you feed it, so test a conservative set too:
+The `type = "se"` plot is more informative here, since standard errors keep shrinking after power has maxed out. It also means we should check a less optimistic scenario. Power analysis is only as good as the priors you feed it, so test a conservative set too:
 
 ```{r}
 priors_conservative <- cbc_priors(
@@ -143,7 +140,8 @@ power_conservative <- cbc_power(
   obsID    = "obsID",
   n_q      = 6,
   n_breaks = 10,
-  pars     = c("price", "fuelEconomy", "accelTime", "powertrain")
+  pars     = c("price", "fuelEconomy", "accelTime", "powertrain"), 
+  n_cores = 1
 )
 
 plot(
@@ -154,8 +152,7 @@ plot(
 summary(power_conservative)
 ```
 
-With smaller effects the curves actually rise, and the required sample size is
-much larger. When you report a sample size, report which priors it came from.
+With smaller effects the curves actually rise, and the required sample size is much larger. When you report a sample size, report which priors it came from.
 
 # Bayesian D-efficient design
 
@@ -170,7 +167,7 @@ design_modfed <- cbc_design(
   n_q      = 6,   # Number of questions per respondent
   priors   = priors,
   method   = 'modfed',
-  n_start  = 5,
+  n_start  = 1,
   n_blocks = 1
 )
 
@@ -196,7 +193,8 @@ power_modfed <- cbc_power(
   obsID    = "obsID",
   n_q      = 6,
   n_breaks = 10,
-  pars     = c("price", "fuelEconomy", "accelTime", "powertrain")
+  pars     = c("price", "fuelEconomy", "accelTime", "powertrain"), 
+  n_cores = 1
 )
 
 power_modfed
@@ -234,6 +232,4 @@ plot_compare_power(
 )
 ```
 
-The D-efficient design reaches any given level of precision with fewer
-respondents - the same thing the D-error comparison in `design-efficiency.qmd`
-told us, now expressed in the units you actually have to budget for.
+The D-efficient design reaches any given level of precision with fewer respondents - the same thing the D-error comparison in `design-efficiency.qmd` told us, now expressed in the units you actually have to budget for.

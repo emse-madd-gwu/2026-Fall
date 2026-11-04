@@ -84,7 +84,7 @@ design_modfed <- cbc_design(
   n_q      = 6,   # Number of questions per respondent
   priors   = priors,
   method   = 'modfed',
-  n_start  = 5,
+  n_start  = 1,
   n_blocks = 1
 )
 
@@ -93,28 +93,17 @@ head(design_modfed)
 cbc_inspect(design_modfed)
 ```
 
-Note the `SUMMARY METRICS` section: this design has a D-error, and the random
-design above did not. More on that below.
+Note the `SUMMARY METRICS` section: this design has a D-error, and the random design above did not. More on that below.
 
 Tuning parameters:
 
 - `method`: Which design algorithm to use. There are seven:
     - `"random"` (the default): independently sample profiles for each respondent.
-    - `"shortcut"`, `"minoverlap"`, `"balanced"`: fast greedy algorithms that
-      target attribute balance and low overlap. They do **not** use priors.
-    - `"stochastic"`, `"modfed"`, `"cea"`: the D-optimal algorithms. These are
-      the ones that minimize D-error. `"modfed"` (modified Federov) swaps whole
-      profiles exhaustively; `"cea"` (coordinate exchange) swaps one attribute
-      at a time and is faster; `"stochastic"` accepts the first improvement it
-      finds and is fastest.
-- `priors`: Your assumed coefficients. Provide them and the D-optimal methods
-  minimize the $D_p$-error; omit them and they minimize the $D_0$-error (which
-  assumes every coefficient is 0).
-- `n_start`: Number of random starts when searching for a D-efficient design.
-  More starts is a better search, but slower.
-- `n_blocks`: Number of blocks the design is split into. More blocks means more
-  people see more different questions, which increases overall efficiency, but
-  it takes longer to compute.
+    - `"shortcut"`, `"minoverlap"`, `"balanced"`: fast greedy algorithms that target attribute balance and low overlap. They do **not** use priors.
+    - `"stochastic"`, `"modfed"`, `"cea"`: the D-optimal algorithms. These are the ones that minimize D-error. `"modfed"` (modified Federov) swaps whole profiles exhaustively; `"cea"` (coordinate exchange) swaps one attribute at a time and is faster; `"stochastic"` accepts the first improvement it finds and is fastest.
+- `priors`: Your assumed coefficients. Provide them and the D-optimal methods minimize the $D_p$-error; omit them and they minimize the $D_0$-error (which assumes every coefficient is 0).
+- `n_start`: Number of random starts when searching for a D-efficient design. More starts is a better search, but slower.
+- `n_blocks`: Number of blocks the design is split into. More blocks means more people see more different questions, which increases overall efficiency, but it takes longer to compute.
 
 # Comparing designs
 
@@ -129,7 +118,7 @@ design_stochastic <- cbc_design(
   n_q      = 6,
   priors   = priors,
   method   = 'stochastic',
-  n_start  = 5,
+  n_start  = 1,
   n_blocks = 1
 )
 
@@ -140,7 +129,7 @@ design_cea <- cbc_design(
   n_q      = 6,
   priors   = priors,
   method   = 'cea',
-  n_start  = 5,
+  n_start  = 1,
   n_blocks = 1
 )
 ```
@@ -159,20 +148,10 @@ cbc_compare(
 
 Three things to take away from that table:
 
-1. **The D-optimal methods differ from each other.** They are all searching for
-   a low D-error, but they search differently, so they land in different
-   places. It's worth trying more than one.
+1. **The D-optimal methods differ from each other.** They are all searching for a low D-error, but they search differently, so they land in different places. It's worth trying more than one.
 
-2. **The random design has no D-error at all** - the column is `NA`. {cbcTools}
-   computes D-error *during* the optimization, so it only has one to report for
-   designs built with a D-optimal method. There's no function that will score
-   an arbitrary design after the fact.
+2. **The random design has no D-error at all** - the column is `NA`. {cbcTools} computes D-error *during* the optimization, so it only has one to report for designs built with a D-optimal method. There's no function that will score an arbitrary design after the fact.
 
-3. **The random design is the most balanced of the four.** That is not a bug.
-   Balance and efficiency are different goals, and a D-optimal algorithm will
-   happily sacrifice balance to buy information about the coefficients you told
-   it to care about.
+3. **The random design is the most balanced of the four.** That is not a bug. Balance and efficiency are different goals, and a D-optimal algorithm will happily sacrifice balance to buy information about the coefficients you told it to care about.
 
-So if D-error can't tell us whether the efficient design beats a random one,
-what can? Power analysis - which measures the same thing in units you can
-actually budget for. That's `power-analysis.qmd`.
+So if D-error can't tell us whether the efficient design beats a random one, what can? Power analysis - which measures the same thing in units you can actually budget for. That's `power-analysis.qmd`.
