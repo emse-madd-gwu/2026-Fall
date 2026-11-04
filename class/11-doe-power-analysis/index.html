@@ -101,7 +101,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-b347fff2a7c45c2678ee5df48c274abd.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-fd00472e3a78a30ea026e890d6a0b4e9.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -790,7 +790,7 @@ built-in one.
 <h1>Quiz 4</h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_470b9161" minutes="12" seconds="0" warn-when="30" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:3em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_fb696b05" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <div class="cols-row">
@@ -1258,30 +1258,35 @@ Open <code>balance-orthogonality.qmd</code>
 <p><span class="center"><strong>Design: <span class="red">9</span> choice sets, <span class="blue">3</span> alternatives each</strong></span></p>
 <div class="fragment">
 <div class="cols-row">
-<div class="col">
+<div class="col font80">
+<div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Attribute counts:
-
-brand:
-  GM   BMW  Ferrari
-  10    11    6
-
-price:
-
- 20k  40k 100k
-  9    9   9</code></pre>
+<pre><code>#&gt; Attribute counts:
+#&gt; 
+#&gt; brand:
+#&gt; 
+#&gt;      GM     BMW Ferrari 
+#&gt;      10      11       6 
+#&gt; 
+#&gt; price:
+#&gt; 
+#&gt;  20k  40k 100k 
+#&gt;    8   10    9</code></pre>
 </div>
 </div>
-<div class="col fragment">
+</div>
+<div class="col fragment font80">
+<div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Pairwise attribute counts:
-
-brand &amp; price:
-
-          20k 40k 100k
-  GM        3   0    7
-  BMW       4   5    2
-  Ferrari   2   4    0</code></pre>
+<pre><code>#&gt; Pairwise attribute counts:
+#&gt; 
+#&gt; brand &amp; price:
+#&gt;          
+#&gt;           20k 40k 100k
+#&gt;   GM        3   5    2
+#&gt;   BMW       4   4    3
+#&gt;   Ferrari   1   1    4</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1311,30 +1316,35 @@ brand &amp; price:
 <p><span class="center"><strong>Design: <span class="red">90</span> choice sets, <span class="blue">3</span> alternatives each</strong></span></p>
 <div class="fragment">
 <div class="cols-row">
-<div class="col">
+<div class="col font80">
+<div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Attribute counts:
-
-brand:
-  GM    BMW   Ferrari
-  92    80     98
-
-price:
-
-  20k  40k 100k
-  91   84   95</code></pre>
+<pre><code>#&gt; Attribute counts:
+#&gt; 
+#&gt; brand:
+#&gt; 
+#&gt;      GM     BMW Ferrari 
+#&gt;      93      89      88 
+#&gt; 
+#&gt; price:
+#&gt; 
+#&gt;  20k  40k 100k 
+#&gt;   93   91   86</code></pre>
 </div>
 </div>
-<div class="col fragment">
+</div>
+<div class="col fragment font80">
+<div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Pairwise attribute counts:
-
-brand &amp; price:
-
-          20k 40k 100k
-  GM      31  31  30
-  BMW     25  25  30
-  Ferrari 35  28  35</code></pre>
+<pre><code>#&gt; Pairwise attribute counts:
+#&gt; 
+#&gt; brand &amp; price:
+#&gt;          
+#&gt;           20k 40k 100k
+#&gt;   GM       39  27   27
+#&gt;   BMW      33  31   25
+#&gt;   Ferrari  21  33   34</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1395,27 +1405,36 @@ brand &amp; price:
 </tbody>
 </table>
 <div class="cols-row">
-<div class="col">
-<pre><code>Attribute counts:
-
-brand:
-  GM    BMW   Ferrari
-  93    90     86
-
-price:
-
-  20k  40k 100k
-  97   93   78</code></pre>
+<div class="col font80">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; Attribute counts:
+#&gt; 
+#&gt; brand:
+#&gt; 
+#&gt;      GM     BMW Ferrari 
+#&gt;     100      90      80 
+#&gt; 
+#&gt; price:
+#&gt; 
+#&gt;  20k  40k 100k 
+#&gt;   80  120   70</code></pre>
 </div>
-<div class="col fragment">
-<pre><code>Pairwise attribute counts:
-
-brand &amp; price:
-
-          20k 40k 100k
-  GM      52  41  0
-  BMW     30  30  30
-  Ferrari 15  22  49</code></pre>
+</div>
+</div>
+<div class="col fragment font80">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; Pairwise attribute counts:
+#&gt; 
+#&gt; brand &amp; price:
+#&gt;          
+#&gt;           20k 40k 100k
+#&gt;   GM       40  50   10
+#&gt;   BMW      30  40   20
+#&gt;   Ferrari  10  30   40</code></pre>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -1438,6 +1457,19 @@ brand &amp; price:
 </section>
 <section class="slide level0">
 
+<section id="getting-the-d-error-of-a-design" class="center">
+<h1><span class="center">Getting the D-error of a design</span></h1>
+<p><br></p>
+<h3 id="cbc_inspect-and-cbc_compare-report-a-designs-d-error"><code>cbc_inspect()</code> and <code>cbc_compare()</code> report a design’s D-error</h3>
+<div class="fragment">
+<p><br></p>
+<h3 id="but-only-for-designs-built-with-a-d-optimal-method-stochastic-modfed-cea---d-error-gets-computed-during-the-optimization">But only for designs built with a D-optimal method (<code>"stochastic"</code>, <code>"modfed"</code>, <code>"cea"</code>) - D-error gets computed <em>during</em> the optimization</h3>
+<p>(random designs have no D-error to report)</p>
+</div>
+</section>
+</section>
+<section class="slide level0">
+
 <section class="lexis-slide-title center middle">
 <h1 class="lexis-slide-title"></h1>
 <div id="finding-efficient-designs" class="h1">
@@ -1454,12 +1486,13 @@ Open <code>design-efficiency.qmd</code>
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_7f964f17" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_01a8110e" minutes="15" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <h2 id="your-turn">Your Turn</h2>
 <ol type="1">
 <li><p>Individually, create a Bayesian D-efficient fractional factorial survey design. Inspect the attribute balance and overlap.</p></li>
+<li><p>Try all three D-optimal methods and compare them with <code>cbc_compare()</code>. Which gives the lowest D-error? Which is the most balanced?</p></li>
 <li><p>Compare your results with your teammates.</p></li>
 </ol>
 </section>
@@ -1510,7 +1543,7 @@ Open <code>design-efficiency.qmd</code>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="figs/unnamed-chunk-16-1.png" width="576"></p>
+<p><img data-src="figs/unnamed-chunk-23-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -1536,14 +1569,15 @@ Open <code>power-analysis.qmd</code>
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_587dd0bd" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_cfb4100c" minutes="15" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <h2 id="your-turn-1">Your Turn</h2>
 <div class="col" style="flex:0 1 80%;width:80%">
 <p>Individually:</p>
 <ol type="1">
-<li><p>Using the survey design you created in the last practice, conduct a power analysis to determine the necessary sample size to achieve a 0.05 significance level on your parameter estimates.</p></li>
+<li><p>Using the survey design you created in the last practice, conduct a power analysis. Use <code>summary()</code> to find the sample size you need to reach 80% power (at <span class="math inline">\(\alpha = 0.05\)</span>) on every parameter.</p></li>
+<li><p>Re-run it with a more conservative set of priors. How much does your required sample size change?</p></li>
 <li><p>Compare your results with your teammates.</p></li>
 </ol>
 </div>

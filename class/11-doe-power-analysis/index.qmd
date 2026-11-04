@@ -39,12 +39,12 @@ agenda_items <- c(
 ```{r}
 #| echo: false
 countdown(
-  minutes      = 12,
-  warn_when    = 30,
+  minutes = 10,
+  warn_when = 15,
   update_every = 1,
-  top          = 0,
-  right        = 0,
-  font_size    = '3em'
+  top = '0.5em',
+  right = '0.5em',
+  font_size = '2em'
 )
 ```
 
@@ -477,7 +477,7 @@ Price     | $20k, $40k, $100k
 
 . . .
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| echo: false
@@ -486,7 +486,7 @@ counts(doe_small)
 
 :::
 
-::: {.col .fragment}
+::: {.col .fragment .font80}
 
 ```{r}
 #| echo: false
@@ -508,7 +508,7 @@ Price     | $20k, $40k, $100k
 
 . . .
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| echo: false
@@ -517,7 +517,7 @@ counts(doe_big)
 
 :::
 
-::: {.col .fragment}
+::: {.col .fragment .font80}
 
 ```{r}
 #| echo: false
@@ -552,7 +552,7 @@ Attribute | Levels | Prior
 Brand     | GM, BMW, Ferrari  | 0, 1, 2
 Price     | $20k, $40k, $100k | 0, -1, -4
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 #| echo: false
@@ -561,7 +561,7 @@ counts(doe_opt)
 
 :::
 
-::: {.col .fragment}
+::: {.col .fragment .font80}
 
 ```{r}
 #| echo: false
@@ -590,6 +590,8 @@ where $p$ is the number of coefficients in the model
 
 ---
 
+{{< center >}}
+
 # [Getting the D-error of a design]{.center}
 
 <br>
@@ -598,11 +600,11 @@ where $p$ is the number of coefficients in the model
 
 . . .
 
+<br>
+
 ### But only for designs built with a D-optimal method (`"stochastic"`, `"modfed"`, `"cea"`) - D-error gets computed _during_ the optimization
 
-. . .
-
-### So a random design has no D-error to report. To find out whether an efficient design beats a random one, we need [power analysis]{.orange}
+(random designs have no D-error to report)
 
 ---
 
@@ -620,11 +622,11 @@ where $p$ is the number of coefficients in the model
 ```{r}
 #| echo: false
 countdown(
-  minutes = 20,
+  minutes = 15,
   warn_when = 15,
   update_every = 1,
-  top = 0,
-  right = 0,
+  top = '0.5em',
+  right = '0.5em',
   font_size = '2em'
 )
 ```
@@ -708,11 +710,11 @@ Standard errors also decrease with:
 ```{r}
 #| echo: false
 countdown(
-  minutes = 20,
+  minutes = 15,
   warn_when = 15,
   update_every = 1,
-  top = 0,
-  right = 0,
+  top = '0.5em',
+  right = '0.5em',
   font_size = '2em'
 )
 ```
