@@ -11,5 +11,6 @@ params:
   surveydown: false
 ---
 
-```{r child = here::here("fragments", "placeholder.qmd")}
-```
+Final presentations will be held **in-person** on **12/9** from **2:30pm - 5:00pm** in **SEH B1270 (Lehman Auditorium)**.
+
+Each team will have 10 minutes to present. See the [project page](../project/7-final-presentation.qmd) for details.
