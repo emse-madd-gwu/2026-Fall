@@ -5,4 +5,25 @@ params:
   purpose: "The purpose of this assignment is to introduce the concept of preference heterogeneity - that is, not everyone has the same preferences. We will see two ways to account for this: 1) specify preference parameters as distributions, and 2) estimate fixed parameter models on different sub-groups in your data."
 ---
 
-Coming soon!
+```{r child = here::here("fragments", "hw.qmd")}
+```
+
+{{< include ../fragments/hw-get-organized.qmd >}}
+
+# 2. Readings
+
+Up until this point in the class, we have only estimated relatively simple models that assume everyone in our sample has the same preferences. That is, we only estimate a "fixed parameter" model that reflects the average preferences for the whole sample. In reality, preferences are usually _heterogeneous_ (different people have different preferences).
+
+One way to account for this is to estimated a "mixed" logit model where we assume the preference parameters in our utility models follow some distribution across the sample (usually a normal distribution). Another way is to estimate a fixed parameter model on different sub-groups in our data. Each of these approaches are discussed in this week's video on heterogeneity. **Take notes** as you watch the video and answer the practice questions in the video as part of your reflection. You may submit your answers however you wish, e.g. hand-write them on paper and take a picture and / or type answers in your reflection .Rmd file.
+
+Click [here](../content/slides_heterogeneity.pdf) to download the slides in the video as a PDF.
+
+{{< video https://www.youtube.com/embed/tOGKpeZ0AhE >}}
+
+# 3. Reflect
+
+Reflect on what you've learned while going through these readings and exercises. Is there anything that jumped out at you? Anything you found particularly interesting or confusing? Write at least a paragraph in your ``r hw_file`` file, and include at least one question. The teaching team will review the questions we get and will try to answer them either in Slack or in class.
+
+# 4. Submit
+
+{{< include ../fragments/hw-submit.qmd >}}

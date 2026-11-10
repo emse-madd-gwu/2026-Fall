@@ -134,11 +134,16 @@ We can use the coefficients and hessian from a model to obtain draws that reflec
 ```{r}
 beta <- c(-0.7, 0.1, -4.0)
 
+hessian <- matrix(c(
+    -6000,   50,   60,
+       50, -700,   50,
+       60,   50, -300),
+    ncol = 3, byrow = TRUE)
 ```
 
 :::
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 covariance <- -1 * solve(hessian)
@@ -241,8 +246,8 @@ countdown(
   minutes = 10,
   warn_when = 15,
   update_every = 1,
-  top = 0,
-  right = 0,
+  top = '0.5em',
+  right = '0.5em',
   font_size = '2em'
 )
 ```
@@ -271,7 +276,7 @@ agenda(3)
 
 ::: {.col}
 
-## "Preference Space"
+## ["Preference Space"]{.center}
 
 ## $$\tilde{u}_j = \alpha p_j + \boldsymbol{\beta} x_j + \tilde{\varepsilon_j}$$
 
@@ -279,7 +284,7 @@ agenda(3)
 
 ::: {.col .fragment}
 
-## "WTP Space"
+## ["WTP Space"]{.center}
 
 ## $$\boldsymbol{\omega} = \frac{\boldsymbol{\beta}}{-\alpha}$$
 ## $$\lambda = - \alpha$$
@@ -332,8 +337,8 @@ countdown(
   minutes = 10,
   warn_when = 15,
   update_every = 1,
-  top = 0,
-  right = 0,
+  top = '0.5em',
+  right = '0.5em',
   font_size = '2em'
 )
 ```
@@ -482,11 +487,16 @@ We can use the coefficients and hessian from a model to obtain draws that reflec
 ```{r}
 beta <- c(-0.7, 0.1, -4.0)
 
+hessian <- matrix(c(
+    -6000,   50,   60,
+       50, -700,   50,
+       60,   50, -300),
+    ncol = 3, byrow = TRUE)
 ```
 
 :::
 
-::: {.col}
+::: {.col .font80}
 
 ```{r}
 covariance <- -1 * solve(hessian)
@@ -533,8 +543,8 @@ countdown(
   minutes = 20,
   warn_when = 15,
   update_every = 1,
-  top = 0,
-  right = 0,
+  top = '0.5em',
+  right = '0.5em',
   font_size = '2em'
 )
 ```

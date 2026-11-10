@@ -1,0 +1,313 @@
+---
+engine: markdown
+format:
+  typst:
+    papersize: us-letter
+    margin:
+      x: 1.4cm
+      y: 1.2cm
+    fontsize: 8.6pt
+    mainfont: "Source Sans Pro"
+    keep-typ: false
+---
+
+{{< include ../_summary-styles.qmd >}}
+
+```{=typst}
+#summary-header(12, "WTP & Simulations", "November 11, 2026")
+#show: rest => columns(2, rest)
+```
+
+# The point of this week
+
+A table of $\beta$ coefficients is hard to act on. "Electric powertrain:
+−4.0" means nothing to a product manager. This week turns the estimates into
+the two outputs a design decision actually needs:
+
+1. **Willingness to pay (WTP)**: what each attribute is worth, *in dollars*.
+2. **Market simulations**: the share of the market a product would capture
+   against specific competitors.
+
+Both are arithmetic on the coefficients you already estimated. Both also
+inherit the coefficients' uncertainty, so both get confidence intervals the
+same way: take draws of the coefficients and push every draw through the
+calculation.
+
+# Willingness to pay
+
+Split utility into price and everything else:
+
+$$
+\tilde{u}_j = \alpha p_j + \boldsymbol{\beta} x_j + \tilde{\varepsilon}_j
+$$
+
+$\alpha$ is the utility of one more unit of price (negative), and each
+$\beta$ is the utility of one more unit of an attribute. Dividing one by the
+other cancels the utility units and leaves dollars:
+
+$$
+\boldsymbol{\omega} = \frac{\boldsymbol{\beta}}{(-\alpha)}
+$$
+
+WTP comes out **in the units price was coded in**. If price is in \$1,000s, a
+WTP of 0.14 means \$140.
+
+**Hats mean "estimated."** $\alpha$ and $\boldsymbol{\beta}$ are the true
+(unknown) parameters; $\hat{\alpha}$ and $\hat{\boldsymbol{\beta}}$ are what
+your model returned, so what you compute is
+$\hat{\boldsymbol{\omega}} = \hat{\boldsymbol{\beta}} / (-\hat{\alpha})$.
+
+## Worked example
+
+Cars, with price in \$1,000s, fuel economy in mpg, and an electric dummy.
+Estimates: $\hat{\alpha} = -0.7$, $\hat{\beta}_1 = 0.1$,
+$\hat{\beta}_2 = -4.0$.
+
+| Attribute | WTP | In dollars |
+|-----------|-----|------------|
+| Fuel economy | 0.1 / 0.7 = 0.143 | +\$143 per mpg |
+| Electric | −4.0 / 0.7 = −5.71 | −\$5,714 vs. gas |
+
+```r
+beta <- c(price = -0.7, mpg = 0.1, elec = -4.0)
+wtp <- beta / (-1 * beta['price'])
+```
+
+The price entry divides to −1 by construction; ignore it.
+
+# WTP with uncertainty
+
+A ratio of two uncertain numbers has no simple standard error formula, so
+**simulate it.** Same recipe as the uncertainty week:
+
+1. Get the coefficients and the covariance matrix (the negative inverse of the
+   hessian).
+2. Draw many coefficient vectors from a multivariate normal.
+3. Compute WTP for every draw.
+4. Report the mean and the 2.5% and 97.5% quantiles.
+
+```r
+hessian <- matrix(c(
+  -6000,   50,   60,
+     50, -700,   50,
+     60,   50, -300),
+  ncol = 3, byrow = TRUE)
+covariance <- -1 * solve(hessian)
+
+draws <- MASS::mvrnorm(10^4, beta, covariance)
+wtp_draws <- draws[, 2:3] / (-1 * draws[, 1])
+
+logitr::ci(wtp_draws)   # mean, lower, upper
+```
+
+From an estimated {logitr} model, `coef(model)` and `vcov(model)` give you
+the two inputs directly (`code/6.1-compute-wtp.R` in `logitr-cars`):
+
+```r
+coefs <- coef(model_mnl)
+covariance <- vcov(model_mnl)
+coef_draws <- as.data.frame(
+  MASS::mvrnorm(10^4, coefs, covariance))
+wtp_draws <- -1 * (coef_draws[, 2:5] /
+                   coef_draws[, 1])
+ci(wtp_draws, level = 0.95)
+```
+
+# Estimating WTP directly
+
+Instead of computing WTP after the fact, rewrite the model so the WTP values
+*are* the parameters. Substitute $\boldsymbol{\omega} = \boldsymbol{\beta} /
+(-\alpha)$ and define the scale $\lambda = -\alpha$:
+
+$$
+\tilde{u}_j = \lambda (\boldsymbol{\omega} x_j - p_j) + \tilde{\varepsilon}_j
+$$
+
+| Space | Estimates | WTP | Log-likelihood |
+|-------|-----------|--------|----------------|
+| Preference | $\alpha$, $\boldsymbol{\beta}$ | Computed | Convex |
+| WTP | $\lambda$, $\boldsymbol{\omega}$ | Estimated | **Non-convex** |
+
+A non-convex log-likelihood can have several local maxima, and the optimizer
+stops at whichever one is closest to where it started. The fix is a
+**multi-start**: run the optimization from many random starting points and keep
+the best result.
+
+```r
+model_mnl_wtp <- logitr(
+  data    = data,
+  outcome = "choice",
+  obsID   = "obsID",
+  pars = c('fuelEconomy', 'accelTime',
+           'powertrain_Electric',
+           'powertrain_Hybrid'),
+  scalePar = 'price',     # the WTP-space switch
+  numMultiStarts = 10)
+```
+
+Price moves out of `pars` and into `scalePar`. Then check that you found a
+real maximum, not just a stopping point:
+
+```r
+# 1st order: gradient should be ~0
+model_mnl_wtp$gradient
+
+# 2nd order: all eigenvalues negative
+eigen(model_mnl_wtp$hessian)$values
+
+# Same WTP and log-likelihood as the
+# preference-space model?
+wtpCompare(model_mnl, model_mnl_wtp,
+           scalePar = 'price')
+```
+
+If the WTP-space log-likelihood is noticeably worse than the preference-space
+one, the multi-start did not find the global maximum. Add more starts.
+
+# Simulating market shares
+
+A **market** is a set of alternatives a buyer chooses among: your product plus
+the competitors you expect it to face. Write it as a matrix $\boldsymbol{X}$,
+one row per alternative, one column per attribute. Then apply the logit
+formula with your estimates:
+
+$$
+\hat{P}_j = \frac{e^{\hat{\boldsymbol{\beta}}'\boldsymbol{X}_j}}
+                 {\sum_{k=1}^J e^{\hat{\boldsymbol{\beta}}'\boldsymbol{X}_k}}
+$$
+
+In R, `X %*% beta` computes every alternative's observed utility at once.
+
+## Worked example
+
+Same coefficients as above, with $\boldsymbol{\beta}$ ordered as price, mpg,
+electric:
+
+| Alt | Price | mpg | Elec | $v_j$ | Share |
+|-----|-------|-----|------|-------|-------|
+| 1 | 15 | 20 | 0 | −8.5 | 81.6% |
+| 2 | 30 | 100 | 1 | −15.0 | 0.1% |
+| 3 | 20 | 40 | 0 | −10.0 | 18.2% |
+
+```r
+X <- matrix(c(
+  15,  20, 0,
+  30, 100, 1,
+  20,  40, 0),
+  ncol = 3, byrow = TRUE)
+v_j <- X %*% beta
+P_j <- exp(v_j) / sum(exp(v_j))
+```
+
+Shares depend on **differences** in utility, so a 6.5-point utility gap
+leaves the electric car with almost nothing.
+
+## With uncertainty: `predict()`
+
+`predict()` does the draws for you: it samples coefficients, computes the
+shares for each draw, and returns the mean and the confidence interval
+(`code/7.1-compute-market-sims.R`):
+
+```r
+baseline <- data.frame(
+  altID = c(1, 2, 3),
+  obsID = c(1, 1, 1),
+  price = c(15, 25, 21),
+  fuelEconomy = c(20, 100, 40),
+  accelTime = c(8, 6, 7),
+  powertrain_Electric = c(0, 1, 0),
+  powertrain_Hybrid   = c(0, 0, 1))
+
+sim_mnl <- predict(
+  model_mnl,
+  newdata    = baseline,
+  obsID      = 'obsID',
+  level      = 0.95,
+  interval   = 'confidence',
+  returnData = TRUE)
+```
+
+The column names in `newdata` must match the model's `pars` exactly, dummy
+coding included. To run several markets at once, stack them in one data frame
+with a different `obsID` for each scenario.
+
+```{=typst}
+#keypoint[
+  WTP and market shares are both functions of uncertain coefficients, so they
+  are uncertain too. Never report a WTP or a share as a single number: report
+  the mean with a 95% confidence interval from the coefficient draws.
+]
+```
+
+# Presenting the results
+
+## WTP
+
+- **Scale WTP to a change people care about.** WTP is per unit, and "\$143
+  per mpg" undersells a 10 mpg improvement. Multiply the mean *and* both
+  bounds by the size of the change.
+- **Flip the sign for "lower is better" attributes.** A 3-second faster
+  0–60 time is a change of −3, so multiply by −3.
+- **Drop $\lambda$ before plotting** a WTP-space model's draws. It is the
+  price scale, not a WTP.
+- **Continuous attributes** plot as a line with a ribbon; **categorical**
+  ones as points with error bars, with the reference level at 0. Put every
+  panel on the same y-axis so the sizes compare honestly.
+
+```r
+wtp_ci <- ci(wtp_draws, level = 0.95)
+wtp_ci <- wtp_ci[-1, ]   # drop lambda
+```
+
+## Market shares
+
+A bar per alternative with an error bar for the interval, y-axis fixed from
+0 to 100%. One panel per scenario with `facet_wrap(~obsID)`.
+
+```r
+sim_mnl %>%
+  ggplot(aes(
+    x = label,
+    y = predicted_prob,
+    ymin = predicted_prob_lower,
+    ymax = predicted_prob_upper)) +
+  geom_col(fill = "grey", width = 0.6) +
+  geom_errorbar(width = 0.3) +
+  scale_y_continuous(
+    limits = c(0, 1),
+    labels = scales::percent)
+```
+
+## Common mistakes
+
+| Symptom | Usual cause |
+|---------|-------------|
+| WTP has the wrong sign | Divided by $\alpha$ instead of $-\alpha$ |
+| WTP off by 1,000× | Forgot price was coded in \$1,000s |
+| WTP-space LL worse than pref-space | Too few multi-starts |
+| `predict()` errors on `newdata` | Column names don't match `pars` |
+| Shares don't sum to 1 | Alternatives from different markets share an `obsID` |
+| Huge WTP intervals | Price coefficient is close to zero |
+
+# Before next class
+
+- [Final Survey](https://madd.seas.gwu.edu/2026-Fall/project/5-final-survey.html)
+  — due **Nov 15**.
+- [HW 11: Heterogeneity](https://madd.seas.gwu.edu/2026-Fall/hw/11-heterogeneity.html)
+  — due **Nov 16**.
+- With your team, compute WTP from your pilot model, re-estimate it in WTP
+  space, and set up one or two market scenarios pitting your product against
+  real competitors. All of it goes into the
+  [Final Analysis](https://madd.seas.gwu.edu/2026-Fall/project/6-final-analysis.html)
+  report, due **Dec 6**.
+- Quiz 5 is at the start of class on **Nov 18**.
+
+You should be able to:
+
+- Compute WTP from preference-space coefficients and state it in dollars.
+- Get a 95% confidence interval on WTP by simulating coefficient draws.
+- Estimate a WTP-space model with `scalePar` and a multi-start, and check
+  its first- and second-order conditions.
+- Explain why WTP-space models need a multi-start.
+- Compute market shares for a set of alternatives by hand and with
+  `predict()`, with confidence intervals.
