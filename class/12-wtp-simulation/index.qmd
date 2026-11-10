@@ -71,7 +71,8 @@ agenda(1)
 
 ::: {.col}
 
-# Model
+# [Model]{.center}
+
 ## $$\tilde{u}_j = \alpha p_j + \boldsymbol{\beta} x_j + \tilde{\varepsilon_j}$$
 ## $$\boldsymbol{\omega} = \frac{\boldsymbol{\beta}}{-\alpha}$$
 
@@ -79,7 +80,8 @@ agenda(1)
 
 ::: {.col}
 
-# Estimated Model
+# [Estimated Model]{.center}
+
 ## $$\tilde{u}_j = \hat{\alpha} p_j + \hat{\boldsymbol{\beta}} x_j + \tilde{\varepsilon_j}$$
 ## $$\hat{\boldsymbol{\omega}} = \frac{\hat{\boldsymbol{\beta}}}{-\hat{\alpha}}$$
 
@@ -132,11 +134,6 @@ We can use the coefficients and hessian from a model to obtain draws that reflec
 ```{r}
 beta <- c(-0.7, 0.1, -4.0)
 
-hessian <- matrix(c(
-    -6000,   50,   60,
-       50, -700,   50,
-       60,   50, -300),
-    ncol = 3, byrow = TRUE)
 ```
 
 :::
@@ -144,7 +141,7 @@ hessian <- matrix(c(
 ::: {.col}
 
 ```{r}
-covariance <- -1*solve(hessian)
+covariance <- -1 * solve(hessian)
 draws <- MASS::mvrnorm(10^4, beta, covariance)
 
 head(draws)
@@ -161,9 +158,9 @@ head(draws)
 ::: {.col .fragment width="55%" .font80}
 
 ```{r}
-draws_other <- draws[,2:ncol(draws)]
-draws_price <- draws[,1]
-draws_wtp <- draws_other / (-1*draws_price)
+draws_other <- draws[, 2:ncol(draws)]
+draws_price <- draws[, 1]
+draws_wtp <- draws_other / (-1 * draws_price)
 head(draws_wtp)
 ```
 
@@ -331,7 +328,14 @@ agenda(3)
 
 ```{r}
 #| echo: false
-countdown(minutes = 10, warn_when = 15, update_every = 1, top = 0, right = 0, font_size = '2em')
+countdown(
+  minutes = 10,
+  warn_when = 15,
+  update_every = 1,
+  top = 0,
+  right = 0,
+  font_size = '2em'
+)
 ```
 
 ## Your Turn
@@ -354,12 +358,15 @@ Try plotting your results (see `6.3-plot-wtp.R` for examples)
 ```{r}
 #| echo: false
 countdown(
-    minutes      = 5,
-    warn_when    = 30,
+    minutes = 5,
+    warn_when = 30,
     update_every = 1,
-    left         = 0, right = 0, top = 1, bottom = 0,
-    margin       = "5%",
-    font_size    = "8em"
+    left = 0,
+    right = 0,
+    top = 1,
+    bottom = 0,
+    margin = "5%",
+    font_size = "8em"
 )
 ```
 
@@ -475,11 +482,6 @@ We can use the coefficients and hessian from a model to obtain draws that reflec
 ```{r}
 beta <- c(-0.7, 0.1, -4.0)
 
-hessian <- matrix(c(
-    -6000,   50,   60,
-       50, -700,   50,
-       60,   50, -300),
-    ncol = 3, byrow = TRUE)
 ```
 
 :::
@@ -487,7 +489,7 @@ hessian <- matrix(c(
 ::: {.col}
 
 ```{r}
-covariance <- -1*solve(hessian)
+covariance <- -1 * solve(hessian)
 draws <- MASS::mvrnorm(10^4, beta, covariance)
 
 head(draws)
@@ -527,7 +529,14 @@ Internally, it:
 
 ```{r}
 #| echo: false
-countdown(minutes = 20, warn_when = 15, update_every = 1, top = 0, right = 0, font_size = '2em')
+countdown(
+  minutes = 20,
+  warn_when = 15,
+  update_every = 1,
+  top = 0,
+  right = 0,
+  font_size = '2em'
+)
 ```
 
 ## Your Turn
