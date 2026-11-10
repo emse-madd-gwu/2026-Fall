@@ -920,24 +920,14 @@ built-in one.
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>beta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.7</span>, <span class="fl">0.1</span>, <span class="sc">-</span><span class="fl">4.0</span>)</span>
 <span id="cb1-2"><a href=""></a></span>
-<span id="cb1-3"><a href=""></a>hessian <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
-<span id="cb1-4"><a href=""></a>   <span class="fu">c</span>(</span>
-<span id="cb1-5"><a href=""></a>      <span class="sc">-</span><span class="dv">6000</span>,</span>
-<span id="cb1-6"><a href=""></a>      <span class="dv">50</span>,</span>
-<span id="cb1-7"><a href=""></a>      <span class="dv">60</span>,</span>
-<span id="cb1-8"><a href=""></a>      <span class="dv">50</span>,</span>
-<span id="cb1-9"><a href=""></a>      <span class="sc">-</span><span class="dv">700</span>,</span>
-<span id="cb1-10"><a href=""></a>      <span class="dv">50</span>,</span>
-<span id="cb1-11"><a href=""></a>      <span class="dv">60</span>,</span>
-<span id="cb1-12"><a href=""></a>      <span class="dv">50</span>,</span>
-<span id="cb1-13"><a href=""></a>      <span class="sc">-</span><span class="dv">300</span></span>
-<span id="cb1-14"><a href=""></a>   ),</span>
-<span id="cb1-15"><a href=""></a>   <span class="at">ncol =</span> <span class="dv">3</span>,</span>
-<span id="cb1-16"><a href=""></a>   <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
-<span id="cb1-17"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href=""></a>hessian <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb1-4"><a href=""></a>    <span class="sc">-</span><span class="dv">6000</span>,   <span class="dv">50</span>,   <span class="dv">60</span>,</span>
+<span id="cb1-5"><a href=""></a>       <span class="dv">50</span>, <span class="sc">-</span><span class="dv">700</span>,   <span class="dv">50</span>,</span>
+<span id="cb1-6"><a href=""></a>       <span class="dv">60</span>,   <span class="dv">50</span>, <span class="sc">-</span><span class="dv">300</span>),</span>
+<span id="cb1-7"><a href=""></a>    <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div class="col">
+<div class="col font80">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>covariance <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">*</span> <span class="fu">solve</span>(hessian)</span>
 <span id="cb2-2"><a href=""></a>draws <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>, beta, covariance)</span>
@@ -945,12 +935,12 @@ built-in one.
 <span id="cb2-4"><a href=""></a><span class="fu">head</span>(draws)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;            [,1]       [,2]      [,3]
-#&gt; [1,] -0.7137244 0.07440399 -4.003023
-#&gt; [2,] -0.7033310 0.06705899 -4.036238
-#&gt; [3,] -0.6966845 0.09231280 -3.956395
-#&gt; [4,] -0.6963287 0.04535216 -3.863331
-#&gt; [5,] -0.7064238 0.07924377 -3.919833
-#&gt; [6,] -0.7141195 0.12054894 -3.978348</code></pre>
+#&gt; [1,] -0.6863012 0.10377457 -4.067518
+#&gt; [2,] -0.7055525 0.07070391 -3.984283
+#&gt; [3,] -0.6750049 0.08589199 -4.026048
+#&gt; [4,] -0.7077806 0.17031792 -3.961917
+#&gt; [5,] -0.7104361 0.13943050 -4.002240
+#&gt; [6,] -0.7191487 0.12070569 -3.997669</code></pre>
 </div>
 </div>
 </div>
@@ -968,13 +958,13 @@ built-in one.
 <span id="cb4-3"><a href=""></a>draws_wtp <span class="ot">&lt;-</span> draws_other <span class="sc">/</span> (<span class="sc">-</span><span class="dv">1</span> <span class="sc">*</span> draws_price)</span>
 <span id="cb4-4"><a href=""></a><span class="fu">head</span>(draws_wtp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt;            [,1]      [,2]
-#&gt; [1,] 0.10424752 -5.608640
-#&gt; [2,] 0.09534485 -5.738745
-#&gt; [3,] 0.13250301 -5.678890
-#&gt; [4,] 0.06513039 -5.548143
-#&gt; [5,] 0.11217596 -5.548840
-#&gt; [6,] 0.16880781 -5.570983</code></pre>
+<pre><code>#&gt;           [,1]      [,2]
+#&gt; [1,] 0.1512085 -5.926725
+#&gt; [2,] 0.1002107 -5.647039
+#&gt; [3,] 0.1272465 -5.964472
+#&gt; [4,] 0.2406366 -5.597662
+#&gt; [5,] 0.1962604 -5.633497
+#&gt; [6,] 0.1678452 -5.558891</code></pre>
 </div>
 </div>
 </div>
@@ -983,9 +973,9 @@ built-in one.
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>logitr<span class="sc">::</span><span class="fu">ci</span>(draws_wtp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt;         mean       lower      upper
-#&gt; 1  0.1437146  0.03541524  0.2501892
-#&gt; 2 -5.7153659 -5.97868947 -5.4651240</code></pre>
+<pre><code>#&gt;         mean       lower     upper
+#&gt; 1  0.1429468  0.03650848  0.250882
+#&gt; 2 -5.7176206 -5.98406591 -5.469265</code></pre>
 </div>
 </div>
 </div>
@@ -1046,7 +1036,7 @@ built-in one.
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_ce8bb459" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_60929962" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <h2 id="your-turn">Your Turn</h2>
@@ -1075,7 +1065,7 @@ built-in one.
 <div class="cols-row">
 <div class="col">
 <div id="preference-space" class="h2">
-“Preference Space”
+<span class="center">“Preference Space”</span>
 </div>
 <div id="tildeu_j-alpha-p_j-boldsymbolbeta-x_j-tildevarepsilon_j-2" class="h2">
 <span class="math display">\[\tilde{u}_j = \alpha p_j + \boldsymbol{\beta} x_j + \tilde{\varepsilon_j}\]</span>
@@ -1083,7 +1073,7 @@ built-in one.
 </div>
 <div class="col fragment">
 <div id="wtp-space" class="h2">
-“WTP Space”
+<span class="center">“WTP Space”</span>
 </div>
 <div id="boldsymbolomega-fracboldsymbolbeta-alpha-2" class="h2">
 <span class="math display">\[\boldsymbol{\omega} = \frac{\boldsymbol{\beta}}{-\alpha}\]</span>
@@ -1139,7 +1129,7 @@ WTP space models have non-convex<br>log-likelihood functions!
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_317edb60" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_bba2342a" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <h2 id="your-turn-1">Your Turn</h2>
@@ -1155,7 +1145,7 @@ WTP space models have non-convex<br>log-likelihood functions!
 <h1><span class="fancy">Break</span></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_0e312963" minutes="5" seconds="0" warn-when="30" update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;--countdown-margin:5%;--countdown-font-size:8em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_b94125f6" minutes="5" seconds="0" warn-when="30" update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;--countdown-margin:5%;--countdown-font-size:8em;"></countdown-timer>
 </div>
 </div>
 </section>
@@ -1282,24 +1272,14 @@ WTP space models have non-convex<br>log-likelihood functions!
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>beta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.7</span>, <span class="fl">0.1</span>, <span class="sc">-</span><span class="fl">4.0</span>)</span>
 <span id="cb9-2"><a href=""></a></span>
-<span id="cb9-3"><a href=""></a>hessian <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
-<span id="cb9-4"><a href=""></a>   <span class="fu">c</span>(</span>
-<span id="cb9-5"><a href=""></a>      <span class="sc">-</span><span class="dv">6000</span>,</span>
-<span id="cb9-6"><a href=""></a>      <span class="dv">50</span>,</span>
-<span id="cb9-7"><a href=""></a>      <span class="dv">60</span>,</span>
-<span id="cb9-8"><a href=""></a>      <span class="dv">50</span>,</span>
-<span id="cb9-9"><a href=""></a>      <span class="sc">-</span><span class="dv">700</span>,</span>
-<span id="cb9-10"><a href=""></a>      <span class="dv">50</span>,</span>
-<span id="cb9-11"><a href=""></a>      <span class="dv">60</span>,</span>
-<span id="cb9-12"><a href=""></a>      <span class="dv">50</span>,</span>
-<span id="cb9-13"><a href=""></a>      <span class="sc">-</span><span class="dv">300</span></span>
-<span id="cb9-14"><a href=""></a>   ),</span>
-<span id="cb9-15"><a href=""></a>   <span class="at">ncol =</span> <span class="dv">3</span>,</span>
-<span id="cb9-16"><a href=""></a>   <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
-<span id="cb9-17"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-3"><a href=""></a>hessian <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb9-4"><a href=""></a>    <span class="sc">-</span><span class="dv">6000</span>,   <span class="dv">50</span>,   <span class="dv">60</span>,</span>
+<span id="cb9-5"><a href=""></a>       <span class="dv">50</span>, <span class="sc">-</span><span class="dv">700</span>,   <span class="dv">50</span>,</span>
+<span id="cb9-6"><a href=""></a>       <span class="dv">60</span>,   <span class="dv">50</span>, <span class="sc">-</span><span class="dv">300</span>),</span>
+<span id="cb9-7"><a href=""></a>    <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div class="col">
+<div class="col font80">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>covariance <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">*</span> <span class="fu">solve</span>(hessian)</span>
 <span id="cb10-2"><a href=""></a>draws <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>, beta, covariance)</span>
@@ -1307,12 +1287,12 @@ WTP space models have non-convex<br>log-likelihood functions!
 <span id="cb10-4"><a href=""></a><span class="fu">head</span>(draws)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;            [,1]       [,2]      [,3]
-#&gt; [1,] -0.6999470 0.07947519 -4.159509
-#&gt; [2,] -0.6904803 0.08048839 -4.117840
-#&gt; [3,] -0.6913688 0.11793981 -3.999667
-#&gt; [4,] -0.6963863 0.13068248 -3.889306
-#&gt; [5,] -0.6942480 0.15325403 -3.944333
-#&gt; [6,] -0.6919379 0.11620337 -4.008733</code></pre>
+#&gt; [1,] -0.6967780 0.17301065 -3.949949
+#&gt; [2,] -0.7229003 0.06867770 -4.018826
+#&gt; [3,] -0.6991102 0.05821212 -3.949547
+#&gt; [4,] -0.7092873 0.14409428 -4.000576
+#&gt; [5,] -0.6888186 0.12140738 -3.958083
+#&gt; [6,] -0.6767735 0.11266683 -3.990181</code></pre>
 </div>
 </div>
 </div>
@@ -1348,7 +1328,7 @@ WTP space models have non-convex<br>log-likelihood functions!
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_1eb3aa67" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_df696965" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <h2 id="your-turn-2">Your Turn</h2>
