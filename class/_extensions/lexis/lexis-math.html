@@ -1,0 +1,18 @@
+<!--
+  Force MathJax 2 to use its own TeX web fonts.
+
+  Quarto's reveal template hardcodes MathJax 2.7 with the HTML-CSS output
+  (`config: 'TeX-AMS_HTML-full'`), and there is no YAML option to change it.
+  HTML-CSS prefers fonts installed locally (STIX) over its own web fonts, and
+  on macOS the local STIX fonts mis-place accents: \hat and \tilde land beside
+  the letter instead of over it (e.g. \hat{\alpha} renders as "α^").
+
+  MathJax 2 reads a `window.MathJax` object defined before MathJax.js loads as
+  its initial config, so emptying `availableFonts` here makes it skip local
+  fonts and always load the TeX web fonts, which position accents correctly.
+-->
+<script>
+  window.MathJax = {
+    "HTML-CSS": { availableFonts: [], preferredFont: null, webFont: "TeX" }
+  };
+</script>

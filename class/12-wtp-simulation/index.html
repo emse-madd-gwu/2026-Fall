@@ -741,6 +741,24 @@
     });
   })();
   </script>
+  <!--
+    Force MathJax 2 to use its own TeX web fonts.
+
+    Quarto's reveal template hardcodes MathJax 2.7 with the HTML-CSS output
+    (`config: 'TeX-AMS_HTML-full'`), and there is no YAML option to change it.
+    HTML-CSS prefers fonts installed locally (STIX) over its own web fonts, and
+    on macOS the local STIX fonts mis-place accents: \hat and \tilde land beside
+    the letter instead of over it (e.g. \hat{\alpha} renders as "α^").
+
+    MathJax 2 reads a `window.MathJax` object defined before MathJax.js loads as
+    its initial config, so emptying `availableFonts` here makes it skip local
+    fonts and always load the TeX web fonts, which position accents correctly.
+  -->
+  <script>
+    window.MathJax = {
+      "HTML-CSS": { availableFonts: [], preferredFont: null, webFont: "TeX" }
+    };
+  </script>
   <link href="index_files/libs/countdown/countdown.css" rel="stylesheet">
   <script src="index_files/libs/countdown/countdown.js"></script>
 </head>
@@ -927,12 +945,12 @@ built-in one.
 <span id="cb2-4"><a href=""></a><span class="fu">head</span>(draws)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;            [,1]       [,2]      [,3]
-#&gt; [1,] -0.7116852 0.06631560 -4.129328
-#&gt; [2,] -0.7194694 0.08557985 -3.996246
-#&gt; [3,] -0.7215379 0.13344949 -3.929021
-#&gt; [4,] -0.7050977 0.04994781 -4.042008
-#&gt; [5,] -0.7264095 0.13090298 -4.014206
-#&gt; [6,] -0.6765839 0.08755621 -3.873487</code></pre>
+#&gt; [1,] -0.7137244 0.07440399 -4.003023
+#&gt; [2,] -0.7033310 0.06705899 -4.036238
+#&gt; [3,] -0.6966845 0.09231280 -3.956395
+#&gt; [4,] -0.6963287 0.04535216 -3.863331
+#&gt; [5,] -0.7064238 0.07924377 -3.919833
+#&gt; [6,] -0.7141195 0.12054894 -3.978348</code></pre>
 </div>
 </div>
 </div>
@@ -951,12 +969,12 @@ built-in one.
 <span id="cb4-4"><a href=""></a><span class="fu">head</span>(draws_wtp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;            [,1]      [,2]
-#&gt; [1,] 0.09318108 -5.802184
-#&gt; [2,] 0.11894856 -5.554435
-#&gt; [3,] 0.18495145 -5.445342
-#&gt; [4,] 0.07083814 -5.732550
-#&gt; [5,] 0.18020548 -5.526093
-#&gt; [6,] 0.12940924 -5.725066</code></pre>
+#&gt; [1,] 0.10424752 -5.608640
+#&gt; [2,] 0.09534485 -5.738745
+#&gt; [3,] 0.13250301 -5.678890
+#&gt; [4,] 0.06513039 -5.548143
+#&gt; [5,] 0.11217596 -5.548840
+#&gt; [6,] 0.16880781 -5.570983</code></pre>
 </div>
 </div>
 </div>
@@ -965,9 +983,9 @@ built-in one.
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>logitr<span class="sc">::</span><span class="fu">ci</span>(draws_wtp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt;        mean       lower      upper
-#&gt; 1  0.143242  0.03803408  0.2497249
-#&gt; 2 -5.714651 -5.98175542 -5.4582165</code></pre>
+<pre><code>#&gt;         mean       lower      upper
+#&gt; 1  0.1437146  0.03541524  0.2501892
+#&gt; 2 -5.7153659 -5.97868947 -5.4651240</code></pre>
 </div>
 </div>
 </div>
@@ -1028,7 +1046,7 @@ built-in one.
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_c6e0b48c" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_ce8bb459" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <h2 id="your-turn">Your Turn</h2>
@@ -1121,7 +1139,7 @@ WTP space models have non-convex<br>log-likelihood functions!
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_64152e91" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_317edb60" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <h2 id="your-turn-1">Your Turn</h2>
@@ -1137,7 +1155,7 @@ WTP space models have non-convex<br>log-likelihood functions!
 <h1><span class="fancy">Break</span></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_565b1c66" minutes="5" seconds="0" warn-when="30" update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;--countdown-margin:5%;--countdown-font-size:8em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_0e312963" minutes="5" seconds="0" warn-when="30" update-every="1" tabindex="0" style="top:1;right:0;bottom:0;left:0;--countdown-margin:5%;--countdown-font-size:8em;"></countdown-timer>
 </div>
 </div>
 </section>
@@ -1289,12 +1307,12 @@ WTP space models have non-convex<br>log-likelihood functions!
 <span id="cb10-4"><a href=""></a><span class="fu">head</span>(draws)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;            [,1]       [,2]      [,3]
-#&gt; [1,] -0.6779078 0.16262671 -3.955472
-#&gt; [2,] -0.7019771 0.04941574 -3.984371
-#&gt; [3,] -0.6702723 0.12815884 -3.960300
-#&gt; [4,] -0.6876564 0.10035229 -4.069186
-#&gt; [5,] -0.6914799 0.03123777 -3.949809
-#&gt; [6,] -0.6873393 0.15165491 -4.002911</code></pre>
+#&gt; [1,] -0.6999470 0.07947519 -4.159509
+#&gt; [2,] -0.6904803 0.08048839 -4.117840
+#&gt; [3,] -0.6913688 0.11793981 -3.999667
+#&gt; [4,] -0.6963863 0.13068248 -3.889306
+#&gt; [5,] -0.6942480 0.15325403 -3.944333
+#&gt; [6,] -0.6919379 0.11620337 -4.008733</code></pre>
 </div>
 </div>
 </div>
@@ -1330,7 +1348,7 @@ WTP space models have non-convex<br>log-likelihood functions!
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_3b7894d2" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_1eb3aa67" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <h2 id="your-turn-2">Your Turn</h2>

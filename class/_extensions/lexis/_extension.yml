@@ -56,6 +56,9 @@ contributes:
         # Hands the iconify web component the Quarto mark locally, so
         # `{{< quarto >}}` still renders with no network. See the file.
         - lexis-offline-icons.html
+        # Makes MathJax use its TeX web fonts instead of local STIX, which
+        # mis-places \hat and \tilde accents on macOS. See the file.
+        - lexis-math.html
       # Rotation + swipe remap for a phone held upright; the look it goes with is
       # the "Handheld portrait" block in lexis.scss.
       include-after-body:
