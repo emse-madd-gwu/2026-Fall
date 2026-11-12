@@ -104,7 +104,7 @@ Throughout the semester, students will work in teams of 3-4 students towards a f
 
 ## Final Exam
 
-The final exam is held **in class on 12/2**. It is **closed book** and taken on paper - no computers, notes, or phones - and lasts 45 minutes.
+The final exam is held **in class on 12/2**. It is **closed book** and taken on paper - no computers, notes, or phones - and lasts 60 minutes.
 
 This is deliberate. Nearly everything else you do in this course, you do with an AI assistant at your side, and that's how the work is done in practice. But it only works if you can tell when the assistant is wrong. The exam is where you show me you can read a set of model results and say something true about them without anything else in the room.
 
