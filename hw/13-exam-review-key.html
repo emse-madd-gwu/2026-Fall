@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exam – EMSE 6035</title>
+<title>Exam Review: Answer Key – EMSE 6035</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -83,16 +83,45 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Exam – EMSE 6035">
+<meta property="og:title" content="Exam Review: Answer Key – EMSE 6035">
 <meta property="og:description" content="Course website for Fall 2026 semester of the EMSE course “Marketing Analytics for Design Decisions” at GWU">
 <meta property="og:image" content="https://madd.seas.gwu.edu/2026-Fall/images/logo.png">
 <meta property="og:site_name" content="https://madd.seas.gwu.edu/">
 <meta property="og:locale" content="es_ES">
 <meta property="og:image:height" content="1153">
 <meta property="og:image:width" content="1000">
-<meta name="twitter:title" content="Exam – EMSE 6035">
+<meta name="twitter:title" content="Exam Review: Answer Key – EMSE 6035">
 <meta name="twitter:description" content="Course website for Fall 2026 semester of the EMSE course “Marketing Analytics for Design Decisions” at GWU">
 <meta name="twitter:image" content="https://madd.seas.gwu.edu/2026-Fall/images/logo-square.png">
 <meta name="twitter:creator" content="@johnhelveston">
@@ -311,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exam</h1>
+<h1 class="title">Exam Review: Answer Key</h1>
 </div>
 
 
@@ -328,9 +357,86 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon!</p>
+<p>Answers to the questions in the <a href="13-exam-review.html">Exam Review</a>. If you haven’t tried them yet, go back and do that first - the key is only useful once you know which questions you couldn’t answer on your own.</p>
+<section id="utility-models-logit" class="level2">
+<h2 class="anchored" data-anchor-id="utility-models-logit">Utility models &amp; logit</h2>
+<p><strong>1.</strong> <strong>A, C, D, and E</strong> are true.</p>
+<ul>
+<li><strong>A)</strong> TRUE - <span class="math inline">\(\beta_2 = 0.2\)</span> is positive, so more capacity adds utility.</li>
+<li><strong>B)</strong> FALSE - <span class="math inline">\(\beta_4 = -0.5\)</span> is negative, so Leather has lower utility than the reference level, Canvas.</li>
+<li><strong>C)</strong> TRUE - <span class="math inline">\(\beta_3 = 1.0 &gt; \beta_4 = -0.5\)</span>.</li>
+<li><strong>D)</strong> TRUE - a $10 increase changes utility by <span class="math inline">\(10 \times 0.05 = 0.5\)</span>, more than the <span class="math inline">\(0.2\)</span> from one more liter.</li>
+<li><strong>E)</strong> TRUE - Canvas is the reference level (0), which is higher than Leather’s <span class="math inline">\(-0.5\)</span>.</li>
+</ul>
+<p><strong>2.</strong></p>
+<ul>
+<li>Backpack X (Leather): <span class="math inline">\(\delta^{\mathrm{Nylon}} = 0\)</span>, <span class="math inline">\(\delta^{\mathrm{Leather}} = 1\)</span></li>
+<li>Backpack Y (Canvas, the reference level): <span class="math inline">\(\delta^{\mathrm{Nylon}} = 0\)</span>, <span class="math inline">\(\delta^{\mathrm{Leather}} = 0\)</span></li>
+<li>Backpack Z (Nylon): <span class="math inline">\(\delta^{\mathrm{Nylon}} = 1\)</span>, <span class="math inline">\(\delta^{\mathrm{Leather}} = 0\)</span></li>
+</ul>
+<p><strong>3.</strong></p>
+<p><span class="math display">\[v_X = (-0.05)(40) + (0.2)(20) + (1.0)(0) + (-0.5)(1) = -2 + 4 - 0.5 = 1.5\]</span></p>
+<p><span class="math display">\[v_Y = (-0.05)(60) + (0.2)(30) + (1.0)(0) + (-0.5)(0) = -3 + 6 = 3.0\]</span></p>
+<p><span class="math display">\[v_Z = (-0.05)(50) + (0.2)(25) + (1.0)(1) + (-0.5)(0) = -2.5 + 5 + 1 = 3.5\]</span></p>
+<p><strong>4.</strong> Backpack Z, because it has the highest observed utility and logit shares increase with utility. (The actual shares are about 8%, 35%, and 57% for X, Y, and Z.)</p>
+<p><strong>5.</strong> (a) Discrete: <strong>2</strong> dummy coefficients in either version (one fewer than the number of levels). Continuous: <strong>1</strong> coefficient - but only the ounces version can be continuous, since “Small / Medium / Large” has no numeric value. (b) That every additional ounce adds the same amount of utility (a linear effect), so going from 8 to 12 oz is worth exactly as much as going from 12 to 16 oz.</p>
+<p><strong>6.</strong> No.&nbsp;The logit probability of choosing A is above 50% but below 100%. The error term <span class="math inline">\(\varepsilon_j\)</span> captures everything about the choice that we don’t observe, so a person with <span class="math inline">\(v_A &gt; v_B\)</span> will still sometimes choose B.</p>
+</section>
+<section id="optimization-mle" class="level2">
+<h2 class="anchored" data-anchor-id="optimization-mle">Optimization &amp; MLE</h2>
+<p><strong>7.</strong> The log-likelihood is the <strong>sum</strong> of the log values: <span class="math inline">\(-3.54 + (-3.35) + (-3.24) + (-3.83) = -13.96\)</span></p>
+<p><strong>8.</strong> <span class="math inline">\(\mu = 52\)</span>, because it has the highest (least negative) log-likelihood, <span class="math inline">\(-13.92\)</span>. (Of the values tried, it’s also the one closest to the sample mean of 51.5 hours, which is the maximum likelihood estimate of the mean of a normal distribution.)</p>
+<p><strong>9.</strong> No.&nbsp;The density values here are all less than 1, and the log of a number less than 1 is negative. Log-likelihoods are usually negative; what matters is which parameter value makes the log-likelihood the <strong>highest</strong> (least negative).</p>
+<p><strong>10.</strong> The likelihood is the probability of observing the data we actually observed, treated as a function of the model’s parameters. Maximum likelihood estimation chooses the parameter values that make the observed data most probable.</p>
+<p><strong>11.</strong> Too large: the search overshoots the optimum and can bounce back and forth or diverge. Too small: it creeps toward the optimum and takes a very long time, or hits the iteration limit before converging.</p>
+</section>
+<section id="uncertainty" class="level2">
+<h2 class="anchored" data-anchor-id="uncertainty">Uncertainty</h2>
+<p><strong>12.</strong> <span class="math inline">\(\beta_1\)</span>. Sharp curvature means the log-likelihood falls off quickly as you move away from <span class="math inline">\(\hat\beta_1\)</span>, so the data pin it down tightly. Formally, a larger (in magnitude) second derivative in the Hessian means a smaller variance in <span class="math inline">\(-H^{-1}\)</span>, and so a smaller standard error.</p>
+<p><strong>13.</strong> About <span class="math inline">\(0.8 \pm 2(0.5) = [-0.2, 1.8]\)</span>. The interval contains 0, so the coefficient is <strong>not</strong> statistically significant at the 95% level.</p>
+<p><strong>14.</strong> WTP is a ratio of two uncertain - and correlated - estimates, <span class="math inline">\(\beta / -\alpha\)</span>, and ratios are non-linear, so the endpoints don’t divide cleanly. Instead, we take many draws of all the coefficients at once (from a multivariate normal distribution using the covariance matrix from the Hessian), compute the WTP for each draw, and take the 2.5% and 97.5% quantiles of those WTPs.</p>
+</section>
+<section id="design-of-experiments-power" class="level2">
+<h2 class="anchored" data-anchor-id="design-of-experiments-power">Design of experiments &amp; power</h2>
+<p><strong>15.</strong> <span class="math inline">\(4 \times 3 \times 2 = 24\)</span> profiles. Real surveys usually have more attributes and levels, so the full factorial quickly grows into the hundreds or thousands. No respondent can see them all, so we use a fractional design (randomized or D-optimal) that covers the space efficiently with far fewer questions.</p>
+<p><strong>16.</strong> Standard errors shrink with <span class="math inline">\(1 / \sqrt{N}\)</span>, so cutting the standard error in half takes <strong>four times</strong> the respondents: about 200.</p>
+<p><strong>17.</strong> Any two of: more questions per respondent; fewer attributes; fewer levels for categorical attributes; a more efficient (e.g.&nbsp;D-optimal) design.</p>
+</section>
+<section id="wtp-market-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="wtp-market-simulation">WTP &amp; market simulation</h2>
+<p><strong>18.</strong> WTP is the attribute coefficient divided by the negative of the price coefficient, <span class="math inline">\(\omega = \beta / -\beta_1\)</span>, with <span class="math inline">\(-\beta_1 = 0.05\)</span>:</p>
+<ul>
+<li>Nylon: <span class="math inline">\(1.0 / 0.05 = \$20\)</span></li>
+<li>Leather: <span class="math inline">\(-0.5 / 0.05 = -\$10\)</span></li>
+<li>Capacity: <span class="math inline">\(0.2 / 0.05 = \$4\)</span> per liter</li>
+</ul>
+<p><strong>19.</strong> It is negative, so on average consumers would need a $10 discount to accept a Leather backpack instead of a Canvas one.</p>
+<p><strong>20.</strong> <span class="math inline">\(\hat\lambda = -\hat\beta_1 = 0.05\)</span></p>
+<p><strong>21.</strong> The solution with a log-likelihood of <span class="math inline">\(-1{,}198.2\)</span>, the highest of the five. The log-likelihood of a WTP space model is non-convex, so some runs get stuck at local optima. Three runs reaching the same best value is a good sign that it’s the global optimum.</p>
+<p><strong>22.</strong> Yes. The interval does not contain 0, so the WTP for Leather is statistically significantly negative: consumers do dislike Leather relative to Canvas, by somewhere between about $6 and $14.</p>
+<p><strong>23.</strong> <span class="math inline">\(0.02 / 0.4 = 0.05\)</span> thousand dollars, i.e.&nbsp;<strong>$50 per mile</strong> of range.</p>
+<p><strong>24.</strong> Share is always highest at the lowest price, but revenue is price × share (× market size). At a very low price you sell a lot but earn little on each unit; at a very high price you earn a lot on each unit but sell very little. Revenue peaks somewhere in between.</p>
+<p><strong>25.</strong> Any two of:</p>
+<ul>
+<li>The simulation assumes every consumer knows about and can buy every product (no differences in awareness, availability, or distribution).</li>
+<li>It only includes the products and attributes in the survey, while real consumers weigh many other things.</li>
+<li>Survey choices are hypothetical - nobody spends real money.</li>
+<li>The survey sample may not represent the real market.</li>
+</ul>
+</section>
+<section id="heterogeneity" class="level2">
+<h2 class="anchored" data-anchor-id="heterogeneity">Heterogeneity</h2>
+<p><strong>26.</strong> (a) Zero is one standard deviation below the mean, and about 16% of a normal distribution lies more than one standard deviation below its mean, so roughly <strong>16%</strong> of people dislike more battery life. (b) How much preferences for battery life vary across the population. A simple logit model estimates one coefficient for everybody.</p>
+<p><strong>27.</strong> Use a group interaction model when you have a measured variable that you think drives the difference (e.g.&nbsp;student status) and you want to compare those groups directly. Use a mixed logit when preferences vary across people in ways you can’t tie to a variable you measured.</p>
+</section>
+<section id="judging-your-agents-work" class="level2">
+<h2 class="anchored" data-anchor-id="judging-your-agents-work">Judging your agent’s work</h2>
+<p><strong>28.</strong> Too many attributes and levels for a respondent to process (fatigue, and people fall back on simple rules like “just pick the cheapest”). It also means many parameters to estimate from very few questions per person, so standard errors will be large and the sample size needed will be huge. Better: fewer attributes and levels, and more questions per respondent.</p>
+<p><strong>29.</strong> The <strong>priors</strong> it assumed. A power analysis only tells you what happens if the true coefficients are what you told it they are; if the real effects are smaller, you’ll need more people. Also check that it simulated the same design (attributes, levels, and questions per respondent) that you will actually field.</p>
+<p><strong>30.</strong> Exactly what counted as “incomplete” (e.g.&nbsp;skipping an optional demographic question shouldn’t throw out someone’s choice data); how many respondents were dropped for each reason; and whether the people who were dropped look different from the ones who were kept, which could bias the results. Ask it to show you the filtering code rather than taking its summary at face value.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -845,7 +951,7 @@ ul.task-list li input[type="checkbox"] {
  © 2026 John Paul Helveston  <a href="LICENSE.html"><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i><i class="fab fa-creative-commons-sa"></i></a><br><i class="far fa-calendar-alt"></i> Wednesdays | <i class="far fa-clock"></i> 3:30PM - 6:00PM EST | <a href="https://it.gwu.edu/classroom-search/tompkins-hall-201"><i class="fa fa-map-marker-alt"></i> Tompkins 201</a><br><a href="https://www.jhelvy.com"><i class="fas fa-user"></i> Dr. John Paul Helveston</a> | <a href="mailto:jph@gwu.edu"><i class="fas fa-envelope"></i> jph@gwu.edu</a> | <a href="https://github.com/emse-madd-gwu/2026-Fall"><i class="fab fa-github"></i></a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/emse-madd-gwu/2026-Fall/edit/main/hw/13-take-home-analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/emse-madd-gwu/2026-Fall/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/emse-madd-gwu/2026-Fall/edit/main/hw/13-exam-review-key.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/emse-madd-gwu/2026-Fall/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
