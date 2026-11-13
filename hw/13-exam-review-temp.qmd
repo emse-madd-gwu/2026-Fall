@@ -1,0 +1,230 @@
+---
+title: "Exam Review"
+params:
+  number: 13
+  purpose: "The purpose of this assignment is to help you prepare for the in-class final exam on 12/2 by testing yourself on the main ideas from the semester, and to give me your honest feedback on the course."
+---
+
+```{r child = here::here("fragments", "hw.qmd")}
+```
+
+::: {.callout-important title="You can bring a cheat sheet to the exam"}
+For the final exam on 12/2, you may bring **one 8.5x11 sheet of notes (both
+sides)** with anything you want on it - typed, printed, or handwritten. You'll
+turn it in with your exam, and I'll give it back with your graded exam at the
+final presentations on 12/9.
+:::
+
+# 1. Get Organized
+
+Open your course repo (`madd-f26/madd-netID`) in Positron using **File > Open
+Folder...** - open the folder itself, not a file inside it.
+
+Everything you submit for this assignment goes in the `hw13/hw13.qmd` file, and
+it's just one thing: the reflection at the end (section 4). The review below is
+for you - **nothing in it is submitted or graded.**
+
+# 2. Make Your Cheat Sheet
+
+I recommend starting here. Go back through the class slides and summary sheets, quizzes, and any other notes you took and decide what is worth putting on your one page. Deciding what to include (and what you already know well enough to leave off) is itself a pretty good way to study.
+
+# 3. Practice Questions
+
+Work through the questions below the way you'll take the exam: **on paper, with
+no computer and no calculator, using only your cheat sheet.** When you get stuck,
+make a note of what was missing from your sheet and add it.
+
+Only after you've tried everything, check your answers against the
+**[answer key](13-exam-review-key.html)**. The point is to find out what you
+know and what you don't while there's still time to fix it, so resist the urge
+to peek. This is entirely an exercise for you to study with, not something I'm going to grade. The only thing I'll look at is your final reflection, so please leave some feedback for me 🙏.
+
+## Utility models & logit
+
+A team of GWU researchers ran a conjoint experiment on backpacks, with the
+attributes _price_ (in \$), _capacity_ (in liters), and _material_ ("Canvas",
+"Nylon", or "Leather"). They estimated the following utility model, with Canvas
+as the reference level:
+
+$$u_j = \beta_1 x_j^{\mathrm{price}} + \beta_2 x_j^{\mathrm{capacity}} + \beta_3 \delta_j^{\mathrm{Nylon}} + \beta_4 \delta_j^{\mathrm{Leather}} + \varepsilon_j$$
+
+| Parameter | Coefficient |
+|-----------|-------------|
+| $\beta_1$ | $-0.05$     |
+| $\beta_2$ | $0.2$       |
+| $\beta_3$ | $1.0$       |
+| $\beta_4$ | $-0.5$      |
+
+**1.** Which of the following statements are TRUE? (Select all that apply.)
+
+- **A)** Consumers prefer backpacks with more capacity
+- **B)** Consumers prefer Leather backpacks over Canvas backpacks (all else equal)
+- **C)** Consumers prefer Nylon backpacks over Leather backpacks (all else equal)
+- **D)** A \$10 increase in price changes utility by more than a 1-liter
+  increase in capacity
+- **E)** Consumers prefer Canvas backpacks over Leather backpacks (all else
+  equal)
+
+Consider these three backpacks:
+
+| Attribute | Backpack X | Backpack Y | Backpack Z |
+|-----------|------------|------------|------------|
+| Price     | \$40       | \$60       | \$50       |
+| Capacity  | 20 L       | 30 L       | 25 L       |
+| Material  | Leather    | Canvas     | Nylon      |
+
+**2.** For each backpack, what are the values of $\delta^{\mathrm{Nylon}}$ and
+$\delta^{\mathrm{Leather}}$?
+
+**3.** Compute the observed utility $v_j$ for each backpack.
+
+**4.** Which backpack will have the highest predicted market share?
+
+**5.** A coffee survey has a _size_ attribute. In one version the levels are
+"Small", "Medium", and "Large". In another they are 8 oz, 12 oz, and 16 oz.
+
+a) How many coefficients does _size_ need in each version if it is modeled as
+discrete? As continuous?
+
+b) What assumption are you making when you model the ounces version as
+continuous?
+
+**6.** For a given respondent, product A has a higher observed utility than
+product B ($v_A > v_B$). Does the logit model predict that this person always
+chooses A? Why or why not?
+
+## Optimization & MLE
+
+The lifetime (in hours) of a phone battery follows a normal distribution with
+an unknown mean $\mu$ and a standard deviation of 10. You test four batteries,
+which last 42, 55, 48, and 61 hours. For $\mu = 50$, the log of the probability
+density for each battery is:
+
+| Battery | $\ln f(x_i \mid \mu = 50)$ |
+|---------|----------------------------|
+| 42 hrs  | $-3.54$                    |
+| 55 hrs  | $-3.35$                    |
+| 48 hrs  | $-3.24$                    |
+| 61 hrs  | $-3.83$                    |
+
+**7.** Compute the log-likelihood $\ln \mathcal{L}(\mu = 50)$.
+
+**8.** You compute the log-likelihood for several other values of $\mu$:
+
+| $\mu$ | Log-Likelihood |
+|-------|----------------|
+| 45    | $-14.76$       |
+| 50    | $-13.96$       |
+| 52    | $-13.92$       |
+| 55    | $-14.16$       |
+
+Which value of $\mu$ is most likely to be the true mean? Why?
+
+**9.** Every one of the $\ln f$ values above is negative. Does that mean
+something went wrong? Explain.
+
+**10.** In one or two sentences each: what is the _likelihood_ a function of,
+and what does maximum likelihood estimation choose?
+
+**11.** You are running gradient descent. What goes wrong if the step size
+$\gamma$ is too large? Too small?
+
+## Uncertainty
+
+**12.** At the estimated optimum, the log-likelihood is very sharply curved in
+the direction of $\beta_1$ and nearly flat in the direction of $\beta_2$. Which
+coefficient is estimated more precisely? Why?
+
+**13.** A coefficient is estimated at $0.8$ with a standard error of $0.5$. Give
+an approximate 95% confidence interval. Is the coefficient statistically
+significant?
+
+**14.** To get a confidence interval on a WTP, why do we simulate draws of the
+coefficients instead of just dividing the endpoints of the coefficient
+confidence intervals?
+
+## Design of experiments & power
+
+**15.** A conjoint has three attributes: price (4 levels), brand (3 levels), and
+color (2 levels). How many profiles are in the full factorial? Why don't we just
+show respondents the full factorial?
+
+**16.** Your pilot survey with 50 respondents gives a standard error of $0.20$
+on the price coefficient. You want it down to $0.10$. Roughly how many
+respondents do you need?
+
+**17.** Besides recruiting more respondents, name two survey design choices that
+shrink standard errors.
+
+## WTP & market simulation
+
+Questions 18-22 go back to the backpack model from question 1.
+
+**18.** Compute the mean WTP for Nylon and for Leather (each relative to
+Canvas), and for one additional liter of capacity.
+
+**19.** In one sentence, interpret the **sign** of the WTP for Leather.
+
+**20.** If the backpack model were written in the WTP space form
+$\tilde{u}_j = \lambda \left( \boldsymbol{\omega} x_j - p_j \right) + \tilde\varepsilon_j$,
+what would $\hat\lambda$ be?
+
+**21.** The team re-estimates the backpack model in WTP space from five random
+starting points. The five runs finish with log-likelihoods of $-1{,}210.4$,
+$-1{,}198.2$, $-1{,}198.2$, $-1{,}225.0$, and $-1{,}198.2$. Which solution
+should they report? Why don't all five runs agree?
+
+**22.** The team reports a mean WTP for Leather of $-\$10$ with a 95% confidence
+interval of $[-\$14, -\$6]$. Can they conclude that consumers dislike Leather
+relative to Canvas? Explain.
+
+**23.** A car model has price in **\$1,000s**, with $\hat\alpha = -0.4$, and the
+coefficient on electric driving range (in miles) is $0.02$. What is the WTP for
+one additional mile of range?
+
+**24.** Your price sensitivity analysis shows market share falling steadily as
+price rises. Why might the price that maximizes **revenue** be different from
+the price that maximizes **market share**?
+
+**25.** Give two reasons the market shares from a simulation will not match the
+real-world market shares of those products.
+
+## Heterogeneity
+
+**26.** A mixed logit model estimates the battery life coefficient as
+$\beta \sim \mathcal{N}(0.5, 0.5)$.
+
+a) Roughly what share of people **dislike** more battery life?
+
+b) What does the standard deviation tell you that a simple logit model can't?
+
+**27.** When would you model differences in preferences with a two-group
+interaction model (e.g. students vs. non-students), and when with a mixed logit?
+
+## Judging your agent's work
+
+**28.** You ask your agent to design a conjoint survey. It proposes 8
+attributes, each with 5 levels, and 3 choice questions per respondent, saying
+"this gives us the richest data." What concerns would you raise?
+
+**29.** Your agent runs a power analysis and reports: "With 100 respondents all
+coefficients are significant, so 100 is enough." What would you check before
+trusting that?
+
+**30.** Your agent cleans your final survey data and reports that the number of
+respondents dropped from 400 to 250 because it "removed incomplete responses."
+What would you check?
+
+# 4. Reflect
+
+This is the last homework of the semester, so instead of reflecting on a
+reading, I'd like your honest feedback on the course. In your `hw13.qmd` file,
+under the "Reflection" heading, tell me what you think I should change, keep,
+add, or drop to make this course better for next year's students. Anything is
+fair game - the content, the projects, the homework, the quizzes, the agentic
+workflow, the pace, the way class time is used. Candid, critical feedback is the
+most useful kind.
+
+# 5. Submit
+
+{{< include ../fragments/hw-submit.qmd >}}

@@ -1,0 +1,177 @@
+---
+title: "Exam Review: Answer Key"
+---
+
+Answers to the questions in the [Exam Review](13-exam-review.html). If
+you haven't tried them yet, go back and do that first - the key is only useful
+once you know which questions you couldn't answer on your own.
+
+## Utility models & logit
+
+**1.** **A, C, D, and E** are true.
+
+- **A)** TRUE - $\beta_2 = 0.2$ is positive, so more capacity adds utility.
+- **B)** FALSE - $\beta_4 = -0.5$ is negative, so Leather has lower utility than
+  the reference level, Canvas.
+- **C)** TRUE - $\beta_3 = 1.0 > \beta_4 = -0.5$.
+- **D)** TRUE - a \$10 increase changes utility by $10 \times 0.05 = 0.5$,
+  more than the $0.2$ from one more liter.
+- **E)** TRUE - Canvas is the reference level (0), which is higher than
+  Leather's $-0.5$.
+
+**2.**
+
+- Backpack X (Leather): $\delta^{\mathrm{Nylon}} = 0$, $\delta^{\mathrm{Leather}} = 1$
+- Backpack Y (Canvas, the reference level): $\delta^{\mathrm{Nylon}} = 0$,
+  $\delta^{\mathrm{Leather}} = 0$
+- Backpack Z (Nylon): $\delta^{\mathrm{Nylon}} = 1$, $\delta^{\mathrm{Leather}} = 0$
+
+**3.**
+
+$$v_X = (-0.05)(40) + (0.2)(20) + (1.0)(0) + (-0.5)(1) = -2 + 4 - 0.5 = 1.5$$
+
+$$v_Y = (-0.05)(60) + (0.2)(30) + (1.0)(0) + (-0.5)(0) = -3 + 6 = 3.0$$
+
+$$v_Z = (-0.05)(50) + (0.2)(25) + (1.0)(1) + (-0.5)(0) = -2.5 + 5 + 1 = 3.5$$
+
+**4.** Backpack Z, because it has the highest observed utility and logit shares
+increase with utility. (The actual shares are about 8%, 35%, and 57% for X, Y,
+and Z.)
+
+**5.** (a) Discrete: **2** dummy coefficients in either version (one fewer than
+the number of levels). Continuous: **1** coefficient - but only the ounces
+version can be continuous, since "Small / Medium / Large" has no numeric value.
+(b) That every additional ounce adds the same amount of utility (a linear
+effect), so going from 8 to 12 oz is worth exactly as much as going from 12 to
+16 oz.
+
+**6.** No. The logit probability of choosing A is above 50% but below 100%. The
+error term $\varepsilon_j$ captures everything about the choice that we don't
+observe, so a person with $v_A > v_B$ will still sometimes choose B.
+
+## Optimization & MLE
+
+**7.** The log-likelihood is the **sum** of the log values:
+$-3.54 + (-3.35) + (-3.24) + (-3.83) = -13.96$
+
+**8.** $\mu = 52$, because it has the highest (least negative) log-likelihood,
+$-13.92$. (Of the values tried, it's also the one closest to the sample mean of
+51.5 hours, which is the maximum likelihood estimate of the mean of a normal
+distribution.)
+
+**9.** No. The density values here are all less than 1, and the log of a number
+less than 1 is negative. Log-likelihoods are usually negative; what matters is
+which parameter value makes the log-likelihood the **highest** (least
+negative).
+
+**10.** The likelihood is the probability of observing the data we actually
+observed, treated as a function of the model's parameters. Maximum likelihood
+estimation chooses the parameter values that make the observed data most
+probable.
+
+**11.** Too large: the search overshoots the optimum and can bounce back and
+forth or diverge. Too small: it creeps toward the optimum and takes a very long
+time, or hits the iteration limit before converging.
+
+## Uncertainty
+
+**12.** $\beta_1$. Sharp curvature means the log-likelihood falls off quickly as
+you move away from $\hat\beta_1$, so the data pin it down tightly. Formally, a
+larger (in magnitude) second derivative in the Hessian means a smaller variance
+in $-H^{-1}$, and so a smaller standard error.
+
+**13.** About $0.8 \pm 2(0.5) = [-0.2, 1.8]$. The interval contains 0, so the
+coefficient is **not** statistically significant at the 95% level.
+
+**14.** WTP is a ratio of two uncertain - and correlated - estimates,
+$\beta / -\alpha$, and ratios are non-linear, so the endpoints don't divide
+cleanly. Instead, we take many draws of all the coefficients at once (from a
+multivariate normal distribution using the covariance matrix from the Hessian),
+compute the WTP for each draw, and take the 2.5% and 97.5% quantiles of those
+WTPs.
+
+## Design of experiments & power
+
+**15.** $4 \times 3 \times 2 = 24$ profiles. Real surveys usually have more
+attributes and levels, so the full factorial quickly grows into the hundreds or
+thousands. No respondent can see them all, so we use a fractional design
+(randomized or D-optimal) that covers the space efficiently with far fewer
+questions.
+
+**16.** Standard errors shrink with $1 / \sqrt{N}$, so cutting the standard
+error in half takes **four times** the respondents: about 200.
+
+**17.** Any two of: more questions per respondent; fewer attributes; fewer
+levels for categorical attributes; a more efficient (e.g. D-optimal) design.
+
+## WTP & market simulation
+
+**18.** WTP is the attribute coefficient divided by the negative of the price
+coefficient, $\omega = \beta / -\beta_1$, with $-\beta_1 = 0.05$:
+
+- Nylon: $1.0 / 0.05 = \$20$
+- Leather: $-0.5 / 0.05 = -\$10$
+- Capacity: $0.2 / 0.05 = \$4$ per liter
+
+**19.** It is negative, so on average consumers would need a \$10 discount to
+accept a Leather backpack instead of a Canvas one.
+
+**20.** $\hat\lambda = -\hat\beta_1 = 0.05$
+
+**21.** The solution with a log-likelihood of $-1{,}198.2$, the highest of the
+five. The log-likelihood of a WTP space model is non-convex, so some runs get
+stuck at local optima. Three runs reaching the same best value is a good sign
+that it's the global optimum.
+
+**22.** Yes. The interval does not contain 0, so the WTP for Leather is
+statistically significantly negative: consumers do dislike Leather relative to
+Canvas, by somewhere between about \$6 and \$14.
+
+**23.** $0.02 / 0.4 = 0.05$ thousand dollars, i.e. **\$50 per mile** of range.
+
+**24.** Share is always highest at the lowest price, but revenue is price ×
+share (× market size). At a very low price you sell a lot but earn little on
+each unit; at a very high price you earn a lot on each unit but sell very
+little. Revenue peaks somewhere in between.
+
+**25.** Any two of:
+
+- The simulation assumes every consumer knows about and can buy every product
+  (no differences in awareness, availability, or distribution).
+- It only includes the products and attributes in the survey, while real
+  consumers weigh many other things.
+- Survey choices are hypothetical - nobody spends real money.
+- The survey sample may not represent the real market.
+
+## Heterogeneity
+
+**26.** (a) Zero is one standard deviation below the mean, and about 16% of a
+normal distribution lies more than one standard deviation below its mean, so
+roughly **16%** of people dislike more battery life. (b) How much preferences for
+battery life vary across the population. A simple logit model estimates one
+coefficient for everybody.
+
+**27.** Use a group interaction model when you have a measured variable that you
+think drives the difference (e.g. student status) and you want to compare those
+groups directly. Use a mixed logit when preferences vary across people in ways
+you can't tie to a variable you measured.
+
+## Judging your agent's work
+
+**28.** Too many attributes and levels for a respondent to process (fatigue, and
+people fall back on simple rules like "just pick the cheapest"). It also means
+many parameters to estimate from very few questions per person, so standard
+errors will be large and the sample size needed will be huge. Better: fewer
+attributes and levels, and more questions per respondent.
+
+**29.** The **priors** it assumed. A power analysis only tells you what happens
+if the true coefficients are what you told it they are; if the real effects are
+smaller, you'll need more people. Also check that it simulated the same design
+(attributes, levels, and questions per respondent) that you will actually field.
+
+**30.** Exactly what counted as "incomplete" (e.g. skipping an optional
+demographic question shouldn't throw out someone's choice data); how many
+respondents were dropped for each reason; and whether the people who were
+dropped look different from the ones who were kept, which could bias the
+results. Ask it to show you the filtering code rather than taking its summary at
+face value.

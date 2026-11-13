@@ -104,7 +104,7 @@ Throughout the semester, students will work in teams of 3-4 students towards a f
 
 ## Final Exam
 
-The final exam is held **in class on 12/2**. It is **closed book** and taken on paper - no computers, notes, or phones - and lasts 60 minutes.
+The final exam is held **in class on 12/2**. It is taken on paper and lasts 60 minutes. You may bring **one cheat sheet** (one 8.5x11 page, both sides) with anything you want on it, which you turn in with your exam; no other notes, computers, or phones are allowed.
 
 This is deliberate. Nearly everything else you do in this course, you do with an AI assistant at your side, and that's how the work is done in practice. But it only works if you can tell when the assistant is wrong. The exam is where you show me you can read a set of model results and say something true about them without anything else in the room.
 
@@ -125,7 +125,7 @@ Item                  | Weight | Notes
 Participation / Attendance | 5%     | (Yes, I take attendance)
 Homework (13)             | 30 %    | Weekly assignment (12 x 2.5%), lowest 1 dropped
 Quizzes (5)               | 10 %    | Lowest 1 dropped
-Final Exam            | 10 %   | In class, closed book, on paper (12/2)
+Final Exam            | 10 %   | In class, on paper, one cheat sheet (12/2)
 Project Proposal      | 5 %    | Teams of 3-4 students
 Survey Plan           | 5 %    |
 Pilot Survey          | 5 %    |
