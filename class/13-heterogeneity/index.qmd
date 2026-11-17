@@ -25,7 +25,8 @@ execute:
 
 agenda_items <- c(
   "Mixed logit (unobserved heterogeneity)",
-  "Sub-group modeling (observed heterogeneity)"
+  "Sub-group modeling (observed heterogeneity)",
+  "Sensitivity analysis"
 )
 ```
 
@@ -549,7 +550,7 @@ b) Use the draws to compute the mean WTP and 95% confidence intervals of the eff
 
 ## 1. Open `logitr-cars`
 
-## 2. Open `code/8.2-model-mnl-groups.R`
+## 2. Open `code/8.2-mnl-groups.R`
 
 ---
 
@@ -569,5 +570,118 @@ countdown(minutes = 20, warn_when = 15, update_every = 1, top = '0.5em', right =
 - Examine the demographic and other variables in your pilot data and specify a model that estimates differences between different groups.
 - Write code to estimate that model (or multiple models, e.g. WTP space models).
 - Compute and compare WTP across the different groups.
+
+:::
+
+---
+
+```{r}
+#| echo: false
+#| output: asis
+agenda(3)
+```
+
+---
+
+# What's a sensitivity analysis?
+
+::: {.font120}
+
+A market simulation gives you **one** predicted share for **one** market.
+
+The next question your client will ask:
+
+[_"How much does that share change if we change our product?"_]{.blue}
+
+. . .
+
+1. Pick a **baseline** market (e.g., your market simulation)
+2. Change **one** attribute of your product, holding everything else fixed
+3. Re-run `predict()` and see how your product's share moves
+
+:::
+
+---
+
+# Two common sensitivity analyses
+
+::: {.col .font110}
+
+### 1. Sweep the price
+
+Re-predict your product's share across a range of prices
+
+{{< fa arrow-right >}} **Market share vs. price**<br>
+{{< fa arrow-right >}} **Revenue vs. price** (price x share x market size)
+
+:::
+
+::: {.col .font110}
+
+### 2. Push each attribute up & down
+
+Move each attribute by a fixed amount (e.g. +/- 20%) in the direction that **raises** ("high") and **lowers** ("low") your share
+
+{{< fa arrow-right >}} **Tornado plot**
+
+:::
+
+---
+
+# Sensitivity to price
+
+::: {.col}
+
+<center>
+<img src="images/share_price_plot.png" width=600>
+</center>
+
+:::
+
+::: {.col}
+
+<center>
+<img src="images/rev_price_plot.png" width=600>
+</center>
+
+:::
+
+Solid line = prices included in the survey; [dashed = extrapolation]{.red} beyond that range
+
+---
+
+# Sensitivity to other attributes: "tornado" plot
+
+::: {.col width="65%"}
+
+<img src="images/tornado_plot.png" width=900>
+
+:::
+
+::: {.col width="35%"}
+
+- Each bar is the EV's share when **one** attribute moves to its [low]{.orange} or [high]{.blue} value
+- Sorted so the attributes your share depends on **most** are on top
+
+:::
+
+---
+
+# [Sensitivity analysis with `logitr`]{.center}
+
+<br>
+
+::: {.col width="80%"}
+
+## 1. Open `logitr-cars`
+
+## 2. Open `code/9.1-compute-sensitivity.R`
+
+## 3. Open `code/9.2-plot-sensitivity.R`
+
+<br>
+
+These charts belong in your [Final Analysis](https://madd.seas.gwu.edu/2026-Fall/project/6-final-analysis.html) report.<br>
+Think about what makes a good **baseline** market for your project.
 
 :::

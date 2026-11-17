@@ -88,7 +88,7 @@ Quizzes are **short** (10 minutes) and are designed to test for fluency and to d
 
 ## Homework
 
-There are **13 homework assignments**, roughly one per week. Each assigns readings and exercises to prepare you for the next class period, and asks you to write a short reflection on what you worked through - which may involve answering some practice questions along the way.
+There are **12 homework assignments**, roughly one per week. Each assigns readings and exercises to prepare you for the next class period, and asks you to write a short reflection on what you worked through - which may involve answering some practice questions along the way.
 
 Homework is graded using a check system:
 
@@ -110,7 +110,7 @@ This is deliberate. Nearly everything else you do in this course, you do with an
 
 The exam opens with a section where you review a conjoint analysis written by an AI assistant and identify which of its claims are correct and which are not. The rest covers the concepts from across the semester: experiment design, utility models, maximum likelihood, willingness to pay, and market simulation.
 
-Your last homework (HW 13, due 11/29) is built as preparation for it: you'll audit a complete AI-generated analysis that runs cleanly and gets the client's answer backwards. Use your AI tools freely on that assignment - it's the practice, not the test. We'll go over the exam solutions together in class after you turn it in.
+Your last homework (HW 12, due 11/29) is built as preparation for it: you'll make your cheat sheet, then work through a set of practice questions the way you'll take the exam - on paper, with no computer, using only your cheat sheet - and check yourself against an answer key. The practice questions aren't graded; the only thing you submit is a reflection with your honest feedback on the course. We'll go over the exam solutions together in class after you turn it in.
 
 # Grading
 
@@ -123,7 +123,7 @@ Final grades will be calculated as follows:
 Item                  | Weight | Notes
 ----------------------|--------|-------------------------------------
 Participation / Attendance | 5%     | (Yes, I take attendance)
-Homework (13)             | 30 %    | Weekly assignment (12 x 2.5%), lowest 1 dropped
+Homework (12)             | 30 %    | Weekly assignment (11 x ~2.73%), lowest 1 dropped
 Quizzes (5)               | 10 %    | Lowest 1 dropped
 Final Exam            | 10 %   | In class, on paper, one cheat sheet (12/2)
 Project Proposal      | 5 %    | Teams of 3-4 students

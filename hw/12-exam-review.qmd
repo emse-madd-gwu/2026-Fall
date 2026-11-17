@@ -1,7 +1,7 @@
 ---
 title: "Exam Review"
 params:
-  number: 13
+  number: 12
   purpose: "The purpose of this assignment is to help you prepare for the in-class final exam on 12/2 by testing yourself on the main ideas from the semester, and to give me your honest feedback on the course."
 ---
 
@@ -20,7 +20,7 @@ final presentations on 12/9.
 Open your course repo (`madd-f26/madd-netID`) in Positron using **File > Open
 Folder...** - open the folder itself, not a file inside it.
 
-Everything you submit for this assignment goes in the `hw13/hw13.qmd` file, and
+Everything you submit for this assignment goes in the `hw12/hw12.qmd` file, and
 it's just one thing: the reflection at the end (section 4). The review below is
 for you - **nothing in it is submitted or graded.**
 
@@ -35,7 +35,7 @@ no computer and no calculator, using only your cheat sheet.** When you get stuck
 make a note of what was missing from your sheet and add it.
 
 Only after you've tried everything, check your answers against the
-**[answer key](13-exam-review-key.html)**. The point is to find out what you
+**[answer key](12-exam-review-key.html)**. The point is to find out what you
 know and what you don't while there's still time to fix it, so resist the urge
 to peek. This is entirely an exercise for you to study with, not something I'm going to grade. The only thing I'll look at is your final reflection, so please leave some feedback for me 🙏.
 
@@ -218,7 +218,7 @@ What would you check?
 # 4. Reflect
 
 This is the last homework of the semester, so instead of reflecting on a
-reading, I'd like your honest feedback on the course. In your `hw13.qmd` file,
+reading, I'd like your honest feedback on the course. In your `hw12.qmd` file,
 under the "Reflection" heading, tell me what you think I should change, keep,
 add, or drop to make this course better for next year's students. Anything is
 fair game - the content, the projects, the homework, the quizzes, the agentic

@@ -35,5 +35,4 @@ For each class week:
 
 ## End of semester
 
-- [ ] Distribute the take-home exam (HW 12) in class on 11/18; due 11/22
 - [ ] Update the project showcase with the new semester's examples

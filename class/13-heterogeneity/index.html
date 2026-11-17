@@ -742,7 +742,7 @@ built-in one.
 <h1>Quiz 5 - last one!</h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_ba4363f7" minutes="12" seconds="0" warn-when="30" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:3em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_55165668" minutes="12" seconds="0" warn-when="30" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:3em;"></countdown-timer>
 </div>
 </div>
 <div class="cols-row">
@@ -785,6 +785,7 @@ Rules:
 </div>
 <h3 id="mixed-logit-unobserved-heterogeneity">1. Mixed logit (unobserved heterogeneity)</h3>
 <h3 id="sub-group-modeling-observed-heterogeneity">2. Sub-group modeling (observed heterogeneity)</h3>
+<h3 id="sensitivity-analysis">3. Sensitivity analysis</h3>
 </section>
 </section>
 <section class="slide level0">
@@ -796,6 +797,7 @@ Rules:
 </div>
 <h3 id="mixed-logit-unobserved-heterogeneity-1">1. <span class="orange">Mixed logit (unobserved heterogeneity)</span></h3>
 <h3 id="sub-group-modeling-observed-heterogeneity-1">2. Sub-group modeling (observed heterogeneity)</h3>
+<h3 id="sensitivity-analysis-1">3. Sensitivity analysis</h3>
 </section>
 </section>
 <section class="slide level0">
@@ -1002,7 +1004,7 @@ WTP space
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_c41571d8" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_892545b4" minutes="10" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <h2 id="your-turn">Your Turn</h2>
@@ -1021,6 +1023,7 @@ WTP space
 </div>
 <h3 id="mixed-logit-unobserved-heterogeneity-2">1. Mixed logit (unobserved heterogeneity)</h3>
 <h3 id="sub-group-modeling-observed-heterogeneity-2">2. <span class="orange">Sub-group modeling (observed heterogeneity)</span></h3>
+<h3 id="sensitivity-analysis-2">3. Sensitivity analysis</h3>
 </section>
 </section>
 <section class="slide level0">
@@ -1236,7 +1239,7 @@ H =
 <h1><span class="center">Estimating mixed logit models with <code>logitr</code></span></h1>
 <p><br></p>
 <h2 id="open-logitr-cars-1">1. Open <code>logitr-cars</code></h2>
-<h2 id="open-code8.2-model-mnl-groups.r">2. Open <code>code/8.2-model-mnl-groups.R</code></h2>
+<h2 id="open-code8.2-mnl-groups.r">2. Open <code>code/8.2-mnl-groups.R</code></h2>
 </section>
 <section class="slide level0">
 
@@ -1244,7 +1247,7 @@ H =
 <h1 class="lexis-slide-title"></h1>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_c9e71780" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_179f0303" minutes="20" seconds="0" warn-when="15" update-every="1" tabindex="0" style="top:0.5em;right:0.5em;--countdown-font-size:2em;"></countdown-timer>
 </div>
 </div>
 <h2 id="your-turn-1">Your Turn</h2>
@@ -1257,6 +1260,104 @@ H =
 </ul>
 </div>
 </section>
+</section>
+<section class="slide level0">
+
+<section id="week-13-heterogeneity-3" class="inverse middle">
+<h1>Week 13: <span class="fancy">Heterogeneity</span></h1>
+<div style="height: 1.5em;">
+
+</div>
+<h3 id="mixed-logit-unobserved-heterogeneity-3">1. Mixed logit (unobserved heterogeneity)</h3>
+<h3 id="sub-group-modeling-observed-heterogeneity-3">2. Sub-group modeling (observed heterogeneity)</h3>
+<h3 id="sensitivity-analysis-3">3. <span class="orange">Sensitivity analysis</span></h3>
+</section>
+</section>
+<section class="slide level0">
+
+<h1>What’s a sensitivity analysis?</h1>
+<div class="font120">
+<p>A market simulation gives you <strong>one</strong> predicted share for <strong>one</strong> market.</p>
+<p>The next question your client will ask:</p>
+<p><span class="blue"><em>“How much does that share change if we change our product?”</em></span></p>
+<div class="fragment">
+<ol type="1">
+<li>Pick a <strong>baseline</strong> market (e.g., your market simulation)</li>
+<li>Change <strong>one</strong> attribute of your product, holding everything else fixed</li>
+<li>Re-run <code>predict()</code> and see how your product’s share moves</li>
+</ol>
+</div>
+</div>
+</section>
+<section class="slide level0">
+
+<h1>Two common sensitivity analyses</h1>
+<div class="cols-row">
+<div class="col font110">
+<div id="sweep-the-price" class="h3">
+1. Sweep the price
+</div>
+<p>Re-predict your product’s share across a range of prices</p>
+<p><i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>Market share vs.&nbsp;price</strong><br> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>Revenue vs.&nbsp;price</strong> (price x share x market size)</p>
+</div>
+<div class="col font110">
+<div id="push-each-attribute-up-down" class="h3">
+2. Push each attribute up &amp; down
+</div>
+<p>Move each attribute by a fixed amount (e.g.&nbsp;+/- 20%) in the direction that <strong>raises</strong> (“high”) and <strong>lowers</strong> (“low”) your share</p>
+<p><i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> <strong>Tornado plot</strong></p>
+</div>
+</div>
+</section>
+<section class="slide level0">
+
+<h1>Sensitivity to price</h1>
+<div class="cols-row">
+<div class="col">
+<center>
+<img src="images/share_price_plot.png" width="600">
+</center>
+</div>
+<div class="col">
+<center>
+<img src="images/rev_price_plot.png" width="600">
+</center>
+</div>
+</div>
+<p>Solid line = prices included in the survey; <span class="red">dashed = extrapolation</span> beyond that range</p>
+</section>
+<section class="slide level0">
+
+<h1>Sensitivity to other attributes: “tornado” plot</h1>
+<div class="cols-row">
+<div class="col" style="flex:0 1 65%;width:65%">
+<p><img src="images/tornado_plot.png" width="900"></p>
+</div>
+<div class="col" style="flex:0 1 35%;width:35%">
+<ul>
+<li>Each bar is the EV’s share when <strong>one</strong> attribute moves to its <span class="orange">low</span> or <span class="blue">high</span> value</li>
+<li>Sorted so the attributes your share depends on <strong>most</strong> are on top</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="slide level0">
+
+<h1><span class="center">Sensitivity analysis with <code>logitr</code></span></h1>
+<p><br></p>
+<div class="col" style="flex:0 1 80%;width:80%">
+<div id="open-logitr-cars-2" class="h2">
+1. Open <code>logitr-cars</code>
+</div>
+<div id="open-code9.1-compute-sensitivity.r" class="h2">
+2. Open <code>code/9.1-compute-sensitivity.R</code>
+</div>
+<div id="open-code9.2-plot-sensitivity.r" class="h2">
+3. Open <code>code/9.2-plot-sensitivity.R</code>
+</div>
+<p><br></p>
+<p>These charts belong in your <a href="https://madd.seas.gwu.edu/2026-Fall/project/6-final-analysis.html">Final Analysis</a> report.<br> Think about what makes a good <strong>baseline</strong> market for your project.</p>
+</div>
 
 </section>
     </div>

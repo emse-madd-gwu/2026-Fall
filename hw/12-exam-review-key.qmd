@@ -2,7 +2,7 @@
 title: "Exam Review: Answer Key"
 ---
 
-Answers to the questions in the [Exam Review](13-exam-review.html). If
+Answers to the questions in the [Exam Review](12-exam-review.html). If
 you haven't tried them yet, go back and do that first - the key is only useful
 once you know which questions you couldn't answer on your own.
 
