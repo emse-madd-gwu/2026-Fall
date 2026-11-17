@@ -262,12 +262,62 @@ attribute, so check that each group has plenty of respondents.
 #colbreak()
 ```
 
+# Sensitivity analysis
+
+A market simulation predicts **one** share for **one** market. A sensitivity
+analysis asks how much that share moves when you change your product: start
+from a **baseline** market, change one attribute of your product while holding
+everything else fixed, and run `predict()` again.
+
+| Analysis | What you change | Chart |
+|----------|-----------------|-------|
+| Price | Sweep your product's price over a range | Share and revenue vs. price |
+| Attributes | Each attribute to a "high" and "low" value (e.g. ±20%) | Tornado plot |
+
+## Sweeping price
+
+Stack one copy of the baseline market per price, then predict them all at once
+(`rep_df()` is from {jph}):
+
+```r
+prices <- seq(10, 30)
+n <- length(prices)
+scenarios <- rep_df(baseline, n)
+scenarios$obsID <- rep(seq(n), each = 3)
+scenarios$price[scenarios$altID == 2] <- prices
+
+sens_price <- predict(
+  model_mnl,
+  newdata    = scenarios,
+  obsID      = "obsID",
+  level      = 0.95,
+  interval   = "confidence",
+  returnData = TRUE) %>%
+  filter(altID == 2)
+```
+
+Revenue is price × share × market size. Share is always highest at the lowest
+price, but revenue usually peaks somewhere in between, and that's the price
+worth reporting. Only trust prices inside the range you surveyed; beyond it
+you're extrapolating.
+
+## Reading a tornado plot
+
+Each bar is your product's share when one attribute moves to its "low" or
+"high" value, with everything else at baseline. Sort the longest bars to the
+top: those are the attributes your share depends on most.
+
+In `logitr-cars`, `code/9.1-compute-sensitivity.R` runs both analyses and
+`code/9.2-plot-sensitivity.R` makes the charts. All three charts belong in
+your Final Analysis report.
+
 # Before next class
 
-- [HW 12: Sensitivity Analysis](https://madd.seas.gwu.edu/2026-Fall/hw/12-sensitivity.html)
-  is due **Nov 22**.
-- With your team, re-estimate your pilot model as a mixed logit, then try
-  a sub-group model on a demographic in your pilot data. Both feed the
+- [HW 12: Exam Review](https://madd.seas.gwu.edu/2026-Fall/hw/12-exam-review.html)
+  is due **Nov 29**.
+- With your team, re-estimate your pilot model as a mixed logit, try a
+  sub-group model on a demographic in your pilot data, and run price and
+  attribute sensitivity analyses on your market simulation. All of these feed the
   [Final Analysis](https://madd.seas.gwu.edu/2026-Fall/project/6-final-analysis.html)
   report, due **Dec 6** (DM me if you don't want yours on the
   [showcase](https://madd.seas.gwu.edu/showcase#fall-2025)).
@@ -285,3 +335,5 @@ You should be able to:
 - Write a two-group model with interactions and state each group's effect.
 - Explain why separate models' coefficients can't be compared, and compute
   WTP by group with confidence intervals.
+- Run price and attribute sensitivity analyses with `predict()`, and read a
+  tornado plot.
