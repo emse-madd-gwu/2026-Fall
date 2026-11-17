@@ -83,6 +83,35 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Exam Review – EMSE 6035">
@@ -328,9 +357,254 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon!</p>
+<blockquote class="blockquote">
+<p><strong>Due</strong>: Nov 29 by 11:59pm</p>
+<p><strong>Weight</strong>: This assignment is worth 2.5% of your final grade.</p>
+<p><strong>Purpose</strong>: The purpose of this assignment is to help you prepare for the in-class final exam on 12/2 by testing yourself on the main ideas from the semester, and to give me your honest feedback on the course.</p>
+<p><strong>Submit</strong>: Commit and push your completed assignment to your course GitHub repository (see the “Submit” section at the end of this assignment).</p>
+<p><strong>Assessment</strong>: This assignment is graded using a check system:</p>
+<ul>
+<li>✔+ (110%): Responses show phenomenal thought and engagement with the course content. I will not assign these often.</li>
+<li>✔ (100%): Responses are thoughtful, well-written, and show engagement with the course content. This is the expected level of performance.</li>
+<li>✔− (50%): Responses are hastily composed, too short, and/or only cursorily engage with the course content. This grade signals that you need to improve next time. I will <em>hopefully</em> not assign these often.</li>
+</ul>
+<p>Notice that this is essentially a pass/fail system. I’m not grading your writing ability and I’m not counting the number of words you write - I’m looking for thoughtful engagement. One or two sentences is <strong>not enough</strong>. Write at least a paragraph and show me that you did the readings assigned.</p>
+</blockquote>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>You can bring a cheat sheet to the exam
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the final exam on 12/2, you may bring <strong>one 8.5x11 sheet of notes (both sides)</strong> with anything you want on it - typed, printed, or handwritten. You’ll turn it in with your exam, and I’ll give it back with your graded exam at the final presentations on 12/9.</p>
+</div>
+</div>
+<section id="get-organized" class="level1">
+<h1>1. Get Organized</h1>
+<p>Open your course repo (<code>madd-f26/madd-netID</code>) in Positron using <strong>File &gt; Open Folder…</strong> - open the folder itself, not a file inside it.</p>
+<p>Everything you submit for this assignment goes in the <code>hw13/hw13.qmd</code> file, and it’s just one thing: the reflection at the end (section 4). The review below is for you - <strong>nothing in it is submitted or graded.</strong></p>
+</section>
+<section id="make-your-cheat-sheet" class="level1">
+<h1>2. Make Your Cheat Sheet</h1>
+<p>I recommend starting here. Go back through the class slides and summary sheets, quizzes, and any other notes you took and decide what is worth putting on your one page. Deciding what to include (and what you already know well enough to leave off) is itself a pretty good way to study.</p>
+</section>
+<section id="practice-questions" class="level1">
+<h1>3. Practice Questions</h1>
+<p>Work through the questions below the way you’ll take the exam: <strong>on paper, with no computer and no calculator, using only your cheat sheet.</strong> When you get stuck, make a note of what was missing from your sheet and add it.</p>
+<p>Only after you’ve tried everything, check your answers against the <strong><a href="13-exam-review-key.html">answer key</a></strong>. The point is to find out what you know and what you don’t while there’s still time to fix it, so resist the urge to peek. This is entirely an exercise for you to study with, not something I’m going to grade. The only thing I’ll look at is your final reflection, so please leave some feedback for me 🙏.</p>
+<section id="utility-models-logit" class="level2">
+<h2 class="anchored" data-anchor-id="utility-models-logit">Utility models &amp; logit</h2>
+<p>A team of GWU researchers ran a conjoint experiment on backpacks, with the attributes <em>price</em> (in $), <em>capacity</em> (in liters), and <em>material</em> (“Canvas”, “Nylon”, or “Leather”). They estimated the following utility model, with Canvas as the reference level:</p>
+<p><span class="math display">\[u_j = \beta_1 x_j^{\mathrm{price}} + \beta_2 x_j^{\mathrm{capacity}} + \beta_3 \delta_j^{\mathrm{Nylon}} + \beta_4 \delta_j^{\mathrm{Leather}} + \varepsilon_j\]</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Coefficient</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\beta_1\)</span></td>
+<td><span class="math inline">\(-0.05\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\beta_2\)</span></td>
+<td><span class="math inline">\(0.2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\beta_3\)</span></td>
+<td><span class="math inline">\(1.0\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\beta_4\)</span></td>
+<td><span class="math inline">\(-0.5\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.</strong> Which of the following statements are TRUE? (Select all that apply.)</p>
+<ul>
+<li><strong>A)</strong> Consumers prefer backpacks with more capacity</li>
+<li><strong>B)</strong> Consumers prefer Leather backpacks over Canvas backpacks (all else equal)</li>
+<li><strong>C)</strong> Consumers prefer Nylon backpacks over Leather backpacks (all else equal)</li>
+<li><strong>D)</strong> A $10 increase in price changes utility by more than a 1-liter increase in capacity</li>
+<li><strong>E)</strong> Consumers prefer Canvas backpacks over Leather backpacks (all else equal)</li>
+</ul>
+<p>Consider these three backpacks:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Backpack X</th>
+<th>Backpack Y</th>
+<th>Backpack Z</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Price</td>
+<td>$40</td>
+<td>$60</td>
+<td>$50</td>
+</tr>
+<tr class="even">
+<td>Capacity</td>
+<td>20 L</td>
+<td>30 L</td>
+<td>25 L</td>
+</tr>
+<tr class="odd">
+<td>Material</td>
+<td>Leather</td>
+<td>Canvas</td>
+<td>Nylon</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.</strong> For each backpack, what are the values of <span class="math inline">\(\delta^{\mathrm{Nylon}}\)</span> and <span class="math inline">\(\delta^{\mathrm{Leather}}\)</span>?</p>
+<p><strong>3.</strong> Compute the observed utility <span class="math inline">\(v_j\)</span> for each backpack.</p>
+<p><strong>4.</strong> Which backpack will have the highest predicted market share?</p>
+<p><strong>5.</strong> A coffee survey has a <em>size</em> attribute. In one version the levels are “Small”, “Medium”, and “Large”. In another they are 8 oz, 12 oz, and 16 oz.</p>
+<ol type="a">
+<li><p>How many coefficients does <em>size</em> need in each version if it is modeled as discrete? As continuous?</p></li>
+<li><p>What assumption are you making when you model the ounces version as continuous?</p></li>
+</ol>
+<p><strong>6.</strong> For a given respondent, product A has a higher observed utility than product B (<span class="math inline">\(v_A &gt; v_B\)</span>). Does the logit model predict that this person always chooses A? Why or why not?</p>
+</section>
+<section id="optimization-mle" class="level2">
+<h2 class="anchored" data-anchor-id="optimization-mle">Optimization &amp; MLE</h2>
+<p>The lifetime (in hours) of a phone battery follows a normal distribution with an unknown mean <span class="math inline">\(\mu\)</span> and a standard deviation of 10. You test four batteries, which last 42, 55, 48, and 61 hours. For <span class="math inline">\(\mu = 50\)</span>, the log of the probability density for each battery is:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Battery</th>
+<th><span class="math inline">\(\ln f(x_i \mid \mu = 50)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>42 hrs</td>
+<td><span class="math inline">\(-3.54\)</span></td>
+</tr>
+<tr class="even">
+<td>55 hrs</td>
+<td><span class="math inline">\(-3.35\)</span></td>
+</tr>
+<tr class="odd">
+<td>48 hrs</td>
+<td><span class="math inline">\(-3.24\)</span></td>
+</tr>
+<tr class="even">
+<td>61 hrs</td>
+<td><span class="math inline">\(-3.83\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>7.</strong> Compute the log-likelihood <span class="math inline">\(\ln \mathcal{L}(\mu = 50)\)</span>.</p>
+<p><strong>8.</strong> You compute the log-likelihood for several other values of <span class="math inline">\(\mu\)</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\mu\)</span></th>
+<th>Log-Likelihood</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>45</td>
+<td><span class="math inline">\(-14.76\)</span></td>
+</tr>
+<tr class="even">
+<td>50</td>
+<td><span class="math inline">\(-13.96\)</span></td>
+</tr>
+<tr class="odd">
+<td>52</td>
+<td><span class="math inline">\(-13.92\)</span></td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td><span class="math inline">\(-14.16\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Which value of <span class="math inline">\(\mu\)</span> is most likely to be the true mean? Why?</p>
+<p><strong>9.</strong> Every one of the <span class="math inline">\(\ln f\)</span> values above is negative. Does that mean something went wrong? Explain.</p>
+<p><strong>10.</strong> In one or two sentences each: what is the <em>likelihood</em> a function of, and what does maximum likelihood estimation choose?</p>
+<p><strong>11.</strong> You are running gradient descent. What goes wrong if the step size <span class="math inline">\(\gamma\)</span> is too large? Too small?</p>
+</section>
+<section id="uncertainty" class="level2">
+<h2 class="anchored" data-anchor-id="uncertainty">Uncertainty</h2>
+<p><strong>12.</strong> At the estimated optimum, the log-likelihood is very sharply curved in the direction of <span class="math inline">\(\beta_1\)</span> and nearly flat in the direction of <span class="math inline">\(\beta_2\)</span>. Which coefficient is estimated more precisely? Why?</p>
+<p><strong>13.</strong> A coefficient is estimated at <span class="math inline">\(0.8\)</span> with a standard error of <span class="math inline">\(0.5\)</span>. Give an approximate 95% confidence interval. Is the coefficient statistically significant?</p>
+<p><strong>14.</strong> To get a confidence interval on a WTP, why do we simulate draws of the coefficients instead of just dividing the endpoints of the coefficient confidence intervals?</p>
+</section>
+<section id="design-of-experiments-power" class="level2">
+<h2 class="anchored" data-anchor-id="design-of-experiments-power">Design of experiments &amp; power</h2>
+<p><strong>15.</strong> A conjoint has three attributes: price (4 levels), brand (3 levels), and color (2 levels). How many profiles are in the full factorial? Why don’t we just show respondents the full factorial?</p>
+<p><strong>16.</strong> Your pilot survey with 50 respondents gives a standard error of <span class="math inline">\(0.20\)</span> on the price coefficient. You want it down to <span class="math inline">\(0.10\)</span>. Roughly how many respondents do you need?</p>
+<p><strong>17.</strong> Besides recruiting more respondents, name two survey design choices that shrink standard errors.</p>
+</section>
+<section id="wtp-market-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="wtp-market-simulation">WTP &amp; market simulation</h2>
+<p>Questions 18-22 go back to the backpack model from question 1.</p>
+<p><strong>18.</strong> Compute the mean WTP for Nylon and for Leather (each relative to Canvas), and for one additional liter of capacity.</p>
+<p><strong>19.</strong> In one sentence, interpret the <strong>sign</strong> of the WTP for Leather.</p>
+<p><strong>20.</strong> If the backpack model were written in the WTP space form <span class="math inline">\(\tilde{u}_j = \lambda \left( \boldsymbol{\omega} x_j - p_j \right) + \tilde\varepsilon_j\)</span>, what would <span class="math inline">\(\hat\lambda\)</span> be?</p>
+<p><strong>21.</strong> The team re-estimates the backpack model in WTP space from five random starting points. The five runs finish with log-likelihoods of <span class="math inline">\(-1{,}210.4\)</span>, <span class="math inline">\(-1{,}198.2\)</span>, <span class="math inline">\(-1{,}198.2\)</span>, <span class="math inline">\(-1{,}225.0\)</span>, and <span class="math inline">\(-1{,}198.2\)</span>. Which solution should they report? Why don’t all five runs agree?</p>
+<p><strong>22.</strong> The team reports a mean WTP for Leather of <span class="math inline">\(-\$10\)</span> with a 95% confidence interval of <span class="math inline">\([-\$14, -\$6]\)</span>. Can they conclude that consumers dislike Leather relative to Canvas? Explain.</p>
+<p><strong>23.</strong> A car model has price in <strong>$1,000s</strong>, with <span class="math inline">\(\hat\alpha = -0.4\)</span>, and the coefficient on electric driving range (in miles) is <span class="math inline">\(0.02\)</span>. What is the WTP for one additional mile of range?</p>
+<p><strong>24.</strong> Your price sensitivity analysis shows market share falling steadily as price rises. Why might the price that maximizes <strong>revenue</strong> be different from the price that maximizes <strong>market share</strong>?</p>
+<p><strong>25.</strong> Give two reasons the market shares from a simulation will not match the real-world market shares of those products.</p>
+</section>
+<section id="heterogeneity" class="level2">
+<h2 class="anchored" data-anchor-id="heterogeneity">Heterogeneity</h2>
+<p><strong>26.</strong> A mixed logit model estimates the battery life coefficient as <span class="math inline">\(\beta \sim \mathcal{N}(0.5, 0.5)\)</span>.</p>
+<ol type="a">
+<li><p>Roughly what share of people <strong>dislike</strong> more battery life?</p></li>
+<li><p>What does the standard deviation tell you that a simple logit model can’t?</p></li>
+</ol>
+<p><strong>27.</strong> When would you model differences in preferences with a two-group interaction model (e.g.&nbsp;students vs.&nbsp;non-students), and when with a mixed logit?</p>
+</section>
+<section id="judging-your-agents-work" class="level2">
+<h2 class="anchored" data-anchor-id="judging-your-agents-work">Judging your agent’s work</h2>
+<p><strong>28.</strong> You ask your agent to design a conjoint survey. It proposes 8 attributes, each with 5 levels, and 3 choice questions per respondent, saying “this gives us the richest data.” What concerns would you raise?</p>
+<p><strong>29.</strong> Your agent runs a power analysis and reports: “With 100 respondents all coefficients are significant, so 100 is enough.” What would you check before trusting that?</p>
+<p><strong>30.</strong> Your agent cleans your final survey data and reports that the number of respondents dropped from 400 to 250 because it “removed incomplete responses.” What would you check?</p>
+</section>
+</section>
+<section id="reflect" class="level1">
+<h1>4. Reflect</h1>
+<p>This is the last homework of the semester, so instead of reflecting on a reading, I’d like your honest feedback on the course. In your <code>hw13.qmd</code> file, under the “Reflection” heading, tell me what you think I should change, keep, add, or drop to make this course better for next year’s students. Anything is fair game - the content, the projects, the homework, the quizzes, the agentic workflow, the pace, the way class time is used. Candid, critical feedback is the most useful kind.</p>
+</section>
+<section id="submit" class="level1">
+<h1>5. Submit</h1>
+<p>To submit your assignment, follow these instructions:</p>
+<ol type="1">
+<li>Render your .qmd file by either clicking the “Preview” button in Positron or running <code>quarto render</code> in the terminal.</li>
+<li>Open the rendered html file and make sure it looks good! Is all the formatting as you expected?</li>
+<li>Commit and push your work using GitHub Desktop: look at the diff, write a short commit message, click <strong>Commit</strong>, then <strong>Push</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Remember
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your work isn’t submitted until you’ve <strong>pushed</strong> it. Committing only saves the change on your own computer – go look at your repo on GitHub.com and confirm your work is actually there before you call this done.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
